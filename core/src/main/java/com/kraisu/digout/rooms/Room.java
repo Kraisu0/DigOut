@@ -1,5 +1,8 @@
 package com.kraisu.digout.rooms;
 
+import com.kraisu.digout.Equimpent.Equipment;
+import com.kraisu.digout.Survivor.Survivor;
+
 import java.util.List;
 
 public abstract class Room {
@@ -12,12 +15,13 @@ public abstract class Room {
     protected int buildUp; //nic, baza, kuchnia, restroom, winda, warsztat, elektrownia, pompa powietrza, majsterkowania
     protected boolean ableToBuild; //czy pokój można zabudować
     protected int amountOfSpace; //ile jest miejsca w pokoju
-    protected List<int[]> Resources; //zasoby z odkopania
-    protected List<int[]> Equipment; //ekwipunek z odkopania
-    protected List<int[]> Survivors; //ocaleńcy z odkopania
+    protected int constructionResources;
+    protected int food;
+    protected int tools;
+    protected List<Equipment> Equipments; //ekwipunek z odkopania
+    protected List<Survivor> Survivors; //ocaleńcy z odkopania
 
-
-    public Room(int gameId, int coordinateX, int coordinateY, int type, boolean discovered, boolean ableToDiscover, int buildUp, boolean ableToBuild, int amountOfSpace, List<int[]> resources, List<int[]> equipment, List<int[]> survivors) {
+    public Room(int gameId, int coordinateX, int coordinateY, int type, boolean discovered, boolean ableToDiscover, int buildUp, boolean ableToBuild, int amountOfSpace, int constructionResources, int food, int tools, List<Equipment> equipments, List<Survivor> survivors ) {
         this.gameId = gameId;
         this.coordinateX = coordinateX;
         this.coordinateY = coordinateY;
@@ -27,10 +31,10 @@ public abstract class Room {
         this.buildUp = buildUp;
         this.ableToBuild = ableToBuild;
         this.amountOfSpace = amountOfSpace;
-        this.Resources = resources;
-        this.Equipment = equipment;
+        this.constructionResources = constructionResources;
+        this.food = food;
+        this.tools = tools;
+        this.Equipments = equipments;
         this.Survivors = survivors;
     }
-
-
 }

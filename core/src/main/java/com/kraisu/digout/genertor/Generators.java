@@ -1,5 +1,6 @@
 package com.kraisu.digout.genertor;
 
+import java.util.List;
 import java.util.Random;
 
 import static com.kraisu.digout.help.ConstantsGenerator.ConstructionResourcesDropPercentages.*;
@@ -41,7 +42,6 @@ public class Generators {
             return 1;
         else
             return 0;
-
     }
 
     public int generateRandomFood(){
@@ -52,5 +52,66 @@ public class Generators {
         else
             return 0;
     }
+
+    public int generateRandomTools(){
+        int nr = generateRandomNumber(1, tools_range_drop);
+
+        if(nr <= TOOLS_DROP)
+            return 1;
+        else
+            return 0;
+    }
+
+    public int generateRandomSurvivors(){
+        int nr = generateRandomNumber(1, survivors_range_drop);
+
+        if(nr <= SURVIVOR_DROP){
+            return generateRandomProfession();
+        }else
+            return -1;
+    }
+
+    public int generateRandomProfession(){
+        int nr = generateRandomNumber(1, profession_range_drop);
+
+        if(nr <= ENGINEER_DROP)
+            return 3;
+        else if(nr <= ENGINEER_DROP + COOK_DROP)
+            return 2;
+        else if(nr <= ENGINEER_DROP + COOK_DROP + WORKER_DROP)
+            return 1;
+        else
+            return 0;
+    }
+
+    public int generateRandomEquipment(){
+        int nr = generateRandomNumber(1, equipment_range_drop);
+
+        if(nr <= EQ_DROP)
+            return generateRandomEQ();
+        else
+            return -1;
+    }
+
+    private int generateRandomEQ() {
+        int nr = generateRandomNumber(1, eq_range_drop);
+
+        if(nr <= SEARCHLIGHT_DROP)
+            return 0;
+        else if(nr <= SEARCHLIGHT_DROP + KITCHEN_ROBOT)
+            return 1;
+        else
+            return 2;
+    }
+
+    private List<Integer> generateRandomSurvivals(int loop){
+
+
+        for(int i = 0; i < loop; i++){
+
+        }
+        return null;
+    }
+
 
 }

@@ -37,8 +37,8 @@ public class ConstantsGenerator {
     }
 
     public static class EQDropPercentages{
-        public static final int SEARCHLIGHT_DROP = 1;
-        public static final int KITCHEN_ROBOT = 1;
-        public static final int OXYGEN_MASK = 1;
+        public static final int SEARCHLIGHT_DROP = 33;
+        public static final int KITCHEN_ROBOT = 33;
+        public static final int OXYGEN_MASK = 33;
     }
 }
