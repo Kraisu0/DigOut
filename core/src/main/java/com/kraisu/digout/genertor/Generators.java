@@ -1,7 +1,14 @@
 package com.kraisu.digout.genertor;
 
+import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
+import com.kraisu.digout.survivor.Survivor;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.UUID;
 
 import static com.kraisu.digout.help.ConstantsGenerator.ConstructionResourcesDropPercentages.*;
 import static com.kraisu.digout.help.ConstantsGenerator.EQDropPercentages.*;
@@ -104,13 +111,60 @@ public class Generators {
             return 2;
     }
 
-    private List<Integer> generateRandomSurvivals(int loop){
-
+    private List<Survivor> generateRandomSurvivals(UUID id, int loop){
+        List<Survivor> list = new ArrayList<Survivor>();
+        int survivor = 0;
+        list = null;
 
         for(int i = 0; i < loop; i++){
+            survivor = generateRandomSurvivors();
 
+            if(survivor != -1) {
+                Survivor temp = new Survivor(id, "name", 4, survivor, -1, "profileInformation", 0, null);
+                temp = setRandomBio(temp);
+                list.add(temp);
+            }
         }
-        return null;
+        return list;
+    }
+
+    private Map<String, String> generateNameForSurvivor(UUID gameID) {
+        while(true) {
+            String name = generateName();
+            if(getGameById(gameID).getSurvivors.stream()
+                .anyMatch(() -> survivor.getName().equals(name))) {
+                return name;
+            }
+        }
+    }
+
+    private Map<String, String> generateName() {
+        // pobieranie losowej linijki  z pliku i dodanie do mapy jako key - value
+    //    key - name
+      //      value - opis
+    }
+
+    private Survivor setRandomBio(Survivor survivor){
+        Survivor tempSurvivor = survivor;
+        Texture img = generateTexture();
+        img.getTextureData();
+        int age = generateAge(img);
+        String name = generateName(img);
+        String pi = generatePI(img);
+
+
+        tempSurvivor.setAge(age);
+        tempSurvivor.setName(name);
+        tempSurvivor.setProfileInformation(pi);
+        tempSurvivor.setImg(img);
+
+        return tempSurvivor;
+    }
+
+    private Texture generateTexture() {
+        Texture temp = new Texture("surv01_Bob_30_M.png");
+
+        return temp;
     }
 
 

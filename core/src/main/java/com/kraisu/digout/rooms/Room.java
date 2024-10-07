@@ -1,12 +1,13 @@
 package com.kraisu.digout.rooms;
 
-import com.kraisu.digout.Equimpent.Equipment;
-import com.kraisu.digout.Survivor.Survivor;
+import com.kraisu.digout.equimpent.Equipment;
+import com.kraisu.digout.survivor.Survivor;
 
 import java.util.List;
+import java.util.UUID;
 
 public abstract class Room {
-    protected int gameId; //ID gry w jakiej znajduje się pokój
+    protected UUID gameId; //ID gry w jakiej znajduje się pokój
     protected int coordinateX; //pozycja poziomia na mapie
     protected int coordinateY; //pozycja pionowa na mapie
     protected int type; //baza, kamienie, skały, wyjście
@@ -21,7 +22,7 @@ public abstract class Room {
     protected List<Equipment> Equipments; //ekwipunek z odkopania
     protected List<Survivor> Survivors; //ocaleńcy z odkopania
 
-    public Room(int gameId, int coordinateX, int coordinateY, int type, boolean discovered, boolean ableToDiscover, int buildUp, boolean ableToBuild, int amountOfSpace, int constructionResources, int food, int tools, List<Equipment> equipments, List<Survivor> survivors ) {
+    public Room(UUID gameId, int coordinateX, int coordinateY, int type, boolean discovered, boolean ableToDiscover, int buildUp, boolean ableToBuild, int amountOfSpace, int constructionResources, int food, int tools, List<Equipment> equipments, List<Survivor> survivors ) {
         this.gameId = gameId;
         this.coordinateX = coordinateX;
         this.coordinateY = coordinateY;
@@ -36,5 +37,117 @@ public abstract class Room {
         this.tools = tools;
         this.Equipments = equipments;
         this.Survivors = survivors;
+    }
+
+    public UUID getGameId() {
+        return gameId;
+    }
+
+    public void setGameId(UUID gameId) {
+        this.gameId = gameId;
+    }
+
+    public int getCoordinateX() {
+        return coordinateX;
+    }
+
+    public void setCoordinateX(int coordinateX) {
+        this.coordinateX = coordinateX;
+    }
+
+    public int getCoordinateY() {
+        return coordinateY;
+    }
+
+    public void setCoordinateY(int coordinateY) {
+        this.coordinateY = coordinateY;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public boolean isDiscovered() {
+        return discovered;
+    }
+
+    public void setDiscovered(boolean discovered) {
+        this.discovered = discovered;
+    }
+
+    public boolean isAbleToDiscover() {
+        return ableToDiscover;
+    }
+
+    public void setAbleToDiscover(boolean ableToDiscover) {
+        this.ableToDiscover = ableToDiscover;
+    }
+
+    public int getBuildUp() {
+        return buildUp;
+    }
+
+    public void setBuildUp(int buildUp) {
+        this.buildUp = buildUp;
+    }
+
+    public boolean isAbleToBuild() {
+        return ableToBuild;
+    }
+
+    public void setAbleToBuild(boolean ableToBuild) {
+        this.ableToBuild = ableToBuild;
+    }
+
+    public int getAmountOfSpace() {
+        return amountOfSpace;
+    }
+
+    public void setAmountOfSpace(int amountOfSpace) {
+        this.amountOfSpace = amountOfSpace;
+    }
+
+    public int getConstructionResources() {
+        return constructionResources;
+    }
+
+    public void setConstructionResources(int constructionResources) {
+        this.constructionResources = constructionResources;
+    }
+
+    public int getFood() {
+        return food;
+    }
+
+    public void setFood(int food) {
+        this.food = food;
+    }
+
+    public int getTools() {
+        return tools;
+    }
+
+    public void setTools(int tools) {
+        this.tools = tools;
+    }
+
+    public List<Equipment> getEquipments() {
+        return Equipments;
+    }
+
+    public void setEquipments(List<Equipment> equipments) {
+        Equipments = equipments;
+    }
+
+    public List<Survivor> getSurvivors() {
+        return Survivors;
+    }
+
+    public void setSurvivors(List<Survivor> survivors) {
+        Survivors = survivors;
     }
 }
