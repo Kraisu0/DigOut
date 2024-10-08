@@ -15,7 +15,6 @@ public class Survivor {
     private int age;
     private Texture img;
 
-
     public Survivor(UUID gameId, String name, int energy, int profession, int equipment, String profileInformation, int age, Texture img) {
         this.gameId = gameId;
         this.name = name;
@@ -89,5 +88,20 @@ public class Survivor {
 
     public void setImg(Texture img) {
         this.img = img;
+    }
+
+    @Override
+    public String toString() {
+        return "Survivor{" +
+            "gameId=" + gameId +
+            ", id=" + id +
+            ", name='" + name + '\'' +
+            ", energy=" + energy +
+            ", profession=" + profession +
+            ", equipment=" + equipment +
+            ", profileInformation='" + profileInformation + '\'' +
+            ", age=" + age +
+            ", img=" + img +
+            '}';
     }
 }

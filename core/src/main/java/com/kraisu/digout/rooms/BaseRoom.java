@@ -1,10 +1,12 @@
 package com.kraisu.digout.rooms;
 
+import java.util.UUID;
+
 import static com.kraisu.digout.help.Constants.Buildings.BASE;
 import static com.kraisu.digout.help.Constants.RoomType.BASE_TYPE;
 
 public class BaseRoom extends Room{
-    public BaseRoom(int x, int id) {
+    public BaseRoom(int x, UUID id) {
         super(id, x,0,BASE_TYPE, true, false, BASE, false,50, 0, 0, 0, null,null);
     }
 }

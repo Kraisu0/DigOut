@@ -1,14 +1,13 @@
 package com.kraisu.digout.genertor;
 
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.utils.JsonReader;
+import com.badlogic.gdx.utils.JsonValue;
 import com.kraisu.digout.survivor.Survivor;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.UUID;
+import java.io.File;
+import java.util.*;
 
 import static com.kraisu.digout.help.ConstantsGenerator.ConstructionResourcesDropPercentages.*;
 import static com.kraisu.digout.help.ConstantsGenerator.EQDropPercentages.*;
@@ -25,13 +24,16 @@ public class Generators {
     private final int cr_range_drop = TRIPLE_CR_DROP + DOUBLE_CR_DROP + SINGLE_CR_DROP + NO_CR_DROP;
     private final int food_range_drop = FOOD_DROP + NO_FOOD_DROP;
     private final int tools_range_drop = TOOLS_DROP + NO_TOOLS_DROP;
-    private final int survivors_range_drop = SURVIVOR_DROP + NO_SURVIVOR_DROP;
-    private final int profession_range_drop = ENGINEER_DROP + COOK_DROP + WORKER_DROP + UNTRAINED_DROP;
+    private static final int survivors_range_drop = SURVIVOR_DROP + NO_SURVIVOR_DROP;
+    private static final int profession_range_drop = ENGINEER_DROP + COOK_DROP + WORKER_DROP + UNTRAINED_DROP;
     private final int equipment_range_drop = EQ_DROP + NO_EQ_DROP;
     private final int eq_range_drop = SEARCHLIGHT_DROP + KITCHEN_ROBOT + OXYGEN_MASK;
 
+    private static List<String> names = new ArrayList<>();
+    private static Map<String, List<String>> descriptions = new HashMap<>();
 
-    public int generateRandomNumber(int min, int max) {
+
+    public static int generateRandomNumber(int min, int max) {
         if(min > max){
             throw new IllegalArgumentException("Zakres niepoprawny: (min > max)");
         }
@@ -69,16 +71,16 @@ public class Generators {
             return 0;
     }
 
-    public int generateRandomSurvivors(){
+    public static int generateRandomSurvivors(){
         int nr = generateRandomNumber(1, survivors_range_drop);
 
         if(nr <= SURVIVOR_DROP){
             return generateRandomProfession();
         }else
-            return -1;
+            return 0;
     }
 
-    public int generateRandomProfession(){
+    public static int generateRandomProfession(){
         int nr = generateRandomNumber(1, profession_range_drop);
 
         if(nr <= ENGINEER_DROP)
@@ -111,61 +113,219 @@ public class Generators {
             return 2;
     }
 
-    private List<Survivor> generateRandomSurvivals(UUID id, int loop){
-        List<Survivor> list = new ArrayList<Survivor>();
+
+
+//    public List<Survivor> generateRandomSurvivals(UUID id, int loop){
+//        List<Survivor> list = new ArrayList<Survivor>();
+//        int survivor = 0;
+//        list = null;
+//
+//        for(int i = 0; i < loop; i++){
+//            survivor = generateRandomSurvivors();
+//
+//            if(survivor != -1) {
+//                Survivor temp = new Survivor(id, "name", 4, survivor, -1, "profileInformation", 0, null);
+//                temp = setRandomBio(temp, loadJsonData("name_description.json"));
+//                list.add(temp);
+//            }
+//        }
+//        return list;
+//    }
+
+//    private Map<String, String> generateNameForSurvivor(UUID gameID) {
+//        while(true) {
+//            String name = generateName();
+//            if(getGameById(gameID).getSurvivors.stream()
+//                .anyMatch(() -> survivor.getName().equals(name))) {
+//                return name;
+//            }
+//        }
+//    }
+
+//    private Map<String, String> generateName() {
+//        // pobieranie losowej linijki  z pliku i dodanie do mapy jako key - value
+//    //    key - name
+//      //      value - opis
+//    }
+
+
+    public static void loadAndDisplayJsonData(String filePath) {
+
+        try {
+            JsonReader jsonReader = new JsonReader();
+            JsonValue jsonData = jsonReader.parse(Gdx.files.internal(filePath));
+
+            // Wczytaj listę imion
+            JsonValue namesArray = jsonData.get("names");
+            for (JsonValue name : namesArray) {
+                names.add(name.asString());
+            }
+
+            // Wczytaj opisy
+            JsonValue descriptionsObject = jsonData.get("descriptions");
+            for (JsonValue descriptionType : descriptionsObject) {
+                List<String> descriptionList = new ArrayList<>();
+                for (JsonValue description : descriptionType) {
+                    descriptionList.add(description.asString());
+                }
+                descriptions.put(descriptionType.name, descriptionList);
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public static Survivor generateRandomSurvivals(UUID id, int loop){
+        Survivor temp = null;
         int survivor = 0;
-        list = null;
+
 
         for(int i = 0; i < loop; i++){
             survivor = generateRandomSurvivors();
 
             if(survivor != -1) {
-                Survivor temp = new Survivor(id, "name", 4, survivor, -1, "profileInformation", 0, null);
-                temp = setRandomBio(temp);
-                list.add(temp);
+                temp = new Survivor(
+                    id,
+                    "name",
+                    4,
+                    survivor,
+                    -1,
+                    "profileInformation",
+                    0,
+                    null
+                );
+                loadAndDisplayJsonData("name_description.json");
+                temp = setRandomBio(
+                    temp,
+                    names,
+                    descriptions
+                );
             }
         }
-        return list;
-    }
-
-    private Map<String, String> generateNameForSurvivor(UUID gameID) {
-        while(true) {
-            String name = generateName();
-            if(getGameById(gameID).getSurvivors.stream()
-                .anyMatch(() -> survivor.getName().equals(name))) {
-                return name;
-            }
-        }
-    }
-
-    private Map<String, String> generateName() {
-        // pobieranie losowej linijki  z pliku i dodanie do mapy jako key - value
-    //    key - name
-      //      value - opis
-    }
-
-    private Survivor setRandomBio(Survivor survivor){
-        Survivor tempSurvivor = survivor;
-        Texture img = generateTexture();
-        img.getTextureData();
-        int age = generateAge(img);
-        String name = generateName(img);
-        String pi = generatePI(img);
-
-
-        tempSurvivor.setAge(age);
-        tempSurvivor.setName(name);
-        tempSurvivor.setProfileInformation(pi);
-        tempSurvivor.setImg(img);
-
-        return tempSurvivor;
-    }
-
-    private Texture generateTexture() {
-        Texture temp = new Texture("surv01_Bob_30_M.png");
-
         return temp;
     }
 
+    public static Survivor generateRandomSurvivor(UUID id, int loop) {
+        Survivor temp = null;
 
+        for (int i = 0; i < loop; i++) {
+            int survivor = generateRandomSurvivors();
+
+            if (survivor != -1) {
+                temp = new Survivor(
+                    id,
+                    "name",
+                    4,
+                    survivor,
+                    -1,
+                    "profileInformation",
+                    0,
+                    null
+                );
+
+                // Wczytaj dane JSON i ustaw bio dla postaci
+                Map<String, Object> jsonData = loadJsonData("name_description.json");
+                if (jsonData != null) {
+                    List<String> names = (List<String>) jsonData.get("names");
+                    Map<String, List<String>> descriptions = (Map<String, List<String>>) jsonData.get("descriptions");
+                    temp = setRandomBio(temp, names, descriptions);
+                }
+            }
+        }
+        return temp;
+    }
+
+    public static Map<String, Object> loadJsonData(String filePath) {
+        Map<String, Object> data = new HashMap<>();
+        List<String> names = new ArrayList<>();
+        Map<String, List<String>> descriptions = new HashMap<>();
+
+        try {
+            JsonReader jsonReader = new JsonReader();
+            JsonValue jsonData = jsonReader.parse(Gdx.files.internal(filePath));
+
+            // Wczytaj listę imion
+            JsonValue namesArray = jsonData.get("names");
+            for (JsonValue name : namesArray) {
+                names.add(name.asString());
+            }
+
+            // Wczytaj opisy
+            JsonValue descriptionsObject = jsonData.get("descriptions");
+            for (JsonValue descriptionType : descriptionsObject) {
+                List<String> descriptionList = new ArrayList<>();
+                for (JsonValue description : descriptionType) {
+                    descriptionList.add(description.asString());
+                }
+                descriptions.put(descriptionType.name, descriptionList);
+            }
+
+            data.put("names", names);
+            data.put("descriptions", descriptions);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return data;
+    }
+
+    public static String getRandomAvatarPath() {
+        File folder = new File("assets/avatars");
+        File[] files = folder.listFiles();
+        if (files != null && files.length > 1) {
+            int randomIndex = generateRandomNumber(0, files.length - 1);
+            return files[randomIndex].getPath();
+        }
+        return null;
+    }
+
+    public static int getAgeFromAvatar(String fileName) {
+        String[] parts = fileName.split("_");
+        int ageRange = Integer.parseInt(parts[1]);
+        switch (ageRange) {
+            case 20: return generateRandomNumber(18, 39);
+            case 40: return generateRandomNumber(40, 64);
+            case 65: return generateRandomNumber(65, 80);
+            default: return generateRandomNumber(18, 80);
+        }
+    }
+
+    public static String getRandomName(List<String> names) {
+        int randomIndex = generateRandomNumber(0, names.size() - 1);
+        return names.get(randomIndex);
+    }
+
+    public static String generateRandomBio(String name, List<String> beginnings, List<String> middles, List<String> ends) {
+        String beginning = beginnings.get(generateRandomNumber(0, beginnings.size() - 1));
+        String middle = middles.get(generateRandomNumber(0, middles.size() - 1));
+        String end = ends.get(generateRandomNumber(0, ends.size() - 1)).replace("X", name);
+        return beginning + " " + middle + " " + end;
+    }
+
+    public static Survivor setRandomBio(Survivor survivor, List<String> names, Map<String, List<String>> descriptions) {
+        String avatarPath = getRandomAvatarPath();
+        if (avatarPath == null)
+            return survivor;
+
+        File avatarFile = new File(avatarPath);
+        int age = getAgeFromAvatar(avatarFile.getName());
+        String name = getRandomName(names);
+        String bio = generateRandomBio(
+            name,
+            descriptions.get("beginning"),
+            descriptions.get("middle"),
+            descriptions.get("end")
+        );
+
+        survivor.setAge(age);
+        survivor.setName(name);
+        survivor.setProfileInformation(bio);
+        survivor.setImg(new Texture(avatarPath));
+
+        return survivor;
+    }
 }

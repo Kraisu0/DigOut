@@ -1,0 +1,41 @@
+{
+  "names": ["BOB", "TIM", "JOHN", "TED", "SAM", "RYAN", "JIM", "MIKE", "DAN", "KURT", "TOM", "MAX", "AL", "BILL", "RON", "KEN", "STEVE", "ZAC", "GUS", "WILL"],
+  "descriptions": {
+    "beginning": [
+      "Pracował w kopalni od dekady",
+      "Kiedyś był złotnikiem",
+      "Nie rozstawał się z łopatą",
+      "Znany był jako mistrz kilofa",
+      "Uwielbiał wykopywać skarby",
+      "Zawsze miał przy sobie termos z kawą",
+      "Znany z tego, że zna wszystkie tunele na pamięć",
+      "Zawsze marzył o znalezieniu diamentów",
+      "Kiedyś był najlepszym górnikiem w okolicy",
+      "Nie rozstawał się ze swoim ekwipunkiem"
+    ],
+    "middle": [
+      ", ale ostatnio miał zły dzień",
+      ", ale nigdy nie znalazł złota",
+      ", a jego siła była legendarna",
+      ", choć nigdy nie lubił się brudzić",
+      ", a jego koledzy zawsze się z niego śmiali",
+      ", lecz praca pod ziemią go męczyła",
+      ", lecz nie odnalazł jeszcze skarbu",
+      ", chociaż bardziej lubił opowieści niż kopanie",
+      ", choć bał się ciemności",
+      ", mimo że nie lubił kopalń"
+    ],
+    "end": [
+      ", bo pomylił kask z wiadrem.",
+      ", chociaż nie wiedział, jak używać kilofa.",
+      ", mimo że kopanie szło mu jak po grudzie.",
+      ", choć zawsze marzył o emeryturze na plaży.",
+      ", i tak naprawdę bał się myszy.",
+      ", choć zawsze miał nadzieję na awans do biura.",
+      ", ale najczęściej szukał pretekstu, żeby nie pracować.",
+      ", bo tak naprawdę wolał szydełkować.",
+      ", chociaż liczył na znalezienie zapomnianego skarbu.",
+      ", choć przyszedł tu, myśląc, że to biblioteka."
+    ]
+  }
+}
