@@ -21,7 +21,8 @@ public class Constants {
         BASE_TYPE,
         LIGHT_ROOK_TYPE,
         HARD_ROOK_TYPE,
-        EXIT_TYPE;
+        EXIT_TYPE,
+        ROOM_TO_ARRANGE;
     }
 
     public enum Resources{
@@ -66,5 +67,10 @@ public class Constants {
         GAME_IN_PROGRESS,
         GAME_OVER,
         GAME_WON;
+    }
+
+    public static class SurvivorLimitations{
+        public static final int MAX_SURVIVOR_ENERGY = 4;
+        public static final int MIN_SURVIVOR_ENERGY = 0;
     }
 }

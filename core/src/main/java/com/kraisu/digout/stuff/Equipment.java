@@ -3,12 +3,12 @@ package com.kraisu.digout.stuff;
 public class Equipment {
     protected int gameID;
     protected String description;
-    protected int type;
+    protected String name;
 
-    public Equipment(int gameID, String description, int type) {
+    public Equipment(int gameID, String description, String name) {
         this.gameID = gameID;
         this.description = description;
-        this.type = type;
+        this.name = name;
     }
 
     public int getGameID() {
@@ -27,11 +27,11 @@ public class Equipment {
         this.description = description;
     }
 
-    public int getType() {
-        return type;
+    public String getName() {
+        return name;
     }
 
-    public void setType(int type) {
-        this.type = type;
+    public void setType(String name) {
+        this.name = name;
     }
 }

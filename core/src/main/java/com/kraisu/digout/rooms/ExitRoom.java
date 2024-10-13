@@ -6,22 +6,15 @@ import static com.kraisu.digout.help.Constants.Buildings.NOTHING;
 import static com.kraisu.digout.help.Constants.RoomType.EXIT_TYPE;
 
 public class ExitRoom extends Room {
-    public ExitRoom(int x, UUID id) {
+    public ExitRoom(Coordinate coordinates, UUID id) {
         super (id,
-            x,
-            9,
+            coordinates,
             EXIT_TYPE,
             false,
             false,
             NOTHING,
             false,
-            0,
-            0,
-            0,
-            0,
-            null,
-            null
-            );
+            1);
     }
 
 }

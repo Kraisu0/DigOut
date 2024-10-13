@@ -2,6 +2,7 @@ package com.kraisu.digout.survivor;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.kraisu.digout.help.Constants;
+import com.kraisu.digout.stuff.Equipment;
 
 import java.util.UUID;
 
@@ -11,12 +12,12 @@ public class Survivor {
     private String name;
     private int energy;
     private Constants.Survivors profession;
-    private int equipment;
+    private Equipment equipment;
     private String profileInformation;
     private int age;
     private Texture img;
 
-    public Survivor(UUID gameId, String name, int energy, Constants.Survivors profession, int equipment, String profileInformation, int age, Texture img) {
+    public Survivor(UUID gameId, String name, int energy, Constants.Survivors profession, Equipment equipment, String profileInformation, int age, Texture img) {
         this.gameId = gameId;
         this.name = name;
         this.energy = energy;
@@ -59,11 +60,11 @@ public class Survivor {
         this.profession = profession;
     }
 
-    public int getEquipment() {
+    public Equipment getEquipment() {
         return equipment;
     }
 
-    public void setEquipment(int equipment) {
+    public void setEquipment(Equipment equipment) {
         this.equipment = equipment;
     }
 
@@ -89,6 +90,26 @@ public class Survivor {
 
     public void setImg(Texture img) {
         this.img = img;
+    }
+
+    public void reduceEnergy(int amount) {
+        this.energy = Math.max(this.energy - amount, Constants.SurvivorLimitations.MIN_SURVIVOR_ENERGY);
+    }
+
+    public void increaseEnergy(int amount) {
+        if(this.energy < Constants.SurvivorLimitations.MAX_SURVIVOR_ENERGY) {
+            this.energy = this.energy + amount;
+        }else{
+            this.energy = Constants.SurvivorLimitations.MAX_SURVIVOR_ENERGY;
+        }
+    }
+
+    public void giveEquipment(Equipment equipment){
+        if(this.equipment == null){
+            this.equipment = equipment;
+        }else{
+            System.out.println("Nie można dodać: " + equipment.getName() + ", ponieważ ocalały ma już ekwipunek: " + this.equipment.getName());
+        }
     }
 
     @Override

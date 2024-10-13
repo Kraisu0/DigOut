@@ -1,5 +1,9 @@
 package com.kraisu.digout.game;
 
+import com.kraisu.digout.managers.EquipmentManager;
+import com.kraisu.digout.managers.ResourceManager;
+import com.kraisu.digout.managers.RoomManager;
+import com.kraisu.digout.managers.SurvivorManager;
 import com.kraisu.digout.stuff.Equipment;
 import com.kraisu.digout.rooms.Room;
 import com.kraisu.digout.survivor.Survivor;
@@ -11,24 +15,20 @@ public class Game {
     private UUID gameId;
     private Player player;
     private int round;
-    private List<Room> rooms;
-    private List<Survivor> survivors;
-    private List<Equipment> equipments;
-    private int constructionResources;
-    private int tools;
-    private int foods;
+    private RoomManager roomManager;
+    private SurvivorManager survivorManager;
+    private EquipmentManager equipmentManager;
+    private ResourceManager resourceManager;
 
-    public Game(UUID gameId, Player player, int round, List<Room> rooms, List<Survivor> survivors,
-                List<Equipment> equipments, int constructionResources, int tools, int foods) {
+    public Game(UUID gameId, Player player, int round, RoomManager roomManager, SurvivorManager survivorManager,
+                EquipmentManager equipmentManager, ResourceManager resourceManager) {
         this.gameId = gameId;
         this.player = player;
         this.round = round;
-        this.rooms = rooms;
-        this.survivors = survivors;
-        this.equipments = equipments;
-        this.constructionResources = constructionResources;
-        this.tools = tools;
-        this.foods = foods;
+        this.roomManager = roomManager;
+        this.survivorManager = survivorManager;
+        this.equipmentManager = equipmentManager;
+        this.resourceManager = resourceManager;
     }
 
     public UUID getGameId() {
@@ -55,51 +55,35 @@ public class Game {
         this.round = round;
     }
 
-    public List<Room> getRooms() {
-        return rooms;
+    public RoomManager getRoomManager() {
+        return roomManager;
     }
 
-    public void setRooms(List<Room> rooms) {
-        this.rooms = rooms;
+    public void setRoomManager(RoomManager roomManager) {
+        this.roomManager = roomManager;
     }
 
-    public List<Survivor> getSurvivors() {
-        return survivors;
+    public SurvivorManager getSurvivorManager() {
+        return survivorManager;
     }
 
-    public void setSurvivors(List<Survivor> survivors) {
-        this.survivors = survivors;
+    public void setSurvivorManager(SurvivorManager survivorManager) {
+        this.survivorManager = survivorManager;
     }
 
-    public List<Equipment> getEquipments() {
-        return equipments;
+    public EquipmentManager getEquipmentManager() {
+        return equipmentManager;
     }
 
-    public void setEquipments(List<Equipment> equipments) {
-        this.equipments = equipments;
+    public void setEquipmentManager(EquipmentManager equipmentManager) {
+        this.equipmentManager = equipmentManager;
     }
 
-    public int getConstructionResources() {
-        return constructionResources;
+    public ResourceManager getResourceManager() {
+        return resourceManager;
     }
 
-    public void setConstructionResources(int constructionResources) {
-        this.constructionResources = constructionResources;
-    }
-
-    public int getTools() {
-        return tools;
-    }
-
-    public void setTools(int tools) {
-        this.tools = tools;
-    }
-
-    public int getFoods() {
-        return foods;
-    }
-
-    public void setFoods(int foods) {
-        this.foods = foods;
+    public void setResourceManager(ResourceManager resourceManager) {
+        this.resourceManager = resourceManager;
     }
 }

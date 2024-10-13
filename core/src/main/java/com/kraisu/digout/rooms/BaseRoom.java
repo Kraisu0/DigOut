@@ -6,20 +6,14 @@ import static com.kraisu.digout.help.Constants.Buildings.BASE;
 import static com.kraisu.digout.help.Constants.RoomType.BASE_TYPE;
 
 public class BaseRoom extends Room{
-    public BaseRoom(int x, UUID id) {
+    public BaseRoom(Coordinate coordinate, UUID id) {
         super(id,
-            x,
-            0,
+            coordinate,
             BASE_TYPE,
             true,
             false,
             BASE,
             false,
-            50,
-            0,
-            0,
-            0,
-            null,
-            null);
+            50);
     }
 }

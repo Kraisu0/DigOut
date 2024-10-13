@@ -43,7 +43,7 @@ public class NewGame {
     }
 
     private Game createNewGame(UUID gameId, List<Room> rooms, List<Survivor> survivors){
-        return new Game(gameId,this.player,0,rooms,survivors,null,0,0,0);
+        return new Game(gameId,this.player,0,rooms,survivors,null,);
     }
 
     private void generateStartRooms(UUID gameId){

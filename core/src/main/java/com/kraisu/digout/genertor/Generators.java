@@ -3,6 +3,7 @@ package com.kraisu.digout.genertor;
 import com.badlogic.gdx.graphics.Texture;
 import com.kraisu.digout.help.Constants;
 import com.kraisu.digout.rooms.BaseRoom;
+import com.kraisu.digout.rooms.Coordinate;
 import com.kraisu.digout.rooms.ExitRoom;
 import com.kraisu.digout.rooms.Room;
 import com.kraisu.digout.survivor.Survivor;
@@ -24,13 +25,13 @@ public class Generators {
     static long seed = System.nanoTime();
     private static final Random random = new Random(seed);
 
-    private final int cr_range_drop = TRIPLE_CR_DROP + DOUBLE_CR_DROP + SINGLE_CR_DROP + NO_CR_DROP;
-    private final int food_range_drop = FOOD_DROP + NO_FOOD_DROP;
-    private final int tools_range_drop = TOOLS_DROP + NO_TOOLS_DROP;
+    private static final int cr_range_drop = TRIPLE_CR_DROP + DOUBLE_CR_DROP + SINGLE_CR_DROP + NO_CR_DROP;
+    private static final int food_range_drop = FOOD_DROP + NO_FOOD_DROP;
+    private static final int tools_range_drop = TOOLS_DROP + NO_TOOLS_DROP;
     private static final int survivors_range_drop = SURVIVOR_DROP + NO_SURVIVOR_DROP;
     private static final int profession_range_drop = ENGINEER_DROP + COOK_DROP + WORKER_DROP + UNTRAINED_DROP;
-    private final int equipment_range_drop = EQ_DROP + NO_EQ_DROP;
-    private final int eq_range_drop = SEARCHLIGHT_DROP + KITCHEN_ROBOT + OXYGEN_MASK;
+    private static final int equipment_range_drop = EQ_DROP + NO_EQ_DROP;
+    private static final int eq_range_drop = SEARCHLIGHT_DROP + KITCHEN_ROBOT + OXYGEN_MASK;
 
 
     public static int generateRandomNumber(int min, int max) {
@@ -40,7 +41,7 @@ public class Generators {
         return random.nextInt((max - min) + 1) + min;
     }
 
-    public int generateRandomCR(){
+    public static int generateRandomCR(){
         int nr = generateRandomNumber(1, cr_range_drop);
 
         if(nr <= TRIPLE_CR_DROP)
@@ -53,7 +54,7 @@ public class Generators {
             return 0;
     }
 
-    public int generateRandomFood(){
+    public static int generateRandomFood(){
         int nr = generateRandomNumber(1, food_range_drop);
 
         if(nr <= FOOD_DROP)
@@ -62,7 +63,7 @@ public class Generators {
             return 0;
     }
 
-    public int generateRandomTools(){
+    public static int generateRandomTools(){
         int nr = generateRandomNumber(1, tools_range_drop);
 
         if(nr <= TOOLS_DROP)
@@ -93,7 +94,7 @@ public class Generators {
             return Constants.Survivors.UNTRAINED;
     }
 
-    public int generateRandomEquipment(){
+    public static int generateRandomEquipment(){
         int nr = generateRandomNumber(1, equipment_range_drop);
 
         if(nr <= EQ_DROP)
@@ -102,7 +103,7 @@ public class Generators {
             return -1;
     }
 
-    private int generateRandomEQ() {
+    private static int generateRandomEQ() {
         int nr = generateRandomNumber(1, eq_range_drop);
 
         if(nr <= SEARCHLIGHT_DROP)
@@ -140,7 +141,7 @@ public class Generators {
                 "name",
                 4,
                 survivorType,
-                -1,
+                null,
                 "profileInformation",
                 0,
                 null
@@ -211,11 +212,13 @@ public class Generators {
     }
 
     public static BaseRoom generateBaseRoom(UUID gameId){
-        return new BaseRoom(generateRandomNumber(1,10),gameId);
+        Coordinate coordinate = new Coordinate(generateRandomNumber(1,10), 1);
+        return new BaseRoom(coordinate,gameId);
     }
 
     public static ExitRoom generateExitRoom(UUID gameId) {
-        return new ExitRoom(generateRandomNumber(1,10),gameId);
+        Coordinate coordinate = new Coordinate(generateRandomNumber(1,10), 10);
+        return new ExitRoom(coordinate,gameId);
     }
 
 }
