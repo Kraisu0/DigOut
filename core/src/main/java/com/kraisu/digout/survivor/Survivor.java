@@ -1,6 +1,7 @@
 package com.kraisu.digout.survivor;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.kraisu.digout.help.Constants;
 
 import java.util.UUID;
 
@@ -9,13 +10,13 @@ public class Survivor {
     private final UUID id = UUID.randomUUID();
     private String name;
     private int energy;
-    private int profession;
+    private Constants.Survivors profession;
     private int equipment;
     private String profileInformation;
     private int age;
     private Texture img;
 
-    public Survivor(UUID gameId, String name, int energy, int profession, int equipment, String profileInformation, int age, Texture img) {
+    public Survivor(UUID gameId, String name, int energy, Constants.Survivors profession, int equipment, String profileInformation, int age, Texture img) {
         this.gameId = gameId;
         this.name = name;
         this.energy = energy;
@@ -50,11 +51,11 @@ public class Survivor {
         this.energy = energy;
     }
 
-    public int getProfession() {
+    public Constants.Survivors getProfession() {
         return profession;
     }
 
-    public void setProfession(int profession) {
+    public void setProfession(Constants.Survivors profession) {
         this.profession = profession;
     }
 

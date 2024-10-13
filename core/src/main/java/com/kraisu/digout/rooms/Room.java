@@ -1,6 +1,7 @@
 package com.kraisu.digout.rooms;
 
-import com.kraisu.digout.equimpent.Equipment;
+import com.kraisu.digout.help.Constants;
+import com.kraisu.digout.stuff.Equipment;
 import com.kraisu.digout.survivor.Survivor;
 
 import java.util.List;
@@ -10,10 +11,10 @@ public abstract class Room {
     protected UUID gameId; //ID gry w jakiej znajduje się pokój
     protected int coordinateX; //pozycja poziomia na mapie
     protected int coordinateY; //pozycja pionowa na mapie
-    protected int type; //baza, kamienie, skały, wyjście
+    protected Constants.RoomType type; //baza, kamienie, skały, wyjście
     protected boolean discovered; //czy pokój został odkopany
     protected boolean ableToDiscover; //czy pokój moze być odkopany
-    protected int buildUp; //nic, baza, kuchnia, restroom, winda, warsztat, elektrownia, pompa powietrza, majsterkowania
+    protected Constants.Buildings buildUp; //nic, baza, kuchnia, restroom, winda, warsztat, elektrownia, pompa powietrza, majsterkowania
     protected boolean ableToBuild; //czy pokój można zabudować
     protected int amountOfSpace; //ile jest miejsca w pokoju
     protected int constructionResources;
@@ -22,7 +23,9 @@ public abstract class Room {
     protected List<Equipment> Equipments; //ekwipunek z odkopania
     protected List<Survivor> Survivors; //ocaleńcy z odkopania
 
-    public Room(UUID gameId, int coordinateX, int coordinateY, int type, boolean discovered, boolean ableToDiscover, int buildUp, boolean ableToBuild, int amountOfSpace, int constructionResources, int food, int tools, List<Equipment> equipments, List<Survivor> survivors ) {
+    public Room(UUID gameId, int coordinateX, int coordinateY, Constants.RoomType type, boolean discovered, boolean ableToDiscover,
+                Constants.Buildings buildUp, boolean ableToBuild, int amountOfSpace, int constructionResources, int food, int tools,
+                List<Equipment> equipments, List<Survivor> survivors ) {
         this.gameId = gameId;
         this.coordinateX = coordinateX;
         this.coordinateY = coordinateY;
@@ -63,11 +66,11 @@ public abstract class Room {
         this.coordinateY = coordinateY;
     }
 
-    public int getType() {
+    public Constants.RoomType getType() {
         return type;
     }
 
-    public void setType(int type) {
+    public void setType(Constants.RoomType type) {
         this.type = type;
     }
 
@@ -87,11 +90,11 @@ public abstract class Room {
         this.ableToDiscover = ableToDiscover;
     }
 
-    public int getBuildUp() {
+    public Constants.Buildings getBuildUp() {
         return buildUp;
     }
 
-    public void setBuildUp(int buildUp) {
+    public void setBuildUp(Constants.Buildings buildUp) {
         this.buildUp = buildUp;
     }
 

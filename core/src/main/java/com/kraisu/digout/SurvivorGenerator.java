@@ -12,10 +12,12 @@ import com.badlogic.gdx.Input;
 
 import java.util.UUID;
 
-import com.kraisu.digout.logs.DateLogs;
+import com.kraisu.digout.help.Constants;
+import com.kraisu.digout.loaders.JsonLoader;
 import com.kraisu.digout.survivor.Survivor;
 
-import static com.kraisu.digout.genertor.Generators.generateRandomSurvivals;
+import static com.kraisu.digout.genertor.Generators.generateNewSurvivors;
+import static com.kraisu.digout.genertor.Generators.generateRandomSurvivor;
 
 public class SurvivorGenerator extends ApplicationAdapter {
     private SpriteBatch batch;
@@ -23,7 +25,7 @@ public class SurvivorGenerator extends ApplicationAdapter {
     private String name;
     private int age;
     private String profileInfo;
-    private int profession;
+    private Constants.Survivors profession;
     private UUID staticUUID = UUID.fromString("11111111-1111-1111-1111-111111111111");
     public BitmapFont font;
     private GlyphLayout layout;
@@ -34,7 +36,10 @@ public class SurvivorGenerator extends ApplicationAdapter {
         font = new BitmapFont(Gdx.files.internal("myfont.fnt"));
         font.getData().setScale(0.6f); // Zmniejsz wielkość tekstu (0.5f to przykład, dostosuj według potrzeb)
         layout = new GlyphLayout();
-        generateNewSurvivor();
+
+        JsonLoader.mainLoader();
+
+        generateNewSurvivorRend();
     }
 
     @Override
@@ -60,7 +65,7 @@ public class SurvivorGenerator extends ApplicationAdapter {
 
         if (Gdx.input.isKeyJustPressed(Input.Keys.SPACE)) {
             if (avatar != null) avatar.dispose();
-            generateNewSurvivor();
+            generateNewSurvivorRend();
         }
     }
 
@@ -74,15 +79,19 @@ public class SurvivorGenerator extends ApplicationAdapter {
     }
 
 
-    private void generateNewSurvivor() {
-        Survivor survivor = generateRandomSurvivals(staticUUID, 1);
-        // Ustawienie danych ocalałego
-        avatar = survivor.getImg();
-        name = survivor.getName();
-        age = survivor.getAge();
-        profileInfo = survivor.getProfileInformation();
-        profession = survivor.getProfession();
-        System.out.println(survivor.toString());
+    private void generateNewSurvivorRend() {
+        Constants.Survivors survivorType = generateRandomSurvivor();
+        if (survivorType != null) {
+            Survivor survivor = generateNewSurvivors(staticUUID, survivorType);
+            avatar = survivor.getImg();
+            name = survivor.getName();
+            age = survivor.getAge();
+            profileInfo = survivor.getProfileInformation();
+            profession = survivor.getProfession();
+            System.out.println(survivor.toString());
+        } else {
+            System.out.println("Survivor not found");
+        }
     }
 
 

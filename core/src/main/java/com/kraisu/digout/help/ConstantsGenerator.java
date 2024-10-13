@@ -1,5 +1,10 @@
 package com.kraisu.digout.help;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class ConstantsGenerator {
 
     public static class ConstructionResourcesDropPercentages{
@@ -41,4 +46,10 @@ public class ConstantsGenerator {
         public static final int KITCHEN_ROBOT = 33;
         public static final int OXYGEN_MASK = 33;
     }
+
+    public static class JsonData {
+        public static final List<String> names = new ArrayList<>();
+        public static final Map<String, List<String>> descriptions = new HashMap<>();
+    }
+
 }

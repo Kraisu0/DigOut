@@ -1,9 +1,10 @@
 package com.kraisu.digout.genertor;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.utils.JsonReader;
-import com.badlogic.gdx.utils.JsonValue;
+import com.kraisu.digout.help.Constants;
+import com.kraisu.digout.rooms.BaseRoom;
+import com.kraisu.digout.rooms.ExitRoom;
+import com.kraisu.digout.rooms.Room;
 import com.kraisu.digout.survivor.Survivor;
 
 import java.io.File;
@@ -13,6 +14,8 @@ import static com.kraisu.digout.help.ConstantsGenerator.ConstructionResourcesDro
 import static com.kraisu.digout.help.ConstantsGenerator.EQDropPercentages.*;
 import static com.kraisu.digout.help.ConstantsGenerator.EquipmentDropPercentages.*;
 import static com.kraisu.digout.help.ConstantsGenerator.FoodDropPercentages.*;
+import static com.kraisu.digout.help.ConstantsGenerator.JsonData.descriptions;
+import static com.kraisu.digout.help.ConstantsGenerator.JsonData.names;
 import static com.kraisu.digout.help.ConstantsGenerator.ProfessionDropPercentages.*;
 import static com.kraisu.digout.help.ConstantsGenerator.SurvivorsDropPercentages.*;
 import static com.kraisu.digout.help.ConstantsGenerator.ToolsDropPercentages.*;
@@ -29,13 +32,10 @@ public class Generators {
     private final int equipment_range_drop = EQ_DROP + NO_EQ_DROP;
     private final int eq_range_drop = SEARCHLIGHT_DROP + KITCHEN_ROBOT + OXYGEN_MASK;
 
-    private static List<String> names = new ArrayList<>();
-    private static Map<String, List<String>> descriptions = new HashMap<>();
-
 
     public static int generateRandomNumber(int min, int max) {
         if(min > max){
-            throw new IllegalArgumentException("Zakres niepoprawny: (min > max)");
+            throw new IllegalArgumentException("Error Range: (min > max)");
         }
         return random.nextInt((max - min) + 1) + min;
     }
@@ -71,26 +71,26 @@ public class Generators {
             return 0;
     }
 
-    public static int generateRandomSurvivors(){
+    public static Constants.Survivors generateRandomSurvivor(){
         int nr = generateRandomNumber(1, survivors_range_drop);
 
         if(nr <= SURVIVOR_DROP){
             return generateRandomProfession();
         }else
-            return 0;
+            return null;
     }
 
-    public static int generateRandomProfession(){
+    public static Constants.Survivors generateRandomProfession(){
         int nr = generateRandomNumber(1, profession_range_drop);
 
         if(nr <= ENGINEER_DROP)
-            return 3;
+            return Constants.Survivors.ENGINEER;
         else if(nr <= ENGINEER_DROP + COOK_DROP)
-            return 2;
+            return Constants.Survivors.COOK;
         else if(nr <= ENGINEER_DROP + COOK_DROP + WORKER_DROP)
-            return 1;
+            return Constants.Survivors.WORKER;
         else
-            return 0;
+            return Constants.Survivors.UNTRAINED;
     }
 
     public int generateRandomEquipment(){
@@ -113,24 +113,7 @@ public class Generators {
             return 2;
     }
 
-
-
-//    public List<Survivor> generateRandomSurvivals(UUID id, int loop){
-//        List<Survivor> list = new ArrayList<Survivor>();
-//        int survivor = 0;
-//        list = null;
-//
-//        for(int i = 0; i < loop; i++){
-//            survivor = generateRandomSurvivors();
-//
-//            if(survivor != -1) {
-//                Survivor temp = new Survivor(id, "name", 4, survivor, -1, "profileInformation", 0, null);
-//                temp = setRandomBio(temp, loadJsonData("name_description.json"));
-//                list.add(temp);
-//            }
-//        }
-//        return list;
-//    }
+   //TODO DOROBIĆ FUNKCJE BY NIE POWTARZAŁY SIE IMIONA
 
 //    private Map<String, String> generateNameForSurvivor(UUID gameID) {
 //        while(true) {
@@ -149,128 +132,26 @@ public class Generators {
 //    }
 
 
-    public static void loadAndDisplayJsonData(String filePath) {
-
-        try {
-            JsonReader jsonReader = new JsonReader();
-            JsonValue jsonData = jsonReader.parse(Gdx.files.internal(filePath));
-
-            // Wczytaj listę imion
-            JsonValue namesArray = jsonData.get("names");
-            for (JsonValue name : namesArray) {
-                names.add(name.asString());
-            }
-
-            // Wczytaj opisy
-            JsonValue descriptionsObject = jsonData.get("descriptions");
-            for (JsonValue descriptionType : descriptionsObject) {
-                List<String> descriptionList = new ArrayList<>();
-                for (JsonValue description : descriptionType) {
-                    descriptionList.add(description.asString());
-                }
-                descriptions.put(descriptionType.name, descriptionList);
-            }
-
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-
-    public static Survivor generateRandomSurvivals(UUID id, int loop){
-        Survivor temp = null;
-        int survivor = 0;
-
-
-        for(int i = 0; i < loop; i++){
-            survivor = generateRandomSurvivors();
-
-            if(survivor != -1) {
-                temp = new Survivor(
-                    id,
-                    "name",
-                    4,
-                    survivor,
-                    -1,
-                    "profileInformation",
-                    0,
-                    null
-                );
-                loadAndDisplayJsonData("name_description.json");
-                temp = setRandomBio(
-                    temp,
-                    names,
-                    descriptions
-                );
-            }
-        }
-        return temp;
-    }
-
-    public static Survivor generateRandomSurvivor(UUID id, int loop) {
+    public static Survivor generateNewSurvivors(UUID id, Constants.Survivors survivorType){
         Survivor temp = null;
 
-        for (int i = 0; i < loop; i++) {
-            int survivor = generateRandomSurvivors();
+            temp = new Survivor(
+                id,
+                "name",
+                4,
+                survivorType,
+                -1,
+                "profileInformation",
+                0,
+                null
+            );
+            temp = setRandomBio(
+                temp,
+                names,
+                descriptions
+            );
 
-            if (survivor != -1) {
-                temp = new Survivor(
-                    id,
-                    "name",
-                    4,
-                    survivor,
-                    -1,
-                    "profileInformation",
-                    0,
-                    null
-                );
-
-                // Wczytaj dane JSON i ustaw bio dla postaci
-                Map<String, Object> jsonData = loadJsonData("name_description.json");
-                if (jsonData != null) {
-                    List<String> names = (List<String>) jsonData.get("names");
-                    Map<String, List<String>> descriptions = (Map<String, List<String>>) jsonData.get("descriptions");
-                    temp = setRandomBio(temp, names, descriptions);
-                }
-            }
-        }
         return temp;
-    }
-
-    public static Map<String, Object> loadJsonData(String filePath) {
-        Map<String, Object> data = new HashMap<>();
-        List<String> names = new ArrayList<>();
-        Map<String, List<String>> descriptions = new HashMap<>();
-
-        try {
-            JsonReader jsonReader = new JsonReader();
-            JsonValue jsonData = jsonReader.parse(Gdx.files.internal(filePath));
-
-            // Wczytaj listę imion
-            JsonValue namesArray = jsonData.get("names");
-            for (JsonValue name : namesArray) {
-                names.add(name.asString());
-            }
-
-            // Wczytaj opisy
-            JsonValue descriptionsObject = jsonData.get("descriptions");
-            for (JsonValue descriptionType : descriptionsObject) {
-                List<String> descriptionList = new ArrayList<>();
-                for (JsonValue description : descriptionType) {
-                    descriptionList.add(description.asString());
-                }
-                descriptions.put(descriptionType.name, descriptionList);
-            }
-
-            data.put("names", names);
-            data.put("descriptions", descriptions);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return data;
     }
 
     public static String getRandomAvatarPath() {
@@ -328,4 +209,13 @@ public class Generators {
 
         return survivor;
     }
+
+    public static BaseRoom generateBaseRoom(UUID gameId){
+        return new BaseRoom(generateRandomNumber(1,10),gameId);
+    }
+
+    public static ExitRoom generateExitRoom(UUID gameId) {
+        return new ExitRoom(generateRandomNumber(1,10),gameId);
+    }
+
 }

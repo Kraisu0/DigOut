@@ -1,44 +1,70 @@
 package com.kraisu.digout.help;
 
+import com.kraisu.digout.stuff.BuildingPrice;
+import com.kraisu.digout.stuff.EquipmentPrice;
+
 public class Constants {
 
-    public static class Buildings{
-        public static final int NOTHING = 0;
-        public static final int BASE = 1;
-        public static final int RESTROOM = 2;
-        public static final int KITCHEN = 3;
-        public static final int ELEVATOR = 4;
-        public static final int WORKSHOP = 5;
-        public static final int POWER_STATION = 6;
-        public static final int AIR_PUMP = 7;
-        public static final int TINKER_ROOM = 8;
+    public enum Buildings{
+         NOTHING,
+         BASE,
+         RESTROOM,
+         KITCHEN,
+         ELEVATOR,
+         WORKSHOP,
+         POWER_STATION,
+         AIR_PUMP,
+         TINKER_ROOM;
     }
 
-    public static class RoomType{
-        public static final int BASE_TYPE = 0;
-        public static final int LIGHT_ROOK_TYPE = 1;
-        public static final int HARD_ROOK_TYPE = 2;
-        public static final int EXIT_TYPE = 3;
+    public enum RoomType{
+        BASE_TYPE,
+        LIGHT_ROOK_TYPE,
+        HARD_ROOK_TYPE,
+        EXIT_TYPE;
     }
 
-    public static class Resources{
-        public static final int CONSTRUCTION_RESOURCES = 0;
-        public static final int FOOD = 1;
-        public static final int TOOLS = 2;
+    public enum Resources{
+        CONSTRUCTION_RESOURCES,
+        FOOD,
+        TOOLS;
     }
 
-    public static class Equipment{
-        public static final int SEARCHLIGHT = 0;
-        public static final int KITCHEN_ROBOT = 1;
-        public static final int OXYGEN_MASK = 2;
-        public static final int PICKAXE = 3;
+    public enum Equipment{
+        SEARCHLIGHT,
+        KITCHEN_ROBOT,
+        OXYGEN_MASK,
+        PICKAXE;
     }
 
-    public static class Survivors{
-        public static final int UNTRAINED = 0;
-        public static final int WORKER = 1;
-        public static final int COOK = 2;
-        public static final int ENGINEER = 3;
-        public static final int MINER = 4;
+    public enum Survivors{
+        UNTRAINED,
+        WORKER,
+        COOK,
+        ENGINEER,
+        MINER;
+    }
+
+    public static class BuildingPrices{
+        public static final BuildingPrice RESTROOM_PRICE = new BuildingPrice(4,0,0,1,1,false);
+        public static final BuildingPrice KITCHEN_PRICE = new BuildingPrice(2,0,2,1,1,false);
+        public static final BuildingPrice ELEVATOR_PRICE = new BuildingPrice(3,0,0,1,1,false);
+        public static final BuildingPrice WORKSHOP_PRICE = new BuildingPrice(3,1,0,2,1,false);
+        public static final BuildingPrice POWER_STATION_PRICE = new BuildingPrice(4,3,0,2,1,false);
+        public static final BuildingPrice AIR_PUMP_PRICE = new BuildingPrice(3,1,4,2,1,true);
+        public static final BuildingPrice TINKER_ROOM_PRICE = new BuildingPrice(6,1,1,2,2,true);
+    }
+
+    public static class EquipmentPrices{
+        public static final EquipmentPrice SEARCHLIGHT_PRICE = new EquipmentPrice(1,3,0,1);
+        public static final EquipmentPrice KITCHEN_ROBOT_PRICE = new EquipmentPrice(0,3,2,1);
+        public static final EquipmentPrice OXYGEN_MASK_PRICE = new EquipmentPrice(0,3,1,1);
+        public static final EquipmentPrice PICKAXE_PRICE = new EquipmentPrice(2,4,0,1);
+    }
+
+    public enum GameState{
+        GAME_IN_PROGRESS,
+        GAME_OVER,
+        GAME_WON;
     }
 }

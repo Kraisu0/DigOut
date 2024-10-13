@@ -1,4 +1,4 @@
-package com.kraisu.digout.equimpent;
+package com.kraisu.digout.stuff;
 
 public class Equipment {
     protected int gameID;

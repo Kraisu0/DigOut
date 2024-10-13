@@ -1,20 +1,19 @@
-package com.kraisu.digout;
+package com.kraisu.digout.loaders;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.utils.Json;
 import com.badlogic.gdx.utils.JsonReader;
 import com.badlogic.gdx.utils.JsonValue;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
+import static com.kraisu.digout.help.ConstantsFileDirectory.filenames.namesDescriptions;
+import static com.kraisu.digout.help.ConstantsGenerator.JsonData.descriptions;
+import static com.kraisu.digout.help.ConstantsGenerator.JsonData.names;
 
 public class JsonLoader {
 
-    public static void loadAndDisplayJsonData(String filePath) {
-        List<String> names = new ArrayList<>();
-        Map<String, List<String>> descriptions = new HashMap<>();
+    private static void loadAndDisplayJsonData(String filePath) {
 
         try {
             JsonReader jsonReader = new JsonReader();
@@ -36,20 +35,16 @@ public class JsonLoader {
                 descriptions.put(descriptionType.name, descriptionList);
             }
 
-            // Wyświetlanie wyników w konsoli
-            System.out.println("Names:");
-            for (String name : names) {
-                System.out.println(name);
-            }
-
-            System.out.println("\nDescriptions:");
-            for (Map.Entry<String, List<String>> entry : descriptions.entrySet()) {
-                System.out.println(entry.getKey() + ": " + entry.getValue());
-            }
 
         } catch (Exception e) {
+            System.out.println("Error while loading json data from file " + filePath);
+            System.out.println("Names : " + names);
+            System.out.println("Descriptions : " + descriptions);
             e.printStackTrace();
         }
     }
-}
 
+    public static void mainLoader(){
+        loadAndDisplayJsonData(namesDescriptions);
+    }
+}
