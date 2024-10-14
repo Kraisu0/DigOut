@@ -31,7 +31,7 @@ public class NewGame {
 
         generateFirstSurvivor(gameId); //wygenerowanie pierwszego ocalałego
 
-        this.game = createNewGame(gameId, rooms, survivors); //stworzenie nowej gry
+        //this.game = createNewGame(gameId, rooms, survivors); //stworzenie nowej gry
 
         //TODO stowrznie pliku JSON do zapisu gry
 
@@ -42,9 +42,9 @@ public class NewGame {
         return new Player(gamerName, 0);
     }
 
-    private Game createNewGame(UUID gameId, List<Room> rooms, List<Survivor> survivors){
-        return new Game(gameId,this.player,0,rooms,survivors,null,);
-    }
+//    private Game createNewGame(UUID gameId, List<Room> rooms, List<Survivor> survivors){
+//        return new Game(gameId,this.player,0,rooms,survivors,null,);
+//    }
 
     private void generateStartRooms(UUID gameId){
         baseRoom = Generators.generateBaseRoom(gameId);
