@@ -1,6 +1,5 @@
 package com.kraisu.digout.scenes;
 
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
@@ -15,7 +14,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.kraisu.digout.Main;
 
-public class NewGameScreen implements Screen {
+public class NewGameScreenOLD implements Screen {
     private final Main game;
     private final Stage stage;
     private final ShapeRenderer shapeRenderer;
@@ -30,7 +29,7 @@ public class NewGameScreen implements Screen {
     private int selectedRow = -1;
     private int selectedCol = -1;
 
-    public NewGameScreen(Main game) {
+    public NewGameScreenOLD(Main game) {
         this.game = game;
         stage = new Stage(new ScreenViewport());
         Gdx.input.setInputProcessor(stage);

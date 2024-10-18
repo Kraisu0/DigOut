@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.kraisu.digout.scenes.MainMenuScreen;
+import com.kraisu.digout.scenes.MainMenuScreenOLD;
 
 public class Main extends Game {
     private Skin skin;
@@ -17,7 +17,7 @@ public class Main extends Game {
         skin.add("default-font", new BitmapFont(Gdx.files.internal("default.fnt")));
         skin.add("default", new Label.LabelStyle(skin.getFont("default-font"), Color.WHITE));
 
-        setScreen(new MainMenuScreen(this));
+        setScreen(new MainMenuScreenOLD(this));
     }
 
     public Skin getSkin() {
