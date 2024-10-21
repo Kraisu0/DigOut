@@ -1,0 +1,8 @@
+kwadracik.png
+size:512,256
+repeat:none
+blackBox
+bounds:204,102,300,100
+kwadracik
+bounds:2,2,200,200
+split:8,8,8,8
