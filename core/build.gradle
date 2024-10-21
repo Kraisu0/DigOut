@@ -9,6 +9,7 @@ dependencies {
   api "io.github.libktx:ktx-actors:$ktxVersion"
   api "io.github.libktx:ktx-scene2d:$ktxVersion"
   api "io.github.libktx:ktx-style:$ktxVersion"
+  api "org.mini2Dx:universal-tween-engine:$universalTweenVersion"
 
   if(enableGraalNative == 'true') {
     implementation "io.github.berstanio:gdx-svmhelper-annotations:$graalHelperVersion"

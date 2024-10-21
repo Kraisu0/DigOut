@@ -1,0 +1,135 @@
+package com.kraisu.digout.scenes;
+
+import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.*;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.badlogic.gdx.utils.viewport.ScreenViewport;
+
+import static com.kraisu.digout.scenes.UtilsScreen.*;
+import static com.kraisu.digout.scenes.UtilsScreen.fonts.*;
+
+public class NewGameNameScreen implements Screen {
+    private Stage stage;
+    private Skin skinButton, skinBox;
+    private TextureAtlas atlasButton, atlasBox;
+    private Table table;
+    private Label heading, labelName;
+    private TextField nameField;
+    private TextButton createButton;
+    private String newName = "";
+
+    @Override
+    public void show() {
+        stage = new Stage(new ScreenViewport());
+        Gdx.input.setInputProcessor(stage);
+
+        atlasButton = new TextureAtlas(Gdx.files.internal("ui/buttonAtlas.atlas"));
+        atlasBox = new TextureAtlas(Gdx.files.internal("ui/kwadracik.atlas"));
+        skinButton = new Skin(atlasButton);
+        skinBox = new Skin(atlasBox);
+
+        Table outerTable = new Table();
+        outerTable.setFillParent(true);
+
+        table = new Table();
+        table.setSize(Gdx.graphics.getWidth()/2, Gdx.graphics.getHeight()/3);
+        table.setBackground(skinBox.getDrawable("kwadracik"));
+
+        // Heading & label
+        Label.LabelStyle headingStyle = new Label.LabelStyle(whiteFont, Color.WHITE);
+        heading = new Label("NEW GAME NAME", headingStyle);
+
+        labelName = new Label("Name:", headingStyle);
+
+        // FieldText
+        TextField.TextFieldStyle textFieldStyle = new TextField.TextFieldStyle();
+        textFieldStyle.font = goldFont;
+        textFieldStyle.fontColor = Color.GOLD;
+        textFieldStyle.background = skinBox.newDrawable("blackBox", Color.BLACK); // Czarny prostokąt
+        nameField = new TextField("", textFieldStyle);
+
+        // button
+        TextButton.TextButtonStyle textButtonStyle = new TextButton.TextButtonStyle();
+        textButtonStyle.up = skinButton.getDrawable("buttonUP");
+        textButtonStyle.down = skinButton.getDrawable("buttonDOWN");
+        textButtonStyle.disabled = skinButton.getDrawable("buttonDISABLE");
+        textButtonStyle.font = gold80Font;
+
+        createButton = new TextButton("CREATE NEW GAME", textButtonStyle);
+        createButton.setDisabled(true);
+
+        // Listener Text field
+        nameField.setTextFieldListener((textField, c) -> {
+            newName = nameField.getText().trim();
+            if (newName.isEmpty()) {
+                createButton.setDisabled(true);
+            } else {
+                createButton.setDisabled(false);
+            }
+        });
+
+        createButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                if (!createButton.isDisabled()) {
+                    ((Game) Gdx.app.getApplicationListener()).setScreen(new NewGameScreen());
+                    System.out.println("New Game Name: " + newName);
+                }
+            }
+        });
+
+        table.add(heading).colspan(2).center();
+        table.row().pad(20);
+        table.add(labelName).right();
+        table.add(nameField).width(400);
+        table.row().pad(20);
+        table.add(createButton).colspan(2);
+
+        table.debug();
+
+        outerTable.add(table).center().width(table.getWidth()).height(table.getHeight());
+
+        stage.addActor(outerTable);
+    }
+
+    @Override
+    public void render(float delta) {
+        Gdx.gl.glClearColor(0, 0, 0, 1);
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
+        stage.act(delta);
+        stage.draw();
+    }
+
+    @Override
+    public void resize(int width, int height) {
+        //stage.getViewport().update(width, height, true);
+    }
+
+    @Override
+    public void pause() {
+    }
+
+    @Override
+    public void resume() {
+    }
+
+    @Override
+    public void hide() {
+    }
+
+    @Override
+    public void dispose() {
+        stage.dispose();
+        skinButton.dispose();
+        skinBox.dispose();
+    }
+}
