@@ -1,9 +1,0 @@
-buttonRed.png
-size:256,128
-repeat:none
-buttonDOWN
-bounds:2,2,100,100
-split:8,12,6,8
-buttonUP
-bounds:104,2,100,100
-split:10,8,10,8

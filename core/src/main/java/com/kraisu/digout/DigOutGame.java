@@ -5,21 +5,30 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.kraisu.digout.scenes.KeyUseScreen;
 import com.kraisu.digout.scenes.MainMenuScreen;
 import com.kraisu.digout.scenes.SplashScreen;
+import com.kraisu.digout.logs.DateLogs;
+
+import java.io.File;
+
+import static com.kraisu.digout.logs.DateLogs.createLogFile;
+import static com.kraisu.digout.logs.DateLogs.logs;
 
 public class DigOutGame extends Game {
-    private Skin skin;
-
+    public static Skin skin;
 
     public static final String TITLE = "DigOut", VERSION = "0.0.1";
+    public static File LOGFILE = new File("./logs/digout.log");
 
     @Override
     public void create() {
-        Gdx.app.log(TITLE, "create()");
+        //TextureAtlas atlas = new TextureAtlas(Gdx.files.internal("ui/skins.atlas"));
+        skin = new Skin(Gdx.files.internal("skins.json"));
+        logs(DateLogs.LogType.INFO, "create()", null);
 
 //        skin = new Skin();
 //        skin.add("default-font", new BitmapFont(Gdx.files.internal("fonts/default.fnt")));
@@ -50,19 +59,20 @@ public class DigOutGame extends Game {
 
     @Override
     public void pause() {
-        Gdx.app.log(TITLE, "pause()");
+        logs(DateLogs.LogType.INFO, "pause()", null);
         super.pause();
     }
 
     @Override
     public void resume() {
-        Gdx.app.log(TITLE, "resume()");
+        logs(DateLogs.LogType.INFO, "resume()", null);
         super.resume();
     }
 
     @Override
     public void dispose() {
-        Gdx.app.log(TITLE, "dispose()");
+        logs(DateLogs.LogType.INFO, "dispose()", null);
+        logs(DateLogs.LogType.INFO, "EIXT GAME\n", null);
         super.dispose();
     }
 

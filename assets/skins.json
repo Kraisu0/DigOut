@@ -1,0 +1,33 @@
+{
+  com.badlogic.gdx.graphics.g2d.BitmapFont: {
+      small-font: { file: fonts/small.fnt },
+      medium-font: { file: fonts/medium.fnt },
+      big-font: { file: fonts/big.fnt },
+      huge-font: { file: fonts/huge.fnt }
+      gold-button-font: {file: fonts/pf80gold.fnt}
+  },
+  com.badlogic.gdx.graphics.Color: {
+    green: { a: 1, b: 0, g: 1, r: 0 },
+    white: { a: 1, b: 1, g: 1, r: 1 },
+    red: { a: 1, b: 0, g: 0, r: 1 },
+    black: { a: 1, b: 0, g: 0, r: 0 },
+    gold: { a: 1.0, b: 0.09019608, g: 0.5647059, r: 0.57254905 }
+  },
+  com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle: {
+    default: { down: buttonDOWN, up: buttonUP, disabled: buttonDISABLE, pressedOffsetX: 1, pressedOffsetY: -1}
+    //toggle: { down: default-round-down, checked: default-round-down, up: default-round }
+  },
+  com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle: {
+    default: { down: buttonDOWN, up: buttonUP, disabled: buttonDISABLE, pressedOffsetX: 1, pressedOffsetY: -1, font: gold-button-font }
+    //toggle: { down: default-round-down, checked: default-round-down, up: default-round }
+  },
+  com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle: {
+    bigFont: { font: big-font, fontColor: white },
+    smallFont: { font: small-font, fontColor: white }
+    mediumFont: { font: medium-font, fontColor: white }
+    hugeFont: { font: huge-font, fontColor: white }
+  },
+  com.badlogic.gdx.scenes.scene2d.ui.TextField$TextFieldStyle: {
+    black: {font: big-font, fontColor: gold, background: blackBox}
+  }
+}

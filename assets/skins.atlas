@@ -1,0 +1,17 @@
+skins.png
+size:512,256
+repeat:none
+blackBox
+bounds:204,104,300,100
+box
+bounds:2,4,200,200
+split:8,8,8,8
+buttonDISABLE
+bounds:306,2,100,100
+split:7,12,7,12
+buttonDOWN
+bounds:204,2,100,100
+split:10,7,11,7
+buttonUP
+bounds:408,2,100,100
+split:7,12,7,12

@@ -12,14 +12,13 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
+import com.kraisu.digout.DigOutGame;
 
 import static com.kraisu.digout.scenes.UtilsScreen.*;
 import static com.kraisu.digout.scenes.UtilsScreen.fonts.*;
 
 public class NewGameNameScreen implements Screen {
     private Stage stage;
-    private Skin skinButton, skinBox;
-    private TextureAtlas atlasButton, atlasBox;
     private Table table;
     private Label heading, labelName;
     private TextField nameField;
@@ -31,39 +30,24 @@ public class NewGameNameScreen implements Screen {
         stage = new Stage(new ScreenViewport());
         Gdx.input.setInputProcessor(stage);
 
-        atlasButton = new TextureAtlas(Gdx.files.internal("ui/buttonAtlas.atlas"));
-        atlasBox = new TextureAtlas(Gdx.files.internal("ui/kwadracik.atlas"));
-        skinButton = new Skin(atlasButton);
-        skinBox = new Skin(atlasBox);
-
         Table outerTable = new Table();
         outerTable.setFillParent(true);
 
         table = new Table();
         table.setSize(Gdx.graphics.getWidth()/2, Gdx.graphics.getHeight()/3);
-        table.setBackground(skinBox.getDrawable("kwadracik"));
+        table.setBackground(DigOutGame.skin.getDrawable("box"));
 
         // Heading & label
         Label.LabelStyle headingStyle = new Label.LabelStyle(whiteFont, Color.WHITE);
-        heading = new Label("NEW GAME NAME", headingStyle);
+        heading = new Label("NEW GAME NAME", DigOutGame.skin.get("hugeFont", Label.LabelStyle.class));
 
-        labelName = new Label("Name:", headingStyle);
+        labelName = new Label("Name:", DigOutGame.skin.get("bigFont", Label.LabelStyle.class));
 
         // FieldText
-        TextField.TextFieldStyle textFieldStyle = new TextField.TextFieldStyle();
-        textFieldStyle.font = goldFont;
-        textFieldStyle.fontColor = Color.GOLD;
-        textFieldStyle.background = skinBox.newDrawable("blackBox", Color.BLACK); // Czarny prostokąt
-        nameField = new TextField("", textFieldStyle);
+        nameField = new TextField("", DigOutGame.skin.get("black", TextField.TextFieldStyle.class));
 
         // button
-        TextButton.TextButtonStyle textButtonStyle = new TextButton.TextButtonStyle();
-        textButtonStyle.up = skinButton.getDrawable("buttonUP");
-        textButtonStyle.down = skinButton.getDrawable("buttonDOWN");
-        textButtonStyle.disabled = skinButton.getDrawable("buttonDISABLE");
-        textButtonStyle.font = gold80Font;
-
-        createButton = new TextButton("CREATE NEW GAME", textButtonStyle);
+        createButton = new TextButton("CREATE NEW GAME", DigOutGame.skin.get("default", TextButton.TextButtonStyle.class));
         createButton.setDisabled(true);
 
         // Listener Text field
@@ -129,7 +113,5 @@ public class NewGameNameScreen implements Screen {
     @Override
     public void dispose() {
         stage.dispose();
-        skinButton.dispose();
-        skinBox.dispose();
     }
 }
