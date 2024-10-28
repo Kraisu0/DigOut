@@ -1,0 +1,12 @@
+buttons.png
+size:512,128
+repeat:none
+button.wood.disable
+bounds:104,2,100,100
+split:7,0,7,0
+button.wood.down
+bounds:206,2,100,100
+split:8,0,8,0
+button.wood.up
+bounds:2,2,100,100
+split:7,0,7,0

@@ -1,22 +1,26 @@
 package com.kraisu.digout.stuff;
 
-public class Equipment {
-    protected int gameID;
-    protected String description;
-    protected String name;
+public class Equipment { ;
+    private String name;
+    private String description;
+    private String iconPath;
+    private int totalAmount;
+    private int allocatedAmount;
 
-    public Equipment(int gameID, String description, String name) {
-        this.gameID = gameID;
-        this.description = description;
+    public Equipment(String name, String description, String iconPath, int totalAmount) {
         this.name = name;
+        this.description = description;
+        this.iconPath = iconPath;
+        this.totalAmount = totalAmount;
+        this.allocatedAmount = 0;
     }
 
-    public int getGameID() {
-        return gameID;
+    public String getName() {
+        return name;
     }
 
-    public void setGameID(int gameID) {
-        this.gameID = gameID;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
@@ -27,11 +31,46 @@ public class Equipment {
         this.description = description;
     }
 
-    public String getName() {
-        return name;
+    public String getIconPath() {
+        return iconPath;
     }
 
-    public void setType(String name) {
-        this.name = name;
+    public void setIconPath(String iconPath) {
+        this.iconPath = iconPath;
     }
+
+    public int getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(int totalAmount) {
+        this.totalAmount = totalAmount;
+    }
+
+    public int getAllocatedAmount() {
+        return allocatedAmount;
+    }
+
+    public void setAllocatedAmount(int allocatedAmount) {
+        this.allocatedAmount = allocatedAmount;
+    }
+
+    public void resetAllocatedAmount() {
+        this.allocatedAmount = 0;
+    }
+
+    public boolean allocateEquipment(int amount) {
+        if (amount <= totalAmount - allocatedAmount) {
+            allocatedAmount += amount;
+            return true;
+        }
+        return false;
+    }
+
+    public void consumeAllocatedEquipment() {
+        totalAmount -= allocatedAmount;
+        resetAllocatedAmount();
+    }
+
+
 }

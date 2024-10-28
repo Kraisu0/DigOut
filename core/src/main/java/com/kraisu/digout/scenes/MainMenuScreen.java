@@ -23,7 +23,6 @@ import com.kraisu.digout.logs.DateLogs;
 import static com.kraisu.digout.DigOutGame.TITLE;
 import static com.kraisu.digout.DigOutGame.VERSION;
 import static com.kraisu.digout.logs.DateLogs.logs;
-import static com.kraisu.digout.scenes.UtilsScreen.fonts.*;
 
 public class MainMenuScreen implements Screen {
 
@@ -52,31 +51,31 @@ public class MainMenuScreen implements Screen {
         //footer.setFontScale(0.5f);
 
         //creatingButton
-        buttonNewGame = new TextButton("NEW GAME", DigOutGame.skin.get("default", TextButton.TextButtonStyle.class));
+        buttonNewGame = new TextButton("NEW GAME", DigOutGame.skinButton.get("default", TextButton.TextButtonStyle.class));
         buttonNewGame.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y) {
                 ((Game) Gdx.app.getApplicationListener()).setScreen(new NewGameNameScreen());
-                logs(DateLogs.LogType.INFO, "Open new game screen", null);
+                logs(DateLogs.LogType.INFO, null, "Open new game screen", null);
             }
         });
 
-        buttonLoadGame = new TextButton("LOAD GAME", DigOutGame.skin.get("default", TextButton.TextButtonStyle.class));
+        buttonLoadGame = new TextButton("LOAD GAME", DigOutGame.skinButton.get("default", TextButton.TextButtonStyle.class));
         buttonLoadGame.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y) {
                 //((Game) Gdx.app.getApplicationListener()).setScreen(new LoadGameScreen());
-                logs(DateLogs.LogType.INFO, "Open load game screen", null);
+                logs(DateLogs.LogType.INFO, null,"Open load game screen", null);
             }
         });
 
-        buttonSettings = new TextButton("SETTINGS", DigOutGame.skin.get("default", TextButton.TextButtonStyle.class));
+        buttonSettings = new TextButton("SETTINGS", DigOutGame.skinButton.get("default", TextButton.TextButtonStyle.class));
         buttonSettings.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y) {
                 //((Game) Gdx.app.getApplicationListener()).setScreen(new SettingsScreen());
-                logs(DateLogs.LogType.INFO, "Open settings screen", null);
+                logs(DateLogs.LogType.INFO, null,"Open settings screen", null);
             }
         });
 
-        buttonExit = new TextButton("EXIT", DigOutGame.skin.get("default", TextButton.TextButtonStyle.class));
+        buttonExit = new TextButton("EXIT", DigOutGame.skinButton.get("default", TextButton.TextButtonStyle.class));
         buttonExit.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y) {
                 Gdx.app.exit();

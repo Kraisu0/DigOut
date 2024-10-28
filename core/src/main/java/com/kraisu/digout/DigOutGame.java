@@ -13,6 +13,7 @@ import com.kraisu.digout.scenes.MainMenuScreen;
 import com.kraisu.digout.scenes.SplashScreen;
 import com.kraisu.digout.logs.DateLogs;
 
+import java.awt.*;
 import java.io.File;
 
 import static com.kraisu.digout.logs.DateLogs.createLogFile;
@@ -20,15 +21,20 @@ import static com.kraisu.digout.logs.DateLogs.logs;
 
 public class DigOutGame extends Game {
     public static Skin skin;
+    public static Skin skinButton;
+    public static Skin uiskin;
 
     public static final String TITLE = "DigOut", VERSION = "0.0.1";
     public static File LOGFILE = new File("./logs/digout.log");
+    public static Integer titleBarHeight = null;
 
     @Override
     public void create() {
         //TextureAtlas atlas = new TextureAtlas(Gdx.files.internal("ui/skins.atlas"));
         skin = new Skin(Gdx.files.internal("skins.json"));
-        logs(DateLogs.LogType.INFO, "create()", null);
+        skinButton = new Skin(Gdx.files.internal("buttons.json"));
+        uiskin = new Skin(Gdx.files.internal("uiskin.json"));
+        logs(DateLogs.LogType.INFO, null, "create()", null);
 
 //        skin = new Skin();
 //        skin.add("default-font", new BitmapFont(Gdx.files.internal("fonts/default.fnt")));
@@ -59,20 +65,20 @@ public class DigOutGame extends Game {
 
     @Override
     public void pause() {
-        logs(DateLogs.LogType.INFO, "pause()", null);
+        logs(DateLogs.LogType.INFO, null, "pause()", null);
         super.pause();
     }
 
     @Override
     public void resume() {
-        logs(DateLogs.LogType.INFO, "resume()", null);
+        logs(DateLogs.LogType.INFO, null,"resume()", null);
         super.resume();
     }
 
     @Override
     public void dispose() {
-        logs(DateLogs.LogType.INFO, "dispose()", null);
-        logs(DateLogs.LogType.INFO, "EIXT GAME\n", null);
+        logs(DateLogs.LogType.INFO, null,"dispose()", null);
+        logs(DateLogs.LogType.INFO, null,"EIXT GAME\n", null);
         super.dispose();
     }
 

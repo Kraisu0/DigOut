@@ -1,62 +1,917 @@
-DigOut - 2024-10-22 15:36:44(INFO): EIXT GAME
+DigOut - 2024-10-24 01:58:52(INFO): create()
+DigOut - 2024-10-24 01:58:58(INFO): pause()
+DigOut - 2024-10-24 01:58:58(INFO): dispose()
+DigOut - 2024-10-24 01:58:58(INFO): EIXT GAME
 
-DigOut - 2024-10-22 15:41:36(INFO): create()
-DigOut - 2024-10-22 15:41:46(INFO): Open new game screen
-DigOut - 2024-10-22 15:41:48(INFO): dispose()
-DigOut - 2024-10-22 15:41:48(INFO): EIXT GAME
+DigOut - 2024-10-24 22:40:14(INFO): create()
+DigOut - 2024-10-24 22:40:22(INFO): Open new game screen
+DigOut - 2024-10-24 22:40:25(INFO): [GAME_ID: 206e0109-a238-444c-818e-09805e9b0d43] Generate new ID for new Game: 206e0109-a238-444c-818e-09805e9b0d43
+DigOut - 2024-10-24 22:41:19(INFO): create()
+DigOut - 2024-10-24 22:41:27(INFO): Open new game screen
+DigOut - 2024-10-24 22:41:29(INFO): [GAME_ID: 2d13801c-c3c6-40aa-919e-e79827a72b9d] Generate new ID for new Game: 2d13801c-c3c6-40aa-919e-e79827a72b9d
+DigOut - 2024-10-24 22:41:58(INFO): pause()
+DigOut - 2024-10-24 22:41:58(INFO): dispose()
+DigOut - 2024-10-24 22:41:58(INFO): EIXT GAME
 
-DigOut - 2024-10-22 15:45:23(INFO): create()
-DigOut - 2024-10-22 15:45:30(INFO): Open new game screen
-DigOut - 2024-10-22 15:45:33(INFO): pause()
-DigOut - 2024-10-22 15:45:33(INFO): dispose()
-DigOut - 2024-10-22 15:45:33(INFO): EIXT GAME
+DigOut - 2024-10-24 22:47:27(INFO): create()
+DigOut - 2024-10-24 22:47:32(INFO): Open new game screen
+DigOut - 2024-10-24 22:47:34(INFO): [GAME_ID: 2e71042f-838c-46db-bb54-740475e4df22] Generate new ID for new Game: 2e71042f-838c-46db-bb54-740475e4df22
+DigOut - 2024-10-24 22:47:52(INFO): pause()
+DigOut - 2024-10-24 22:47:52(INFO): dispose()
+DigOut - 2024-10-24 22:47:52(INFO): EIXT GAME
 
-DigOut - 2024-10-22 15:49:54(INFO): create()
-DigOut - 2024-10-22 15:50:00(INFO): pause()
-DigOut - 2024-10-22 15:50:00(INFO): dispose()
-DigOut - 2024-10-22 15:50:00(INFO): EIXT GAME
+DigOut - 2024-10-24 22:52:18(INFO): create()
+DigOut - 2024-10-24 22:52:25(INFO): Open new game screen
+DigOut - 2024-10-24 22:52:27(INFO): [GAME_ID: 78f82541-7811-4d27-b9cf-5a8a49b8c506] Generate new ID for new Game: 78f82541-7811-4d27-b9cf-5a8a49b8c506
+DigOut - 2024-10-24 22:52:57(INFO): pause()
+DigOut - 2024-10-24 22:52:57(INFO): dispose()
+DigOut - 2024-10-24 22:52:57(INFO): EIXT GAME
 
-DigOut - 2024-10-22 17:14:17(INFO): create()
-DigOut - 2024-10-22 17:14:22(INFO): pause()
-DigOut - 2024-10-22 17:14:50(INFO): create()
-DigOut - 2024-10-22 17:17:13(INFO): create()
-DigOut - 2024-10-22 18:16:20(INFO): create()
-DigOut - 2024-10-22 18:19:11(INFO): create()
-DigOut - 2024-10-22 18:25:52(INFO): create()
-DigOut - 2024-10-22 18:26:09(INFO): pause()
-DigOut - 2024-10-22 18:26:09(INFO): dispose()
-DigOut - 2024-10-22 18:26:09(INFO): EIXT GAME
+DigOut - 2024-10-24 22:54:12(INFO): create()
+DigOut - 2024-10-24 22:54:14(INFO): pause()
+DigOut - 2024-10-24 22:54:21(INFO): resume()
+DigOut - 2024-10-24 22:54:26(INFO): pause()
+DigOut - 2024-10-24 22:54:26(INFO): dispose()
+DigOut - 2024-10-24 22:54:26(INFO): EIXT GAME
 
-DigOut - 2024-10-22 18:26:24(INFO): create()
-DigOut - 2024-10-22 18:26:38(INFO): pause()
-DigOut - 2024-10-22 18:26:38(INFO): dispose()
-DigOut - 2024-10-22 18:26:38(INFO): EIXT GAME
+DigOut - 2024-10-24 22:54:32(INFO): create()
+DigOut - 2024-10-24 22:54:34(INFO): pause()
+DigOut - 2024-10-24 22:54:38(INFO): resume()
+DigOut - 2024-10-24 22:54:43(INFO): pause()
+DigOut - 2024-10-24 22:54:43(INFO): dispose()
+DigOut - 2024-10-24 22:54:43(INFO): EIXT GAME
 
-DigOut - 2024-10-22 19:24:24(INFO): create()
-DigOut - 2024-10-22 19:24:30(INFO): Open new game screen
-DigOut - 2024-10-22 19:24:40(INFO): pause()
-DigOut - 2024-10-22 19:24:40(INFO): dispose()
-DigOut - 2024-10-22 19:24:40(INFO): EIXT GAME
+DigOut - 2024-10-24 22:54:45(INFO): create()
+DigOut - 2024-10-24 22:54:53(INFO): Open new game screen
+DigOut - 2024-10-24 22:54:56(INFO): [GAME_ID: 31ade844-7b26-4586-9484-b6e335c535cc] Generate new ID for new Game: 31ade844-7b26-4586-9484-b6e335c535cc
+DigOut - 2024-10-24 22:55:36(INFO): pause()
+DigOut - 2024-10-24 22:55:36(INFO): dispose()
+DigOut - 2024-10-24 22:55:36(INFO): EIXT GAME
 
-DigOut - 2024-10-22 20:33:02(INFO): create()
-DigOut - 2024-10-22 20:33:29(INFO): Open new game screen
-DigOut - 2024-10-22 20:33:36(INFO): pause()
-DigOut - 2024-10-22 20:33:36(INFO): dispose()
-DigOut - 2024-10-22 20:33:36(INFO): EIXT GAME
+DigOut - 2024-10-24 22:55:52(INFO): create()
+DigOut - 2024-10-24 22:55:58(INFO): Open new game screen
+DigOut - 2024-10-24 22:56:00(INFO): [GAME_ID: f0feab86-8554-42ea-a63e-9d656ef4e5f0] Generate new ID for new Game: f0feab86-8554-42ea-a63e-9d656ef4e5f0
+DigOut - 2024-10-24 22:56:37(INFO): pause()
+DigOut - 2024-10-24 22:56:37(INFO): dispose()
+DigOut - 2024-10-24 22:56:37(INFO): EIXT GAME
 
-DigOut - 2024-10-22 20:35:45(INFO): create()
-DigOut - 2024-10-22 20:35:59(INFO): pause()
-DigOut - 2024-10-22 20:35:59(INFO): dispose()
-DigOut - 2024-10-22 20:35:59(INFO): EIXT GAME
+DigOut - 2024-10-24 22:57:33(INFO): create()
+DigOut - 2024-10-24 22:57:38(INFO): create()
+DigOut - 2024-10-24 22:57:43(INFO): Open new game screen
+DigOut - 2024-10-24 22:57:45(INFO): [GAME_ID: 0fd78f7e-9aba-4830-a6e5-b5becdeabdf0] Generate new ID for new Game: 0fd78f7e-9aba-4830-a6e5-b5becdeabdf0
+DigOut - 2024-10-24 22:58:04(INFO): pause()
+DigOut - 2024-10-24 22:58:07(INFO): pause()
+DigOut - 2024-10-24 22:58:07(INFO): dispose()
+DigOut - 2024-10-24 22:58:07(INFO): EIXT GAME
 
-DigOut - 2024-10-22 20:46:20(INFO): create()
-DigOut - 2024-10-22 20:46:23(INFO): pause()
-DigOut - 2024-10-22 20:46:23(INFO): dispose()
-DigOut - 2024-10-22 20:46:23(INFO): EIXT GAME
+DigOut - 2024-10-24 22:58:08(INFO): resume()
+DigOut - 2024-10-24 22:58:09(INFO): pause()
+DigOut - 2024-10-24 22:59:46(INFO): resume()
+DigOut - 2024-10-24 23:00:03(INFO): pause()
+DigOut - 2024-10-24 23:00:53(INFO): resume()
+DigOut - 2024-10-24 23:00:53(INFO): pause()
+DigOut - 2024-10-24 23:00:53(INFO): dispose()
+DigOut - 2024-10-24 23:00:53(INFO): EIXT GAME
 
-DigOut - 2024-10-22 20:46:33(INFO): create()
-DigOut - 2024-10-22 20:47:21(INFO): Open new game screen
-DigOut - 2024-10-22 20:47:28(INFO): pause()
-DigOut - 2024-10-22 20:47:28(INFO): dispose()
-DigOut - 2024-10-22 20:47:28(INFO): EIXT GAME
+DigOut - 2024-10-24 23:01:12(INFO): create()
+DigOut - 2024-10-24 23:01:18(INFO): Open new game screen
+DigOut - 2024-10-24 23:01:20(INFO): [GAME_ID: fbd2f743-2145-423c-87a7-22206454dfbb] Generate new ID for new Game: fbd2f743-2145-423c-87a7-22206454dfbb
+DigOut - 2024-10-24 23:01:38(INFO): pause()
+DigOut - 2024-10-24 23:01:38(INFO): dispose()
+DigOut - 2024-10-24 23:01:38(INFO): EIXT GAME
+
+DigOut - 2024-10-24 23:05:20(INFO): create()
+DigOut - 2024-10-24 23:05:26(INFO): Open new game screen
+DigOut - 2024-10-24 23:05:27(INFO): [GAME_ID: 557014cb-b4a9-4c8e-bb88-5f6934c48aa7] Generate new ID for new Game: 557014cb-b4a9-4c8e-bb88-5f6934c48aa7
+DigOut - 2024-10-24 23:05:40(INFO): pause()
+DigOut - 2024-10-24 23:05:40(INFO): dispose()
+DigOut - 2024-10-24 23:05:40(INFO): EIXT GAME
+
+DigOut - 2024-10-24 23:06:35(INFO): create()
+DigOut - 2024-10-24 23:06:41(INFO): Open new game screen
+DigOut - 2024-10-24 23:06:42(INFO): [GAME_ID: 87d47000-c5d9-409e-8a66-810beee6957a] Generate new ID for new Game: 87d47000-c5d9-409e-8a66-810beee6957a
+DigOut - 2024-10-24 23:06:55(INFO): pause()
+DigOut - 2024-10-24 23:06:55(INFO): dispose()
+DigOut - 2024-10-24 23:06:55(INFO): EIXT GAME
+
+DigOut - 2024-10-24 23:09:02(INFO): create()
+DigOut - 2024-10-24 23:09:08(INFO): Open new game screen
+DigOut - 2024-10-24 23:09:10(INFO): [GAME_ID: 4e1f5823-08f1-4d43-92ab-63f113fef976] Generate new ID for new Game: 4e1f5823-08f1-4d43-92ab-63f113fef976
+DigOut - 2024-10-24 23:09:22(INFO): pause()
+DigOut - 2024-10-24 23:09:22(INFO): dispose()
+DigOut - 2024-10-24 23:09:22(INFO): EIXT GAME
+
+DigOut - 2024-10-24 23:10:50(INFO): create()
+DigOut - 2024-10-24 23:10:55(INFO): Open new game screen
+DigOut - 2024-10-24 23:10:57(INFO): [GAME_ID: 75222577-7ae2-40c5-bc31-bf1570e2c54f] Generate new ID for new Game: 75222577-7ae2-40c5-bc31-bf1570e2c54f
+DigOut - 2024-10-24 23:11:41(INFO): pause()
+DigOut - 2024-10-24 23:11:41(INFO): dispose()
+DigOut - 2024-10-24 23:11:41(INFO): EIXT GAME
+
+DigOut - 2024-10-24 23:13:06(INFO): create()
+DigOut - 2024-10-24 23:13:12(INFO): Open new game screen
+DigOut - 2024-10-24 23:13:13(INFO): [GAME_ID: 344f25c7-d6c6-41dd-b23c-db2d1bed5d21] Generate new ID for new Game: 344f25c7-d6c6-41dd-b23c-db2d1bed5d21
+DigOut - 2024-10-24 23:13:21(INFO): pause()
+DigOut - 2024-10-24 23:13:41(INFO): resume()
+DigOut - 2024-10-24 23:13:47(INFO): pause()
+DigOut - 2024-10-24 23:13:47(INFO): dispose()
+DigOut - 2024-10-24 23:13:47(INFO): EIXT GAME
+
+DigOut - 2024-10-24 23:18:13(INFO): create()
+DigOut - 2024-10-24 23:18:19(INFO): Open new game screen
+DigOut - 2024-10-24 23:18:20(INFO): [GAME_ID: 44388dc6-dcc0-4f19-924c-fe65058bbe0f] Generate new ID for new Game: 44388dc6-dcc0-4f19-924c-fe65058bbe0f
+DigOut - 2024-10-24 23:18:38(INFO): pause()
+DigOut - 2024-10-24 23:18:38(INFO): dispose()
+DigOut - 2024-10-24 23:18:38(INFO): EIXT GAME
+
+DigOut - 2024-10-24 23:19:12(INFO): create()
+DigOut - 2024-10-24 23:19:17(INFO): Open new game screen
+DigOut - 2024-10-24 23:19:19(INFO): [GAME_ID: f7282ae1-59c5-4e29-85cf-ea2f2edc1950] Generate new ID for new Game: f7282ae1-59c5-4e29-85cf-ea2f2edc1950
+DigOut - 2024-10-24 23:19:29(INFO): pause()
+DigOut - 2024-10-24 23:19:29(INFO): dispose()
+DigOut - 2024-10-24 23:19:29(INFO): EIXT GAME
+
+DigOut - 2024-10-24 23:21:49(INFO): create()
+DigOut - 2024-10-24 23:21:57(INFO): Open new game screen
+DigOut - 2024-10-24 23:21:58(INFO): [GAME_ID: d35b5c74-e36f-41c8-81a6-2c0b613784dc] Generate new ID for new Game: d35b5c74-e36f-41c8-81a6-2c0b613784dc
+DigOut - 2024-10-24 23:22:25(INFO): pause()
+DigOut - 2024-10-24 23:22:25(INFO): dispose()
+DigOut - 2024-10-24 23:22:25(INFO): EIXT GAME
+
+DigOut - 2024-10-24 23:22:45(INFO): create()
+DigOut - 2024-10-24 23:22:50(INFO): Open new game screen
+DigOut - 2024-10-24 23:22:52(INFO): [GAME_ID: 7443930b-bbf0-4a51-9a24-6d3d828aff0d] Generate new ID for new Game: 7443930b-bbf0-4a51-9a24-6d3d828aff0d
+DigOut - 2024-10-24 23:23:06(INFO): pause()
+DigOut - 2024-10-24 23:23:06(INFO): dispose()
+DigOut - 2024-10-24 23:23:06(INFO): EIXT GAME
+
+DigOut - 2024-10-24 23:23:26(INFO): create()
+DigOut - 2024-10-24 23:23:31(INFO): Open new game screen
+DigOut - 2024-10-24 23:23:33(INFO): [GAME_ID: 0e0f84e9-8176-462a-92e3-c95fe3080a67] Generate new ID for new Game: 0e0f84e9-8176-462a-92e3-c95fe3080a67
+DigOut - 2024-10-24 23:23:47(INFO): pause()
+DigOut - 2024-10-24 23:23:47(INFO): dispose()
+DigOut - 2024-10-24 23:23:47(INFO): EIXT GAME
+
+DigOut - 2024-10-24 23:23:57(INFO): create()
+DigOut - 2024-10-24 23:24:02(INFO): Open new game screen
+DigOut - 2024-10-24 23:24:04(INFO): [GAME_ID: f38d7bc6-7097-4a71-97af-46c90a8dd80a] Generate new ID for new Game: f38d7bc6-7097-4a71-97af-46c90a8dd80a
+DigOut - 2024-10-24 23:24:20(INFO): pause()
+DigOut - 2024-10-24 23:24:20(INFO): dispose()
+DigOut - 2024-10-24 23:24:20(INFO): EIXT GAME
+
+DigOut - 2024-10-25 00:06:59(INFO): create()
+DigOut - 2024-10-25 00:07:05(INFO): Open new game screen
+DigOut - 2024-10-25 00:07:08(INFO): [GAME_ID: bebcc5f8-cbaf-4b98-8808-3358b6bac1be] Generate new ID for new Game: bebcc5f8-cbaf-4b98-8808-3358b6bac1be
+DigOut - 2024-10-25 00:07:43(INFO): pause()
+DigOut - 2024-10-25 00:07:43(INFO): dispose()
+DigOut - 2024-10-25 00:07:43(INFO): EIXT GAME
+
+DigOut - 2024-10-25 00:14:11(INFO): create()
+DigOut - 2024-10-25 00:14:16(INFO): Open new game screen
+DigOut - 2024-10-25 00:14:22(INFO): [GAME_ID: 99ad58c9-f5db-41a8-8f32-a31249796a25] Generate new ID for new Game: 99ad58c9-f5db-41a8-8f32-a31249796a25
+DigOut - 2024-10-25 00:14:37(INFO): pause()
+DigOut - 2024-10-25 00:14:37(INFO): dispose()
+DigOut - 2024-10-25 00:14:37(INFO): EIXT GAME
+
+DigOut - 2024-10-25 00:14:49(INFO): create()
+DigOut - 2024-10-25 00:14:55(INFO): Open new game screen
+DigOut - 2024-10-25 00:15:00(INFO): [GAME_ID: 3e14ce66-8665-43be-b833-037fa7a858c6] Generate new ID for new Game: 3e14ce66-8665-43be-b833-037fa7a858c6
+DigOut - 2024-10-25 00:15:23(INFO): pause()
+DigOut - 2024-10-25 00:15:23(INFO): dispose()
+DigOut - 2024-10-25 00:15:23(INFO): EIXT GAME
+
+DigOut - 2024-10-25 00:33:54(INFO): create()
+DigOut - 2024-10-25 00:33:59(INFO): Open new game screen
+DigOut - 2024-10-25 00:34:00(INFO): [GAME_ID: bbe39e5d-2f0d-4f07-8560-0bc8bb2b27e9] Generate new ID for new Game: bbe39e5d-2f0d-4f07-8560-0bc8bb2b27e9
+DigOut - 2024-10-25 00:34:38(INFO): pause()
+DigOut - 2024-10-25 00:36:04(INFO): create()
+DigOut - 2024-10-25 00:36:09(INFO): Open new game screen
+DigOut - 2024-10-25 00:36:12(INFO): [GAME_ID: 66219c54-901f-48ef-b69c-72c32d46277d] Generate new ID for new Game: 66219c54-901f-48ef-b69c-72c32d46277d
+DigOut - 2024-10-25 00:36:48(INFO): pause()
+DigOut - 2024-10-25 00:36:48(INFO): dispose()
+DigOut - 2024-10-25 00:36:48(INFO): EIXT GAME
+
+DigOut - 2024-10-25 00:37:08(INFO): create()
+DigOut - 2024-10-25 00:37:13(INFO): Open new game screen
+DigOut - 2024-10-25 00:37:14(INFO): [GAME_ID: 3bd0b5a3-730c-4bec-89d5-a2fc2719b447] Generate new ID for new Game: 3bd0b5a3-730c-4bec-89d5-a2fc2719b447
+DigOut - 2024-10-25 00:37:31(INFO): pause()
+DigOut - 2024-10-25 00:37:31(INFO): dispose()
+DigOut - 2024-10-25 00:37:31(INFO): EIXT GAME
+
+DigOut - 2024-10-25 00:37:49(INFO): create()
+DigOut - 2024-10-25 00:37:54(INFO): Open new game screen
+DigOut - 2024-10-25 00:37:55(INFO): [GAME_ID: d11f8e2e-62c7-44b4-a911-7cf0015221f4] Generate new ID for new Game: d11f8e2e-62c7-44b4-a911-7cf0015221f4
+DigOut - 2024-10-25 00:38:07(INFO): pause()
+DigOut - 2024-10-25 00:38:11(INFO): resume()
+DigOut - 2024-10-25 00:38:18(INFO): pause()
+DigOut - 2024-10-25 00:38:47(INFO): create()
+DigOut - 2024-10-25 00:38:52(INFO): Open new game screen
+DigOut - 2024-10-25 00:38:53(INFO): [GAME_ID: 432f7af6-7b04-43f3-9978-2c2477054dba] Generate new ID for new Game: 432f7af6-7b04-43f3-9978-2c2477054dba
+DigOut - 2024-10-25 00:39:10(INFO): pause()
+DigOut - 2024-10-25 00:39:58(INFO): create()
+DigOut - 2024-10-25 00:40:01(INFO): pause()
+DigOut - 2024-10-25 00:40:01(INFO): dispose()
+DigOut - 2024-10-25 00:40:01(INFO): EIXT GAME
+
+DigOut - 2024-10-25 00:40:26(INFO): create()
+DigOut - 2024-10-25 00:40:31(INFO): Open new game screen
+DigOut - 2024-10-25 00:40:33(INFO): [GAME_ID: 4140d615-4057-45db-b5ff-7c04bb7e8030] Generate new ID for new Game: 4140d615-4057-45db-b5ff-7c04bb7e8030
+DigOut - 2024-10-25 00:40:46(INFO): pause()
+DigOut - 2024-10-25 00:40:46(INFO): dispose()
+DigOut - 2024-10-25 00:40:46(INFO): EIXT GAME
+
+DigOut - 2024-10-25 00:41:08(INFO): create()
+DigOut - 2024-10-25 00:41:13(INFO): Open new game screen
+DigOut - 2024-10-25 00:41:13(INFO): [GAME_ID: a47b8614-e714-4778-99a6-769a5465dd76] Generate new ID for new Game: a47b8614-e714-4778-99a6-769a5465dd76
+DigOut - 2024-10-25 00:41:25(INFO): pause()
+DigOut - 2024-10-25 00:41:25(INFO): dispose()
+DigOut - 2024-10-25 00:41:25(INFO): EIXT GAME
+
+DigOut - 2024-10-25 00:41:39(INFO): create()
+DigOut - 2024-10-25 00:41:45(INFO): Open new game screen
+DigOut - 2024-10-25 00:41:46(INFO): [GAME_ID: 4b1e9f6d-f6c2-41e2-bddb-d31f39c0b59e] Generate new ID for new Game: 4b1e9f6d-f6c2-41e2-bddb-d31f39c0b59e
+DigOut - 2024-10-25 00:42:09(INFO): pause()
+DigOut - 2024-10-25 00:42:09(INFO): dispose()
+DigOut - 2024-10-25 00:42:09(INFO): EIXT GAME
+
+DigOut - 2024-10-25 00:42:23(INFO): create()
+DigOut - 2024-10-25 00:42:31(INFO): Open new game screen
+DigOut - 2024-10-25 00:42:33(INFO): [GAME_ID: 96dea472-1111-4f29-9257-652eb9fb51fe] Generate new ID for new Game: 96dea472-1111-4f29-9257-652eb9fb51fe
+DigOut - 2024-10-25 00:42:48(INFO): pause()
+DigOut - 2024-10-25 00:42:48(INFO): dispose()
+DigOut - 2024-10-25 00:42:48(INFO): EIXT GAME
+
+DigOut - 2024-10-25 00:43:58(INFO): create()
+DigOut - 2024-10-25 00:44:03(INFO): Open new game screen
+DigOut - 2024-10-25 00:44:05(INFO): [GAME_ID: d0d79f44-9239-49ad-a0dd-010c3c440b55] Generate new ID for new Game: d0d79f44-9239-49ad-a0dd-010c3c440b55
+DigOut - 2024-10-25 00:44:18(INFO): pause()
+DigOut - 2024-10-25 00:44:18(INFO): dispose()
+DigOut - 2024-10-25 00:44:18(INFO): EIXT GAME
+
+DigOut - 2024-10-25 00:45:47(INFO): create()
+DigOut - 2024-10-25 00:45:55(INFO): Open new game screen
+DigOut - 2024-10-25 00:46:20(INFO): [GAME_ID: ad7eb08e-eddd-42a6-8f8d-3a4bdfd6457a] Generate new ID for new Game: ad7eb08e-eddd-42a6-8f8d-3a4bdfd6457a
+DigOut - 2024-10-25 00:46:45(INFO): pause()
+DigOut - 2024-10-25 00:46:45(INFO): dispose()
+DigOut - 2024-10-25 00:46:45(INFO): EIXT GAME
+
+DigOut - 2024-10-25 00:54:05(INFO): create()
+DigOut - 2024-10-25 00:54:11(INFO): Open new game screen
+DigOut - 2024-10-25 00:54:12(INFO): [GAME_ID: cacb0987-5fd7-40ed-80ab-83643ee61d42] Generate new ID for new Game: cacb0987-5fd7-40ed-80ab-83643ee61d42
+DigOut - 2024-10-25 00:55:41(INFO): pause()
+DigOut - 2024-10-25 00:55:41(INFO): dispose()
+DigOut - 2024-10-25 00:55:41(INFO): EIXT GAME
+
+DigOut - 2024-10-25 00:57:03(INFO): create()
+DigOut - 2024-10-25 00:57:18(INFO): Open new game screen
+DigOut - 2024-10-25 00:57:20(INFO): [GAME_ID: 8b8f6e09-1663-4d53-a5f9-b110cdf0f29d] Generate new ID for new Game: 8b8f6e09-1663-4d53-a5f9-b110cdf0f29d
+DigOut - 2024-10-25 00:57:33(INFO): pause()
+DigOut - 2024-10-25 00:57:33(INFO): dispose()
+DigOut - 2024-10-25 00:57:33(INFO): EIXT GAME
+
+DigOut - 2024-10-25 00:57:52(INFO): create()
+DigOut - 2024-10-25 00:58:04(INFO): Open new game screen
+DigOut - 2024-10-25 00:58:06(INFO): [GAME_ID: a955a9b3-4a01-431a-8a9e-cb9d60981cd7] Generate new ID for new Game: a955a9b3-4a01-431a-8a9e-cb9d60981cd7
+DigOut - 2024-10-25 00:58:55(INFO): pause()
+DigOut - 2024-10-25 00:58:55(INFO): dispose()
+DigOut - 2024-10-25 00:58:55(INFO): EIXT GAME
+
+DigOut - 2024-10-25 01:13:08(INFO): create()
+DigOut - 2024-10-25 01:13:09(INFO): pause()
+DigOut - 2024-10-25 01:13:09(INFO): dispose()
+DigOut - 2024-10-25 01:13:09(INFO): EIXT GAME
+
+DigOut - 2024-10-25 01:14:00(INFO): create()
+DigOut - 2024-10-25 01:14:11(INFO): Open new game screen
+DigOut - 2024-10-25 01:14:23(INFO): [GAME_ID: f3434d1f-796b-4f63-89e6-8383e9c0b5dd] Generate new ID for new Game: f3434d1f-796b-4f63-89e6-8383e9c0b5dd
+DigOut - 2024-10-25 01:14:35(INFO): pause()
+DigOut - 2024-10-25 01:14:35(INFO): dispose()
+DigOut - 2024-10-25 01:14:35(INFO): EIXT GAME
+
+DigOut - 2024-10-25 01:14:48(INFO): create()
+DigOut - 2024-10-25 01:14:54(INFO): Open new game screen
+DigOut - 2024-10-25 01:14:56(INFO): [GAME_ID: 2b012bcd-a41a-49f0-b6fc-194bc23c3829] Generate new ID for new Game: 2b012bcd-a41a-49f0-b6fc-194bc23c3829
+DigOut - 2024-10-25 01:16:34(INFO): pause()
+DigOut - 2024-10-25 01:16:34(INFO): dispose()
+DigOut - 2024-10-25 01:16:34(INFO): EIXT GAME
+
+DigOut - 2024-10-25 15:35:30(INFO): create()
+DigOut - 2024-10-25 15:36:02(INFO): pause()
+DigOut - 2024-10-25 15:36:10(INFO): resume()
+DigOut - 2024-10-25 15:36:11(INFO): Open new game screen
+DigOut - 2024-10-25 15:36:25(INFO): [GAME_ID: 28ed0a28-7eac-4699-bb3f-f79db766cbee] Generate new ID for new Game: 28ed0a28-7eac-4699-bb3f-f79db766cbee
+DigOut - 2024-10-25 15:36:25(INFO): [GAME_ID: 28ed0a28-7eac-4699-bb3f-f79db766cbee] Create New Game
+DigOut - 2024-10-25 15:36:48(INFO): pause()
+DigOut - 2024-10-25 15:36:48(INFO): dispose()
+DigOut - 2024-10-25 15:36:48(INFO): EIXT GAME
+
+DigOut - 2024-10-25 16:09:35(INFO): create()
+DigOut - 2024-10-25 16:09:48(INFO): pause()
+DigOut - 2024-10-25 16:09:50(INFO): resume()
+DigOut - 2024-10-25 16:09:51(INFO): pause()
+DigOut - 2024-10-25 16:09:51(INFO): dispose()
+DigOut - 2024-10-25 16:09:51(INFO): EIXT GAME
+
+DigOut - 2024-10-25 16:11:12(INFO): create()
+DigOut - 2024-10-25 16:11:19(INFO): Open new game screen
+DigOut - 2024-10-25 16:11:27(INFO): [GAME_ID: 128f50e1-99c9-4c61-8490-700cb664ab65] Generate new ID for new Game: 128f50e1-99c9-4c61-8490-700cb664ab65
+DigOut - 2024-10-25 16:11:27(INFO): [GAME_ID: 128f50e1-99c9-4c61-8490-700cb664ab65] Create New Game
+DigOut - 2024-10-25 16:11:46(INFO): pause()
+DigOut - 2024-10-25 16:11:46(INFO): dispose()
+DigOut - 2024-10-25 16:11:46(INFO): EIXT GAME
+
+DigOut - 2024-10-25 17:15:46(INFO): create()
+DigOut - 2024-10-25 17:15:53(INFO): Open new game screen
+DigOut - 2024-10-25 17:15:59(INFO): [GAME_ID: d2151d6f-52ff-493c-86eb-91a3beda822d] Generate new ID for new Game: d2151d6f-52ff-493c-86eb-91a3beda822d
+DigOut - 2024-10-25 17:15:59(INFO): [GAME_ID: d2151d6f-52ff-493c-86eb-91a3beda822d] Create New Game
+DigOut - 2024-10-25 17:16:27(INFO): pause()
+DigOut - 2024-10-25 17:16:27(INFO): dispose()
+DigOut - 2024-10-25 17:16:27(INFO): EIXT GAME
+
+DigOut - 2024-10-25 17:22:30(INFO): create()
+DigOut - 2024-10-25 17:22:35(INFO): Open new game screen
+DigOut - 2024-10-25 17:22:37(INFO): [GAME_ID: db37145b-a3bc-4ad9-8e8c-a6615f667fe3] Generate new ID for new Game: db37145b-a3bc-4ad9-8e8c-a6615f667fe3
+DigOut - 2024-10-25 17:22:37(INFO): [GAME_ID: db37145b-a3bc-4ad9-8e8c-a6615f667fe3] Create New Game
+DigOut - 2024-10-25 17:22:59(INFO): pause()
+DigOut - 2024-10-25 17:22:59(INFO): dispose()
+DigOut - 2024-10-25 17:22:59(INFO): EIXT GAME
+
+DigOut - 2024-10-25 17:25:22(INFO): create()
+DigOut - 2024-10-25 17:25:35(INFO): Open new game screen
+DigOut - 2024-10-25 17:25:38(INFO): [GAME_ID: 174654ef-63c1-4152-80b8-e1eb83aba50b] Generate new ID for new Game: 174654ef-63c1-4152-80b8-e1eb83aba50b
+DigOut - 2024-10-25 17:25:38(INFO): [GAME_ID: 174654ef-63c1-4152-80b8-e1eb83aba50b] Create New Game
+DigOut - 2024-10-25 17:25:53(INFO): pause()
+DigOut - 2024-10-25 17:25:53(INFO): dispose()
+DigOut - 2024-10-25 17:25:53(INFO): EIXT GAME
+
+DigOut - 2024-10-25 17:27:16(INFO): create()
+DigOut - 2024-10-25 17:27:21(INFO): Open new game screen
+DigOut - 2024-10-25 17:27:25(INFO): [GAME_ID: 0b267041-3643-4357-9fa1-1d4bdb995e7b] Generate new ID for new Game: 0b267041-3643-4357-9fa1-1d4bdb995e7b
+DigOut - 2024-10-25 17:27:25(INFO): [GAME_ID: 0b267041-3643-4357-9fa1-1d4bdb995e7b] Create New Game
+DigOut - 2024-10-25 17:27:38(INFO): Open new game screen
+DigOut - 2024-10-25 17:27:40(INFO): [GAME_ID: bb4b543b-65a1-44cd-88fe-b670be5ec32d] Generate new ID for new Game: bb4b543b-65a1-44cd-88fe-b670be5ec32d
+DigOut - 2024-10-25 17:27:40(INFO): [GAME_ID: bb4b543b-65a1-44cd-88fe-b670be5ec32d] Create New Game
+DigOut - 2024-10-25 17:28:08(INFO): pause()
+DigOut - 2024-10-25 17:28:08(INFO): dispose()
+DigOut - 2024-10-25 17:28:08(INFO): EIXT GAME
+
+DigOut - 2024-10-25 17:29:33(INFO): create()
+DigOut - 2024-10-25 17:29:35(INFO): pause()
+DigOut - 2024-10-25 17:29:36(INFO): resume()
+DigOut - 2024-10-25 17:29:39(INFO): pause()
+DigOut - 2024-10-25 17:29:46(INFO): resume()
+DigOut - 2024-10-25 17:29:47(INFO): Open new game screen
+DigOut - 2024-10-25 17:29:48(INFO): [GAME_ID: 1e33a208-bdba-46c4-895a-3671394e0126] Generate new ID for new Game: 1e33a208-bdba-46c4-895a-3671394e0126
+DigOut - 2024-10-25 17:29:48(INFO): [GAME_ID: 1e33a208-bdba-46c4-895a-3671394e0126] Create New Game
+DigOut - 2024-10-25 17:30:06(INFO): pause()
+DigOut - 2024-10-25 17:30:06(INFO): dispose()
+DigOut - 2024-10-25 17:30:06(INFO): EIXT GAME
+
+DigOut - 2024-10-25 17:31:05(INFO): create()
+DigOut - 2024-10-25 17:31:10(INFO): pause()
+DigOut - 2024-10-25 17:31:16(INFO): resume()
+DigOut - 2024-10-25 17:31:23(INFO): Open new game screen
+DigOut - 2024-10-25 17:31:24(INFO): [GAME_ID: 17b72c73-5f26-423d-b1b1-4007a25b2bbd] Generate new ID for new Game: 17b72c73-5f26-423d-b1b1-4007a25b2bbd
+DigOut - 2024-10-25 17:31:24(INFO): [GAME_ID: 17b72c73-5f26-423d-b1b1-4007a25b2bbd] Create New Game
+DigOut - 2024-10-25 17:31:45(INFO): pause()
+DigOut - 2024-10-25 17:31:45(INFO): dispose()
+DigOut - 2024-10-25 17:31:45(INFO): EIXT GAME
+
+DigOut - 2024-10-25 17:33:43(INFO): create()
+DigOut - 2024-10-25 17:33:51(INFO): Open new game screen
+DigOut - 2024-10-25 17:33:53(INFO): [GAME_ID: b1444433-2f9b-44e1-ba75-4448b5d95bb6] Generate new ID for new Game: b1444433-2f9b-44e1-ba75-4448b5d95bb6
+DigOut - 2024-10-25 17:33:53(INFO): [GAME_ID: b1444433-2f9b-44e1-ba75-4448b5d95bb6] Create New Game
+DigOut - 2024-10-25 17:34:18(INFO): pause()
+DigOut - 2024-10-25 17:34:18(INFO): dispose()
+DigOut - 2024-10-25 17:34:18(INFO): EIXT GAME
+
+DigOut - 2024-10-25 17:35:20(INFO): create()
+DigOut - 2024-10-25 17:35:25(INFO): Open new game screen
+DigOut - 2024-10-25 17:35:27(INFO): [GAME_ID: 2a1abf7d-e02a-45ab-833f-c17c9502fd9b] Generate new ID for new Game: 2a1abf7d-e02a-45ab-833f-c17c9502fd9b
+DigOut - 2024-10-25 17:35:27(INFO): [GAME_ID: 2a1abf7d-e02a-45ab-833f-c17c9502fd9b] Create New Game
+DigOut - 2024-10-25 17:35:37(INFO): pause()
+DigOut - 2024-10-25 17:35:37(INFO): dispose()
+DigOut - 2024-10-25 17:35:37(INFO): EIXT GAME
+
+DigOut - 2024-10-25 17:36:06(INFO): create()
+DigOut - 2024-10-25 17:36:15(INFO): Open new game screen
+DigOut - 2024-10-25 17:36:16(INFO): [GAME_ID: e8100260-b144-458a-a8a4-c584c8dfe57f] Generate new ID for new Game: e8100260-b144-458a-a8a4-c584c8dfe57f
+DigOut - 2024-10-25 17:36:16(INFO): [GAME_ID: e8100260-b144-458a-a8a4-c584c8dfe57f] Create New Game
+DigOut - 2024-10-25 17:36:32(INFO): pause()
+DigOut - 2024-10-25 17:36:32(INFO): dispose()
+DigOut - 2024-10-25 17:36:32(INFO): EIXT GAME
+
+DigOut - 2024-10-25 17:36:50(INFO): create()
+DigOut - 2024-10-25 17:36:57(INFO): Open new game screen
+DigOut - 2024-10-25 17:36:59(INFO): [GAME_ID: bf697609-2141-4418-be13-23a8396f17b8] Generate new ID for new Game: bf697609-2141-4418-be13-23a8396f17b8
+DigOut - 2024-10-25 17:36:59(INFO): [GAME_ID: bf697609-2141-4418-be13-23a8396f17b8] Create New Game
+DigOut - 2024-10-25 17:37:15(INFO): pause()
+DigOut - 2024-10-25 17:37:15(INFO): dispose()
+DigOut - 2024-10-25 17:37:15(INFO): EIXT GAME
+
+DigOut - 2024-10-25 17:37:46(INFO): create()
+DigOut - 2024-10-25 17:37:52(INFO): Open new game screen
+DigOut - 2024-10-25 17:37:53(INFO): [GAME_ID: b5e0a783-c9bb-43d1-ad3d-f270a7634c55] Generate new ID for new Game: b5e0a783-c9bb-43d1-ad3d-f270a7634c55
+DigOut - 2024-10-25 17:37:53(INFO): [GAME_ID: b5e0a783-c9bb-43d1-ad3d-f270a7634c55] Create New Game
+DigOut - 2024-10-25 17:38:05(INFO): pause()
+DigOut - 2024-10-25 17:38:05(INFO): dispose()
+DigOut - 2024-10-25 17:38:05(INFO): EIXT GAME
+
+DigOut - 2024-10-25 17:43:11(INFO): create()
+DigOut - 2024-10-25 17:43:18(INFO): Open new game screen
+DigOut - 2024-10-25 17:43:20(INFO): [GAME_ID: 5e8aad4d-d54b-4631-a08a-a01b81e39bad] Generate new ID for new Game: 5e8aad4d-d54b-4631-a08a-a01b81e39bad
+DigOut - 2024-10-25 17:43:20(INFO): [GAME_ID: 5e8aad4d-d54b-4631-a08a-a01b81e39bad] Create New Game
+DigOut - 2024-10-25 17:43:39(INFO): pause()
+DigOut - 2024-10-25 17:43:39(INFO): dispose()
+DigOut - 2024-10-25 17:43:39(INFO): EIXT GAME
+
+DigOut - 2024-10-25 17:46:13(INFO): create()
+DigOut - 2024-10-25 17:46:26(INFO): Open new game screen
+DigOut - 2024-10-25 17:46:28(INFO): [GAME_ID: 98481d30-978e-4449-a3c5-c368ac96a9c8] Generate new ID for new Game: 98481d30-978e-4449-a3c5-c368ac96a9c8
+DigOut - 2024-10-25 17:46:28(INFO): [GAME_ID: 98481d30-978e-4449-a3c5-c368ac96a9c8] Create New Game
+DigOut - 2024-10-25 17:46:37(INFO): pause()
+DigOut - 2024-10-25 17:46:37(INFO): dispose()
+DigOut - 2024-10-25 17:46:37(INFO): EIXT GAME
+
+DigOut - 2024-10-25 17:46:45(INFO): create()
+DigOut - 2024-10-25 17:46:47(INFO): pause()
+DigOut - 2024-10-25 17:46:50(INFO): resume()
+DigOut - 2024-10-25 17:46:54(INFO): pause()
+DigOut - 2024-10-25 17:46:54(INFO): dispose()
+DigOut - 2024-10-25 17:46:54(INFO): EIXT GAME
+
+DigOut - 2024-10-25 17:46:56(INFO): create()
+DigOut - 2024-10-25 17:47:02(INFO): Open new game screen
+DigOut - 2024-10-25 17:47:05(INFO): [GAME_ID: 943cbc1a-d27d-4ecc-8cb6-b344f6db4b46] Generate new ID for new Game: 943cbc1a-d27d-4ecc-8cb6-b344f6db4b46
+DigOut - 2024-10-25 17:47:05(INFO): [GAME_ID: 943cbc1a-d27d-4ecc-8cb6-b344f6db4b46] Create New Game
+DigOut - 2024-10-25 17:47:36(INFO): pause()
+DigOut - 2024-10-25 17:47:36(INFO): dispose()
+DigOut - 2024-10-25 17:47:36(INFO): EIXT GAME
+
+DigOut - 2024-10-25 17:47:50(INFO): create()
+DigOut - 2024-10-25 17:47:55(INFO): Open new game screen
+DigOut - 2024-10-25 17:47:58(INFO): [GAME_ID: 8223fbfe-aeb6-47b8-b2c4-bc496df967be] Generate new ID for new Game: 8223fbfe-aeb6-47b8-b2c4-bc496df967be
+DigOut - 2024-10-25 17:47:58(INFO): [GAME_ID: 8223fbfe-aeb6-47b8-b2c4-bc496df967be] Create New Game
+DigOut - 2024-10-25 17:48:09(INFO): pause()
+DigOut - 2024-10-25 17:48:09(INFO): dispose()
+DigOut - 2024-10-25 17:48:09(INFO): EIXT GAME
+
+DigOut - 2024-10-25 18:14:13(INFO): create()
+DigOut - 2024-10-25 18:14:21(INFO): Open new game screen
+DigOut - 2024-10-25 18:14:29(INFO): [GAME_ID: 10ec4c6c-5fb1-409d-8905-e3bc09406e4e] Generate new ID for new Game: 10ec4c6c-5fb1-409d-8905-e3bc09406e4e
+DigOut - 2024-10-25 18:14:29(INFO): [GAME_ID: 10ec4c6c-5fb1-409d-8905-e3bc09406e4e] Create New Game
+DigOut - 2024-10-25 18:14:46(INFO): pause()
+DigOut - 2024-10-25 18:14:46(INFO): dispose()
+DigOut - 2024-10-25 18:14:46(INFO): EIXT GAME
+
+DigOut - 2024-10-25 18:21:44(INFO): create()
+DigOut - 2024-10-25 18:21:51(INFO): Open new game screen
+DigOut - 2024-10-25 18:21:53(INFO): [GAME_ID: aefd569a-d133-491e-9d9c-ab8569b52931] Generate new ID for new Game: aefd569a-d133-491e-9d9c-ab8569b52931
+DigOut - 2024-10-25 18:21:53(INFO): [GAME_ID: aefd569a-d133-491e-9d9c-ab8569b52931] Create New Game
+DigOut - 2024-10-25 18:22:08(INFO): pause()
+DigOut - 2024-10-25 18:22:08(INFO): dispose()
+DigOut - 2024-10-25 18:22:08(INFO): EIXT GAME
+
+DigOut - 2024-10-25 18:28:10(INFO): create()
+DigOut - 2024-10-25 18:28:17(INFO): Open new game screen
+DigOut - 2024-10-25 18:28:18(INFO): [GAME_ID: 6bdba0c1-42e6-4f80-b2f2-c1b866df7a9a] Generate new ID for new Game: 6bdba0c1-42e6-4f80-b2f2-c1b866df7a9a
+DigOut - 2024-10-25 18:28:18(INFO): [GAME_ID: 6bdba0c1-42e6-4f80-b2f2-c1b866df7a9a] Create New Game
+DigOut - 2024-10-25 18:28:27(INFO): pause()
+DigOut - 2024-10-25 18:28:27(INFO): dispose()
+DigOut - 2024-10-25 18:28:27(INFO): EIXT GAME
+
+DigOut - 2024-10-25 18:28:31(INFO): create()
+DigOut - 2024-10-25 18:28:38(INFO): Open new game screen
+DigOut - 2024-10-25 18:28:40(INFO): [GAME_ID: c6a31ffe-5ea8-40ce-846b-01ff2a0475ec] Generate new ID for new Game: c6a31ffe-5ea8-40ce-846b-01ff2a0475ec
+DigOut - 2024-10-25 18:28:40(INFO): [GAME_ID: c6a31ffe-5ea8-40ce-846b-01ff2a0475ec] Create New Game
+DigOut - 2024-10-25 18:28:49(INFO): pause()
+DigOut - 2024-10-25 18:28:49(INFO): dispose()
+DigOut - 2024-10-25 18:28:49(INFO): EIXT GAME
+
+DigOut - 2024-10-25 18:29:41(INFO): create()
+DigOut - 2024-10-25 18:29:47(INFO): Open new game screen
+DigOut - 2024-10-25 18:29:48(INFO): [GAME_ID: 09adf277-1083-48a8-a014-690bcc7c70c4] Generate new ID for new Game: 09adf277-1083-48a8-a014-690bcc7c70c4
+DigOut - 2024-10-25 18:29:48(INFO): [GAME_ID: 09adf277-1083-48a8-a014-690bcc7c70c4] Create New Game
+DigOut - 2024-10-25 18:30:01(INFO): pause()
+DigOut - 2024-10-25 18:30:01(INFO): dispose()
+DigOut - 2024-10-25 18:30:01(INFO): EIXT GAME
+
+DigOut - 2024-10-25 18:53:54(INFO): create()
+DigOut - 2024-10-25 18:54:30(INFO): Open new game screen
+DigOut - 2024-10-25 18:54:33(INFO): [GAME_ID: 82c5e989-44af-4a8b-b0be-755750f1d8a8] Generate new ID for new Game: 82c5e989-44af-4a8b-b0be-755750f1d8a8
+DigOut - 2024-10-25 18:54:33(INFO): [GAME_ID: 82c5e989-44af-4a8b-b0be-755750f1d8a8] Create New Game
+DigOut - 2024-10-25 18:55:35(INFO): pause()
+DigOut - 2024-10-25 19:15:18(INFO): resume()
+DigOut - 2024-10-25 19:15:20(INFO): pause()
+DigOut - 2024-10-25 19:15:20(INFO): dispose()
+DigOut - 2024-10-25 19:15:20(INFO): EIXT GAME
+
+DigOut - 2024-10-25 19:19:30(INFO): create()
+DigOut - 2024-10-25 19:19:35(INFO): Open new game screen
+DigOut - 2024-10-25 19:19:36(INFO): [GAME_ID: 4355d9f4-028c-4f7d-ac07-8db612111134] Generate new ID for new Game: 4355d9f4-028c-4f7d-ac07-8db612111134
+DigOut - 2024-10-25 19:19:36(INFO): [GAME_ID: 4355d9f4-028c-4f7d-ac07-8db612111134] Create New Game
+DigOut - 2024-10-25 19:19:56(INFO): pause()
+DigOut - 2024-10-25 19:19:56(INFO): dispose()
+DigOut - 2024-10-25 19:19:56(INFO): EIXT GAME
+
+DigOut - 2024-10-25 19:22:11(INFO): create()
+DigOut - 2024-10-25 19:22:25(INFO): Open new game screen
+DigOut - 2024-10-25 19:22:29(INFO): pause()
+DigOut - 2024-10-25 19:22:29(INFO): dispose()
+DigOut - 2024-10-25 19:22:29(INFO): EIXT GAME
+
+DigOut - 2024-10-25 19:38:51(INFO): create()
+DigOut - 2024-10-25 19:38:54(INFO): pause()
+DigOut - 2024-10-25 19:38:54(INFO): dispose()
+DigOut - 2024-10-25 19:38:54(INFO): EIXT GAME
+
+DigOut - 2024-10-25 19:40:25(INFO): create()
+DigOut - 2024-10-25 19:40:32(INFO): Open new game screen
+DigOut - 2024-10-25 19:40:35(INFO): [GAME_ID: f3c33b9b-146c-4ae8-9567-fd9c28f181fc] Generate new ID for new Game: f3c33b9b-146c-4ae8-9567-fd9c28f181fc
+DigOut - 2024-10-25 19:40:35(INFO): [GAME_ID: f3c33b9b-146c-4ae8-9567-fd9c28f181fc] Create New Game
+DigOut - 2024-10-25 19:40:49(INFO): pause()
+DigOut - 2024-10-25 19:40:49(INFO): dispose()
+DigOut - 2024-10-25 19:40:49(INFO): EIXT GAME
+
+DigOut - 2024-10-25 19:41:34(INFO): create()
+DigOut - 2024-10-25 19:41:40(INFO): Open new game screen
+DigOut - 2024-10-25 19:41:43(INFO): [GAME_ID: 2c932cfa-ce16-4246-8609-987995dc7f99] Generate new ID for new Game: 2c932cfa-ce16-4246-8609-987995dc7f99
+DigOut - 2024-10-25 19:41:43(INFO): [GAME_ID: 2c932cfa-ce16-4246-8609-987995dc7f99] Create New Game
+DigOut - 2024-10-25 19:41:55(INFO): pause()
+DigOut - 2024-10-25 19:41:55(INFO): dispose()
+DigOut - 2024-10-25 19:41:55(INFO): EIXT GAME
+
+DigOut - 2024-10-25 19:42:27(INFO): create()
+DigOut - 2024-10-25 19:42:32(INFO): Open new game screen
+DigOut - 2024-10-25 19:42:34(INFO): [GAME_ID: a473558e-a34e-493c-89ba-48a7e2eda9bd] Generate new ID for new Game: a473558e-a34e-493c-89ba-48a7e2eda9bd
+DigOut - 2024-10-25 19:42:34(INFO): [GAME_ID: a473558e-a34e-493c-89ba-48a7e2eda9bd] Create New Game
+DigOut - 2024-10-25 19:42:48(INFO): pause()
+DigOut - 2024-10-25 19:42:48(INFO): dispose()
+DigOut - 2024-10-25 19:42:48(INFO): EIXT GAME
+
+DigOut - 2024-10-25 19:44:47(INFO): create()
+DigOut - 2024-10-25 19:44:52(INFO): Open new game screen
+DigOut - 2024-10-25 19:44:55(INFO): [GAME_ID: 7c2c9648-a087-4c5a-9113-7a5fd00724a1] Generate new ID for new Game: 7c2c9648-a087-4c5a-9113-7a5fd00724a1
+DigOut - 2024-10-25 19:44:55(INFO): [GAME_ID: 7c2c9648-a087-4c5a-9113-7a5fd00724a1] Create New Game
+DigOut - 2024-10-25 19:47:30(INFO): create()
+DigOut - 2024-10-25 19:47:36(INFO): Open new game screen
+DigOut - 2024-10-25 19:47:37(INFO): [GAME_ID: 32131d1d-cf90-4577-a54e-5c5ff7032ea0] Generate new ID for new Game: 32131d1d-cf90-4577-a54e-5c5ff7032ea0
+DigOut - 2024-10-25 19:47:37(INFO): [GAME_ID: 32131d1d-cf90-4577-a54e-5c5ff7032ea0] Create New Game
+DigOut - 2024-10-25 19:48:37(INFO): create()
+DigOut - 2024-10-25 19:48:44(INFO): Open new game screen
+DigOut - 2024-10-25 19:48:47(INFO): [GAME_ID: 8dcbb65c-c264-414e-8be9-2a034e1998fc] Generate new ID for new Game: 8dcbb65c-c264-414e-8be9-2a034e1998fc
+DigOut - 2024-10-25 19:48:47(INFO): [GAME_ID: 8dcbb65c-c264-414e-8be9-2a034e1998fc] Create New Game
+DigOut - 2024-10-25 19:58:25(INFO): create()
+DigOut - 2024-10-25 19:58:31(INFO): Open new game screen
+DigOut - 2024-10-25 19:58:32(INFO): [GAME_ID: f854fb9c-3d56-460e-9f58-f8012ea362a4] Generate new ID for new Game: f854fb9c-3d56-460e-9f58-f8012ea362a4
+DigOut - 2024-10-25 19:58:32(INFO): [GAME_ID: f854fb9c-3d56-460e-9f58-f8012ea362a4] Create New Game
+DigOut - 2024-10-25 20:01:22(INFO): create()
+DigOut - 2024-10-25 20:01:28(INFO): Open new game screen
+DigOut - 2024-10-25 20:01:30(INFO): [GAME_ID: a54f8bed-64ec-4768-a4ea-6bbaedbec54c] Generate new ID for new Game: a54f8bed-64ec-4768-a4ea-6bbaedbec54c
+DigOut - 2024-10-25 20:01:30(INFO): [GAME_ID: a54f8bed-64ec-4768-a4ea-6bbaedbec54c] Create New Game
+DigOut - 2024-10-25 20:03:44(INFO): pause()
+DigOut - 2024-10-25 20:04:06(INFO): create()
+DigOut - 2024-10-25 20:04:11(INFO): Open new game screen
+DigOut - 2024-10-25 20:04:13(INFO): [GAME_ID: c340462b-8318-4a26-bd93-ef63e0b4956c] Generate new ID for new Game: c340462b-8318-4a26-bd93-ef63e0b4956c
+DigOut - 2024-10-25 20:04:13(INFO): [GAME_ID: c340462b-8318-4a26-bd93-ef63e0b4956c] Create New Game
+DigOut - 2024-10-25 20:04:34(INFO): pause()
+DigOut - 2024-10-25 20:04:34(INFO): dispose()
+DigOut - 2024-10-25 20:04:34(INFO): EIXT GAME
+
+DigOut - 2024-10-25 20:06:06(INFO): create()
+DigOut - 2024-10-25 20:06:11(INFO): pause()
+DigOut - 2024-10-25 20:06:11(INFO): dispose()
+DigOut - 2024-10-25 20:06:11(INFO): EIXT GAME
+
+DigOut - 2024-10-25 20:06:37(INFO): create()
+DigOut - 2024-10-25 20:06:43(INFO): Open new game screen
+DigOut - 2024-10-25 20:06:44(INFO): [GAME_ID: d7cce1fa-20ef-47c9-ab57-c456dd24e9db] Generate new ID for new Game: d7cce1fa-20ef-47c9-ab57-c456dd24e9db
+DigOut - 2024-10-25 20:06:44(INFO): [GAME_ID: d7cce1fa-20ef-47c9-ab57-c456dd24e9db] Create New Game
+DigOut - 2024-10-25 20:15:00(INFO): create()
+DigOut - 2024-10-25 20:15:05(INFO): Open new game screen
+DigOut - 2024-10-25 20:15:07(INFO): [GAME_ID: 458235a8-7dab-4c7c-8f5d-07d04236f764] Generate new ID for new Game: 458235a8-7dab-4c7c-8f5d-07d04236f764
+DigOut - 2024-10-25 20:15:07(INFO): [GAME_ID: 458235a8-7dab-4c7c-8f5d-07d04236f764] Create New Game
+DigOut - 2024-10-25 20:15:42(INFO): pause()
+DigOut - 2024-10-25 20:15:42(INFO): dispose()
+DigOut - 2024-10-25 20:15:42(INFO): EIXT GAME
+
+DigOut - 2024-10-25 20:19:39(INFO): create()
+DigOut - 2024-10-25 20:19:44(INFO): Open new game screen
+DigOut - 2024-10-25 20:19:45(INFO): [GAME_ID: a534ca67-88ca-4352-b113-b5c57a7c7ec2] Generate new ID for new Game: a534ca67-88ca-4352-b113-b5c57a7c7ec2
+DigOut - 2024-10-25 20:19:45(INFO): [GAME_ID: a534ca67-88ca-4352-b113-b5c57a7c7ec2] Create New Game
+DigOut - 2024-10-25 20:19:57(INFO): pause()
+DigOut - 2024-10-25 20:20:00(INFO): resume()
+DigOut - 2024-10-25 20:20:14(INFO): pause()
+DigOut - 2024-10-25 20:21:11(INFO): resume()
+DigOut - 2024-10-25 20:21:12(INFO): pause()
+DigOut - 2024-10-25 20:21:12(INFO): dispose()
+DigOut - 2024-10-25 20:21:12(INFO): EIXT GAME
+
+DigOut - 2024-10-25 20:22:42(INFO): create()
+DigOut - 2024-10-25 20:22:48(INFO): Open new game screen
+DigOut - 2024-10-25 20:22:49(INFO): [GAME_ID: 2a10bba9-9c0d-4895-ac97-d20789298b3e] Generate new ID for new Game: 2a10bba9-9c0d-4895-ac97-d20789298b3e
+DigOut - 2024-10-25 20:22:49(INFO): [GAME_ID: 2a10bba9-9c0d-4895-ac97-d20789298b3e] Create New Game
+DigOut - 2024-10-25 20:23:01(INFO): pause()
+DigOut - 2024-10-25 20:23:01(INFO): dispose()
+DigOut - 2024-10-25 20:23:01(INFO): EIXT GAME
+
+DigOut - 2024-10-25 20:26:42(INFO): create()
+DigOut - 2024-10-25 20:26:48(INFO): Open new game screen
+DigOut - 2024-10-25 20:26:51(INFO): [GAME_ID: ace7c4ea-4d86-4f6e-80c7-1d0555976a54] Generate new ID for new Game: ace7c4ea-4d86-4f6e-80c7-1d0555976a54
+DigOut - 2024-10-25 20:26:51(INFO): [GAME_ID: ace7c4ea-4d86-4f6e-80c7-1d0555976a54] Create New Game
+DigOut - 2024-10-25 20:26:59(INFO): pause()
+DigOut - 2024-10-25 20:26:59(INFO): dispose()
+DigOut - 2024-10-25 20:26:59(INFO): EIXT GAME
+
+DigOut - 2024-10-25 20:27:50(INFO): create()
+DigOut - 2024-10-25 20:27:56(INFO): Open new game screen
+DigOut - 2024-10-25 20:27:57(INFO): [GAME_ID: 53c3b732-b3f2-45cf-919d-23983af8ed96] Generate new ID for new Game: 53c3b732-b3f2-45cf-919d-23983af8ed96
+DigOut - 2024-10-25 20:27:57(INFO): [GAME_ID: 53c3b732-b3f2-45cf-919d-23983af8ed96] Create New Game
+DigOut - 2024-10-25 20:28:29(INFO): pause()
+DigOut - 2024-10-25 20:28:29(INFO): dispose()
+DigOut - 2024-10-25 20:28:29(INFO): EIXT GAME
+
+DigOut - 2024-10-25 20:28:54(INFO): create()
+DigOut - 2024-10-25 20:28:59(INFO): Open new game screen
+DigOut - 2024-10-25 20:29:01(INFO): [GAME_ID: c51b7b4f-1918-468b-8965-3dd7c03f2d9c] Generate new ID for new Game: c51b7b4f-1918-468b-8965-3dd7c03f2d9c
+DigOut - 2024-10-25 20:29:01(INFO): [GAME_ID: c51b7b4f-1918-468b-8965-3dd7c03f2d9c] Create New Game
+DigOut - 2024-10-25 20:29:10(INFO): pause()
+DigOut - 2024-10-25 20:29:10(INFO): dispose()
+DigOut - 2024-10-25 20:29:10(INFO): EIXT GAME
+
+DigOut - 2024-10-25 20:32:52(INFO): create()
+DigOut - 2024-10-25 20:32:58(INFO): Open new game screen
+DigOut - 2024-10-25 20:32:59(INFO): [GAME_ID: 93f13ba8-bafb-48ec-89ec-cc1c4c50f74c] Generate new ID for new Game: 93f13ba8-bafb-48ec-89ec-cc1c4c50f74c
+DigOut - 2024-10-25 20:32:59(INFO): [GAME_ID: 93f13ba8-bafb-48ec-89ec-cc1c4c50f74c] Create New Game
+DigOut - 2024-10-25 20:33:06(INFO): pause()
+DigOut - 2024-10-25 20:33:06(INFO): dispose()
+DigOut - 2024-10-25 20:33:06(INFO): EIXT GAME
+
+DigOut - 2024-10-25 20:36:23(INFO): create()
+DigOut - 2024-10-25 20:36:30(INFO): pause()
+DigOut - 2024-10-25 20:36:32(INFO): resume()
+DigOut - 2024-10-25 20:36:33(INFO): Open new game screen
+DigOut - 2024-10-25 20:36:35(INFO): [GAME_ID: ce0e0027-4e86-4aaf-86aa-60f5cc465622] Generate new ID for new Game: ce0e0027-4e86-4aaf-86aa-60f5cc465622
+DigOut - 2024-10-25 20:36:35(INFO): [GAME_ID: ce0e0027-4e86-4aaf-86aa-60f5cc465622] Create New Game
+DigOut - 2024-10-25 20:36:37(INFO): pause()
+DigOut - 2024-10-25 20:38:52(INFO): create()
+DigOut - 2024-10-25 20:38:57(INFO): Open new game screen
+DigOut - 2024-10-25 20:38:59(INFO): [GAME_ID: 197b9eec-6e17-4677-86e3-4624b051d092] Generate new ID for new Game: 197b9eec-6e17-4677-86e3-4624b051d092
+DigOut - 2024-10-25 20:38:59(INFO): [GAME_ID: 197b9eec-6e17-4677-86e3-4624b051d092] Create New Game
+DigOut - 2024-10-25 20:39:08(INFO): pause()
+DigOut - 2024-10-25 20:39:08(INFO): dispose()
+DigOut - 2024-10-25 20:39:08(INFO): EIXT GAME
+
+DigOut - 2024-10-25 20:45:37(INFO): create()
+DigOut - 2024-10-25 20:45:42(INFO): Open new game screen
+DigOut - 2024-10-25 20:45:44(INFO): [GAME_ID: a4294b0b-b0d8-46cc-8bdc-ebf55c95ba28] Generate new ID for new Game: a4294b0b-b0d8-46cc-8bdc-ebf55c95ba28
+DigOut - 2024-10-25 20:45:44(INFO): [GAME_ID: a4294b0b-b0d8-46cc-8bdc-ebf55c95ba28] Create New Game
+DigOut - 2024-10-25 20:46:00(INFO): pause()
+DigOut - 2024-10-25 20:46:00(INFO): dispose()
+DigOut - 2024-10-25 20:46:00(INFO): EIXT GAME
+
+DigOut - 2024-10-25 21:25:49(INFO): create()
+DigOut - 2024-10-25 21:25:55(INFO): Open new game screen
+DigOut - 2024-10-25 21:25:57(INFO): [GAME_ID: 2c088710-c94b-4a58-9cbc-38222b1afbe2] Generate new ID for new Game: 2c088710-c94b-4a58-9cbc-38222b1afbe2
+DigOut - 2024-10-25 21:25:57(INFO): [GAME_ID: 2c088710-c94b-4a58-9cbc-38222b1afbe2] Create New Game
+DigOut - 2024-10-25 21:26:20(INFO): pause()
+DigOut - 2024-10-25 21:26:20(INFO): dispose()
+DigOut - 2024-10-25 21:26:20(INFO): EIXT GAME
+
+DigOut - 2024-10-25 21:27:51(INFO): create()
+DigOut - 2024-10-25 21:27:57(INFO): Open new game screen
+DigOut - 2024-10-25 21:27:59(INFO): [GAME_ID: 3f3f4043-f355-42a0-b7a5-0d3ef5cd11a6] Generate new ID for new Game: 3f3f4043-f355-42a0-b7a5-0d3ef5cd11a6
+DigOut - 2024-10-25 21:27:59(INFO): [GAME_ID: 3f3f4043-f355-42a0-b7a5-0d3ef5cd11a6] Create New Game
+DigOut - 2024-10-25 21:29:06(INFO): create()
+DigOut - 2024-10-25 21:29:11(INFO): Open new game screen
+DigOut - 2024-10-25 21:29:13(INFO): [GAME_ID: 03e940d5-7767-4c9a-a125-d654b7fd19b5] Generate new ID for new Game: 03e940d5-7767-4c9a-a125-d654b7fd19b5
+DigOut - 2024-10-25 21:29:13(INFO): [GAME_ID: 03e940d5-7767-4c9a-a125-d654b7fd19b5] Create New Game
+DigOut - 2024-10-25 21:29:24(INFO): pause()
+DigOut - 2024-10-25 21:29:24(INFO): dispose()
+DigOut - 2024-10-25 21:29:24(INFO): EIXT GAME
+
+DigOut - 2024-10-25 21:30:44(INFO): create()
+DigOut - 2024-10-25 21:30:49(INFO): Open new game screen
+DigOut - 2024-10-25 21:30:51(INFO): [GAME_ID: 23ba082b-699e-4cd8-be66-47aae20df344] Generate new ID for new Game: 23ba082b-699e-4cd8-be66-47aae20df344
+DigOut - 2024-10-25 21:30:51(INFO): [GAME_ID: 23ba082b-699e-4cd8-be66-47aae20df344] Create New Game
+DigOut - 2024-10-25 21:31:14(INFO): pause()
+DigOut - 2024-10-25 21:31:14(INFO): dispose()
+DigOut - 2024-10-25 21:31:14(INFO): EIXT GAME
+
+DigOut - 2024-10-25 21:34:42(INFO): create()
+DigOut - 2024-10-25 21:34:49(INFO): Open new game screen
+DigOut - 2024-10-25 21:34:50(INFO): [GAME_ID: ddd99c10-f0e8-44f1-ac73-bc9222fe6f02] Generate new ID for new Game: ddd99c10-f0e8-44f1-ac73-bc9222fe6f02
+DigOut - 2024-10-25 21:34:50(INFO): [GAME_ID: ddd99c10-f0e8-44f1-ac73-bc9222fe6f02] Create New Game
+DigOut - 2024-10-25 21:35:08(INFO): pause()
+DigOut - 2024-10-25 21:35:12(INFO): resume()
+DigOut - 2024-10-25 21:35:57(INFO): pause()
+DigOut - 2024-10-25 21:35:57(INFO): dispose()
+DigOut - 2024-10-25 21:35:57(INFO): EIXT GAME
+
+DigOut - 2024-10-25 21:36:23(INFO): create()
+DigOut - 2024-10-25 21:36:29(INFO): Open new game screen
+DigOut - 2024-10-25 21:36:30(INFO): [GAME_ID: 3f4d967b-e72f-456c-b628-3bf920d70b4d] Generate new ID for new Game: 3f4d967b-e72f-456c-b628-3bf920d70b4d
+DigOut - 2024-10-25 21:36:30(INFO): [GAME_ID: 3f4d967b-e72f-456c-b628-3bf920d70b4d] Create New Game
+DigOut - 2024-10-25 21:36:38(INFO): pause()
+DigOut - 2024-10-25 21:36:38(INFO): dispose()
+DigOut - 2024-10-25 21:36:38(INFO): EIXT GAME
+
+DigOut - 2024-10-25 21:37:53(INFO): create()
+DigOut - 2024-10-25 21:37:59(INFO): Open new game screen
+DigOut - 2024-10-25 21:38:01(INFO): [GAME_ID: f1485fee-5c41-4171-9e34-dd690b360524] Generate new ID for new Game: f1485fee-5c41-4171-9e34-dd690b360524
+DigOut - 2024-10-25 21:38:01(INFO): [GAME_ID: f1485fee-5c41-4171-9e34-dd690b360524] Create New Game
+DigOut - 2024-10-25 21:39:19(INFO): pause()
+DigOut - 2024-10-25 21:39:24(INFO): resume()
+DigOut - 2024-10-25 21:39:29(INFO): pause()
+DigOut - 2024-10-25 21:40:23(INFO): create()
+DigOut - 2024-10-25 21:40:28(INFO): Open new game screen
+DigOut - 2024-10-25 21:40:30(INFO): [GAME_ID: 945f8896-5753-46dc-82c0-bf8cebe29bbb] Generate new ID for new Game: 945f8896-5753-46dc-82c0-bf8cebe29bbb
+DigOut - 2024-10-25 21:40:30(INFO): [GAME_ID: 945f8896-5753-46dc-82c0-bf8cebe29bbb] Create New Game
+DigOut - 2024-10-25 21:40:43(INFO): pause()
+DigOut - 2024-10-25 21:40:46(INFO): resume()
+DigOut - 2024-10-25 21:40:57(INFO): pause()
+DigOut - 2024-10-25 21:44:07(INFO): resume()
+DigOut - 2024-10-25 21:52:51(INFO): create()
+DigOut - 2024-10-25 21:52:56(INFO): Open new game screen
+DigOut - 2024-10-25 21:52:58(INFO): [GAME_ID: 04ca6fe7-6215-4627-aa00-9ce7da947230] Generate new ID for new Game: 04ca6fe7-6215-4627-aa00-9ce7da947230
+DigOut - 2024-10-25 21:52:58(INFO): [GAME_ID: 04ca6fe7-6215-4627-aa00-9ce7da947230] Create New Game
+DigOut - 2024-10-25 21:53:49(INFO): pause()
+DigOut - 2024-10-25 21:53:49(INFO): dispose()
+DigOut - 2024-10-25 21:53:49(INFO): EIXT GAME
+
+DigOut - 2024-10-25 21:55:55(INFO): create()
+DigOut - 2024-10-25 21:56:01(INFO): Open new game screen
+DigOut - 2024-10-25 21:56:03(INFO): [GAME_ID: ef57a9bb-6f7c-479d-8c90-4ffa972bae44] Generate new ID for new Game: ef57a9bb-6f7c-479d-8c90-4ffa972bae44
+DigOut - 2024-10-25 21:56:03(INFO): [GAME_ID: ef57a9bb-6f7c-479d-8c90-4ffa972bae44] Create New Game
+DigOut - 2024-10-25 21:57:46(INFO): pause()
+DigOut - 2024-10-25 21:57:46(INFO): dispose()
+DigOut - 2024-10-25 21:57:46(INFO): EIXT GAME
+
+DigOut - 2024-10-25 21:58:26(INFO): create()
+DigOut - 2024-10-25 21:58:31(INFO): Open new game screen
+DigOut - 2024-10-25 21:58:33(INFO): [GAME_ID: 91b21ba3-a31c-4e80-bef4-f3e34a142795] Generate new ID for new Game: 91b21ba3-a31c-4e80-bef4-f3e34a142795
+DigOut - 2024-10-25 21:58:33(INFO): [GAME_ID: 91b21ba3-a31c-4e80-bef4-f3e34a142795] Create New Game
+DigOut - 2024-10-25 21:59:03(INFO): pause()
+DigOut - 2024-10-25 21:59:03(INFO): dispose()
+DigOut - 2024-10-25 21:59:03(INFO): EIXT GAME
+
+DigOut - 2024-10-25 22:00:02(INFO): create()
+DigOut - 2024-10-25 22:00:07(INFO): Open new game screen
+DigOut - 2024-10-25 22:00:08(INFO): [GAME_ID: c6c99f9c-10aa-4227-899b-26cd9f1e5521] Generate new ID for new Game: c6c99f9c-10aa-4227-899b-26cd9f1e5521
+DigOut - 2024-10-25 22:00:08(INFO): [GAME_ID: c6c99f9c-10aa-4227-899b-26cd9f1e5521] Create New Game
+DigOut - 2024-10-25 22:00:19(INFO): pause()
+DigOut - 2024-10-25 22:00:19(INFO): dispose()
+DigOut - 2024-10-25 22:00:19(INFO): EIXT GAME
+
+DigOut - 2024-10-25 22:01:06(INFO): create()
+DigOut - 2024-10-25 22:01:12(INFO): Open new game screen
+DigOut - 2024-10-25 22:01:13(INFO): [GAME_ID: 7d9ca1c2-ca7f-4739-9e51-d42803c5e107] Generate new ID for new Game: 7d9ca1c2-ca7f-4739-9e51-d42803c5e107
+DigOut - 2024-10-25 22:01:13(INFO): [GAME_ID: 7d9ca1c2-ca7f-4739-9e51-d42803c5e107] Create New Game
+DigOut - 2024-10-25 22:01:35(INFO): pause()
+DigOut - 2024-10-25 22:01:35(INFO): dispose()
+DigOut - 2024-10-25 22:01:35(INFO): EIXT GAME
+
+DigOut - 2024-10-25 22:07:37(INFO): create()
+DigOut - 2024-10-25 22:07:42(INFO): Open new game screen
+DigOut - 2024-10-25 22:07:43(INFO): [GAME_ID: 52099e63-fa04-4ea0-a05f-f0732a3713c2] Generate new ID for new Game: 52099e63-fa04-4ea0-a05f-f0732a3713c2
+DigOut - 2024-10-25 22:07:43(INFO): [GAME_ID: 52099e63-fa04-4ea0-a05f-f0732a3713c2] Create New Game
+DigOut - 2024-10-25 22:07:56(INFO): pause()
+DigOut - 2024-10-25 22:07:56(INFO): dispose()
+DigOut - 2024-10-25 22:07:56(INFO): EIXT GAME
+
+DigOut - 2024-10-25 22:11:01(INFO): create()
+DigOut - 2024-10-25 22:11:06(INFO): Open new game screen
+DigOut - 2024-10-25 22:11:08(INFO): [GAME_ID: 310cabcb-17d9-43c9-9695-726f2e6f2286] Generate new ID for new Game: 310cabcb-17d9-43c9-9695-726f2e6f2286
+DigOut - 2024-10-25 22:11:08(INFO): [GAME_ID: 310cabcb-17d9-43c9-9695-726f2e6f2286] Create New Game
+DigOut - 2024-10-25 22:11:14(INFO): pause()
+DigOut - 2024-10-25 22:39:28(INFO): create()
+DigOut - 2024-10-25 22:39:34(INFO): pause()
+DigOut - 2024-10-25 22:39:34(INFO): dispose()
+DigOut - 2024-10-25 22:39:34(INFO): EIXT GAME
+
+DigOut - 2024-10-25 22:39:48(INFO): create()
+DigOut - 2024-10-25 22:39:53(INFO): Open new game screen
+DigOut - 2024-10-25 22:39:55(INFO): [GAME_ID: e8b910ae-249f-4dee-ac5b-21339066700a] Generate new ID for new Game: e8b910ae-249f-4dee-ac5b-21339066700a
+DigOut - 2024-10-25 22:39:55(INFO): [GAME_ID: e8b910ae-249f-4dee-ac5b-21339066700a] Create New Game
+DigOut - 2024-10-25 22:40:09(INFO): pause()
+DigOut - 2024-10-25 22:48:14(INFO): create()
+DigOut - 2024-10-25 22:48:19(INFO): Open new game screen
+DigOut - 2024-10-25 22:48:21(INFO): [GAME_ID: 138c1986-37ff-4056-b590-e3cb1f844a2f] Generate new ID for new Game: 138c1986-37ff-4056-b590-e3cb1f844a2f
+DigOut - 2024-10-25 22:48:21(INFO): [GAME_ID: 138c1986-37ff-4056-b590-e3cb1f844a2f] Create New Game
+DigOut - 2024-10-25 22:48:57(INFO): pause()
+DigOut - 2024-10-25 22:48:57(INFO): dispose()
+DigOut - 2024-10-25 22:48:57(INFO): EIXT GAME
+
+DigOut - 2024-10-25 22:49:04(INFO): create()
+DigOut - 2024-10-25 22:49:09(INFO): Open new game screen
+DigOut - 2024-10-25 22:49:10(INFO): [GAME_ID: 487251a2-9aea-487a-a5ef-e3fd7b268340] Generate new ID for new Game: 487251a2-9aea-487a-a5ef-e3fd7b268340
+DigOut - 2024-10-25 22:49:10(INFO): [GAME_ID: 487251a2-9aea-487a-a5ef-e3fd7b268340] Create New Game
+DigOut - 2024-10-25 22:49:46(INFO): pause()
+DigOut - 2024-10-25 22:49:46(INFO): dispose()
+DigOut - 2024-10-25 22:49:46(INFO): EIXT GAME
+
+DigOut - 2024-10-25 22:50:43(INFO): create()
+DigOut - 2024-10-25 22:50:48(INFO): pause()
+DigOut - 2024-10-25 22:50:48(INFO): create()
+DigOut - 2024-10-25 22:50:53(INFO): Open new game screen
+DigOut - 2024-10-25 22:50:54(INFO): [GAME_ID: e3f20aac-7fa1-4c42-9790-433c49e007eb] Generate new ID for new Game: e3f20aac-7fa1-4c42-9790-433c49e007eb
+DigOut - 2024-10-25 22:50:54(INFO): [GAME_ID: e3f20aac-7fa1-4c42-9790-433c49e007eb] Create New Game
+DigOut - 2024-10-25 22:51:16(INFO): pause()
+DigOut - 2024-10-25 22:51:16(INFO): dispose()
+DigOut - 2024-10-25 22:51:16(INFO): EIXT GAME
+
+DigOut - 2024-10-25 22:51:59(INFO): create()
+DigOut - 2024-10-25 22:52:04(INFO): Open new game screen
+DigOut - 2024-10-25 22:52:05(INFO): [GAME_ID: a2bdd80d-cd21-47ff-957b-ba9edc011388] Generate new ID for new Game: a2bdd80d-cd21-47ff-957b-ba9edc011388
+DigOut - 2024-10-25 22:52:05(INFO): [GAME_ID: a2bdd80d-cd21-47ff-957b-ba9edc011388] Create New Game
+DigOut - 2024-10-25 22:52:49(INFO): pause()
+DigOut - 2024-10-25 22:52:49(INFO): dispose()
+DigOut - 2024-10-25 22:52:49(INFO): EIXT GAME
+
+DigOut - 2024-10-25 22:53:10(INFO): create()
+DigOut - 2024-10-25 22:53:15(INFO): Open new game screen
+DigOut - 2024-10-25 22:53:16(INFO): [GAME_ID: 15d0a644-3340-4514-a361-4552890f599d] Generate new ID for new Game: 15d0a644-3340-4514-a361-4552890f599d
+DigOut - 2024-10-25 22:53:16(INFO): [GAME_ID: 15d0a644-3340-4514-a361-4552890f599d] Create New Game
+DigOut - 2024-10-25 22:54:03(INFO): pause()
+DigOut - 2024-10-25 22:54:03(INFO): dispose()
+DigOut - 2024-10-25 22:54:03(INFO): EIXT GAME
+
+DigOut - 2024-10-25 23:08:49(INFO): create()
+DigOut - 2024-10-25 23:08:54(INFO): Open new game screen
+DigOut - 2024-10-25 23:08:55(INFO): [GAME_ID: 862b1415-b4b2-4757-8c39-0619c6f2ee7c] Generate new ID for new Game: 862b1415-b4b2-4757-8c39-0619c6f2ee7c
+DigOut - 2024-10-25 23:08:55(INFO): [GAME_ID: 862b1415-b4b2-4757-8c39-0619c6f2ee7c] Create New Game
+DigOut - 2024-10-25 23:09:12(INFO): pause()
+DigOut - 2024-10-25 23:09:12(INFO): dispose()
+DigOut - 2024-10-25 23:09:12(INFO): EIXT GAME
+
+DigOut - 2024-10-25 23:16:31(INFO): create()
+DigOut - 2024-10-25 23:16:36(INFO): Open new game screen
+DigOut - 2024-10-25 23:16:37(INFO): [GAME_ID: 5e55bf50-1806-4828-9361-906f5721b8cb] Generate new ID for new Game: 5e55bf50-1806-4828-9361-906f5721b8cb
+DigOut - 2024-10-25 23:16:37(INFO): [GAME_ID: 5e55bf50-1806-4828-9361-906f5721b8cb] Create New Game
+DigOut - 2024-10-25 23:16:54(INFO): pause()
+DigOut - 2024-10-25 23:16:54(INFO): dispose()
+DigOut - 2024-10-25 23:16:54(INFO): EIXT GAME
+
+DigOut - 2024-10-25 23:23:53(INFO): create()
+DigOut - 2024-10-25 23:23:59(INFO): Open new game screen
+DigOut - 2024-10-25 23:24:01(INFO): [GAME_ID: 616df1b4-6fa4-452e-96e8-1590e1f2444e] Generate new ID for new Game: 616df1b4-6fa4-452e-96e8-1590e1f2444e
+DigOut - 2024-10-25 23:24:01(INFO): [GAME_ID: 616df1b4-6fa4-452e-96e8-1590e1f2444e] Create New Game
+DigOut - 2024-10-25 23:24:19(INFO): pause()
+DigOut - 2024-10-25 23:24:19(INFO): dispose()
+DigOut - 2024-10-25 23:24:19(INFO): EIXT GAME
+
+DigOut - 2024-10-25 23:29:36(INFO): create()
+DigOut - 2024-10-25 23:29:41(INFO): Open new game screen
+DigOut - 2024-10-25 23:29:43(INFO): [GAME_ID: 4596f930-cb83-49bc-841e-37baf1ee5258] Generate new ID for new Game: 4596f930-cb83-49bc-841e-37baf1ee5258
+DigOut - 2024-10-25 23:29:43(INFO): [GAME_ID: 4596f930-cb83-49bc-841e-37baf1ee5258] Create New Game
+DigOut - 2024-10-25 23:30:14(INFO): pause()
+DigOut - 2024-10-25 23:30:14(INFO): dispose()
+DigOut - 2024-10-25 23:30:14(INFO): EIXT GAME
+
+DigOut - 2024-10-25 23:30:35(INFO): create()
+DigOut - 2024-10-25 23:30:40(INFO): Open new game screen
+DigOut - 2024-10-25 23:30:42(INFO): [GAME_ID: 4e4fa0b0-822c-4376-9a68-8f414fc8e6ba] Generate new ID for new Game: 4e4fa0b0-822c-4376-9a68-8f414fc8e6ba
+DigOut - 2024-10-25 23:30:42(INFO): [GAME_ID: 4e4fa0b0-822c-4376-9a68-8f414fc8e6ba] Create New Game
+DigOut - 2024-10-25 23:30:53(INFO): pause()
+DigOut - 2024-10-25 23:30:53(INFO): dispose()
+DigOut - 2024-10-25 23:30:53(INFO): EIXT GAME
+
+DigOut - 2024-10-25 23:46:11(INFO): create()
+DigOut - 2024-10-25 23:46:16(INFO): Open new game screen
+DigOut - 2024-10-25 23:46:17(INFO): [GAME_ID: ad527ed7-bd28-4398-b4d1-e7ee11088029] Generate new ID for new Game: ad527ed7-bd28-4398-b4d1-e7ee11088029
+DigOut - 2024-10-25 23:46:17(INFO): [GAME_ID: ad527ed7-bd28-4398-b4d1-e7ee11088029] Create New Game
+DigOut - 2024-10-25 23:46:37(INFO): pause()
+DigOut - 2024-10-25 23:46:39(INFO): resume()
+DigOut - 2024-10-25 23:46:40(INFO): pause()
+DigOut - 2024-10-25 23:46:40(INFO): dispose()
+DigOut - 2024-10-25 23:46:40(INFO): EIXT GAME
+
+DigOut - 2024-10-26 01:09:29(INFO): create()
+DigOut - 2024-10-26 01:09:34(INFO): Open new game screen
+DigOut - 2024-10-26 01:09:37(INFO): [GAME_ID: 6187f016-5bdd-4693-990f-d0d2e635dbc2] Generate new ID for new Game: 6187f016-5bdd-4693-990f-d0d2e635dbc2
+DigOut - 2024-10-26 01:09:37(INFO): [GAME_ID: 6187f016-5bdd-4693-990f-d0d2e635dbc2] Create New Game
+DigOut - 2024-10-26 01:09:55(INFO): pause()
+DigOut - 2024-10-26 01:09:55(INFO): dispose()
+DigOut - 2024-10-26 01:09:55(INFO): EIXT GAME
+
+DigOut - 2024-10-26 01:10:26(INFO): create()
+DigOut - 2024-10-26 01:10:36(INFO): Open new game screen
+DigOut - 2024-10-26 01:10:37(INFO): [GAME_ID: 609dc23f-6148-484d-95d7-c21da0e99d4c] Generate new ID for new Game: 609dc23f-6148-484d-95d7-c21da0e99d4c
+DigOut - 2024-10-26 01:10:37(INFO): [GAME_ID: 609dc23f-6148-484d-95d7-c21da0e99d4c] Create New Game
+DigOut - 2024-10-26 01:10:49(INFO): pause()
+DigOut - 2024-10-26 01:10:49(INFO): dispose()
+DigOut - 2024-10-26 01:10:49(INFO): EIXT GAME
+
+DigOut - 2024-10-26 01:11:06(INFO): create()
+DigOut - 2024-10-26 01:11:12(INFO): Open new game screen
+DigOut - 2024-10-26 01:11:13(INFO): [GAME_ID: 4d1dd9e5-6259-4a43-8cd9-e275872722f3] Generate new ID for new Game: 4d1dd9e5-6259-4a43-8cd9-e275872722f3
+DigOut - 2024-10-26 01:11:13(INFO): [GAME_ID: 4d1dd9e5-6259-4a43-8cd9-e275872722f3] Create New Game
+DigOut - 2024-10-26 01:11:40(INFO): pause()
+DigOut - 2024-10-26 01:30:17(INFO): create()
+DigOut - 2024-10-26 01:30:22(INFO): Open new game screen
+DigOut - 2024-10-26 01:30:23(INFO): [GAME_ID: eaac0591-3add-41e5-b1b5-e8e3f5db6810] Generate new ID for new Game: eaac0591-3add-41e5-b1b5-e8e3f5db6810
+DigOut - 2024-10-26 01:30:23(INFO): [GAME_ID: eaac0591-3add-41e5-b1b5-e8e3f5db6810] Create New Game
+DigOut - 2024-10-26 01:31:38(INFO): pause()
+DigOut - 2024-10-26 01:31:38(INFO): dispose()
+DigOut - 2024-10-26 01:31:38(INFO): EIXT GAME
 

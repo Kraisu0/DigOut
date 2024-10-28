@@ -28,7 +28,8 @@ public class Constants {
     public enum Resources{
         CONSTRUCTION_RESOURCES,
         FOOD,
-        TOOLS;
+        TOOLS,
+        ELECTRICITY;
     }
 
     public enum Equipment{

@@ -86,4 +86,13 @@ public class Game {
     public void setResourceManager(ResourceManager resourceManager) {
         this.resourceManager = resourceManager;
     }
+
+
+    //TODO zrobić volume
+    public float getVolume() {
+        return 0;
+    }
+
+    public void setVolume(float value) {
+    }
 }
