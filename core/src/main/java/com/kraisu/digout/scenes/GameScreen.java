@@ -90,7 +90,7 @@ public class GameScreen implements Screen {
         survivorRowBottomTable = new Table();
         survivorsTable = new Table();
         ScrollPane scrollPane = new ScrollPane(survivorsTable);
-        scrollPane.setScrollingDisabled(false, false);
+        scrollPane.setScrollingDisabled(false, true);
 
         miniMenuTable = new Table();
         menuTable = new Table();
@@ -316,12 +316,18 @@ public class GameScreen implements Screen {
 
         //survivors bar
         float survivorBoxWidth = 150f;
-        float survivorBoxHeight = 80f;
+        float survivorBoxHeight = Gdx.graphics.getHeight()/14f;
 
         survivorsTable.align(Align.left | Align.top);
-        survivorRowBottomTable.align(Align.left);
-        survivorRowTopTable.align(Align.left);
 
+        game.getSurvivorManager().addSurvivor(Generators.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
+        game.getSurvivorManager().addSurvivor(Generators.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
+        game.getSurvivorManager().addSurvivor(Generators.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
+        game.getSurvivorManager().addSurvivor(Generators.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
+        game.getSurvivorManager().addSurvivor(Generators.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
+        game.getSurvivorManager().addSurvivor(Generators.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
+        game.getSurvivorManager().addSurvivor(Generators.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
+        game.getSurvivorManager().addSurvivor(Generators.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
         game.getSurvivorManager().addSurvivor(Generators.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
         game.getSurvivorManager().addSurvivor(Generators.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
         game.getSurvivorManager().addSurvivor(Generators.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
@@ -350,28 +356,33 @@ public class GameScreen implements Screen {
 
             // Tworzymy nową tabelę dla ocalałego
             Table survivorEntry = new Table();
+            Table survivorEntryNames = new Table();
+            Table survivorEntryFull = new Table();
 
             Image icon = new Image(new TextureRegionDrawable(new TextureRegion(survivor.getImg())));
-            survivorEntry.add(icon).size(64, 64).padRight(10);
+            survivorEntry.add(icon).size(64, 64).padLeft(20);
 
-            Label survivorNameLabel = new Label(survivor.getName(), DigOutGame.skin.get("mediumFont", Label.LabelStyle.class));
-            survivorEntry.add(survivorNameLabel).padRight(10);
+            Label survivorNameLabel = new Label(survivor.getName(), DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
+            survivorEntryNames.add(survivorNameLabel).size(86, 48).padRight(5).center().row();
 
             Image energyIcon = new Image(survivor.getEnergyIconDrawable());
-            survivorEntry.row();
-            survivorEntry.add(energyIcon).colspan(2).size(64, 16).left();
+            survivorEntryNames.add(energyIcon).size(64, 16).left().padBottom(3);
 
-            // Dodaj ocalałego do górnego wiersza
-            if (i % 2 == 0) { // Co drugi ocalały do górnego wiersza
-                survivorRowTopTable.add(survivorEntry).size(survivorBoxWidth, survivorBoxHeight).pad(3);
-            } else { // Pozostałe do dolnego wiersza
-                survivorRowBottomTable.add(survivorEntry).size(survivorBoxWidth, survivorBoxHeight).padLeft(3).padRight(3);
+            if(survivorCount % 2 == 1 && survivorCount / 2 == i-1){
+               survivorsTable.row();
             }
-        }
 
-        // Dodaj tabele górnego i dolnego wiersza do głównej tabeli
-        survivorsTable.add(survivorRowTopTable).row(); // Dodaj górny wiersz
-        survivorsTable.add(survivorRowBottomTable); // Dodaj dolny wiersz
+            if(survivorCount % 2 == 0 && survivorCount / 2 == i){
+                survivorsTable.row();
+            }
+
+            survivorEntryFull.setBackground(DigOutGame.skin.getDrawable("box.grey"));
+            survivorEntryFull.add(survivorEntry);
+            survivorEntryFull.add(survivorEntryNames);
+
+            survivorsTable.add(survivorEntryFull).size(survivorBoxWidth, survivorBoxHeight);
+
+        }
 
 
         //mini menu

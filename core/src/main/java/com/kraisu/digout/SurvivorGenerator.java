@@ -14,10 +14,12 @@ import java.util.UUID;
 
 import com.kraisu.digout.help.Constants;
 import com.kraisu.digout.loaders.JsonLoader;
+import com.kraisu.digout.logs.DateLogs;
 import com.kraisu.digout.survivor.Survivor;
 
 import static com.kraisu.digout.genertor.Generators.generateNewSurvivors;
 import static com.kraisu.digout.genertor.Generators.generateRandomSurvivor;
+import static com.kraisu.digout.logs.DateLogs.logs;
 
 public class SurvivorGenerator extends ApplicationAdapter {
     private SpriteBatch batch;
@@ -89,6 +91,8 @@ public class SurvivorGenerator extends ApplicationAdapter {
             profileInfo = survivor.getProfileInformation();
             profession = survivor.getProfession();
             System.out.println(survivor.toString());
+
+            logs(DateLogs.LogType.INFO, staticUUID, "create new Survivor: " + name  + ", age: " + age + ", prof. info: " + profileInfo + " , profession: ", null);
         } else {
             System.out.println("Survivor not found");
         }

@@ -1,7 +1,9 @@
 package com.kraisu.digout.genertor;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.kraisu.digout.game.Game;
 import com.kraisu.digout.help.Constants;
+import com.kraisu.digout.logs.DateLogs;
 import com.kraisu.digout.rooms.BaseRoom;
 import com.kraisu.digout.rooms.Coordinate;
 import com.kraisu.digout.rooms.ExitRoom;
@@ -20,6 +22,7 @@ import static com.kraisu.digout.help.ConstantsGenerator.JsonData.names;
 import static com.kraisu.digout.help.ConstantsGenerator.ProfessionDropPercentages.*;
 import static com.kraisu.digout.help.ConstantsGenerator.SurvivorsDropPercentages.*;
 import static com.kraisu.digout.help.ConstantsGenerator.ToolsDropPercentages.*;
+import static com.kraisu.digout.logs.DateLogs.logs;
 
 public class Generators {
     static long seed = System.nanoTime();
@@ -117,9 +120,10 @@ public class Generators {
    //TODO DOROBIĆ FUNKCJE BY NIE POWTARZAŁY SIE IMIONA
 
 //    private Map<String, String> generateNameForSurvivor(UUID gameID) {
+//        //Game game = game.getGameId();
 //        while(true) {
-//            String name = generateName();
-//            if(getGameById(gameID).getSurvivors.stream()
+//            String name = getRandomName(names);
+//            if(game..getSurvivors.stream()
 //                .anyMatch(() -> survivor.getName().equals(name))) {
 //                return name;
 //            }
@@ -132,7 +136,7 @@ public class Generators {
 //      //      value - opis
 //    }
 
-
+    //TODO przeneiść do survivor managera
     public static Survivor generateNewSurvivors(UUID id, Constants.Survivors survivorType){
         Survivor temp = null;
 
@@ -151,6 +155,10 @@ public class Generators {
                 names,
                 descriptions
             );
+
+        logs(DateLogs.LogType.INFO, id, "create new Survivor. NAME: " + temp.getName() + ", ENERGY: "
+            + temp.getEnergy() + ", SURVIVOR TYPE: " + survivorType + ", PI: " + temp.getProfileInformation() +
+            ", AGE: " + temp.getAge(), null);
 
         return temp;
     }
