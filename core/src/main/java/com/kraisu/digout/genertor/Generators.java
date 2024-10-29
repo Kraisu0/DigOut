@@ -117,115 +117,15 @@ public class Generators {
             return 2;
     }
 
-   //TODO DOROBIĆ FUNKCJE BY NIE POWTARZAŁY SIE IMIONA
-
-//    private Map<String, String> generateNameForSurvivor(UUID gameID) {
-//        //Game game = game.getGameId();
-//        while(true) {
-//            String name = getRandomName(names);
-//            if(game..getSurvivors.stream()
-//                .anyMatch(() -> survivor.getName().equals(name))) {
-//                return name;
-//            }
-//        }
-//    }
-
-//    private Map<String, String> generateName() {
-//        // pobieranie losowej linijki  z pliku i dodanie do mapy jako key - value
-//    //    key - name
-//      //      value - opis
-//    }
-
-    //TODO przeneiść do survivor managera
-    public static Survivor generateNewSurvivors(UUID id, Constants.Survivors survivorType){
-        Survivor temp = null;
-
-            temp = new Survivor(
-                id,
-                "name",
-                4,
-                survivorType,
-                null,
-                "profileInformation",
-                0,
-                null
-            );
-            temp = setRandomBio(
-                temp,
-                names,
-                descriptions
-            );
-
-        logs(DateLogs.LogType.INFO, id, "create new Survivor. NAME: " + temp.getName() + ", ENERGY: "
-            + temp.getEnergy() + ", SURVIVOR TYPE: " + survivorType + ", PI: " + temp.getProfileInformation() +
-            ", AGE: " + temp.getAge(), null);
-
-        return temp;
-    }
-
-    public static String getRandomAvatarPath() {
-        File folder = new File("assets/avatars");
-        File[] files = folder.listFiles();
-        if (files != null && files.length > 1) {
-            int randomIndex = generateRandomNumber(0, files.length - 1);
-            return files[randomIndex].getPath();
-        }
-        return null;
-    }
-
-    public static int getAgeFromAvatar(String fileName) {
-        String[] parts = fileName.split("_");
-        int ageRange = Integer.parseInt(parts[1]);
-        switch (ageRange) {
-            case 20: return generateRandomNumber(18, 39);
-            case 40: return generateRandomNumber(40, 64);
-            case 65: return generateRandomNumber(65, 80);
-            default: return generateRandomNumber(18, 80);
-        }
-    }
-
-    public static String getRandomName(List<String> names) {
-        int randomIndex = generateRandomNumber(0, names.size() - 1);
-        return names.get(randomIndex);
-    }
-
-    public static String generateRandomBio(String name, List<String> beginnings, List<String> middles, List<String> ends) {
-        String beginning = beginnings.get(generateRandomNumber(0, beginnings.size() - 1));
-        String middle = middles.get(generateRandomNumber(0, middles.size() - 1));
-        String end = ends.get(generateRandomNumber(0, ends.size() - 1)).replace("X", name);
-        return beginning + " " + middle + " " + end;
-    }
-
-    public static Survivor setRandomBio(Survivor survivor, List<String> names, Map<String, List<String>> descriptions) {
-        String avatarPath = getRandomAvatarPath();
-        if (avatarPath == null)
-            return survivor;
-
-        File avatarFile = new File(avatarPath);
-        int age = getAgeFromAvatar(avatarFile.getName());
-        String name = getRandomName(names);
-        String bio = generateRandomBio(
-            name,
-            descriptions.get("beginning"),
-            descriptions.get("middle"),
-            descriptions.get("end")
-        );
-
-        survivor.setAge(age);
-        survivor.setName(name);
-        survivor.setProfileInformation(bio);
-        survivor.setImg(new Texture(avatarPath));
-
-        return survivor;
-    }
-
     public static BaseRoom generateBaseRoom(UUID gameId){
         Coordinate coordinate = new Coordinate(generateRandomNumber(1,10), 1);
+        logs(DateLogs.LogType.INFO, gameId, "Coordinates of Base room [" + coordinate.getX() + ", " + coordinate.getY() + "]" , null);
         return new BaseRoom(coordinate,gameId);
     }
 
     public static ExitRoom generateExitRoom(UUID gameId) {
         Coordinate coordinate = new Coordinate(generateRandomNumber(1,10), 10);
+        logs(DateLogs.LogType.INFO, gameId, "Coordinates of Exit room [" + coordinate.getX() + ", " + coordinate.getY() + "]" , null);
         return new ExitRoom(coordinate,gameId);
     }
 

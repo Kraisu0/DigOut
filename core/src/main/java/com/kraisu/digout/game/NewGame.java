@@ -77,7 +77,7 @@ public class NewGame {
     }
 
     private void generateFirstSurvivor(UUID gameId){
-        firstSurvivor = Generators.generateNewSurvivors(gameId, Constants.Survivors.WORKER);
+        firstSurvivor = survivorManager.generateNewSurvivors(gameId, Constants.Survivors.WORKER);
     }
 
     public Game getGame() {

@@ -35,6 +35,16 @@ public class RoomManager {
         return null;
     }
 
+    public Room getBaseRoom() {
+        for (Room room : rooms.values()) {
+            if (room.getType().equals(Constants.RoomType.BASE_TYPE))
+                return room;
+        }
+        System.out.println("Brak pokoju wejścia");
+        return null;
+    }
+
+
     private void ableToDiscoveredRoom(Coordinate coordinate, UUID id) {
         Room exitRoom = getExitRoom();
         if(!rooms.containsKey(coordinate)) {

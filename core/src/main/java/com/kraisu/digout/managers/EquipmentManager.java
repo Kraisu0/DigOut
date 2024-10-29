@@ -24,8 +24,8 @@ public class EquipmentManager {
 
     }
 
-    public Equipment getEquipment(String equipmentName) {
-        return equipmentStuff.get(equipmentName);
+    public Equipment getEquipment(Constants.Equipment equipment) {
+        return equipmentStuff.get(equipment);
     }
 
     public boolean allocateEquipment(String equipmentName, int amount) {

@@ -46,7 +46,7 @@ public class NewGameSplashScreen implements Screen {
 
 
 
-        Tween.to(splash, SpriteAccessor.ALPHA, 1).target(1f).repeatYoyo(3,0.2f).setCallback(new TweenCallback(){
+        Tween.to(splash, SpriteAccessor.ALPHA, 1).target(1f).repeatYoyo(1,0.2f).setCallback(new TweenCallback(){
             @Override
             public void onEvent(int type, BaseTween<?> source) {
                 ((Game) Gdx.app.getApplicationListener()).setScreen(new GameScreen(newGame.getGame()));

@@ -17,9 +17,9 @@ import com.kraisu.digout.loaders.JsonLoader;
 import com.kraisu.digout.logs.DateLogs;
 import com.kraisu.digout.survivor.Survivor;
 
-import static com.kraisu.digout.genertor.Generators.generateNewSurvivors;
 import static com.kraisu.digout.genertor.Generators.generateRandomSurvivor;
 import static com.kraisu.digout.logs.DateLogs.logs;
+import static com.kraisu.digout.managers.SurvivorManager.generateNewSurvivors;
 
 public class SurvivorGenerator extends ApplicationAdapter {
     private SpriteBatch batch;
