@@ -5,18 +5,23 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
+import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Scaling;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.kraisu.digout.DigOutGame;
 import com.kraisu.digout.game.Game;
+import com.kraisu.digout.genertor.Generators;
 import com.kraisu.digout.help.Constants;
 import com.kraisu.digout.logs.DateLogs;
 import com.kraisu.digout.rooms.Coordinate;
+import com.kraisu.digout.survivor.Survivor;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -27,7 +32,9 @@ public class GameScreen implements Screen {
 
     private Game game;
     private Stage stage;
-    private Table outerTable, outerMenuTable, rightTable, centerTable, nameTable, resourcesTable, roomsTable, infoTable, infoButtonTable, survivorsTable, miniMenuTable, survivorInfoTable, eqInfoTable, diaryInfoTable;
+    private Table outerTable, outerMenuTable, rightTable, centerTable, nameTable, resourcesTable,
+        roomsTable, infoTable, infoButtonTable, survivorsTable, miniMenuTable, survivorInfoTable,
+        eqInfoTable, diaryInfoTable, survivorRowTopTable, survivorRowBottomTable;
     private static Table menuTable;
     private Map<Constants.Resources, Integer> resourceStatus;
     private LinkedHashMap<Constants.Equipment, Integer> equipmentStatus;
@@ -78,9 +85,12 @@ public class GameScreen implements Screen {
         eqInfoTable = new Table();
         diaryInfoTable = new Table();
 
+
+        survivorRowTopTable = new Table();
+        survivorRowBottomTable = new Table();
         survivorsTable = new Table();
         ScrollPane scrollPane = new ScrollPane(survivorsTable);
-        scrollPane.setScrollingDisabled(false, true);
+        scrollPane.setScrollingDisabled(false, false);
 
         miniMenuTable = new Table();
         menuTable = new Table();
@@ -264,6 +274,9 @@ public class GameScreen implements Screen {
         eqInfoTable.setBackground(DigOutGame.skin.getDrawable("box.grey"));
         diaryInfoTable.setBackground(DigOutGame.skin.getDrawable("blackBox"));
 
+
+
+
         //eq table
         equipmentStatus = game.getEquipmentManager().getEquipmentStatus();
         equipmentName = game.getEquipmentManager().getEquipmentNames();
@@ -297,6 +310,69 @@ public class GameScreen implements Screen {
             eqInfoTable.add(equipmentNameLabel).colspan(2).expandX().center().padBottom(infoHeight);
             eqInfoTable.row();
         }
+
+
+
+
+        //survivors bar
+        float survivorBoxWidth = 150f;
+        float survivorBoxHeight = 80f;
+
+        survivorsTable.align(Align.left | Align.top);
+        survivorRowBottomTable.align(Align.left);
+        survivorRowTopTable.align(Align.left);
+
+        game.getSurvivorManager().addSurvivor(Generators.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
+        game.getSurvivorManager().addSurvivor(Generators.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
+        game.getSurvivorManager().addSurvivor(Generators.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
+        game.getSurvivorManager().addSurvivor(Generators.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
+        game.getSurvivorManager().addSurvivor(Generators.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
+        game.getSurvivorManager().addSurvivor(Generators.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
+        game.getSurvivorManager().addSurvivor(Generators.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
+        game.getSurvivorManager().addSurvivor(Generators.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
+        game.getSurvivorManager().addSurvivor(Generators.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
+        game.getSurvivorManager().addSurvivor(Generators.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
+        game.getSurvivorManager().addSurvivor(Generators.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
+        game.getSurvivorManager().addSurvivor(Generators.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
+        game.getSurvivorManager().addSurvivor(Generators.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
+        game.getSurvivorManager().addSurvivor(Generators.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
+        game.getSurvivorManager().addSurvivor(Generators.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
+        game.getSurvivorManager().addSurvivor(Generators.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
+
+
+        int survivorCount = game.getSurvivorManager().getAllSurvivors().size();
+
+
+
+// Tworzymy nową tabelę dla ocalałych
+        for (int i = 0; i < survivorCount; i++) {
+            Survivor survivor = game.getSurvivorManager().getAllSurvivors().toArray(new Survivor[0])[i];
+
+            // Tworzymy nową tabelę dla ocalałego
+            Table survivorEntry = new Table();
+
+            Image icon = new Image(new TextureRegionDrawable(new TextureRegion(survivor.getImg())));
+            survivorEntry.add(icon).size(64, 64).padRight(10);
+
+            Label survivorNameLabel = new Label(survivor.getName(), DigOutGame.skin.get("mediumFont", Label.LabelStyle.class));
+            survivorEntry.add(survivorNameLabel).padRight(10);
+
+            Image energyIcon = new Image(survivor.getEnergyIconDrawable());
+            survivorEntry.row();
+            survivorEntry.add(energyIcon).colspan(2).size(64, 16).left();
+
+            // Dodaj ocalałego do górnego wiersza
+            if (i % 2 == 0) { // Co drugi ocalały do górnego wiersza
+                survivorRowTopTable.add(survivorEntry).size(survivorBoxWidth, survivorBoxHeight).pad(3);
+            } else { // Pozostałe do dolnego wiersza
+                survivorRowBottomTable.add(survivorEntry).size(survivorBoxWidth, survivorBoxHeight).padLeft(3).padRight(3);
+            }
+        }
+
+        // Dodaj tabele górnego i dolnego wiersza do głównej tabeli
+        survivorsTable.add(survivorRowTopTable).row(); // Dodaj górny wiersz
+        survivorsTable.add(survivorRowBottomTable); // Dodaj dolny wiersz
+
 
         //mini menu
         roundNumber = game.getRound();

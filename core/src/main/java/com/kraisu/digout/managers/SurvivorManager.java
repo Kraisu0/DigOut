@@ -4,6 +4,7 @@ import com.kraisu.digout.help.Constants;
 import com.kraisu.digout.stuff.Equipment;
 import com.kraisu.digout.survivor.Survivor;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -23,5 +24,8 @@ public class SurvivorManager {
         return survivors.get(name);
     }
 
+    public Collection<Survivor> getAllSurvivors() {
+        return survivors.values();
+    }
 
 }

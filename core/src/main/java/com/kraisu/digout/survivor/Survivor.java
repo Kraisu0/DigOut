@@ -1,6 +1,10 @@
 package com.kraisu.digout.survivor;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.kraisu.digout.help.Constants;
 import com.kraisu.digout.stuff.Equipment;
 
@@ -8,7 +12,6 @@ import java.util.UUID;
 
 public class Survivor {
     private UUID gameId;
-    private final UUID id = UUID.randomUUID();
     private String name;
     private int energy;
     private Constants.Survivors profession;
@@ -112,11 +115,20 @@ public class Survivor {
         }
     }
 
+
+    public Drawable getIconDrawable() {
+        return new TextureRegionDrawable(new TextureRegion(img));
+    }
+
+    public Drawable getEnergyIconDrawable() {
+        Texture energyTexture = new Texture(Gdx.files.internal("energy/ENERGY_" + energy + ".png"));
+        return new TextureRegionDrawable(new TextureRegion(energyTexture));
+    }
+
     @Override
     public String toString() {
         return "Survivor{" +
             "gameId=" + gameId +
-            ", id=" + id +
             ", name='" + name + '\'' +
             ", energy=" + energy +
             ", profession=" + profession +
