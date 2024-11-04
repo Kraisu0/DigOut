@@ -1,5 +1,7 @@
 package com.kraisu.digout.rooms;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.kraisu.digout.help.Constants;
 import com.kraisu.digout.rooms.Coordinate;
 import com.kraisu.digout.rooms.Room;
@@ -20,6 +22,7 @@ public class DiscoveredRoom extends Room {
             false,
             NOTHING,
             true,
-            1 );
+            1,
+        new Skin(Gdx.files.internal("rooms/EmptyRoomTexture.json")));
     }
 }

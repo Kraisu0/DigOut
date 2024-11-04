@@ -3,6 +3,6 @@ package com.kraisu.digout.help;
 public class ConstantsFileDirectory {
 
     public static class filenames{
-        public static final String namesDescriptions = "name_description.json";
+        public static final String NAME_DESCRIPTION_JSON = "name_description.json";
     }
 }

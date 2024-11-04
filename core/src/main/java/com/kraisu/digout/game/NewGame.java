@@ -4,6 +4,11 @@ import com.kraisu.digout.genertor.Generators;
 import com.kraisu.digout.help.Constants;
 import com.kraisu.digout.help.Instruction;
 import com.kraisu.digout.loaders.JsonLoader;
+import com.kraisu.digout.logs.DateLogs;
+import com.kraisu.digout.managers.EquipmentManager;
+import com.kraisu.digout.managers.ResourceManager;
+import com.kraisu.digout.managers.RoomManager;
+import com.kraisu.digout.managers.SurvivorManager;
 import com.kraisu.digout.rooms.Room;
 import com.kraisu.digout.survivor.Survivor;
 
@@ -11,40 +16,60 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import static com.kraisu.digout.logs.DateLogs.logs;
+
 public class NewGame {
     private Game game;
     private Player player;
     private Room baseRoom, exitRoom;
     private Survivor firstSurvivor;
+    private RoomManager roomManager;
+    private SurvivorManager survivorManager;
+    private EquipmentManager equipmentManager;
+    private ResourceManager resourceManager;
 
-    public void startNewGame(UUID gameId,String gamerName){
-        List<Room> rooms = new ArrayList<>();
-        List<Survivor> survivors = new ArrayList<>();
 
-        this.player = createNewPlayer(gamerName); //zapisanie ustawień gracza
-
+    public NewGame(String gameName){
         JsonLoader.mainLoader(); //załadowanie plików JSON
-
-        generateStartRooms(gameId); //wylosowanie lokalizacji bazy i wyjścia
-        rooms.add(baseRoom);
-        rooms.add(exitRoom);
-
-        generateFirstSurvivor(gameId); //wygenerowanie pierwszego ocalałego
-
-        //this.game = createNewGame(gameId, rooms, survivors); //stworzenie nowej gry
-
-        //TODO stowrznie pliku JSON do zapisu gry
+        generateNewGame(gameName);
 
         Instruction.showInstruction();
     }
 
-    private Player createNewPlayer(String gamerName){
-        return new Player(gamerName, 0);
+    private void generateNewGame(String gameName){
+        roomManager = new RoomManager();
+        survivorManager = new SurvivorManager();
+        equipmentManager = new EquipmentManager();
+        resourceManager = new ResourceManager();
+
+        UUID uuid = generateUUID();
+        generatePlayer(gameName);
+
+        generateStartRooms(uuid); //wylosowanie lokalizacji bazy i wyjścia
+        generateFirstSurvivor(uuid); //wygenerowanie pierwszego ocalałego
+
+        roomManager.addRoom(baseRoom);
+        roomManager.addRoom(exitRoom);
+
+        survivorManager.addSurvivor(firstSurvivor);
+
+
+        game = new Game(uuid, player, 0, roomManager,survivorManager,equipmentManager,resourceManager);
+
+
+        //TODO stowrznie pliku JSON do zapisu gry
+
     }
 
-//    private Game createNewGame(UUID gameId, List<Room> rooms, List<Survivor> survivors){
-//        return new Game(gameId,this.player,0,rooms,survivors,null,);
-//    }
+    private void generatePlayer(String gameName){
+        player = new Player(gameName, 0);
+    }
+
+    private UUID generateUUID(){
+        UUID uuid = UUID.randomUUID();
+        logs(DateLogs.LogType.INFO, uuid, "Generate new ID for new Game: " + uuid, null);
+        return uuid;
+    }
 
     private void generateStartRooms(UUID gameId){
         baseRoom = Generators.generateBaseRoom(gameId);
@@ -52,7 +77,10 @@ public class NewGame {
     }
 
     private void generateFirstSurvivor(UUID gameId){
-        firstSurvivor = Generators.generateNewSurvivors(gameId, Constants.Survivors.WORKER);
+        firstSurvivor = survivorManager.generateNewSurvivors(gameId, Constants.Survivors.WORKER);
     }
 
+    public Game getGame() {
+        return game;
+    }
 }

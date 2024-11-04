@@ -7,6 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.UUID;
 
 import static com.kraisu.digout.DigOutGame.LOGFILE;
 import static com.kraisu.digout.DigOutGame.TITLE;
@@ -30,30 +31,45 @@ public class DateLogs {
         DEBUG;
     }
 
-    public static void logs(LogType logType, String message, Throwable throwable){
+    public static void logs(LogType logType, UUID uuid, String message, Throwable throwable){
+
+        String messGdxLog = "blank";
+        String messFileLog = "blank";
+
+        if(uuid != null){
+            messGdxLog = "(GAME_ID: " + uuid + ") " + message;
+            messFileLog = "[GAME_ID: " + uuid + "] " + message;
+        }else {
+            messGdxLog = message;
+            messFileLog = message;
+        }
+
+
         switch (logType){
             case INFO:
-                Gdx.app.log(logName(), message);
-                writeToFile(LOGFILE, logName() + "(INFO)", message, throwable);
+                Gdx.app.log(logName(), messGdxLog);
+                writeToFile(LOGFILE, logName() + "(INFO)", messFileLog, throwable);
             break;
             case WARN:
-                Gdx.app.log(logName(), message);
-                writeToFile(LOGFILE, logName() + "(WARN)", message, throwable);
+                Gdx.app.log(logName(), messGdxLog);
+                writeToFile(LOGFILE, logName() + "(WARN)", messFileLog, throwable);
             break;
             case ERROR:
-                Gdx.app.error(logName(), message, throwable);
-                writeToFile(LOGFILE, logName() + "(ERROR)", message, throwable);
+                Gdx.app.error(logName(), messGdxLog, throwable);
+                writeToFile(LOGFILE, logName() + "(ERROR)", messFileLog, throwable);
             break;
             case DEBUG:
-                Gdx.app.debug(logName(), message);
-                writeToFile(LOGFILE, logName() + "(DEBUG)", message, throwable);
+                Gdx.app.debug(logName(), messGdxLog);
+                writeToFile(LOGFILE, logName() + "(DEBUG)", messFileLog, throwable);
             break;
             default:
-                Gdx.app.log(logName(), message);
-                writeToFile(LOGFILE, logName() + "(DEFAULT)", message, throwable);
+                Gdx.app.log(logName(), messGdxLog);
+                writeToFile(LOGFILE, logName() + "(DEFAULT)", messFileLog, throwable);
             break;
         }
     }
+
+
 
     public static File createLogFile() {
         try {

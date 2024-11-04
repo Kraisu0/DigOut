@@ -1,5 +1,8 @@
 package com.kraisu.digout.rooms;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+
 import java.util.UUID;
 
 import static com.kraisu.digout.help.Constants.Buildings.BASE;
@@ -14,6 +17,7 @@ public class BaseRoom extends Room{
             false,
             BASE,
             false,
-            50);
+            50,
+            new Skin(Gdx.files.internal("rooms/BaseRoomTexture.json")));
     }
 }

@@ -5,8 +5,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
@@ -14,12 +12,9 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.kraisu.digout.DigOutGame;
 
-import static com.kraisu.digout.scenes.UtilsScreen.*;
-import static com.kraisu.digout.scenes.UtilsScreen.fonts.*;
-
 public class NewGameNameScreen implements Screen {
     private Stage stage;
-    private Table table;
+    private Table table, outerTable;
     private Label heading, labelName;
     private TextField nameField;
     private TextButton createButton;
@@ -30,15 +25,14 @@ public class NewGameNameScreen implements Screen {
         stage = new Stage(new ScreenViewport());
         Gdx.input.setInputProcessor(stage);
 
-        Table outerTable = new Table();
+        outerTable = new Table();
         outerTable.setFillParent(true);
 
         table = new Table();
-        table.setSize(Gdx.graphics.getWidth()/2, Gdx.graphics.getHeight()/3);
-        table.setBackground(DigOutGame.skin.getDrawable("box"));
+        table.setSize(Gdx.graphics.getWidth()/2f, Gdx.graphics.getHeight()/3f);
+        table.setBackground(DigOutGame.skin.getDrawable("box.grey"));
 
         // Heading & label
-        Label.LabelStyle headingStyle = new Label.LabelStyle(whiteFont, Color.WHITE);
         heading = new Label("NEW GAME NAME", DigOutGame.skin.get("hugeFont", Label.LabelStyle.class));
 
         labelName = new Label("Name:", DigOutGame.skin.get("bigFont", Label.LabelStyle.class));
@@ -47,7 +41,7 @@ public class NewGameNameScreen implements Screen {
         nameField = new TextField("", DigOutGame.skin.get("black", TextField.TextFieldStyle.class));
 
         // button
-        createButton = new TextButton("CREATE NEW GAME", DigOutGame.skin.get("default", TextButton.TextButtonStyle.class));
+        createButton = new TextButton("CREATE NEW GAME", DigOutGame.skinButton.get("default", TextButton.TextButtonStyle.class));
         createButton.setDisabled(true);
 
         // Listener Text field
@@ -64,7 +58,7 @@ public class NewGameNameScreen implements Screen {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 if (!createButton.isDisabled()) {
-                    ((Game) Gdx.app.getApplicationListener()).setScreen(new NewGameScreen());
+                    ((Game) Gdx.app.getApplicationListener()).setScreen(new NewGameSplashScreen(newName));
                     System.out.println("New Game Name: " + newName);
                 }
             }
@@ -77,7 +71,7 @@ public class NewGameNameScreen implements Screen {
         table.row().pad(20);
         table.add(createButton).colspan(2);
 
-        table.debug();
+        //table.debug();
 
         outerTable.add(table).center().width(table.getWidth()).height(table.getHeight());
 

@@ -1,5 +1,8 @@
 package com.kraisu.digout.rooms;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+
 import java.util.UUID;
 
 import static com.kraisu.digout.help.Constants.Buildings.NOTHING;
@@ -14,7 +17,8 @@ public class ExitRoom extends Room {
             false,
             NOTHING,
             false,
-            1);
+            1,
+        new Skin(Gdx.files.internal("rooms/EmptyRoomTexture.json"))); //TODO do zmiany
     }
 
 }
