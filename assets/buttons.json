@@ -17,7 +17,9 @@
   },
   com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle: {
     default: { down: button.wood.down, up: button.wood.up, disabled: button.wood.disable, pressedOffsetX: 1, pressedOffsetY: -1, font: big-font },
-    small: { down: button.wood.down, up: button.wood.up, disabled: button.wood.disable, pressedOffsetX: 1, pressedOffsetY: -1, font: small-font }
+    small: { down: button.wood.down, up: button.wood.up, disabled: button.wood.disable, pressedOffsetX: 1, pressedOffsetY: -1, font: small-font },
+    small-green: { down: button.wood.down, up: button.wood.up, disabled: button.wood.disable, pressedOffsetX: 1, pressedOffsetY: -1, font: small-font, fontColor: green },
+    small-red: { down: button.wood.down, up: button.wood.up, disabled: button.wood.disable, pressedOffsetX: 1, pressedOffsetY: -1, font: small-font, fontColor: red },
     list-small: { down: button.wood.down, up: button.wood.up, disabled: button.wood.down, pressedOffsetX: 1, pressedOffsetY: -1, font: small-font }
     //toggle: { down: default-round-down, checked: default-round-down, up: default-round }
   }

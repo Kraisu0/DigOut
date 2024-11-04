@@ -35,7 +35,7 @@ public class GameScreen implements Screen {
     private Stage stage;
     private Table outerTable, outerMenuTable, rightTable, centerTable, nameTable, resourcesTable,
         roomsTable, infoTable, infoButtonTable, survivorsTable, miniMenuTable, survivorInfoTable,
-        eqInfoTable, diaryInfoTable;
+        eqInfoTable, diaryInfoTable, addEqTable;
     private static Table menuTable;
     private Map<Constants.Resources, Integer> resourceStatus;
     private LinkedHashMap<Constants.Equipment, Integer> equipmentStatus;
@@ -51,7 +51,9 @@ public class GameScreen implements Screen {
     private String name;
     private int roundNumber;
 
-    private static boolean isMenuOpen;
+    private static boolean isMenuOpen, isInfoBoxOpen;
+
+    private float timer = 0;
 
     public GameScreen(Game game) {
         this.game = game;
@@ -61,7 +63,7 @@ public class GameScreen implements Screen {
         this.equipmentName = new LinkedHashMap<Constants.Equipment, String>();
         this.equipmentDescription = new LinkedHashMap<Constants.Equipment, String>();
         this.resourceDescription = new LinkedHashMap<Constants.Resources, String>();
-        this.gameTable = new LinkedHashMap<>();
+        gameTable = new LinkedHashMap<>();
         isMenuOpen = false;
     }
 
@@ -94,6 +96,8 @@ public class GameScreen implements Screen {
         survivorsTable = new Table();
         ScrollPane scrollPane = new ScrollPane(survivorsTable);
         scrollPane.setScrollingDisabled(false, true);
+
+        addEqTable = new Table();
 
         miniMenuTable = new Table();
         menuTable = new Table();
@@ -287,7 +291,6 @@ public class GameScreen implements Screen {
 
 
 
-
         //eq table
         equipmentStatus = game.getEquipmentManager().getEquipmentStatus();
         equipmentName = game.getEquipmentManager().getEquipmentNames();
@@ -321,6 +324,38 @@ public class GameScreen implements Screen {
             eqInfoTable.add(equipmentNameLabel).colspan(2).expandX().center().padBottom(infoHeight);
             eqInfoTable.row();
         }
+
+
+
+
+        //addEqTable
+        addEqTable.setSize(Gdx.graphics.getWidth()/3f, Gdx.graphics.getHeight()/2f);
+        addEqTable.setVisible(false);
+
+        addEqTable.setBackground(DigOutGame.skin.getDrawable("box"));
+
+        for (Map.Entry<Constants.Equipment, Integer> entry : equipmentStatus.entrySet()) {
+            Constants.Equipment equipment = entry.getKey();
+            //Integer amount = entry.getValue();
+            //String name = equipmentName.get(equipment);
+            String description = equipmentDescription.get(equipment);
+
+            Image equipmentIcon = new Image(new Texture(Gdx.files.internal("assets/equipment/" + equipment.toString() + "_icon_64.png")));
+            equipmentIcon.setScaling(Scaling.none);
+            equipmentIcon.setSize(64, 64);
+
+            TextTooltip tooltip = new TextTooltip(description, DigOutGame.skin);
+            tooltip.setInstant(true);
+            //tooltip.getContainer().pad(5);
+            equipmentIcon.addListener(tooltip);
+
+
+            eqInfoTable.add(equipmentIcon).size(64, 64).expand().fill().center().height(infoHeight).padTop(10);
+            eqInfoTable.row();
+            eqInfoTable.row();
+        }
+
+        addEqTable.add(backToGameButton).pad(10).width(addEqTable.getWidth()-20).colspan(2).row();
 
 
         game.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
@@ -558,6 +593,7 @@ public class GameScreen implements Screen {
 //    }
 
 
+
     @Override
     public void render(float delta) {
         Gdx.gl.glClearColor(0, 0, 0, 1);
@@ -576,6 +612,13 @@ public class GameScreen implements Screen {
         fps.setText("FPS: " + Gdx.graphics.getFramesPerSecond());
 
         openMenu();
+
+
+        timer += delta;
+        if (timer >= 10) {
+            uiHelps.displayInfoBox(stage, "You cannot make this action!", uiHelps.Mark.ERROR);
+            timer = 0;
+        }
 
         stage.act(delta);
         stage.draw();
