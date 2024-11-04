@@ -1,5 +1,6 @@
 package com.kraisu.digout.rooms;
 
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.kraisu.digout.help.Constants;
 import com.kraisu.digout.stuff.Equipment;
 import com.kraisu.digout.survivor.Survivor;
@@ -8,19 +9,18 @@ import java.util.List;
 import java.util.UUID;
 
 public abstract class Room {
-    protected UUID gameId; //ID gry w jakiej znajduje się pokój
-//    protected int coordinateX; //pozycja poziomia na mapie
-//    protected int coordinateY; //pozycja pionowa na mapie
-    protected Coordinate coordinates;
-    protected Constants.RoomType type; //baza, kamienie, skały, wyjście
-    protected boolean discovered; //czy pokój został odkopany
-    protected boolean ableToDiscover; //czy pokój moze być odkopany
-    protected Constants.Buildings buildUp; //nic, baza, kuchnia, restroom, winda, warsztat, elektrownia, pompa powietrza, majsterkowania
-    protected boolean ableToBuild; //czy pokój można zabudować
-    protected int amountOfSpace; //ile jest miejsca w pokoju
+    private UUID gameId; //ID gry w jakiej znajduje się pokój
+    private Coordinate coordinates;
+    private Constants.RoomType type; //baza, kamienie, skały, wyjście
+    private boolean discovered; //czy pokój został odkopany
+    private boolean ableToDiscover; //czy pokój moze być odkopany
+    private Constants.Buildings buildUp; //nic, baza, kuchnia, restroom, winda, warsztat, elektrownia, pompa powietrza, majsterkowania
+    private boolean ableToBuild; //czy pokój można zabudować
+    private int amountOfSpace; //ile jest miejsca w pokoju
+    private Skin roomSkins;
 
     public Room(UUID gameId, Coordinate coordinates, Constants.RoomType type, boolean discovered, boolean ableToDiscover,
-                Constants.Buildings buildUp, boolean ableToBuild, int amountOfSpace ) {
+                Constants.Buildings buildUp, boolean ableToBuild, int amountOfSpace, Skin roomSkins) {
         this.gameId = gameId;
         this.coordinates = coordinates;
         this.type = type;
@@ -29,6 +29,7 @@ public abstract class Room {
         this.buildUp = buildUp;
         this.ableToBuild = ableToBuild;
         this.amountOfSpace = amountOfSpace;
+        this.roomSkins = roomSkins;
     }
 
     public UUID getGameId() {
@@ -95,4 +96,11 @@ public abstract class Room {
         this.amountOfSpace = amountOfSpace;
     }
 
+    public Skin getRoomSkins() {
+        return roomSkins;
+    }
+
+    public void setRoomSkins(Skin roomSkins) {
+        this.roomSkins = roomSkins;
+    }
 }

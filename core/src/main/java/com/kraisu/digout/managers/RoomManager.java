@@ -1,15 +1,21 @@
 package com.kraisu.digout.managers;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.kraisu.digout.genertor.Generators;
 import com.kraisu.digout.help.Constants;
+import com.kraisu.digout.logs.DateLogs;
 import com.kraisu.digout.rooms.Coordinate;
 import com.kraisu.digout.rooms.DiscoveredRoom;
 import com.kraisu.digout.rooms.Room;
 import com.kraisu.digout.rooms.UndiscoveredRoom;
+import com.kraisu.digout.scenes.GameScreen;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+
+import static com.kraisu.digout.logs.DateLogs.logs;
 
 public class RoomManager {
     private Map<Coordinate, Room> rooms;
@@ -45,17 +51,26 @@ public class RoomManager {
     }
 
 
-    private void ableToDiscoveredRoom(Coordinate coordinate, UUID id) {
+    private Room ableToDiscoveredRoom(Coordinate coordinate, UUID id) {
         Room exitRoom = getExitRoom();
         if(!rooms.containsKey(coordinate)) {
             if(coordinate.getY() > 8) {
-                if(!exitRoom.getCoordinates().equals(coordinate))
-                    rooms.put(coordinate, new UndiscoveredRoom(coordinate, id, Constants.RoomType.HARD_ROOK_TYPE));
-                else
+                if(!exitRoom.getCoordinates().equals(coordinate)) {
+                    Room temp = new UndiscoveredRoom(coordinate, id, Constants.RoomType.HARD_ROOK_TYPE);
+                    rooms.put(coordinate, temp);
+                    return temp;
+                }
+                else {
                     exitRoom.setAbleToDiscover(true);
-            } else
-                rooms.put(coordinate, new UndiscoveredRoom(coordinate, id, Constants.RoomType.LIGHT_ROOK_TYPE));
+                    return exitRoom;
+                }
+            } else {
+                Room temp = new UndiscoveredRoom(coordinate, id, Constants.RoomType.LIGHT_ROOK_TYPE);
+                rooms.put(coordinate, temp);
+                return temp;
+            }
         }
+        return null;
     }
 
     public void discoveredRoom(Room room, UUID id) {
@@ -65,30 +80,48 @@ public class RoomManager {
             room.setAbleToDiscover(true);
             room.setAbleToDiscover(false);
             room.setAbleToBuild(true);
+
         }
     }
 
     public void makeAbleToDiscoveredNearestRooms(Coordinate coordinate, UUID id) {
         Coordinate tempRight = new Coordinate(coordinate.getX() + 1, coordinate.getY());
-        Coordinate tempLeft = new Coordinate(coordinate.getX() + 1, coordinate.getY());
+        Coordinate tempLeft = new Coordinate(coordinate.getX() - 1, coordinate.getY());
+        Room roomL;
+        Room roomR;
 
-        if (coordinate.getX() == 1 && !rooms.containsKey(tempRight))
-            ableToDiscoveredRoom(tempRight, id);
-        if (coordinate.getY() == 10 && !rooms.containsKey(tempLeft))
-            ableToDiscoveredRoom(tempLeft, id);
+
+        if (coordinate.getX() == 1 && !rooms.containsKey(tempRight)) {
+            roomR = ableToDiscoveredRoom(tempRight, id);
+            GameScreen.colorTileAtCoordinate(tempRight, roomR, "LIGHT_ROOK_TYPE_L_0");
+        }
+
+        if (coordinate.getY() == 10 && !rooms.containsKey(tempLeft)) {
+            roomL = ableToDiscoveredRoom(tempLeft, id);
+            GameScreen.colorTileAtCoordinate(tempRight, roomL, "LIGHT_ROOK_TYPE_R_0");
+        }
+
         if (!rooms.containsKey(tempRight) && !rooms.containsKey(tempLeft))
         {
-            ableToDiscoveredRoom(tempRight, id);
-            ableToDiscoveredRoom(tempLeft, id);
+            roomR = ableToDiscoveredRoom(tempRight, id);
+            GameScreen.colorTileAtCoordinate(tempRight, roomR, "LIGHT_ROOK_TYPE_L_0");
+            roomL = ableToDiscoveredRoom(tempLeft, id);
+            GameScreen.colorTileAtCoordinate(tempLeft, roomL, "LIGHT_ROOK_TYPE_R_0");
         }
+
     }
 
     public void makeAbleToDiscoveredUpperRooms(Coordinate coordinate, UUID id) {
         Coordinate tempUp = new Coordinate(coordinate.getY() + 1, coordinate.getY());
+        Room room;
 
-        if(!rooms.containsKey(tempUp) && coordinate.getY() != 10)
-            ableToDiscoveredRoom(tempUp, id);
+        if(!rooms.containsKey(tempUp) && coordinate.getY() != 10) {
+            room = ableToDiscoveredRoom(tempUp, id);
+
+        }
     }
+
+
 
     public void buildBuilding(Room room, Constants.Buildings type, UUID id) {
         //TODO zrobić to

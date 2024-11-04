@@ -6,10 +6,8 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.Touchable;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.badlogic.gdx.scenes.scene2d.*;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
@@ -19,10 +17,11 @@ import com.badlogic.gdx.utils.Scaling;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.kraisu.digout.DigOutGame;
 import com.kraisu.digout.game.Game;
-import com.kraisu.digout.genertor.Generators;
 import com.kraisu.digout.help.Constants;
 import com.kraisu.digout.logs.DateLogs;
+import com.kraisu.digout.managers.SurvivorManager;
 import com.kraisu.digout.rooms.Coordinate;
+import com.kraisu.digout.rooms.Room;
 import com.kraisu.digout.survivor.Survivor;
 
 import java.util.LinkedHashMap;
@@ -32,7 +31,7 @@ import static com.kraisu.digout.logs.DateLogs.logs;
 
 public class GameScreen implements Screen {
 
-    private Game game;
+    private static Game game;
     private Stage stage;
     private Table outerTable, outerMenuTable, rightTable, centerTable, nameTable, resourcesTable,
         roomsTable, infoTable, infoButtonTable, survivorsTable, miniMenuTable, survivorInfoTable,
@@ -43,11 +42,11 @@ public class GameScreen implements Screen {
     private Map<Constants.Resources, String> resourceName;
     private LinkedHashMap<Constants.Equipment, String> equipmentName, equipmentDescription;
     private LinkedHashMap<Constants.Resources, String> resourceDescription;
-    private Map<Coordinate, Table> gameTable;
+    private static Map<Coordinate, Table> gameTable = Map.of();
     private Button infoButton, eqButton, diaryButton;
     private Label fps;
-    private float roomWidth = Gdx.graphics.getWidth() * 4 / 5f / 10;
-    private float roomHeight = Gdx.graphics.getHeight() / 7f / 10;
+    private static final float roomWidth = Gdx.graphics.getWidth() * 4 / 5f / 10;
+    private static final float roomHeight = Gdx.graphics.getHeight() *11 / 14f / 10 - 2;
 
     private String name;
     private int roundNumber;
@@ -63,7 +62,7 @@ public class GameScreen implements Screen {
         this.equipmentDescription = new LinkedHashMap<Constants.Equipment, String>();
         this.resourceDescription = new LinkedHashMap<Constants.Resources, String>();
         this.gameTable = new LinkedHashMap<>();
-        this.isMenuOpen = false;
+        isMenuOpen = false;
     }
 
     @Override
@@ -199,33 +198,48 @@ public class GameScreen implements Screen {
 
 
         //screen 10x10
-        for (int i = 1; i <= 10; i++) {
-            for (int j = 1; j <= 10; j++) {
-                Coordinate tempCoordinate = new Coordinate(i, j);
+        for (int i = 10; i >= 1; i--) {
+            for (int j = 10; j >= 1; j--) {
+                Coordinate tempCoordinate = new Coordinate(j, i);
                 Table tempTable = new Table();
                 tempTable.setSize(roomWidth, roomHeight);
-
-
                 gameTable.put(tempCoordinate, tempTable);
+
+//                tempTable.addListener(new InputListener() {
+//                    @Override
+//                    public boolean mouseMoved(InputEvent event, float x, float y) {
+//                        tempTable.setColor(1, 1, 1, 0.3f);
+//                        return true; // sygnalizuje, że zdarzenie zostało przetworzone
+//                    }
+//
+//                    @Override
+//                    public void exit(InputEvent event, float x, float y, int pointer, Actor toActor) {
+//                        // Przywróć domyślny kolor
+//                        tempTable.setColor(1, 1, 1, 1); // domyślny kolor tła (pełna widoczność)
+//                    }
+//                });
             }
         }
 
-        for (int i = 1; i <= 10; i++) {
-            for (int j = 1; j <= 10; j++) {
-                Coordinate tempCoordinate = new Coordinate(i, j);
-
+        for (int i = 10; i >= 1; i--) {
+            for (int j = 10; j >= 1; j--) {
+                Coordinate tempCoordinate = new Coordinate(j, i);
                 Table tempTable = gameTable.get(tempCoordinate);
+                tempTable.setSize(roomWidth, roomHeight);
 
-                if (tempTable == null) {
-                    logs(DateLogs.LogType.INFO, game.getGameId(), "Error: tempTable is null for coordinate: " + tempCoordinate, null);
+                if (tempTable != null) {
+                    roomsTable.add(tempTable).size(roomWidth, roomHeight).maxSize(roomWidth, roomHeight).expand().fill();
                 } else {
-                    roomsTable.add(tempTable).expand().fill();
+                    logs(DateLogs.LogType.INFO,
+                        game.getGameId(),
+                        "Error: tempTable is null for coordinate: " + tempCoordinate, null);
                 }
             }
             roomsTable.row();
         }
 
-        colorTileAtCoordinate(game.getRoomManager().getBaseRoom().getCoordinates());
+
+        colorTileAtCoordinateBaseRoom(game.getRoomManager().getBaseRoom());
 
 
 
@@ -309,7 +323,10 @@ public class GameScreen implements Screen {
         }
 
 
-
+        game.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
+        game.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(game.getGameId(), Constants.Survivors.ENGINEER));
+        game.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(game.getGameId(), Constants.Survivors.MINER));
+        game.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(game.getGameId(), Constants.Survivors.UNTRAINED));
 
         //survivors bar
         float survivorBoxWidth = 150f;
@@ -344,7 +361,11 @@ public class GameScreen implements Screen {
                 survivorsTable.row();
             }
 
-            survivorEntryFull.setBackground(DigOutGame.skin.getDrawable("box.grey"));
+            if(survivor.getProfession() == Constants.Survivors.COOK || survivor.getProfession() == Constants.Survivors.UNTRAINED){
+                survivorNameLabel.setColor(Color.BLACK);
+            }
+
+            survivorEntryFull.setBackground(DigOutGame.skinSurvivorBox.getDrawable( "box." + survivor.getProfession()));
             survivorEntryFull.add(survivorEntry);
             survivorEntryFull.add(survivorEntryNames);
 
@@ -395,17 +416,17 @@ public class GameScreen implements Screen {
         outerTable.add(centerTable).width(Gdx.graphics.getWidth() * 4 / 5f).fillY().expandY();
         outerTable.add(rightTable).width(Gdx.graphics.getWidth() / 5f).fillY().expandY();
 
-        eqInfoTable.debug();
-        survivorInfoTable.debug();
-        menuTable.debug();
-        outerTable.debug();
-        centerTable.debug();
-        rightTable.debug();
-        resourcesTable.debug();
-        roomsTable.debug();
-        survivorsTable.debug();
-        nameTable.debug();
-        miniMenuTable.debug();
+//        eqInfoTable.debug();
+//        survivorInfoTable.debug();
+//        menuTable.debug();
+//        outerTable.debug();
+//        centerTable.debug();
+//        rightTable.debug();
+//        resourcesTable.debug();
+//        roomsTable.debug();
+//        survivorsTable.debug();
+//        nameTable.debug();
+//        miniMenuTable.debug();
 
         stage.addActor(outerTable);
         stage.addActor(outerMenuTable);
@@ -420,7 +441,6 @@ public class GameScreen implements Screen {
 
     private Table showSurvivorInfo(Survivor survivor){
         Table info = new Table();
-        Table infoAddEQ = new Table();
 
         Image icon = new Image(new TextureRegionDrawable(new TextureRegion(survivor.getImg())));
         info.add(icon).size(256,256).expandX().fillX().center().pad(2).row();
@@ -472,17 +492,70 @@ public class GameScreen implements Screen {
             diaryButton.setDisabled(false);
     }
 
-    public void colorTileAtCoordinate(Coordinate coordinate) {
+    public void colorTileAtCoordinateBaseRoom(Room room) {
+        Coordinate coordinate = room.getCoordinates();
         Table tile = gameTable.get(coordinate);
         tile.setSize(roomWidth,roomHeight);
 
+        ShapeRenderer shapeRenderer = new ShapeRenderer();
+
+        shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
+        shapeRenderer.setColor(Color.WHITE);
+        shapeRenderer.rect(tile.getX(), tile.getY(), tile.getWidth(), tile.getHeight());
+        shapeRenderer.end();
+
         if (tile != null) {
-            tile.setBackground(DigOutGame.skin.getDrawable("box.grey"));
+            tile.setBackground(room.getRoomSkins().getDrawable("BaseRoom"));
         } else {
             logs(DateLogs.LogType.INFO, game.getGameId(), "Error: No tile found at coordinate: " + coordinate, null);
         }
     }
 
+    public static void colorTileAtCoordinate(Coordinate coordinate, Room room, String name) {
+
+        Table tile = gameTable.get(coordinate);
+        tile.setSize(roomWidth,roomHeight);
+        ShapeRenderer shapeRenderer = new ShapeRenderer();
+
+        shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
+        shapeRenderer.setColor(Color.WHITE);
+        shapeRenderer.rect(tile.getX(), tile.getY(), tile.getWidth(), tile.getHeight());
+        shapeRenderer.end();
+
+
+        if (tile != null) {
+            tile.setBackground(room.getRoomSkins().getDrawable(name));
+        } else {
+            logs(DateLogs.LogType.INFO, game.getGameId(), "Error: No tile found at coordinate: " + coordinate, null);
+        }
+    }
+
+//    public void colorTileAtCoordinate(Room room) {
+//        Coordinate coordinate = room.getCoordinates();
+//        Table tile = gameTable.get(coordinate);
+//        tile.setSize(roomWidth, roomHeight);
+//
+//        if (tile != null) {
+//            String drawableName = getDrawableNameForRoomType(room.getType());
+//            tile.setBackground(room.getRoomSkins().getDrawable(drawableName));
+//        } else {
+//            logs(DateLogs.LogType.INFO, game.getGameId(), "Error: No tile found at coordinate: " + coordinate, null);
+//        }
+//    }
+//
+//    private String getDrawableNameForRoomType(Constants.RoomType type) {
+//        switch (type) {
+//            case HARD_ROOK_TYPE:
+//                return "HARD_ROOK_TYPE";
+//            case LIGHT_ROOK_TYPE:
+//                return "LIGHT_ROOK_TYPE";
+//            case BASE_TYPE:
+//                return "BaseRoom";
+//
+//            default:
+//                return "DefaultRoom"; // Domyślny obrazek
+//        }
+//    }
 
 
     @Override
@@ -497,6 +570,8 @@ public class GameScreen implements Screen {
             outerTable.setColor(0, 0, 0, 1f);
             outerTable.setTouchable(Touchable.enabled);
         }
+
+        game.getRoomManager().makeAbleToDiscoveredNearestRooms(game.getRoomManager().getBaseRoom().getCoordinates(), game.getGameId());
 
         fps.setText("FPS: " + Gdx.graphics.getFramesPerSecond());
 

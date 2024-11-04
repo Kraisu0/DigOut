@@ -1,0 +1,17 @@
+BaseRoomTexture.png
+size:1024,128
+repeat:none
+BASE_ROOM
+index:4
+bounds:154,2,150,80
+BASE_ROOM
+index:1
+bounds:306,2,150,80
+BASE_ROOM
+index:3
+bounds:458,2,150,80
+BASE_ROOM
+index:2
+bounds:610,2,150,80
+BaseRoom
+bounds:2,2,150,80
