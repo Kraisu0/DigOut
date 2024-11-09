@@ -55,7 +55,7 @@ public class GameScreen implements Screen {
 
     private static boolean isMenuOpen, isInfoBoxOpen;
 
-    public static boolean needsRefresh = true;
+    public static boolean needsRefreshAfterAddEQ = true;
     public static Table addEqTable;
 
 
@@ -171,6 +171,7 @@ public class GameScreen implements Screen {
 
 
         //resources bar
+        game.getResourceManager().getResource(Constants.Resources.TOOLS).setTotalAmount(5);
         populateResourceBar();
 
 
@@ -422,7 +423,7 @@ public class GameScreen implements Screen {
             addEQ.setDisabled(false);
             addEQ.addListener(new ChangeListener() {
                 public void changed(ChangeEvent event, Actor actor) {
-                    Table equipmentTable = tableAddEq(survivor, game.getEquipmentManager(), stage, addEQ);
+                    Table equipmentTable = tableAddEq(survivor, game.getEquipmentManager(), stage, addEQ, game.getResourceManager());
                     equipmentTable.setVisible(true);
                     addEQ.setDisabled(true);
                     addEqTable.clear();
@@ -524,10 +525,11 @@ public class GameScreen implements Screen {
         this.game = game;
         refreshEqInfoTable();
 
-        if (needsRefresh) {
-            populateSurvivorBar();
+        if (needsRefreshAfterAddEQ) {
+            refreshSurvivorBar();
+            refreshResourceBar();
             survivorInfoTable.clear();
-            needsRefresh = false;
+            needsRefreshAfterAddEQ = false;
             System.out.println("ABCDEFGHIJ");
         }
 
@@ -607,7 +609,7 @@ public class GameScreen implements Screen {
     }
 
     private void refreshEqInfoTable() {
-        populateEqInfoTable(); // Ponowne wypełnienie tabeli
+        populateEqInfoTable();
     }
 
     private void populateSurvivorBar() {
@@ -667,12 +669,18 @@ public class GameScreen implements Screen {
         }
     }
 
+    private void refreshSurvivorBar() {
+        populateSurvivorBar();
+    }
+
     private void refreshSurvivorInfoTable(Survivor survivor) {
         survivorInfoTable.clear();  // Wyczyść tabelę
         survivorInfoTable.add(showSurvivorInfo(survivor));  // Załaduj ponownie informacje
     }
 
     private void populateResourceBar(){
+        resourcesTable.clear();
+
         resourceStatus = game.getResourceManager().getResourceStatus();
         resourceName = game.getResourceManager().getResourceNames();
         resourceDescription = game.getResourceManager().getResourceDescription();
@@ -706,6 +714,10 @@ public class GameScreen implements Screen {
 
             resourcesTable.add(resourceNameLabel).expandX().colspan(2).center();
         }
+    }
+
+    private void refreshResourceBar() {
+        populateResourceBar();
     }
 
 }

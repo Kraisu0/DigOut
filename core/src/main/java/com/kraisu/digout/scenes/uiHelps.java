@@ -10,13 +10,10 @@ import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.Align;
-import com.badlogic.gdx.utils.Scaling;
 import com.kraisu.digout.DigOutGame;
-import com.kraisu.digout.game.Game;
 import com.kraisu.digout.help.Constants;
 import com.kraisu.digout.managers.EquipmentManager;
-import com.kraisu.digout.stuff.Equipment;
-import com.kraisu.digout.stuff.Resource;
+import com.kraisu.digout.managers.ResourceManager;
 import com.kraisu.digout.survivor.Survivor;
 
 import java.util.LinkedHashMap;
@@ -117,7 +114,7 @@ public class uiHelps {
 
 
 
-    public static Table tableAddEq(Survivor survivor, EquipmentManager equipmentManager, Stage stage, Button addEq) {
+    public static Table tableAddEq(Survivor survivor, EquipmentManager equipmentManager, Stage stage, Button addEq, ResourceManager resourceManager) {
         Table table = new Table();
         table.setSize(Gdx.graphics.getWidth() / 3f, Gdx.graphics.getHeight() / 2f);
         table.setBackground(DigOutGame.skin.getDrawable("box"));
@@ -144,6 +141,11 @@ public class uiHelps {
             equipmentIcon.setSize(64, 64);
             table.add(equipmentIcon).size(64, 64).pad(5);
         }
+
+        Image toolIcon = new Image(new Texture(Gdx.files.internal("assets/resources/TOOLS_icon_64.png")));
+        toolIcon.setSize(64,64);
+        table.add(toolIcon).size(64,64).pad(5);
+
         table.row();
 
         for (Map.Entry<Constants.Equipment, Integer> entry : equipmentStatus.entrySet()) {
@@ -165,7 +167,7 @@ public class uiHelps {
                                 survivor.setEquipment(equipmentManager.getEquipment(equipment));
                                 addButton.setDisabled(true);
                                 GameScreen.addEqTable.clear();
-                                GameScreen.needsRefresh = true;
+                                GameScreen.needsRefreshAfterAddEQ = true;
                             }
                         });
                     }
@@ -174,6 +176,30 @@ public class uiHelps {
 
             table.add(addButton).height(32).width(64).pad(5);
         }
+
+        TextButton addToolButton = new TextButton("Add", DigOutGame.skinButton.get("small", TextButton.TextButtonStyle.class));
+
+        if (resourceManager.getResource(Constants.Resources.TOOLS).getTotalAmount() == 0 || survivor.getProfession() == Constants.Survivors.WORKER || survivor.getProfession() == Constants.Survivors.MINER) {
+            addToolButton.setDisabled(true);
+        } else {
+            addToolButton.addListener(new ChangeListener() {
+                @Override
+                public void changed(ChangeEvent event, Actor actor) {
+                    displayConfirmBox(stage, "Do you want to rebrand a survivor as a Worker?", confirmed -> {
+                        if (confirmed) {
+                            resourceManager.getResource(Constants.Resources.TOOLS).setAllocatedAmount(1);
+                            resourceManager.getResource(Constants.Resources.TOOLS).consumeAllocatedResources();
+                            survivor.setProfession(Constants.Survivors.WORKER);
+                            addToolButton.setDisabled(true);
+                            GameScreen.addEqTable.clear();
+                            GameScreen.needsRefreshAfterAddEQ = true;
+                        }
+                    });
+                }
+            });
+        }
+
+        table.add(addToolButton).height(32).width(64).pad(5);
 
         addEq.setDisabled(false);
         return table;
