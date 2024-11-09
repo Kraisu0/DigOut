@@ -28,14 +28,15 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static com.kraisu.digout.logs.DateLogs.logs;
+import static com.kraisu.digout.scenes.uiHelps.tableAddEq;
 
 public class GameScreen implements Screen {
 
     private static Game game;
     private Stage stage;
-    private Table outerTable, outerMenuTable, rightTable, centerTable, nameTable, resourcesTable,
+    private Table outerTable, outerMenuTable, outerAddEqTable, rightTable, centerTable, nameTable, resourcesTable,
         roomsTable, infoTable, infoButtonTable, survivorsTable, miniMenuTable, survivorInfoTable,
-        eqInfoTable, diaryInfoTable, addEqTable;
+        eqInfoTable, diaryInfoTable;
     private static Table menuTable;
     private Map<Constants.Resources, Integer> resourceStatus;
     private LinkedHashMap<Constants.Equipment, Integer> equipmentStatus;
@@ -48,12 +49,15 @@ public class GameScreen implements Screen {
     private static final float roomWidth = Gdx.graphics.getWidth() * 4 / 5f / 10;
     private static final float roomHeight = Gdx.graphics.getHeight() *11 / 14f / 10 - 2;
 
+
     private String name;
     private int roundNumber;
 
     private static boolean isMenuOpen, isInfoBoxOpen;
 
-    private float timer = 0;
+    public static boolean needsRefreshAfterAddEQ = true;
+    public static Table addEqTable;
+
 
     public GameScreen(Game game) {
         this.game = game;
@@ -76,6 +80,8 @@ public class GameScreen implements Screen {
         outerTable.setFillParent(true);
         outerMenuTable = new Table();
         outerMenuTable.setFillParent(true);
+        outerAddEqTable = new Table();
+        outerAddEqTable.setFillParent(true);
 
         centerTable = new Table();
         rightTable = new Table();
@@ -164,41 +170,9 @@ public class GameScreen implements Screen {
         nameTable.add(nameLabel).expandX().center().height(Gdx.graphics.getHeight()/14f);
 
 
-
         //resources bar
-        resourceStatus = game.getResourceManager().getResourceStatus();
-        resourceName = game.getResourceManager().getResourceNames();
-        resourceDescription = game.getResourceManager().getResourceDescription();
-
-        for(Map.Entry<Constants.Resources, Integer> entry : resourceStatus.entrySet()) {
-            Constants.Resources resource = entry.getKey();
-            String description = resourceDescription.get(resource);
-
-            Image resourceIcon = new Image(new Texture(Gdx.files.internal("assets/resources/" + entry.getKey().toString()+ "_icon_64.png")));
-            resourceIcon.setScaling(Scaling.none);
-            resourceIcon.setSize(64, 64);
-
-            TextTooltip tooltip = new TextTooltip(description, DigOutGame.skin);
-            tooltip.setInstant(true);
-            //tooltip.getContainer().pad(5);
-            resourceIcon.addListener(tooltip);
-
-
-
-            String formattedAmount = String.format("%02d", entry.getValue());
-            Label resourceAmountLabel = new Label(formattedAmount, DigOutGame.skin.get("mediumFont", Label.LabelStyle.class));
-
-            resourcesTable.add(resourceIcon).size(64, 64).expandX().fillX().center();
-            resourcesTable.add(resourceAmountLabel).expandX().fillX().center();
-        }
-
-        resourcesTable.row();
-
-        for(Map.Entry<Constants.Resources, String> entry : resourceName.entrySet()) {
-            Label resourceNameLabel = new Label(entry.getValue(), DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
-
-            resourcesTable.add(resourceNameLabel).expandX().colspan(2).center();
-        }
+        game.getResourceManager().getResource(Constants.Resources.TOOLS).setTotalAmount(5);
+        populateResourceBar();
 
 
         //screen 10x10
@@ -292,70 +266,12 @@ public class GameScreen implements Screen {
 
 
         //eq table
-        equipmentStatus = game.getEquipmentManager().getEquipmentStatus();
-        equipmentName = game.getEquipmentManager().getEquipmentNames();
-        equipmentDescription = game.getEquipmentManager().getEquipmentDescription();
-
-        float infoHeight = Gdx.graphics.getHeight()*10/14f/12;
-
-        for (Map.Entry<Constants.Equipment, Integer> entry : equipmentStatus.entrySet()) {
-            Constants.Equipment equipment = entry.getKey();
-            Integer amount = entry.getValue();
-            String name = equipmentName.get(equipment);
-            String description = equipmentDescription.get(equipment);
-
-            Image equipmentIcon = new Image(new Texture(Gdx.files.internal("assets/equipment/" + equipment.toString() + "_icon_64.png")));
-            equipmentIcon.setScaling(Scaling.none);
-            equipmentIcon.setSize(64, 64);
-
-            TextTooltip tooltip = new TextTooltip(description, DigOutGame.skin);
-            tooltip.setInstant(true);
-            //tooltip.getContainer().pad(5);
-            equipmentIcon.addListener(tooltip);
-
-            String formattedAmount = String.format("%02d", amount);
-            Label equipmentAmountLabel = new Label(formattedAmount, DigOutGame.skin.get("mediumFont", Label.LabelStyle.class));
-
-            Label equipmentNameLabel = new Label(name, DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
-
-            eqInfoTable.add(equipmentIcon).size(64, 64).expand().fill().center().height(infoHeight).padTop(10);
-            eqInfoTable.add(equipmentAmountLabel).expand().fill().center().height(infoHeight).padTop(10);
-            eqInfoTable.row();
-            eqInfoTable.add(equipmentNameLabel).colspan(2).expandX().center().padBottom(infoHeight);
-            eqInfoTable.row();
-        }
-
-
-
+        game.getEquipmentManager().getEquipment(Constants.Equipment.SEARCHLIGHT).setTotalAmount(5);
+        refreshEqInfoTable();
 
         //addEqTable
-        addEqTable.setSize(Gdx.graphics.getWidth()/3f, Gdx.graphics.getHeight()/2f);
-        addEqTable.setVisible(false);
-
-        addEqTable.setBackground(DigOutGame.skin.getDrawable("box"));
-
-        for (Map.Entry<Constants.Equipment, Integer> entry : equipmentStatus.entrySet()) {
-            Constants.Equipment equipment = entry.getKey();
-            //Integer amount = entry.getValue();
-            //String name = equipmentName.get(equipment);
-            String description = equipmentDescription.get(equipment);
-
-            Image equipmentIcon = new Image(new Texture(Gdx.files.internal("assets/equipment/" + equipment.toString() + "_icon_64.png")));
-            equipmentIcon.setScaling(Scaling.none);
-            equipmentIcon.setSize(64, 64);
-
-            TextTooltip tooltip = new TextTooltip(description, DigOutGame.skin);
-            tooltip.setInstant(true);
-            //tooltip.getContainer().pad(5);
-            equipmentIcon.addListener(tooltip);
-
-
-            eqInfoTable.add(equipmentIcon).size(64, 64).expand().fill().center().height(infoHeight).padTop(10);
-            eqInfoTable.row();
-            eqInfoTable.row();
-        }
-
-        addEqTable.add(backToGameButton).pad(10).width(addEqTable.getWidth()-20).colspan(2).row();
+        addEqTable.setSize(Gdx.graphics.getWidth() / 3f, Gdx.graphics.getHeight() / 2f);
+        outerAddEqTable.add(addEqTable);
 
 
         game.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
@@ -465,6 +381,7 @@ public class GameScreen implements Screen {
 
         stage.addActor(outerTable);
         stage.addActor(outerMenuTable);
+        stage.addActor(outerAddEqTable);
     }
 
     public static void openMenu() {
@@ -501,10 +418,16 @@ public class GameScreen implements Screen {
 
         if(survivor.getEquipment() == null)
         {
+
             Button addEQ = new TextButton("+", DigOutGame.skinButton);
+            addEQ.setDisabled(false);
             addEQ.addListener(new ChangeListener() {
                 public void changed(ChangeEvent event, Actor actor) {
-                    System.out.println("Button + is clicked!");
+                    Table equipmentTable = tableAddEq(survivor, game.getEquipmentManager(), stage, addEQ, game.getResourceManager());
+                    equipmentTable.setVisible(true);
+                    addEQ.setDisabled(true);
+                    addEqTable.clear();
+                    addEqTable.add(equipmentTable).pad(10);
                 }
             });
 
@@ -599,6 +522,17 @@ public class GameScreen implements Screen {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(Gdx.gl.GL_COLOR_BUFFER_BIT);
 
+        this.game = game;
+        refreshEqInfoTable();
+
+        if (needsRefreshAfterAddEQ) {
+            refreshSurvivorBar();
+            refreshResourceBar();
+            survivorInfoTable.clear();
+            needsRefreshAfterAddEQ = false;
+            System.out.println("ABCDEFGHIJ");
+        }
+
         if(menuTable.isVisible()) {
             outerTable.setColor(0, 0, 0, 0.3f);
             outerTable.setTouchable(Touchable.disabled);
@@ -614,11 +548,7 @@ public class GameScreen implements Screen {
         openMenu();
 
 
-        timer += delta;
-        if (timer >= 10) {
-            uiHelps.displayInfoBox(stage, "You cannot make this action!", uiHelps.Mark.ERROR);
-            timer = 0;
-        }
+
 
         stage.act(delta);
         stage.draw();
@@ -642,4 +572,152 @@ public class GameScreen implements Screen {
     public void dispose() {
         stage.dispose();
     }
+
+    private void populateEqInfoTable() {
+        equipmentStatus = game.getEquipmentManager().getEquipmentStatus();
+        equipmentName = game.getEquipmentManager().getEquipmentNames();
+        equipmentDescription = game.getEquipmentManager().getEquipmentDescription();
+
+        eqInfoTable.clear();
+
+        float infoHeight = Gdx.graphics.getHeight() * 10 / 14f / 12;
+
+        for (Map.Entry<Constants.Equipment, Integer> entry : equipmentStatus.entrySet()) {
+            Constants.Equipment equipment = entry.getKey();
+            Integer amount = entry.getValue();
+            String name = equipmentName.get(equipment);
+            String description = equipmentDescription.get(equipment);
+
+            Image equipmentIcon = new Image(new Texture(Gdx.files.internal("assets/equipment/" + equipment.toString() + "_icon_64.png")));
+            equipmentIcon.setScaling(Scaling.none);
+            equipmentIcon.setSize(64, 64);
+
+            TextTooltip tooltip = new TextTooltip(description, DigOutGame.skin);
+            tooltip.setInstant(true);
+            equipmentIcon.addListener(tooltip);
+
+            String formattedAmount = String.format("%02d", amount);
+            Label equipmentAmountLabel = new Label(formattedAmount, DigOutGame.skin.get("mediumFont", Label.LabelStyle.class));
+            Label equipmentNameLabel = new Label(name, DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
+
+            eqInfoTable.add(equipmentIcon).size(64, 64).expand().fill().center().height(infoHeight).padTop(10);
+            eqInfoTable.add(equipmentAmountLabel).expand().fill().center().height(infoHeight).padTop(10);
+            eqInfoTable.row();
+            eqInfoTable.add(equipmentNameLabel).colspan(2).expandX().center().padBottom(infoHeight);
+            eqInfoTable.row();
+        }
+    }
+
+    private void refreshEqInfoTable() {
+        populateEqInfoTable();
+    }
+
+    private void populateSurvivorBar() {
+        survivorsTable.clear();
+
+        float survivorBoxWidth = 150f;
+        float survivorBoxHeight = Gdx.graphics.getHeight()/14f;
+
+        survivorsTable.align(Align.left | Align.top);
+
+        int survivorCount = game.getSurvivorManager().getAllSurvivors().size();
+
+        for (int i = 0; i < survivorCount; i++) {
+            Survivor survivor = game.getSurvivorManager().getAllSurvivors().toArray(new Survivor[0])[i];
+
+
+            Table survivorEntry = new Table();
+            Table survivorEntryNames = new Table();
+            Table survivorEntryFull = new Table();
+
+            Image icon = new Image(new TextureRegionDrawable(new TextureRegion(survivor.getImg())));
+            survivorEntry.add(icon).size(64, 64).padLeft(20);
+
+            Label survivorNameLabel = new Label(survivor.getName(), DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
+            survivorEntryNames.add(survivorNameLabel).size(86, 48).padRight(5).padLeft(5).center().row();
+
+            Image energyIcon = new Image(survivor.getEnergyIconDrawable());
+            survivorEntryNames.add(energyIcon).size(64, 16).left().padLeft(5).padBottom(3);
+
+            if(survivorCount % 2 == 1 && survivorCount / 2 == i-1){
+                survivorsTable.row();
+            }
+
+            if(survivorCount % 2 == 0 && survivorCount / 2 == i){
+                survivorsTable.row();
+            }
+
+            if(survivor.getProfession() == Constants.Survivors.COOK || survivor.getProfession() == Constants.Survivors.UNTRAINED){
+                survivorNameLabel.setColor(Color.BLACK);
+            }
+
+            survivorEntryFull.setBackground(DigOutGame.skinSurvivorBox.getDrawable( "box." + survivor.getProfession()));
+            survivorEntryFull.add(survivorEntry);
+            survivorEntryFull.add(survivorEntryNames);
+
+            survivorEntryFull.addListener(new ClickListener() {
+                @Override
+                public void clicked(InputEvent event, float x, float y) {
+                    survivorInfoTable.clear();
+                    survivorInfoTable.add(showSurvivorInfo(survivor));
+                    changeToInfoSurvivor();
+                }
+            });
+
+            survivorsTable.add(survivorEntryFull).size(survivorBoxWidth, survivorBoxHeight);
+
+        }
+    }
+
+    private void refreshSurvivorBar() {
+        populateSurvivorBar();
+    }
+
+    private void refreshSurvivorInfoTable(Survivor survivor) {
+        survivorInfoTable.clear();  // Wyczyść tabelę
+        survivorInfoTable.add(showSurvivorInfo(survivor));  // Załaduj ponownie informacje
+    }
+
+    private void populateResourceBar(){
+        resourcesTable.clear();
+
+        resourceStatus = game.getResourceManager().getResourceStatus();
+        resourceName = game.getResourceManager().getResourceNames();
+        resourceDescription = game.getResourceManager().getResourceDescription();
+
+        for(Map.Entry<Constants.Resources, Integer> entry : resourceStatus.entrySet()) {
+            Constants.Resources resource = entry.getKey();
+            String description = resourceDescription.get(resource);
+
+            Image resourceIcon = new Image(new Texture(Gdx.files.internal("assets/resources/" + entry.getKey().toString()+ "_icon_64.png")));
+            resourceIcon.setScaling(Scaling.none);
+            resourceIcon.setSize(64, 64);
+
+            TextTooltip tooltip = new TextTooltip(description, DigOutGame.skin);
+            tooltip.setInstant(true);
+            //tooltip.getContainer().pad(5);
+            resourceIcon.addListener(tooltip);
+
+
+
+            String formattedAmount = String.format("%02d", entry.getValue());
+            Label resourceAmountLabel = new Label(formattedAmount, DigOutGame.skin.get("mediumFont", Label.LabelStyle.class));
+
+            resourcesTable.add(resourceIcon).size(64, 64).expandX().fillX().center();
+            resourcesTable.add(resourceAmountLabel).expandX().fillX().center();
+        }
+
+        resourcesTable.row();
+
+        for(Map.Entry<Constants.Resources, String> entry : resourceName.entrySet()) {
+            Label resourceNameLabel = new Label(entry.getValue(), DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
+
+            resourcesTable.add(resourceNameLabel).expandX().colspan(2).center();
+        }
+    }
+
+    private void refreshResourceBar() {
+        populateResourceBar();
+    }
+
 }

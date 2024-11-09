@@ -22,7 +22,7 @@ public class ResourceManager {
         resources.put(Constants.Resources.ELECTRICITY, new Resource("Electricity", "Power for power supply", "assets/resources/ELECTRICITY_icon_64.png", 0));
     }
 
-    public Resource getResource(String resourceName) {
+    public Resource getResource(Constants.Resources resourceName) {
         return resources.get(resourceName);
     }
 
