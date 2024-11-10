@@ -28,7 +28,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static com.kraisu.digout.logs.DateLogs.logs;
-import static com.kraisu.digout.scenes.uiHelps.tableAddEq;
+import static com.kraisu.digout.scenes.uiHelps.*;
 
 public class GameScreen implements Screen {
 
@@ -55,8 +55,10 @@ public class GameScreen implements Screen {
 
     private static boolean isMenuOpen, isInfoBoxOpen;
 
-    public static boolean needsRefreshAfterAddEQ = true;
-    public static Table addEqTable;
+    public static boolean needsRefreshAfterAddEQ = false;
+    public static boolean needsRefreshAfterAddTask = false;
+    public static Survivor tempSurvivor = null;
+    public static Table addEqAndTaskTable;
 
 
     public GameScreen(Game game) {
@@ -103,7 +105,7 @@ public class GameScreen implements Screen {
         ScrollPane scrollPane = new ScrollPane(survivorsTable);
         scrollPane.setScrollingDisabled(false, true);
 
-        addEqTable = new Table();
+        addEqAndTaskTable = new Table();
 
         miniMenuTable = new Table();
         menuTable = new Table();
@@ -270,8 +272,8 @@ public class GameScreen implements Screen {
         refreshEqInfoTable();
 
         //addEqTable
-        addEqTable.setSize(Gdx.graphics.getWidth() / 3f, Gdx.graphics.getHeight() / 2f);
-        outerAddEqTable.add(addEqTable);
+        addEqAndTaskTable.setSize(Gdx.graphics.getWidth() / 3f, Gdx.graphics.getHeight() / 2f);
+        outerAddEqTable.add(addEqAndTaskTable);
 
 
         game.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
@@ -395,47 +397,91 @@ public class GameScreen implements Screen {
         Table info = new Table();
 
         Image icon = new Image(new TextureRegionDrawable(new TextureRegion(survivor.getImg())));
-        info.add(icon).size(256,256).expandX().fillX().center().pad(2).row();
+        info.add(icon).size(256,256).expandX().fillX().center().pad(2).colspan(2).row();
 
         Image energyIcon = new Image(survivor.getEnergyIconDrawable());
-        info.add(energyIcon).size(256,64).expandX().fillX().center().pad(2).row();
+        info.add(energyIcon).size(256,64).expandX().fillX().center().pad(2).colspan(2).row();
 
         Label name = new Label("Name: " + survivor.getName(), DigOutGame.skin.get("mediumFont", Label.LabelStyle.class));
-        info.add(name).expandX().fillX().center().pad(2).row();
+        info.add(name).expandX().fillX().center().pad(2).colspan(2).row();
 
         Label age = new Label("Age: " + survivor.getAge(), DigOutGame.skin.get("mediumFont", Label.LabelStyle.class));
-        info.add(age).expandX().fillX().center().pad(2).row();
+        info.add(age).expandX().fillX().center().pad(2).colspan(2).row();
 
         Label profession = new Label("Profession: " + survivor.getProfession(), DigOutGame.skin.get("mediumFont", Label.LabelStyle.class));
-        info.add(profession).expandX().fillX().center().pad(2).row();
+        info.add(profession).expandX().fillX().center().pad(2).colspan(2).row();
 
         Label description = new Label(survivor.getProfileInformation(), DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
         description.setWrap(true);
         description.setWidth(128);
-        info.add(description).expandX().fillX().center().pad(2);
+        info.add(description).expandX().fillX().center().pad(2).colspan(2).row();
 
-        info.row().space(10);
+        Label isTaskAssigned = new Label("Task: ---" , DigOutGame.skin.get("mediumFont", Label.LabelStyle.class));
+
+        if(survivor.getTask() != null)
+            isTaskAssigned = new Label("Task: " + survivor.getTask().getTask(), DigOutGame.skin.get("greenMediumFont", Label.LabelStyle.class));
+
+        info.add(isTaskAssigned).expandX().fillX().center().pad(2).colspan(2).row();
+
+        Label placeOfAssignment = new Label("Place of Assignemnt: ---" , DigOutGame.skin.get("mediumFont", Label.LabelStyle.class));
+
+        if(survivor.getTask() != null && survivor.getTask().getCoordinateOfRoom() != null) {
+            placeOfAssignment = new Label("Place of Assignemnt: " + survivor.getTask().getCoordinateOfRoom().getX() + ", " + survivor.getTask().getCoordinateOfRoom().getY(), DigOutGame.skin.get("mediumFont", Label.LabelStyle.class));
+        }
+
+        info.add(placeOfAssignment).expandX().fillX().center().pad(2).colspan(2);
+
+        info.row().space(5);
 
         if(survivor.getEquipment() == null)
         {
 
             Button addEQ = new TextButton("+", DigOutGame.skinButton);
-            addEQ.setDisabled(false);
             addEQ.addListener(new ChangeListener() {
                 public void changed(ChangeEvent event, Actor actor) {
-                    Table equipmentTable = tableAddEq(survivor, game.getEquipmentManager(), stage, addEQ, game.getResourceManager());
+                    Table equipmentTable = tableAddEq(survivor, stage, game);
                     equipmentTable.setVisible(true);
-                    addEQ.setDisabled(true);
-                    addEqTable.clear();
-                    addEqTable.add(equipmentTable).pad(10);
+                    addEqAndTaskTable.clear();
+                    addEqAndTaskTable.add(equipmentTable).pad(5);
                 }
             });
 
             info.add(addEQ).size(64, 64).expandX().fillX().center().pad(2);
         }else{
             Image EQIcon = new Image(new Texture(Gdx.files.internal(survivor.getEquipment().getIconPath())));
-            info.add(EQIcon).size(64,64).expandX().fillX().center().pad(2).row();
+            info.add(EQIcon).size(64,64).expandX().fillX().center().pad(2);
         }
+
+
+        if(survivor.getTask() == null)
+        {
+            Button addTask = new TextButton("Add Task", DigOutGame.skinButton.get("small", TextButton.TextButtonStyle.class));
+            addTask.addListener(new ChangeListener() {
+                public void changed(ChangeEvent event, Actor actor) {
+                    Table addTaskTable = addChoseTask(stage, survivor, game);
+                    addTaskTable.setVisible(true);
+                    addEqAndTaskTable.clear();
+                    addEqAndTaskTable.add(addTaskTable).pad(5);
+                }
+            });
+
+            info.add(addTask).size(150, 64).expandX().fillX().center().pad(2);
+        }else{
+            Button unpinTask = new TextButton("Unpin Task", DigOutGame.skinButton.get("small-red", TextButton.TextButtonStyle.class));
+            unpinTask.addListener(new ChangeListener() {
+                public void changed(ChangeEvent event, Actor actor) {
+                    displayConfirmBox(stage, "Do you want to unpin a task from a survivor?", confirmed -> {
+                        if (confirmed) {
+                            logs(DateLogs.LogType.INFO, game.getGameId(), "Survivor: " + survivor.getName() + ", Unpin task: " + survivor.getTask().getTask(), null);
+                            survivor.setTask(null);
+                            needsRefreshAfterAddTask = true;
+                        }
+                    });
+                }
+            });
+            info.add(unpinTask).size(150, 64).expandX().fillX().center().pad(2);
+        }
+
 
 
         return info;
@@ -529,8 +575,16 @@ public class GameScreen implements Screen {
             refreshSurvivorBar();
             refreshResourceBar();
             survivorInfoTable.clear();
+            survivorInfoTable.add(showSurvivorInfo(tempSurvivor));
             needsRefreshAfterAddEQ = false;
-            System.out.println("ABCDEFGHIJ");
+        }
+
+        if(needsRefreshAfterAddTask){
+            refreshSurvivorBar();
+            refreshResourceBar();
+            survivorInfoTable.clear();
+            survivorInfoTable.add(showSurvivorInfo(tempSurvivor));
+            needsRefreshAfterAddTask = false;
         }
 
         if(menuTable.isVisible()) {

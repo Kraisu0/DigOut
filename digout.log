@@ -2441,3 +2441,511 @@ DigOut - 2024-11-09 02:25:18(INFO): pause()
 DigOut - 2024-11-09 02:25:18(INFO): dispose()
 DigOut - 2024-11-09 02:25:18(INFO): EIXT GAME
 
+DigOut - 2024-11-09 14:49:48(INFO): create()
+DigOut - 2024-11-09 14:49:54(INFO): Open new game screen
+DigOut - 2024-11-09 14:49:55(INFO): [GAME_ID: 0c4a7d02-59f3-4fd2-888e-ac9c847a06ed] Generate new ID for new Game: 0c4a7d02-59f3-4fd2-888e-ac9c847a06ed
+DigOut - 2024-11-09 14:49:55(INFO): [GAME_ID: 0c4a7d02-59f3-4fd2-888e-ac9c847a06ed] Coordinates of Base room [9, 1]
+DigOut - 2024-11-09 14:49:55(INFO): [GAME_ID: 0c4a7d02-59f3-4fd2-888e-ac9c847a06ed] Coordinates of Exit room [4, 10]
+DigOut - 2024-11-09 14:49:55(INFO): [GAME_ID: 0c4a7d02-59f3-4fd2-888e-ac9c847a06ed] create new Survivor. NAME: JOHN, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Zawsze miał przy sobie termos z kawą , mimo że nie lubił kopalń , chociaż liczył na znalezienie zapomnianego skarbu., AGE: 50
+DigOut - 2024-11-09 14:49:55(INFO): [GAME_ID: 0c4a7d02-59f3-4fd2-888e-ac9c847a06ed] Create New Game
+DigOut - 2024-11-09 14:49:57(INFO): [GAME_ID: 0c4a7d02-59f3-4fd2-888e-ac9c847a06ed] create new Survivor. NAME: MIKE, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Zawsze miał przy sobie termos z kawą , choć nigdy nie lubił się brudzić , ale najczęściej szukał pretekstu, żeby nie pracować., AGE: 60
+DigOut - 2024-11-09 14:49:57(INFO): [GAME_ID: 0c4a7d02-59f3-4fd2-888e-ac9c847a06ed] create new Survivor. NAME: DAN, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Zawsze miał przy sobie termos z kawą , lecz praca pod ziemią go męczyła , i tak naprawdę bał się myszy., AGE: 65
+DigOut - 2024-11-09 14:49:57(INFO): [GAME_ID: 0c4a7d02-59f3-4fd2-888e-ac9c847a06ed] create new Survivor. NAME: TED, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Znany z tego, że zna wszystkie tunele na pamięć , a jego koledzy zawsze się z niego śmiali , chociaż nie wiedział, jak używać kilofa., AGE: 37
+DigOut - 2024-11-09 14:49:57(INFO): [GAME_ID: 0c4a7d02-59f3-4fd2-888e-ac9c847a06ed] create new Survivor. NAME: JIM, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Uwielbiał wykopywać skarby , a jego siła była legendarna , mimo że kopanie szło mu jak po grudzie., AGE: 39
+DigOut - 2024-11-09 14:50:08(INFO): pause()
+DigOut - 2024-11-09 14:50:08(INFO): dispose()
+DigOut - 2024-11-09 14:50:08(INFO): EIXT GAME
+
+DigOut - 2024-11-09 14:50:20(INFO): create()
+DigOut - 2024-11-09 14:50:26(INFO): Open new game screen
+DigOut - 2024-11-09 14:50:28(INFO): [GAME_ID: 499d052f-4c15-4abc-8edb-09ed139eff4d] Generate new ID for new Game: 499d052f-4c15-4abc-8edb-09ed139eff4d
+DigOut - 2024-11-09 14:50:28(INFO): [GAME_ID: 499d052f-4c15-4abc-8edb-09ed139eff4d] Coordinates of Base room [7, 1]
+DigOut - 2024-11-09 14:50:28(INFO): [GAME_ID: 499d052f-4c15-4abc-8edb-09ed139eff4d] Coordinates of Exit room [5, 10]
+DigOut - 2024-11-09 14:50:28(INFO): [GAME_ID: 499d052f-4c15-4abc-8edb-09ed139eff4d] create new Survivor. NAME: WILL, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Nie rozstawał się z łopatą , a jego koledzy zawsze się z niego śmiali , chociaż liczył na znalezienie zapomnianego skarbu., AGE: 52
+DigOut - 2024-11-09 14:50:28(INFO): [GAME_ID: 499d052f-4c15-4abc-8edb-09ed139eff4d] Create New Game
+DigOut - 2024-11-09 14:50:30(INFO): [GAME_ID: 499d052f-4c15-4abc-8edb-09ed139eff4d] create new Survivor. NAME: AL, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Pracował w kopalni od dekady , choć nigdy nie lubił się brudzić , choć zawsze miał nadzieję na awans do biura., AGE: 34
+DigOut - 2024-11-09 14:50:30(INFO): [GAME_ID: 499d052f-4c15-4abc-8edb-09ed139eff4d] create new Survivor. NAME: WILL 1, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Kiedyś był najlepszym górnikiem w okolicy , lecz nie odnalazł jeszcze skarbu , chociaż liczył na znalezienie zapomnianego skarbu., AGE: 79
+DigOut - 2024-11-09 14:50:30(INFO): [GAME_ID: 499d052f-4c15-4abc-8edb-09ed139eff4d] create new Survivor. NAME: KURT, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Nie rozstawał się ze swoim ekwipunkiem , lecz praca pod ziemią go męczyła , choć zawsze miał nadzieję na awans do biura., AGE: 72
+DigOut - 2024-11-09 14:50:30(INFO): [GAME_ID: 499d052f-4c15-4abc-8edb-09ed139eff4d] create new Survivor. NAME: TIM, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Znany z tego, że zna wszystkie tunele na pamięć , a jego koledzy zawsze się z niego śmiali , i tak naprawdę bał się myszy., AGE: 42
+DigOut - 2024-11-09 14:50:49(INFO): pause()
+DigOut - 2024-11-09 14:50:49(INFO): dispose()
+DigOut - 2024-11-09 14:50:49(INFO): EIXT GAME
+
+DigOut - 2024-11-09 14:55:04(INFO): create()
+DigOut - 2024-11-09 14:55:06(INFO): pause()
+DigOut - 2024-11-09 14:55:09(INFO): resume()
+DigOut - 2024-11-09 14:55:10(INFO): pause()
+DigOut - 2024-11-09 14:55:26(INFO): resume()
+DigOut - 2024-11-09 14:55:30(INFO): pause()
+DigOut - 2024-11-09 14:55:32(INFO): resume()
+DigOut - 2024-11-09 14:55:33(INFO): Open new game screen
+DigOut - 2024-11-09 14:55:35(INFO): [GAME_ID: bfdb8ef6-a7fc-4bae-8fff-c976dfb46328] Generate new ID for new Game: bfdb8ef6-a7fc-4bae-8fff-c976dfb46328
+DigOut - 2024-11-09 14:55:35(INFO): [GAME_ID: bfdb8ef6-a7fc-4bae-8fff-c976dfb46328] Coordinates of Base room [3, 1]
+DigOut - 2024-11-09 14:55:35(INFO): [GAME_ID: bfdb8ef6-a7fc-4bae-8fff-c976dfb46328] Coordinates of Exit room [1, 10]
+DigOut - 2024-11-09 14:55:35(INFO): [GAME_ID: bfdb8ef6-a7fc-4bae-8fff-c976dfb46328] create new Survivor. NAME: WILL, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Nie rozstawał się ze swoim ekwipunkiem , lecz nie odnalazł jeszcze skarbu , bo pomylił kask z wiadrem., AGE: 67
+DigOut - 2024-11-09 14:55:35(INFO): [GAME_ID: bfdb8ef6-a7fc-4bae-8fff-c976dfb46328] Create New Game
+DigOut - 2024-11-09 14:55:37(INFO): [GAME_ID: bfdb8ef6-a7fc-4bae-8fff-c976dfb46328] create new Survivor. NAME: KURT, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Znany z tego, że zna wszystkie tunele na pamięć , ale ostatnio miał zły dzień , i tak naprawdę bał się myszy., AGE: 69
+DigOut - 2024-11-09 14:55:37(INFO): [GAME_ID: bfdb8ef6-a7fc-4bae-8fff-c976dfb46328] create new Survivor. NAME: RYAN, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Nie rozstawał się ze swoim ekwipunkiem , choć bał się ciemności , choć zawsze marzył o emeryturze na plaży., AGE: 68
+DigOut - 2024-11-09 14:55:37(INFO): [GAME_ID: bfdb8ef6-a7fc-4bae-8fff-c976dfb46328] create new Survivor. NAME: RYAN 1, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Zawsze miał przy sobie termos z kawą , lecz praca pod ziemią go męczyła , chociaż nie wiedział, jak używać kilofa., AGE: 33
+DigOut - 2024-11-09 14:55:37(INFO): [GAME_ID: bfdb8ef6-a7fc-4bae-8fff-c976dfb46328] create new Survivor. NAME: KEN, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Znany z tego, że zna wszystkie tunele na pamięć , mimo że nie lubił kopalń , ale najczęściej szukał pretekstu, żeby nie pracować., AGE: 25
+DigOut - 2024-11-09 14:56:07(INFO): pause()
+DigOut - 2024-11-09 14:56:07(INFO): dispose()
+DigOut - 2024-11-09 14:56:07(INFO): EIXT GAME
+
+DigOut - 2024-11-09 21:02:26(INFO): create()
+DigOut - 2024-11-09 21:02:32(INFO): Open new game screen
+DigOut - 2024-11-09 21:02:33(INFO): [GAME_ID: 17581739-7fd6-4c18-9811-48f3ea8daf00] Generate new ID for new Game: 17581739-7fd6-4c18-9811-48f3ea8daf00
+DigOut - 2024-11-09 21:02:33(INFO): [GAME_ID: 17581739-7fd6-4c18-9811-48f3ea8daf00] Coordinates of Base room [5, 1]
+DigOut - 2024-11-09 21:02:33(INFO): [GAME_ID: 17581739-7fd6-4c18-9811-48f3ea8daf00] Coordinates of Exit room [3, 10]
+DigOut - 2024-11-09 21:02:33(INFO): [GAME_ID: 17581739-7fd6-4c18-9811-48f3ea8daf00] create new Survivor. NAME: MAX, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Nie rozstawał się ze swoim ekwipunkiem , a jego siła była legendarna , mimo że kopanie szło mu jak po grudzie., AGE: 26
+DigOut - 2024-11-09 21:02:33(INFO): [GAME_ID: 17581739-7fd6-4c18-9811-48f3ea8daf00] Create New Game
+DigOut - 2024-11-09 21:02:36(INFO): [GAME_ID: 17581739-7fd6-4c18-9811-48f3ea8daf00] create new Survivor. NAME: TED, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Znany z tego, że zna wszystkie tunele na pamięć , mimo że nie lubił kopalń , chociaż nie wiedział, jak używać kilofa., AGE: 31
+DigOut - 2024-11-09 21:02:36(INFO): [GAME_ID: 17581739-7fd6-4c18-9811-48f3ea8daf00] create new Survivor. NAME: JIM, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Kiedyś był najlepszym górnikiem w okolicy , choć bał się ciemności , choć zawsze marzył o emeryturze na plaży., AGE: 53
+DigOut - 2024-11-09 21:02:36(INFO): [GAME_ID: 17581739-7fd6-4c18-9811-48f3ea8daf00] create new Survivor. NAME: MIKE, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Kiedyś był złotnikiem , choć nigdy nie lubił się brudzić , choć zawsze miał nadzieję na awans do biura., AGE: 70
+DigOut - 2024-11-09 21:02:36(INFO): [GAME_ID: 17581739-7fd6-4c18-9811-48f3ea8daf00] create new Survivor. NAME: GUS, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Kiedyś był złotnikiem , a jego siła była legendarna , chociaż liczył na znalezienie zapomnianego skarbu., AGE: 24
+DigOut - 2024-11-09 21:02:48(INFO): pause()
+DigOut - 2024-11-09 21:02:48(INFO): dispose()
+DigOut - 2024-11-09 21:02:48(INFO): EIXT GAME
+
+DigOut - 2024-11-09 21:05:04(INFO): create()
+DigOut - 2024-11-09 21:05:11(INFO): Open new game screen
+DigOut - 2024-11-09 21:05:13(INFO): [GAME_ID: 63c02013-858c-47b4-931b-ce9cbccb2f57] Generate new ID for new Game: 63c02013-858c-47b4-931b-ce9cbccb2f57
+DigOut - 2024-11-09 21:05:13(INFO): [GAME_ID: 63c02013-858c-47b4-931b-ce9cbccb2f57] Coordinates of Base room [10, 1]
+DigOut - 2024-11-09 21:05:13(INFO): [GAME_ID: 63c02013-858c-47b4-931b-ce9cbccb2f57] Coordinates of Exit room [9, 10]
+DigOut - 2024-11-09 21:05:13(INFO): [GAME_ID: 63c02013-858c-47b4-931b-ce9cbccb2f57] create new Survivor. NAME: JIM, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Uwielbiał wykopywać skarby , ale nigdy nie znalazł złota , chociaż nie wiedział, jak używać kilofa., AGE: 33
+DigOut - 2024-11-09 21:05:13(INFO): [GAME_ID: 63c02013-858c-47b4-931b-ce9cbccb2f57] Create New Game
+DigOut - 2024-11-09 21:05:15(INFO): [GAME_ID: 63c02013-858c-47b4-931b-ce9cbccb2f57] create new Survivor. NAME: KEN, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Kiedyś był złotnikiem , choć nigdy nie lubił się brudzić , mimo że kopanie szło mu jak po grudzie., AGE: 79
+DigOut - 2024-11-09 21:05:15(INFO): [GAME_ID: 63c02013-858c-47b4-931b-ce9cbccb2f57] create new Survivor. NAME: KURT, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Znany z tego, że zna wszystkie tunele na pamięć , ale ostatnio miał zły dzień , chociaż nie wiedział, jak używać kilofa., AGE: 38
+DigOut - 2024-11-09 21:05:15(INFO): [GAME_ID: 63c02013-858c-47b4-931b-ce9cbccb2f57] create new Survivor. NAME: GUS, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Zawsze miał przy sobie termos z kawą , choć nigdy nie lubił się brudzić , bo pomylił kask z wiadrem., AGE: 52
+DigOut - 2024-11-09 21:05:15(INFO): [GAME_ID: 63c02013-858c-47b4-931b-ce9cbccb2f57] create new Survivor. NAME: MIKE, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Zawsze marzył o znalezieniu diamentów , choć bał się ciemności , i tak naprawdę bał się myszy., AGE: 29
+DigOut - 2024-11-09 21:06:16(INFO): create()
+DigOut - 2024-11-09 21:06:21(INFO): Open new game screen
+DigOut - 2024-11-09 21:06:22(INFO): [GAME_ID: 71e07474-1432-48cd-a5d5-7ac21bdabf67] Generate new ID for new Game: 71e07474-1432-48cd-a5d5-7ac21bdabf67
+DigOut - 2024-11-09 21:06:22(INFO): [GAME_ID: 71e07474-1432-48cd-a5d5-7ac21bdabf67] Coordinates of Base room [7, 1]
+DigOut - 2024-11-09 21:06:22(INFO): [GAME_ID: 71e07474-1432-48cd-a5d5-7ac21bdabf67] Coordinates of Exit room [4, 10]
+DigOut - 2024-11-09 21:06:22(INFO): [GAME_ID: 71e07474-1432-48cd-a5d5-7ac21bdabf67] create new Survivor. NAME: MIKE, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Nie rozstawał się ze swoim ekwipunkiem , ale ostatnio miał zły dzień , chociaż liczył na znalezienie zapomnianego skarbu., AGE: 63
+DigOut - 2024-11-09 21:06:22(INFO): [GAME_ID: 71e07474-1432-48cd-a5d5-7ac21bdabf67] Create New Game
+DigOut - 2024-11-09 21:06:24(INFO): [GAME_ID: 71e07474-1432-48cd-a5d5-7ac21bdabf67] create new Survivor. NAME: TED, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Pracował w kopalni od dekady , a jego koledzy zawsze się z niego śmiali , i tak naprawdę bał się myszy., AGE: 67
+DigOut - 2024-11-09 21:06:24(INFO): [GAME_ID: 71e07474-1432-48cd-a5d5-7ac21bdabf67] create new Survivor. NAME: KEN, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Uwielbiał wykopywać skarby , choć bał się ciemności , i tak naprawdę bał się myszy., AGE: 50
+DigOut - 2024-11-09 21:06:24(INFO): [GAME_ID: 71e07474-1432-48cd-a5d5-7ac21bdabf67] create new Survivor. NAME: TOM, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Kiedyś był złotnikiem , a jego siła była legendarna , choć zawsze miał nadzieję na awans do biura., AGE: 25
+DigOut - 2024-11-09 21:06:24(INFO): [GAME_ID: 71e07474-1432-48cd-a5d5-7ac21bdabf67] create new Survivor. NAME: SAM, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Zawsze miał przy sobie termos z kawą , mimo że nie lubił kopalń , choć przyszedł tu, myśląc, że to biblioteka., AGE: 53
+DigOut - 2024-11-09 21:07:23(INFO): pause()
+DigOut - 2024-11-09 21:07:23(INFO): dispose()
+DigOut - 2024-11-09 21:07:23(INFO): EIXT GAME
+
+DigOut - 2024-11-09 21:09:33(INFO): create()
+DigOut - 2024-11-09 21:09:39(INFO): Open new game screen
+DigOut - 2024-11-09 21:09:40(INFO): [GAME_ID: 5d9b551e-14d2-4d61-93bb-c60cc6a0ef01] Generate new ID for new Game: 5d9b551e-14d2-4d61-93bb-c60cc6a0ef01
+DigOut - 2024-11-09 21:09:40(INFO): [GAME_ID: 5d9b551e-14d2-4d61-93bb-c60cc6a0ef01] Coordinates of Base room [8, 1]
+DigOut - 2024-11-09 21:09:40(INFO): [GAME_ID: 5d9b551e-14d2-4d61-93bb-c60cc6a0ef01] Coordinates of Exit room [8, 10]
+DigOut - 2024-11-09 21:09:40(INFO): [GAME_ID: 5d9b551e-14d2-4d61-93bb-c60cc6a0ef01] create new Survivor. NAME: WILL, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Kiedyś był złotnikiem , lecz praca pod ziemią go męczyła , chociaż liczył na znalezienie zapomnianego skarbu., AGE: 72
+DigOut - 2024-11-09 21:09:40(INFO): [GAME_ID: 5d9b551e-14d2-4d61-93bb-c60cc6a0ef01] Create New Game
+DigOut - 2024-11-09 21:09:43(INFO): [GAME_ID: 5d9b551e-14d2-4d61-93bb-c60cc6a0ef01] create new Survivor. NAME: RON, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Kiedyś był najlepszym górnikiem w okolicy , mimo że nie lubił kopalń , ale najczęściej szukał pretekstu, żeby nie pracować., AGE: 46
+DigOut - 2024-11-09 21:09:43(INFO): [GAME_ID: 5d9b551e-14d2-4d61-93bb-c60cc6a0ef01] create new Survivor. NAME: KEN, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Znany z tego, że zna wszystkie tunele na pamięć , a jego koledzy zawsze się z niego śmiali , choć zawsze miał nadzieję na awans do biura., AGE: 38
+DigOut - 2024-11-09 21:09:43(INFO): [GAME_ID: 5d9b551e-14d2-4d61-93bb-c60cc6a0ef01] create new Survivor. NAME: RON 1, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Kiedyś był najlepszym górnikiem w okolicy , choć nigdy nie lubił się brudzić , bo pomylił kask z wiadrem., AGE: 61
+DigOut - 2024-11-09 21:09:43(INFO): [GAME_ID: 5d9b551e-14d2-4d61-93bb-c60cc6a0ef01] create new Survivor. NAME: SAM, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Zawsze marzył o znalezieniu diamentów , lecz nie odnalazł jeszcze skarbu , i tak naprawdę bał się myszy., AGE: 64
+DigOut - 2024-11-09 21:09:51(INFO): pause()
+DigOut - 2024-11-09 21:09:51(INFO): dispose()
+DigOut - 2024-11-09 21:09:51(INFO): EIXT GAME
+
+DigOut - 2024-11-09 21:10:07(INFO): create()
+DigOut - 2024-11-09 21:10:12(INFO): Open new game screen
+DigOut - 2024-11-09 21:10:14(INFO): [GAME_ID: 834f96cd-a6ea-4ce7-8080-ef2d226d4b06] Generate new ID for new Game: 834f96cd-a6ea-4ce7-8080-ef2d226d4b06
+DigOut - 2024-11-09 21:10:14(INFO): [GAME_ID: 834f96cd-a6ea-4ce7-8080-ef2d226d4b06] Coordinates of Base room [6, 1]
+DigOut - 2024-11-09 21:10:14(INFO): [GAME_ID: 834f96cd-a6ea-4ce7-8080-ef2d226d4b06] Coordinates of Exit room [4, 10]
+DigOut - 2024-11-09 21:10:14(INFO): [GAME_ID: 834f96cd-a6ea-4ce7-8080-ef2d226d4b06] create new Survivor. NAME: MIKE, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Uwielbiał wykopywać skarby , lecz nie odnalazł jeszcze skarbu , i tak naprawdę bał się myszy., AGE: 52
+DigOut - 2024-11-09 21:10:14(INFO): [GAME_ID: 834f96cd-a6ea-4ce7-8080-ef2d226d4b06] Create New Game
+DigOut - 2024-11-09 21:10:16(INFO): [GAME_ID: 834f96cd-a6ea-4ce7-8080-ef2d226d4b06] create new Survivor. NAME: KURT, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Nie rozstawał się z łopatą , a jego siła była legendarna , mimo że kopanie szło mu jak po grudzie., AGE: 25
+DigOut - 2024-11-09 21:10:16(INFO): [GAME_ID: 834f96cd-a6ea-4ce7-8080-ef2d226d4b06] create new Survivor. NAME: JIM, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Nie rozstawał się z łopatą , ale ostatnio miał zły dzień , chociaż liczył na znalezienie zapomnianego skarbu., AGE: 51
+DigOut - 2024-11-09 21:10:16(INFO): [GAME_ID: 834f96cd-a6ea-4ce7-8080-ef2d226d4b06] create new Survivor. NAME: SAM, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Uwielbiał wykopywać skarby , ale nigdy nie znalazł złota , mimo że kopanie szło mu jak po grudzie., AGE: 39
+DigOut - 2024-11-09 21:10:16(INFO): [GAME_ID: 834f96cd-a6ea-4ce7-8080-ef2d226d4b06] create new Survivor. NAME: TIM, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Kiedyś był złotnikiem , ale ostatnio miał zły dzień , bo pomylił kask z wiadrem., AGE: 79
+DigOut - 2024-11-09 21:14:44(INFO): create()
+DigOut - 2024-11-09 21:14:49(INFO): pause()
+DigOut - 2024-11-09 21:14:49(INFO): dispose()
+DigOut - 2024-11-09 21:14:49(INFO): EIXT GAME
+
+DigOut - 2024-11-09 21:14:56(INFO): create()
+DigOut - 2024-11-09 21:15:01(INFO): Open new game screen
+DigOut - 2024-11-09 21:15:02(INFO): [GAME_ID: a2146b58-4ff4-4eb3-8385-7f5815c7e068] Generate new ID for new Game: a2146b58-4ff4-4eb3-8385-7f5815c7e068
+DigOut - 2024-11-09 21:15:02(INFO): [GAME_ID: a2146b58-4ff4-4eb3-8385-7f5815c7e068] Coordinates of Base room [8, 1]
+DigOut - 2024-11-09 21:15:02(INFO): [GAME_ID: a2146b58-4ff4-4eb3-8385-7f5815c7e068] Coordinates of Exit room [9, 10]
+DigOut - 2024-11-09 21:15:02(INFO): [GAME_ID: a2146b58-4ff4-4eb3-8385-7f5815c7e068] create new Survivor. NAME: AL, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Nie rozstawał się ze swoim ekwipunkiem , mimo że nie lubił kopalń , choć zawsze marzył o emeryturze na plaży., AGE: 55
+DigOut - 2024-11-09 21:15:02(INFO): [GAME_ID: a2146b58-4ff4-4eb3-8385-7f5815c7e068] Create New Game
+DigOut - 2024-11-09 21:15:04(INFO): [GAME_ID: a2146b58-4ff4-4eb3-8385-7f5815c7e068] create new Survivor. NAME: MAX, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Nie rozstawał się z łopatą , ale nigdy nie znalazł złota , bo tak naprawdę wolał szydełkować., AGE: 41
+DigOut - 2024-11-09 21:15:04(INFO): [GAME_ID: a2146b58-4ff4-4eb3-8385-7f5815c7e068] create new Survivor. NAME: STEVE, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Kiedyś był najlepszym górnikiem w okolicy , a jego siła była legendarna , bo tak naprawdę wolał szydełkować., AGE: 46
+DigOut - 2024-11-09 21:15:04(INFO): [GAME_ID: a2146b58-4ff4-4eb3-8385-7f5815c7e068] create new Survivor. NAME: DAN, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Nie rozstawał się ze swoim ekwipunkiem , choć bał się ciemności , bo tak naprawdę wolał szydełkować., AGE: 19
+DigOut - 2024-11-09 21:15:04(INFO): [GAME_ID: a2146b58-4ff4-4eb3-8385-7f5815c7e068] create new Survivor. NAME: SAM, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Nie rozstawał się z łopatą , lecz praca pod ziemią go męczyła , chociaż liczył na znalezienie zapomnianego skarbu., AGE: 66
+DigOut - 2024-11-09 21:17:11(INFO): create()
+DigOut - 2024-11-09 21:17:16(INFO): Open new game screen
+DigOut - 2024-11-09 21:17:17(INFO): [GAME_ID: cefa70bd-5466-4def-a71a-cd1d471e02dd] Generate new ID for new Game: cefa70bd-5466-4def-a71a-cd1d471e02dd
+DigOut - 2024-11-09 21:17:17(INFO): [GAME_ID: cefa70bd-5466-4def-a71a-cd1d471e02dd] Coordinates of Base room [4, 1]
+DigOut - 2024-11-09 21:17:17(INFO): [GAME_ID: cefa70bd-5466-4def-a71a-cd1d471e02dd] Coordinates of Exit room [4, 10]
+DigOut - 2024-11-09 21:17:17(INFO): [GAME_ID: cefa70bd-5466-4def-a71a-cd1d471e02dd] create new Survivor. NAME: KEN, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Nie rozstawał się z łopatą , a jego koledzy zawsze się z niego śmiali , chociaż nie wiedział, jak używać kilofa., AGE: 68
+DigOut - 2024-11-09 21:17:17(INFO): [GAME_ID: cefa70bd-5466-4def-a71a-cd1d471e02dd] Create New Game
+DigOut - 2024-11-09 21:17:19(INFO): [GAME_ID: cefa70bd-5466-4def-a71a-cd1d471e02dd] create new Survivor. NAME: RON, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Zawsze miał przy sobie termos z kawą , choć nigdy nie lubił się brudzić , choć zawsze marzył o emeryturze na plaży., AGE: 34
+DigOut - 2024-11-09 21:17:19(INFO): [GAME_ID: cefa70bd-5466-4def-a71a-cd1d471e02dd] create new Survivor. NAME: TIM, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Nie rozstawał się z łopatą , chociaż bardziej lubił opowieści niż kopanie , chociaż liczył na znalezienie zapomnianego skarbu., AGE: 27
+DigOut - 2024-11-09 21:17:19(INFO): [GAME_ID: cefa70bd-5466-4def-a71a-cd1d471e02dd] create new Survivor. NAME: TOM, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Znany z tego, że zna wszystkie tunele na pamięć , choć bał się ciemności , choć zawsze miał nadzieję na awans do biura., AGE: 43
+DigOut - 2024-11-09 21:17:19(INFO): [GAME_ID: cefa70bd-5466-4def-a71a-cd1d471e02dd] create new Survivor. NAME: RON 1, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Nie rozstawał się ze swoim ekwipunkiem , lecz nie odnalazł jeszcze skarbu , i tak naprawdę bał się myszy., AGE: 42
+DigOut - 2024-11-09 21:17:32(INFO): pause()
+DigOut - 2024-11-09 21:17:32(INFO): dispose()
+DigOut - 2024-11-09 21:17:32(INFO): EIXT GAME
+
+DigOut - 2024-11-09 21:21:58(INFO): create()
+DigOut - 2024-11-09 21:22:04(INFO): Open new game screen
+DigOut - 2024-11-09 21:22:05(INFO): [GAME_ID: c78817a3-9598-44f8-86da-f31d32367c53] Generate new ID for new Game: c78817a3-9598-44f8-86da-f31d32367c53
+DigOut - 2024-11-09 21:22:05(INFO): [GAME_ID: c78817a3-9598-44f8-86da-f31d32367c53] Coordinates of Base room [9, 1]
+DigOut - 2024-11-09 21:22:05(INFO): [GAME_ID: c78817a3-9598-44f8-86da-f31d32367c53] Coordinates of Exit room [7, 10]
+DigOut - 2024-11-09 21:22:05(INFO): [GAME_ID: c78817a3-9598-44f8-86da-f31d32367c53] create new Survivor. NAME: JIM, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Nie rozstawał się z łopatą , chociaż bardziej lubił opowieści niż kopanie , choć zawsze marzył o emeryturze na plaży., AGE: 73
+DigOut - 2024-11-09 21:22:05(INFO): [GAME_ID: c78817a3-9598-44f8-86da-f31d32367c53] Create New Game
+DigOut - 2024-11-09 21:22:07(INFO): [GAME_ID: c78817a3-9598-44f8-86da-f31d32367c53] create new Survivor. NAME: MAX, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Zawsze miał przy sobie termos z kawą , ale nigdy nie znalazł złota , bo pomylił kask z wiadrem., AGE: 66
+DigOut - 2024-11-09 21:22:07(INFO): [GAME_ID: c78817a3-9598-44f8-86da-f31d32367c53] create new Survivor. NAME: BILL, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Nie rozstawał się z łopatą , lecz praca pod ziemią go męczyła , chociaż liczył na znalezienie zapomnianego skarbu., AGE: 69
+DigOut - 2024-11-09 21:22:07(INFO): [GAME_ID: c78817a3-9598-44f8-86da-f31d32367c53] create new Survivor. NAME: RON, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Nie rozstawał się z łopatą , choć bał się ciemności , chociaż nie wiedział, jak używać kilofa., AGE: 62
+DigOut - 2024-11-09 21:22:07(INFO): [GAME_ID: c78817a3-9598-44f8-86da-f31d32367c53] create new Survivor. NAME: ZAC, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Kiedyś był złotnikiem , ale nigdy nie znalazł złota , choć zawsze miał nadzieję na awans do biura., AGE: 65
+DigOut - 2024-11-09 21:22:23(INFO): pause()
+DigOut - 2024-11-09 21:22:23(INFO): dispose()
+DigOut - 2024-11-09 21:22:23(INFO): EIXT GAME
+
+DigOut - 2024-11-09 21:23:56(INFO): create()
+DigOut - 2024-11-09 21:24:02(INFO): Open new game screen
+DigOut - 2024-11-09 21:24:02(INFO): [GAME_ID: 03e058e4-ef25-4223-a96c-67f044f2b5b7] Generate new ID for new Game: 03e058e4-ef25-4223-a96c-67f044f2b5b7
+DigOut - 2024-11-09 21:24:02(INFO): [GAME_ID: 03e058e4-ef25-4223-a96c-67f044f2b5b7] Coordinates of Base room [6, 1]
+DigOut - 2024-11-09 21:24:02(INFO): [GAME_ID: 03e058e4-ef25-4223-a96c-67f044f2b5b7] Coordinates of Exit room [4, 10]
+DigOut - 2024-11-09 21:24:02(INFO): [GAME_ID: 03e058e4-ef25-4223-a96c-67f044f2b5b7] create new Survivor. NAME: BILL, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Kiedyś był najlepszym górnikiem w okolicy , lecz nie odnalazł jeszcze skarbu , chociaż liczył na znalezienie zapomnianego skarbu., AGE: 37
+DigOut - 2024-11-09 21:24:02(INFO): [GAME_ID: 03e058e4-ef25-4223-a96c-67f044f2b5b7] Create New Game
+DigOut - 2024-11-09 21:24:05(INFO): [GAME_ID: 03e058e4-ef25-4223-a96c-67f044f2b5b7] create new Survivor. NAME: SAM, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Zawsze marzył o znalezieniu diamentów , a jego siła była legendarna , chociaż nie wiedział, jak używać kilofa., AGE: 55
+DigOut - 2024-11-09 21:24:05(INFO): [GAME_ID: 03e058e4-ef25-4223-a96c-67f044f2b5b7] create new Survivor. NAME: ZAC, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Kiedyś był złotnikiem , ale nigdy nie znalazł złota , choć zawsze marzył o emeryturze na plaży., AGE: 77
+DigOut - 2024-11-09 21:24:05(INFO): [GAME_ID: 03e058e4-ef25-4223-a96c-67f044f2b5b7] create new Survivor. NAME: STEVE, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Zawsze miał przy sobie termos z kawą , choć nigdy nie lubił się brudzić , i tak naprawdę bał się myszy., AGE: 78
+DigOut - 2024-11-09 21:24:05(INFO): [GAME_ID: 03e058e4-ef25-4223-a96c-67f044f2b5b7] create new Survivor. NAME: ZAC 1, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Kiedyś był najlepszym górnikiem w okolicy , chociaż bardziej lubił opowieści niż kopanie , chociaż nie wiedział, jak używać kilofa., AGE: 80
+DigOut - 2024-11-09 21:24:26(INFO): pause()
+DigOut - 2024-11-09 21:24:26(INFO): dispose()
+DigOut - 2024-11-09 21:24:26(INFO): EIXT GAME
+
+DigOut - 2024-11-09 21:34:37(INFO): create()
+DigOut - 2024-11-09 21:34:42(INFO): Open new game screen
+DigOut - 2024-11-09 21:34:43(INFO): [GAME_ID: 8ea9e814-45fc-4b04-8a61-6448a83c5ac1] Generate new ID for new Game: 8ea9e814-45fc-4b04-8a61-6448a83c5ac1
+DigOut - 2024-11-09 21:34:43(INFO): [GAME_ID: 8ea9e814-45fc-4b04-8a61-6448a83c5ac1] Coordinates of Base room [7, 1]
+DigOut - 2024-11-09 21:34:43(INFO): [GAME_ID: 8ea9e814-45fc-4b04-8a61-6448a83c5ac1] Coordinates of Exit room [5, 10]
+DigOut - 2024-11-09 21:34:43(INFO): [GAME_ID: 8ea9e814-45fc-4b04-8a61-6448a83c5ac1] create new Survivor. NAME: RON, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Zawsze miał przy sobie termos z kawą , chociaż bardziej lubił opowieści niż kopanie , chociaż nie wiedział, jak używać kilofa., AGE: 66
+DigOut - 2024-11-09 21:34:43(INFO): [GAME_ID: 8ea9e814-45fc-4b04-8a61-6448a83c5ac1] Create New Game
+DigOut - 2024-11-09 21:34:45(INFO): [GAME_ID: 8ea9e814-45fc-4b04-8a61-6448a83c5ac1] create new Survivor. NAME: WILL, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Nie rozstawał się ze swoim ekwipunkiem , lecz nie odnalazł jeszcze skarbu , i tak naprawdę bał się myszy., AGE: 57
+DigOut - 2024-11-09 21:34:45(INFO): [GAME_ID: 8ea9e814-45fc-4b04-8a61-6448a83c5ac1] create new Survivor. NAME: BOB, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Nie rozstawał się ze swoim ekwipunkiem , choć nigdy nie lubił się brudzić , ale najczęściej szukał pretekstu, żeby nie pracować., AGE: 40
+DigOut - 2024-11-09 21:34:45(INFO): [GAME_ID: 8ea9e814-45fc-4b04-8a61-6448a83c5ac1] create new Survivor. NAME: TIM, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Znany był jako mistrz kilofa , chociaż bardziej lubił opowieści niż kopanie , i tak naprawdę bał się myszy., AGE: 48
+DigOut - 2024-11-09 21:34:45(INFO): [GAME_ID: 8ea9e814-45fc-4b04-8a61-6448a83c5ac1] create new Survivor. NAME: STEVE, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Zawsze miał przy sobie termos z kawą , lecz nie odnalazł jeszcze skarbu , mimo że kopanie szło mu jak po grudzie., AGE: 51
+DigOut - 2024-11-09 21:35:01(INFO): pause()
+DigOut - 2024-11-09 21:35:01(INFO): dispose()
+DigOut - 2024-11-09 21:35:01(INFO): EIXT GAME
+
+DigOut - 2024-11-09 21:37:10(INFO): create()
+DigOut - 2024-11-09 21:37:15(INFO): Open new game screen
+DigOut - 2024-11-09 21:37:16(INFO): [GAME_ID: d191cacc-3427-4dab-b7da-8489db7eb97b] Generate new ID for new Game: d191cacc-3427-4dab-b7da-8489db7eb97b
+DigOut - 2024-11-09 21:37:16(INFO): [GAME_ID: d191cacc-3427-4dab-b7da-8489db7eb97b] Coordinates of Base room [4, 1]
+DigOut - 2024-11-09 21:37:16(INFO): [GAME_ID: d191cacc-3427-4dab-b7da-8489db7eb97b] Coordinates of Exit room [1, 10]
+DigOut - 2024-11-09 21:37:16(INFO): [GAME_ID: d191cacc-3427-4dab-b7da-8489db7eb97b] create new Survivor. NAME: STEVE, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Znany z tego, że zna wszystkie tunele na pamięć , mimo że nie lubił kopalń , choć przyszedł tu, myśląc, że to biblioteka., AGE: 34
+DigOut - 2024-11-09 21:37:16(INFO): [GAME_ID: d191cacc-3427-4dab-b7da-8489db7eb97b] Create New Game
+DigOut - 2024-11-09 21:37:18(INFO): [GAME_ID: d191cacc-3427-4dab-b7da-8489db7eb97b] create new Survivor. NAME: MAX, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Nie rozstawał się z łopatą , a jego koledzy zawsze się z niego śmiali , bo tak naprawdę wolał szydełkować., AGE: 65
+DigOut - 2024-11-09 21:37:18(INFO): [GAME_ID: d191cacc-3427-4dab-b7da-8489db7eb97b] create new Survivor. NAME: MIKE, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Znany z tego, że zna wszystkie tunele na pamięć , chociaż bardziej lubił opowieści niż kopanie , bo tak naprawdę wolał szydełkować., AGE: 53
+DigOut - 2024-11-09 21:37:18(INFO): [GAME_ID: d191cacc-3427-4dab-b7da-8489db7eb97b] create new Survivor. NAME: TOM, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Zawsze marzył o znalezieniu diamentów , choć nigdy nie lubił się brudzić , bo tak naprawdę wolał szydełkować., AGE: 22
+DigOut - 2024-11-09 21:37:18(INFO): [GAME_ID: d191cacc-3427-4dab-b7da-8489db7eb97b] create new Survivor. NAME: KURT, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Pracował w kopalni od dekady , lecz praca pod ziemią go męczyła , chociaż liczył na znalezienie zapomnianego skarbu., AGE: 44
+DigOut - 2024-11-09 21:37:46(INFO): create()
+DigOut - 2024-11-09 21:37:51(INFO): Open new game screen
+DigOut - 2024-11-09 21:37:53(INFO): [GAME_ID: 8eea32aa-aa90-432e-9fc0-f5a2d697f11e] Generate new ID for new Game: 8eea32aa-aa90-432e-9fc0-f5a2d697f11e
+DigOut - 2024-11-09 21:37:53(INFO): [GAME_ID: 8eea32aa-aa90-432e-9fc0-f5a2d697f11e] Coordinates of Base room [2, 1]
+DigOut - 2024-11-09 21:37:53(INFO): [GAME_ID: 8eea32aa-aa90-432e-9fc0-f5a2d697f11e] Coordinates of Exit room [7, 10]
+DigOut - 2024-11-09 21:37:53(INFO): [GAME_ID: 8eea32aa-aa90-432e-9fc0-f5a2d697f11e] create new Survivor. NAME: GUS, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Znany z tego, że zna wszystkie tunele na pamięć , ale ostatnio miał zły dzień , chociaż nie wiedział, jak używać kilofa., AGE: 74
+DigOut - 2024-11-09 21:37:53(INFO): [GAME_ID: 8eea32aa-aa90-432e-9fc0-f5a2d697f11e] Create New Game
+DigOut - 2024-11-09 21:37:55(INFO): [GAME_ID: 8eea32aa-aa90-432e-9fc0-f5a2d697f11e] create new Survivor. NAME: JOHN, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Znany był jako mistrz kilofa , mimo że nie lubił kopalń , bo pomylił kask z wiadrem., AGE: 28
+DigOut - 2024-11-09 21:37:55(INFO): [GAME_ID: 8eea32aa-aa90-432e-9fc0-f5a2d697f11e] create new Survivor. NAME: BILL, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Nie rozstawał się z łopatą , a jego siła była legendarna , bo pomylił kask z wiadrem., AGE: 56
+DigOut - 2024-11-09 21:37:55(INFO): [GAME_ID: 8eea32aa-aa90-432e-9fc0-f5a2d697f11e] create new Survivor. NAME: KEN, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Znany był jako mistrz kilofa , mimo że nie lubił kopalń , choć przyszedł tu, myśląc, że to biblioteka., AGE: 47
+DigOut - 2024-11-09 21:37:55(INFO): [GAME_ID: 8eea32aa-aa90-432e-9fc0-f5a2d697f11e] create new Survivor. NAME: TED, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Zawsze miał przy sobie termos z kawą , lecz nie odnalazł jeszcze skarbu , mimo że kopanie szło mu jak po grudzie., AGE: 59
+DigOut - 2024-11-09 21:38:23(INFO): create()
+DigOut - 2024-11-09 21:38:28(INFO): Open new game screen
+DigOut - 2024-11-09 21:38:29(INFO): [GAME_ID: 5b974152-50e5-4521-a76f-7f21596da7b6] Generate new ID for new Game: 5b974152-50e5-4521-a76f-7f21596da7b6
+DigOut - 2024-11-09 21:38:29(INFO): [GAME_ID: 5b974152-50e5-4521-a76f-7f21596da7b6] Coordinates of Base room [5, 1]
+DigOut - 2024-11-09 21:38:29(INFO): [GAME_ID: 5b974152-50e5-4521-a76f-7f21596da7b6] Coordinates of Exit room [1, 10]
+DigOut - 2024-11-09 21:38:29(INFO): [GAME_ID: 5b974152-50e5-4521-a76f-7f21596da7b6] create new Survivor. NAME: AL, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Nie rozstawał się z łopatą , a jego koledzy zawsze się z niego śmiali , ale najczęściej szukał pretekstu, żeby nie pracować., AGE: 63
+DigOut - 2024-11-09 21:38:29(INFO): [GAME_ID: 5b974152-50e5-4521-a76f-7f21596da7b6] Create New Game
+DigOut - 2024-11-09 21:38:31(INFO): [GAME_ID: 5b974152-50e5-4521-a76f-7f21596da7b6] create new Survivor. NAME: WILL, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Zawsze marzył o znalezieniu diamentów , ale ostatnio miał zły dzień , ale najczęściej szukał pretekstu, żeby nie pracować., AGE: 45
+DigOut - 2024-11-09 21:38:31(INFO): [GAME_ID: 5b974152-50e5-4521-a76f-7f21596da7b6] create new Survivor. NAME: KURT, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Znany był jako mistrz kilofa , a jego siła była legendarna , mimo że kopanie szło mu jak po grudzie., AGE: 30
+DigOut - 2024-11-09 21:38:31(INFO): [GAME_ID: 5b974152-50e5-4521-a76f-7f21596da7b6] create new Survivor. NAME: MAX, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Zawsze miał przy sobie termos z kawą , choć nigdy nie lubił się brudzić , chociaż nie wiedział, jak używać kilofa., AGE: 74
+DigOut - 2024-11-09 21:38:31(INFO): [GAME_ID: 5b974152-50e5-4521-a76f-7f21596da7b6] create new Survivor. NAME: MIKE, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Znany z tego, że zna wszystkie tunele na pamięć , choć nigdy nie lubił się brudzić , bo tak naprawdę wolał szydełkować., AGE: 32
+DigOut - 2024-11-09 21:39:34(INFO): pause()
+DigOut - 2024-11-09 21:39:34(INFO): dispose()
+DigOut - 2024-11-09 21:39:34(INFO): EIXT GAME
+
+DigOut - 2024-11-09 21:40:25(INFO): create()
+DigOut - 2024-11-09 21:41:23(INFO): Open new game screen
+DigOut - 2024-11-09 21:41:25(INFO): [GAME_ID: ac48530a-e9c1-4525-a858-83d1e6627b62] Generate new ID for new Game: ac48530a-e9c1-4525-a858-83d1e6627b62
+DigOut - 2024-11-09 21:41:25(INFO): [GAME_ID: ac48530a-e9c1-4525-a858-83d1e6627b62] Coordinates of Base room [9, 1]
+DigOut - 2024-11-09 21:41:25(INFO): [GAME_ID: ac48530a-e9c1-4525-a858-83d1e6627b62] Coordinates of Exit room [2, 10]
+DigOut - 2024-11-09 21:41:25(INFO): [GAME_ID: ac48530a-e9c1-4525-a858-83d1e6627b62] create new Survivor. NAME: GUS, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Znany był jako mistrz kilofa , a jego siła była legendarna , mimo że kopanie szło mu jak po grudzie., AGE: 48
+DigOut - 2024-11-09 21:41:25(INFO): [GAME_ID: ac48530a-e9c1-4525-a858-83d1e6627b62] Create New Game
+DigOut - 2024-11-09 21:41:27(INFO): [GAME_ID: ac48530a-e9c1-4525-a858-83d1e6627b62] create new Survivor. NAME: DAN, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Znany z tego, że zna wszystkie tunele na pamięć , lecz nie odnalazł jeszcze skarbu , chociaż liczył na znalezienie zapomnianego skarbu., AGE: 55
+DigOut - 2024-11-09 21:41:27(INFO): [GAME_ID: ac48530a-e9c1-4525-a858-83d1e6627b62] create new Survivor. NAME: KURT, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Pracował w kopalni od dekady , chociaż bardziej lubił opowieści niż kopanie , chociaż liczył na znalezienie zapomnianego skarbu., AGE: 32
+DigOut - 2024-11-09 21:41:27(INFO): [GAME_ID: ac48530a-e9c1-4525-a858-83d1e6627b62] create new Survivor. NAME: KURT 1, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Zawsze marzył o znalezieniu diamentów , lecz praca pod ziemią go męczyła , bo pomylił kask z wiadrem., AGE: 44
+DigOut - 2024-11-09 21:41:27(INFO): [GAME_ID: ac48530a-e9c1-4525-a858-83d1e6627b62] create new Survivor. NAME: ZAC, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Kiedyś był złotnikiem , lecz nie odnalazł jeszcze skarbu , chociaż nie wiedział, jak używać kilofa., AGE: 71
+DigOut - 2024-11-09 21:41:56(INFO): pause()
+DigOut - 2024-11-09 21:41:56(INFO): dispose()
+DigOut - 2024-11-09 21:41:56(INFO): EIXT GAME
+
+DigOut - 2024-11-09 21:43:37(INFO): create()
+DigOut - 2024-11-09 21:43:42(INFO): Open new game screen
+DigOut - 2024-11-09 21:43:44(INFO): [GAME_ID: 623909cd-3e59-477e-b1c9-1b021c135b6e] Generate new ID for new Game: 623909cd-3e59-477e-b1c9-1b021c135b6e
+DigOut - 2024-11-09 21:43:44(INFO): [GAME_ID: 623909cd-3e59-477e-b1c9-1b021c135b6e] Coordinates of Base room [5, 1]
+DigOut - 2024-11-09 21:43:44(INFO): [GAME_ID: 623909cd-3e59-477e-b1c9-1b021c135b6e] Coordinates of Exit room [8, 10]
+DigOut - 2024-11-09 21:43:44(INFO): [GAME_ID: 623909cd-3e59-477e-b1c9-1b021c135b6e] create new Survivor. NAME: JOHN, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Nie rozstawał się ze swoim ekwipunkiem , ale nigdy nie znalazł złota , choć przyszedł tu, myśląc, że to biblioteka., AGE: 52
+DigOut - 2024-11-09 21:43:44(INFO): [GAME_ID: 623909cd-3e59-477e-b1c9-1b021c135b6e] Create New Game
+DigOut - 2024-11-09 21:43:46(INFO): [GAME_ID: 623909cd-3e59-477e-b1c9-1b021c135b6e] create new Survivor. NAME: RON, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Zawsze marzył o znalezieniu diamentów , choć nigdy nie lubił się brudzić , chociaż liczył na znalezienie zapomnianego skarbu., AGE: 21
+DigOut - 2024-11-09 21:43:46(INFO): [GAME_ID: 623909cd-3e59-477e-b1c9-1b021c135b6e] create new Survivor. NAME: BILL, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Kiedyś był najlepszym górnikiem w okolicy , chociaż bardziej lubił opowieści niż kopanie , bo pomylił kask z wiadrem., AGE: 65
+DigOut - 2024-11-09 21:43:46(INFO): [GAME_ID: 623909cd-3e59-477e-b1c9-1b021c135b6e] create new Survivor. NAME: JIM, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Uwielbiał wykopywać skarby , a jego koledzy zawsze się z niego śmiali , mimo że kopanie szło mu jak po grudzie., AGE: 71
+DigOut - 2024-11-09 21:43:46(INFO): [GAME_ID: 623909cd-3e59-477e-b1c9-1b021c135b6e] create new Survivor. NAME: BOB, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Zawsze miał przy sobie termos z kawą , ale ostatnio miał zły dzień , bo tak naprawdę wolał szydełkować., AGE: 64
+DigOut - 2024-11-09 21:44:12(INFO): pause()
+DigOut - 2024-11-09 21:44:12(INFO): dispose()
+DigOut - 2024-11-09 21:44:12(INFO): EIXT GAME
+
+DigOut - 2024-11-09 22:12:16(INFO): create()
+DigOut - 2024-11-09 22:12:22(INFO): Open new game screen
+DigOut - 2024-11-09 22:12:23(INFO): [GAME_ID: 729aade4-4008-4a48-b673-02ee97488862] Generate new ID for new Game: 729aade4-4008-4a48-b673-02ee97488862
+DigOut - 2024-11-09 22:12:23(INFO): [GAME_ID: 729aade4-4008-4a48-b673-02ee97488862] Coordinates of Base room [5, 1]
+DigOut - 2024-11-09 22:12:23(INFO): [GAME_ID: 729aade4-4008-4a48-b673-02ee97488862] Coordinates of Exit room [10, 10]
+DigOut - 2024-11-09 22:12:23(INFO): [GAME_ID: 729aade4-4008-4a48-b673-02ee97488862] create new Survivor. NAME: KURT, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Uwielbiał wykopywać skarby , choć bał się ciemności , choć zawsze marzył o emeryturze na plaży., AGE: 36
+DigOut - 2024-11-09 22:12:23(INFO): [GAME_ID: 729aade4-4008-4a48-b673-02ee97488862] Create New Game
+DigOut - 2024-11-09 22:12:25(INFO): [GAME_ID: 729aade4-4008-4a48-b673-02ee97488862] create new Survivor. NAME: BILL, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Kiedyś był złotnikiem , choć bał się ciemności , choć przyszedł tu, myśląc, że to biblioteka., AGE: 73
+DigOut - 2024-11-09 22:12:25(INFO): [GAME_ID: 729aade4-4008-4a48-b673-02ee97488862] create new Survivor. NAME: AL, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Zawsze miał przy sobie termos z kawą , mimo że nie lubił kopalń , choć zawsze marzył o emeryturze na plaży., AGE: 26
+DigOut - 2024-11-09 22:12:25(INFO): [GAME_ID: 729aade4-4008-4a48-b673-02ee97488862] create new Survivor. NAME: BILL 1, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Znany z tego, że zna wszystkie tunele na pamięć , choć nigdy nie lubił się brudzić , chociaż liczył na znalezienie zapomnianego skarbu., AGE: 79
+DigOut - 2024-11-09 22:12:25(INFO): [GAME_ID: 729aade4-4008-4a48-b673-02ee97488862] create new Survivor. NAME: DAN, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Pracował w kopalni od dekady , a jego koledzy zawsze się z niego śmiali , choć zawsze miał nadzieję na awans do biura., AGE: 26
+DigOut - 2024-11-09 22:12:27(INFO): pause()
+DigOut - 2024-11-09 22:12:27(INFO): dispose()
+DigOut - 2024-11-09 22:12:27(INFO): EIXT GAME
+
+DigOut - 2024-11-09 22:18:29(INFO): create()
+DigOut - 2024-11-09 22:18:34(INFO): Open new game screen
+DigOut - 2024-11-09 22:18:35(INFO): [GAME_ID: 992bce8b-acdf-47a5-bbb3-df29297b51a0] Generate new ID for new Game: 992bce8b-acdf-47a5-bbb3-df29297b51a0
+DigOut - 2024-11-09 22:18:35(INFO): [GAME_ID: 992bce8b-acdf-47a5-bbb3-df29297b51a0] Coordinates of Base room [5, 1]
+DigOut - 2024-11-09 22:18:35(INFO): [GAME_ID: 992bce8b-acdf-47a5-bbb3-df29297b51a0] Coordinates of Exit room [5, 10]
+DigOut - 2024-11-09 22:18:35(INFO): [GAME_ID: 992bce8b-acdf-47a5-bbb3-df29297b51a0] create new Survivor. NAME: MIKE, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Uwielbiał wykopywać skarby , mimo że nie lubił kopalń , chociaż nie wiedział, jak używać kilofa., AGE: 18
+DigOut - 2024-11-09 22:18:35(INFO): [GAME_ID: 992bce8b-acdf-47a5-bbb3-df29297b51a0] Create New Game
+DigOut - 2024-11-09 22:18:37(INFO): [GAME_ID: 992bce8b-acdf-47a5-bbb3-df29297b51a0] create new Survivor. NAME: ZAC, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Nie rozstawał się ze swoim ekwipunkiem , lecz nie odnalazł jeszcze skarbu , choć zawsze miał nadzieję na awans do biura., AGE: 73
+DigOut - 2024-11-09 22:18:37(INFO): [GAME_ID: 992bce8b-acdf-47a5-bbb3-df29297b51a0] create new Survivor. NAME: TED, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Znany był jako mistrz kilofa , ale nigdy nie znalazł złota , ale najczęściej szukał pretekstu, żeby nie pracować., AGE: 32
+DigOut - 2024-11-09 22:18:37(INFO): [GAME_ID: 992bce8b-acdf-47a5-bbb3-df29297b51a0] create new Survivor. NAME: TED 1, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Kiedyś był złotnikiem , chociaż bardziej lubił opowieści niż kopanie , chociaż nie wiedział, jak używać kilofa., AGE: 25
+DigOut - 2024-11-09 22:18:37(INFO): [GAME_ID: 992bce8b-acdf-47a5-bbb3-df29297b51a0] create new Survivor. NAME: JOHN, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Zawsze marzył o znalezieniu diamentów , choć bał się ciemności , choć przyszedł tu, myśląc, że to biblioteka., AGE: 31
+DigOut - 2024-11-09 22:18:50(INFO): pause()
+DigOut - 2024-11-09 22:18:50(INFO): dispose()
+DigOut - 2024-11-09 22:18:50(INFO): EIXT GAME
+
+DigOut - 2024-11-10 01:25:25(INFO): create()
+DigOut - 2024-11-10 01:25:27(INFO): pause()
+DigOut - 2024-11-10 01:25:28(INFO): create()
+DigOut - 2024-11-10 01:25:32(INFO): pause()
+DigOut - 2024-11-10 01:26:27(INFO): create()
+DigOut - 2024-11-10 01:26:32(INFO): Open new game screen
+DigOut - 2024-11-10 01:26:33(INFO): [GAME_ID: 4ef045b2-9cad-47e9-a31a-fc697fc1a70c] Generate new ID for new Game: 4ef045b2-9cad-47e9-a31a-fc697fc1a70c
+DigOut - 2024-11-10 01:26:33(INFO): [GAME_ID: 4ef045b2-9cad-47e9-a31a-fc697fc1a70c] Coordinates of Base room [3, 1]
+DigOut - 2024-11-10 01:26:33(INFO): [GAME_ID: 4ef045b2-9cad-47e9-a31a-fc697fc1a70c] Coordinates of Exit room [9, 10]
+DigOut - 2024-11-10 01:26:33(INFO): [GAME_ID: 4ef045b2-9cad-47e9-a31a-fc697fc1a70c] create new Survivor. NAME: RON, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Nie rozstawał się ze swoim ekwipunkiem , ale nigdy nie znalazł złota , i tak naprawdę bał się myszy., AGE: 35
+DigOut - 2024-11-10 01:26:33(INFO): [GAME_ID: 4ef045b2-9cad-47e9-a31a-fc697fc1a70c] Create New Game
+DigOut - 2024-11-10 01:26:35(INFO): [GAME_ID: 4ef045b2-9cad-47e9-a31a-fc697fc1a70c] create new Survivor. NAME: MIKE, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Zawsze marzył o znalezieniu diamentów , choć bał się ciemności , bo pomylił kask z wiadrem., AGE: 71
+DigOut - 2024-11-10 01:26:35(INFO): [GAME_ID: 4ef045b2-9cad-47e9-a31a-fc697fc1a70c] create new Survivor. NAME: GUS, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Kiedyś był najlepszym górnikiem w okolicy , lecz praca pod ziemią go męczyła , bo tak naprawdę wolał szydełkować., AGE: 18
+DigOut - 2024-11-10 01:26:35(INFO): [GAME_ID: 4ef045b2-9cad-47e9-a31a-fc697fc1a70c] create new Survivor. NAME: JIM, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Kiedyś był najlepszym górnikiem w okolicy , choć nigdy nie lubił się brudzić , choć przyszedł tu, myśląc, że to biblioteka., AGE: 21
+DigOut - 2024-11-10 01:26:35(INFO): [GAME_ID: 4ef045b2-9cad-47e9-a31a-fc697fc1a70c] create new Survivor. NAME: BOB, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Zawsze marzył o znalezieniu diamentów , choć nigdy nie lubił się brudzić , choć zawsze marzył o emeryturze na plaży., AGE: 72
+DigOut - 2024-11-10 01:26:51(INFO): pause()
+DigOut - 2024-11-10 01:26:51(INFO): dispose()
+DigOut - 2024-11-10 01:26:51(INFO): EIXT GAME
+
+DigOut - 2024-11-10 01:28:36(INFO): create()
+DigOut - 2024-11-10 01:28:41(INFO): Open new game screen
+DigOut - 2024-11-10 01:28:43(INFO): [GAME_ID: 603b4094-80ff-447c-8296-b491460b5591] Generate new ID for new Game: 603b4094-80ff-447c-8296-b491460b5591
+DigOut - 2024-11-10 01:28:43(INFO): [GAME_ID: 603b4094-80ff-447c-8296-b491460b5591] Coordinates of Base room [8, 1]
+DigOut - 2024-11-10 01:28:43(INFO): [GAME_ID: 603b4094-80ff-447c-8296-b491460b5591] Coordinates of Exit room [1, 10]
+DigOut - 2024-11-10 01:28:43(INFO): [GAME_ID: 603b4094-80ff-447c-8296-b491460b5591] create new Survivor. NAME: RYAN, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Nie rozstawał się z łopatą , lecz nie odnalazł jeszcze skarbu , bo tak naprawdę wolał szydełkować., AGE: 34
+DigOut - 2024-11-10 01:28:43(INFO): [GAME_ID: 603b4094-80ff-447c-8296-b491460b5591] Create New Game
+DigOut - 2024-11-10 01:28:45(INFO): [GAME_ID: 603b4094-80ff-447c-8296-b491460b5591] create new Survivor. NAME: MAX, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Uwielbiał wykopywać skarby , lecz nie odnalazł jeszcze skarbu , choć przyszedł tu, myśląc, że to biblioteka., AGE: 52
+DigOut - 2024-11-10 01:28:45(INFO): [GAME_ID: 603b4094-80ff-447c-8296-b491460b5591] create new Survivor. NAME: WILL, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Kiedyś był złotnikiem , lecz nie odnalazł jeszcze skarbu , choć przyszedł tu, myśląc, że to biblioteka., AGE: 57
+DigOut - 2024-11-10 01:28:45(INFO): [GAME_ID: 603b4094-80ff-447c-8296-b491460b5591] create new Survivor. NAME: ZAC, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Pracował w kopalni od dekady , lecz nie odnalazł jeszcze skarbu , choć przyszedł tu, myśląc, że to biblioteka., AGE: 62
+DigOut - 2024-11-10 01:28:45(INFO): [GAME_ID: 603b4094-80ff-447c-8296-b491460b5591] create new Survivor. NAME: KEN, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Kiedyś był złotnikiem , a jego koledzy zawsze się z niego śmiali , ale najczęściej szukał pretekstu, żeby nie pracować., AGE: 28
+DigOut - 2024-11-10 01:29:27(INFO): pause()
+DigOut - 2024-11-10 01:29:27(INFO): dispose()
+DigOut - 2024-11-10 01:29:27(INFO): EIXT GAME
+
+DigOut - 2024-11-10 01:32:22(INFO): create()
+DigOut - 2024-11-10 01:32:27(INFO): Open new game screen
+DigOut - 2024-11-10 01:32:30(INFO): [GAME_ID: a6fa8d2c-5c43-418a-bfe5-0566b65523be] Generate new ID for new Game: a6fa8d2c-5c43-418a-bfe5-0566b65523be
+DigOut - 2024-11-10 01:32:30(INFO): [GAME_ID: a6fa8d2c-5c43-418a-bfe5-0566b65523be] Coordinates of Base room [1, 1]
+DigOut - 2024-11-10 01:32:30(INFO): [GAME_ID: a6fa8d2c-5c43-418a-bfe5-0566b65523be] Coordinates of Exit room [1, 10]
+DigOut - 2024-11-10 01:32:30(INFO): [GAME_ID: a6fa8d2c-5c43-418a-bfe5-0566b65523be] create new Survivor. NAME: ZAC, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Uwielbiał wykopywać skarby , ale nigdy nie znalazł złota , ale najczęściej szukał pretekstu, żeby nie pracować., AGE: 25
+DigOut - 2024-11-10 01:32:30(INFO): [GAME_ID: a6fa8d2c-5c43-418a-bfe5-0566b65523be] Create New Game
+DigOut - 2024-11-10 01:32:32(INFO): [GAME_ID: a6fa8d2c-5c43-418a-bfe5-0566b65523be] create new Survivor. NAME: BILL, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Nie rozstawał się ze swoim ekwipunkiem , ale nigdy nie znalazł złota , bo tak naprawdę wolał szydełkować., AGE: 71
+DigOut - 2024-11-10 01:32:32(INFO): [GAME_ID: a6fa8d2c-5c43-418a-bfe5-0566b65523be] create new Survivor. NAME: KEN, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Kiedyś był najlepszym górnikiem w okolicy , mimo że nie lubił kopalń , chociaż nie wiedział, jak używać kilofa., AGE: 78
+DigOut - 2024-11-10 01:32:32(INFO): [GAME_ID: a6fa8d2c-5c43-418a-bfe5-0566b65523be] create new Survivor. NAME: KEN 1, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Pracował w kopalni od dekady , choć nigdy nie lubił się brudzić , choć zawsze miał nadzieję na awans do biura., AGE: 76
+DigOut - 2024-11-10 01:32:32(INFO): [GAME_ID: a6fa8d2c-5c43-418a-bfe5-0566b65523be] create new Survivor. NAME: MAX, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Pracował w kopalni od dekady , lecz praca pod ziemią go męczyła , bo tak naprawdę wolał szydełkować., AGE: 39
+DigOut - 2024-11-10 01:32:55(INFO): pause()
+DigOut - 2024-11-10 01:32:55(INFO): dispose()
+DigOut - 2024-11-10 01:32:55(INFO): EIXT GAME
+
+DigOut - 2024-11-10 01:34:23(INFO): create()
+DigOut - 2024-11-10 01:34:27(INFO): pause()
+DigOut - 2024-11-10 01:34:27(INFO): dispose()
+DigOut - 2024-11-10 01:34:27(INFO): EIXT GAME
+
+DigOut - 2024-11-10 01:35:04(INFO): create()
+DigOut - 2024-11-10 01:35:10(INFO): Open new game screen
+DigOut - 2024-11-10 01:35:11(INFO): [GAME_ID: 64f53d6e-1ccf-48f6-b9ac-a2f134df1247] Generate new ID for new Game: 64f53d6e-1ccf-48f6-b9ac-a2f134df1247
+DigOut - 2024-11-10 01:35:11(INFO): [GAME_ID: 64f53d6e-1ccf-48f6-b9ac-a2f134df1247] Coordinates of Base room [9, 1]
+DigOut - 2024-11-10 01:35:11(INFO): [GAME_ID: 64f53d6e-1ccf-48f6-b9ac-a2f134df1247] Coordinates of Exit room [7, 10]
+DigOut - 2024-11-10 01:35:11(INFO): [GAME_ID: 64f53d6e-1ccf-48f6-b9ac-a2f134df1247] create new Survivor. NAME: JIM, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Nie rozstawał się ze swoim ekwipunkiem , choć nigdy nie lubił się brudzić , bo tak naprawdę wolał szydełkować., AGE: 80
+DigOut - 2024-11-10 01:35:11(INFO): [GAME_ID: 64f53d6e-1ccf-48f6-b9ac-a2f134df1247] Create New Game
+DigOut - 2024-11-10 01:35:13(INFO): [GAME_ID: 64f53d6e-1ccf-48f6-b9ac-a2f134df1247] create new Survivor. NAME: TOM, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Nie rozstawał się ze swoim ekwipunkiem , lecz praca pod ziemią go męczyła , bo pomylił kask z wiadrem., AGE: 62
+DigOut - 2024-11-10 01:35:13(INFO): [GAME_ID: 64f53d6e-1ccf-48f6-b9ac-a2f134df1247] create new Survivor. NAME: SAM, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Kiedyś był złotnikiem , a jego siła była legendarna , ale najczęściej szukał pretekstu, żeby nie pracować., AGE: 70
+DigOut - 2024-11-10 01:35:13(INFO): [GAME_ID: 64f53d6e-1ccf-48f6-b9ac-a2f134df1247] create new Survivor. NAME: TOM 1, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Nie rozstawał się z łopatą , ale nigdy nie znalazł złota , choć przyszedł tu, myśląc, że to biblioteka., AGE: 50
+DigOut - 2024-11-10 01:35:13(INFO): [GAME_ID: 64f53d6e-1ccf-48f6-b9ac-a2f134df1247] create new Survivor. NAME: JOHN, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Uwielbiał wykopywać skarby , lecz praca pod ziemią go męczyła , mimo że kopanie szło mu jak po grudzie., AGE: 27
+DigOut - 2024-11-10 01:35:32(INFO): pause()
+DigOut - 2024-11-10 01:35:32(INFO): dispose()
+DigOut - 2024-11-10 01:35:32(INFO): EIXT GAME
+
+DigOut - 2024-11-10 01:44:55(INFO): create()
+DigOut - 2024-11-10 01:45:00(INFO): Open new game screen
+DigOut - 2024-11-10 01:45:01(INFO): [GAME_ID: eab3326e-e2da-4629-88bb-f0ac852ee0af] Generate new ID for new Game: eab3326e-e2da-4629-88bb-f0ac852ee0af
+DigOut - 2024-11-10 01:45:01(INFO): [GAME_ID: eab3326e-e2da-4629-88bb-f0ac852ee0af] Coordinates of Base room [6, 1]
+DigOut - 2024-11-10 01:45:01(INFO): [GAME_ID: eab3326e-e2da-4629-88bb-f0ac852ee0af] Coordinates of Exit room [7, 10]
+DigOut - 2024-11-10 01:45:01(INFO): [GAME_ID: eab3326e-e2da-4629-88bb-f0ac852ee0af] create new Survivor. NAME: ZAC, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Zawsze marzył o znalezieniu diamentów , choć bał się ciemności , chociaż liczył na znalezienie zapomnianego skarbu., AGE: 37
+DigOut - 2024-11-10 01:45:01(INFO): [GAME_ID: eab3326e-e2da-4629-88bb-f0ac852ee0af] Create New Game
+DigOut - 2024-11-10 01:45:03(INFO): [GAME_ID: eab3326e-e2da-4629-88bb-f0ac852ee0af] create new Survivor. NAME: JOHN, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Pracował w kopalni od dekady , mimo że nie lubił kopalń , mimo że kopanie szło mu jak po grudzie., AGE: 55
+DigOut - 2024-11-10 01:45:03(INFO): [GAME_ID: eab3326e-e2da-4629-88bb-f0ac852ee0af] create new Survivor. NAME: RYAN, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Zawsze miał przy sobie termos z kawą , lecz nie odnalazł jeszcze skarbu , chociaż liczył na znalezienie zapomnianego skarbu., AGE: 48
+DigOut - 2024-11-10 01:45:03(INFO): [GAME_ID: eab3326e-e2da-4629-88bb-f0ac852ee0af] create new Survivor. NAME: TOM, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Znany był jako mistrz kilofa , choć bał się ciemności , chociaż nie wiedział, jak używać kilofa., AGE: 35
+DigOut - 2024-11-10 01:45:03(INFO): [GAME_ID: eab3326e-e2da-4629-88bb-f0ac852ee0af] create new Survivor. NAME: DAN, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Nie rozstawał się ze swoim ekwipunkiem , choć bał się ciemności , bo pomylił kask z wiadrem., AGE: 65
+DigOut - 2024-11-10 01:45:36(INFO): pause()
+DigOut - 2024-11-10 01:45:36(INFO): dispose()
+DigOut - 2024-11-10 01:45:36(INFO): EIXT GAME
+
+DigOut - 2024-11-10 01:47:30(INFO): create()
+DigOut - 2024-11-10 01:47:35(INFO): Open new game screen
+DigOut - 2024-11-10 01:47:36(INFO): [GAME_ID: 53e6669e-4d5f-4526-a311-89046b19601f] Generate new ID for new Game: 53e6669e-4d5f-4526-a311-89046b19601f
+DigOut - 2024-11-10 01:47:36(INFO): [GAME_ID: 53e6669e-4d5f-4526-a311-89046b19601f] Coordinates of Base room [4, 1]
+DigOut - 2024-11-10 01:47:36(INFO): [GAME_ID: 53e6669e-4d5f-4526-a311-89046b19601f] Coordinates of Exit room [3, 10]
+DigOut - 2024-11-10 01:47:36(INFO): [GAME_ID: 53e6669e-4d5f-4526-a311-89046b19601f] create new Survivor. NAME: AL, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Znany z tego, że zna wszystkie tunele na pamięć , ale ostatnio miał zły dzień , choć zawsze marzył o emeryturze na plaży., AGE: 75
+DigOut - 2024-11-10 01:47:36(INFO): [GAME_ID: 53e6669e-4d5f-4526-a311-89046b19601f] Create New Game
+DigOut - 2024-11-10 01:47:38(INFO): [GAME_ID: 53e6669e-4d5f-4526-a311-89046b19601f] create new Survivor. NAME: BILL, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Znany z tego, że zna wszystkie tunele na pamięć , choć bał się ciemności , i tak naprawdę bał się myszy., AGE: 32
+DigOut - 2024-11-10 01:47:38(INFO): [GAME_ID: 53e6669e-4d5f-4526-a311-89046b19601f] create new Survivor. NAME: BOB, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Kiedyś był złotnikiem , choć bał się ciemności , choć zawsze miał nadzieję na awans do biura., AGE: 59
+DigOut - 2024-11-10 01:47:38(INFO): [GAME_ID: 53e6669e-4d5f-4526-a311-89046b19601f] create new Survivor. NAME: KEN, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Kiedyś był najlepszym górnikiem w okolicy , chociaż bardziej lubił opowieści niż kopanie , bo tak naprawdę wolał szydełkować., AGE: 21
+DigOut - 2024-11-10 01:47:38(INFO): [GAME_ID: 53e6669e-4d5f-4526-a311-89046b19601f] create new Survivor. NAME: BILL 1, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Kiedyś był najlepszym górnikiem w okolicy , choć nigdy nie lubił się brudzić , bo tak naprawdę wolał szydełkować., AGE: 72
+DigOut - 2024-11-10 01:47:57(INFO): pause()
+DigOut - 2024-11-10 01:47:57(INFO): dispose()
+DigOut - 2024-11-10 01:47:57(INFO): EIXT GAME
+
+DigOut - 2024-11-10 01:50:40(INFO): create()
+DigOut - 2024-11-10 01:50:45(INFO): Open new game screen
+DigOut - 2024-11-10 01:50:45(INFO): [GAME_ID: db9aec2a-439b-4be0-873b-0790ef036d25] Generate new ID for new Game: db9aec2a-439b-4be0-873b-0790ef036d25
+DigOut - 2024-11-10 01:50:45(INFO): [GAME_ID: db9aec2a-439b-4be0-873b-0790ef036d25] Coordinates of Base room [10, 1]
+DigOut - 2024-11-10 01:50:45(INFO): [GAME_ID: db9aec2a-439b-4be0-873b-0790ef036d25] Coordinates of Exit room [9, 10]
+DigOut - 2024-11-10 01:50:46(INFO): [GAME_ID: db9aec2a-439b-4be0-873b-0790ef036d25] create new Survivor. NAME: AL, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Nie rozstawał się z łopatą , mimo że nie lubił kopalń , choć zawsze marzył o emeryturze na plaży., AGE: 45
+DigOut - 2024-11-10 01:50:46(INFO): [GAME_ID: db9aec2a-439b-4be0-873b-0790ef036d25] Create New Game
+DigOut - 2024-11-10 01:50:48(INFO): [GAME_ID: db9aec2a-439b-4be0-873b-0790ef036d25] create new Survivor. NAME: TOM, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Pracował w kopalni od dekady , choć bał się ciemności , choć przyszedł tu, myśląc, że to biblioteka., AGE: 60
+DigOut - 2024-11-10 01:50:48(INFO): [GAME_ID: db9aec2a-439b-4be0-873b-0790ef036d25] create new Survivor. NAME: DAN, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Pracował w kopalni od dekady , a jego siła była legendarna , ale najczęściej szukał pretekstu, żeby nie pracować., AGE: 69
+DigOut - 2024-11-10 01:50:48(INFO): [GAME_ID: db9aec2a-439b-4be0-873b-0790ef036d25] create new Survivor. NAME: TOM 1, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Nie rozstawał się z łopatą , mimo że nie lubił kopalń , bo pomylił kask z wiadrem., AGE: 38
+DigOut - 2024-11-10 01:50:48(INFO): [GAME_ID: db9aec2a-439b-4be0-873b-0790ef036d25] create new Survivor. NAME: TED, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Zawsze miał przy sobie termos z kawą , ale nigdy nie znalazł złota , chociaż liczył na znalezienie zapomnianego skarbu., AGE: 20
+DigOut - 2024-11-10 01:51:06(INFO): create()
+DigOut - 2024-11-10 01:51:11(INFO): Open new game screen
+DigOut - 2024-11-10 01:51:13(INFO): [GAME_ID: ab6b6aff-03f3-43f9-9174-04dfe9742f88] Generate new ID for new Game: ab6b6aff-03f3-43f9-9174-04dfe9742f88
+DigOut - 2024-11-10 01:51:13(INFO): [GAME_ID: ab6b6aff-03f3-43f9-9174-04dfe9742f88] Coordinates of Base room [7, 1]
+DigOut - 2024-11-10 01:51:13(INFO): [GAME_ID: ab6b6aff-03f3-43f9-9174-04dfe9742f88] Coordinates of Exit room [1, 10]
+DigOut - 2024-11-10 01:51:13(INFO): [GAME_ID: ab6b6aff-03f3-43f9-9174-04dfe9742f88] create new Survivor. NAME: STEVE, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Zawsze miał przy sobie termos z kawą , ale ostatnio miał zły dzień , bo tak naprawdę wolał szydełkować., AGE: 66
+DigOut - 2024-11-10 01:51:13(INFO): [GAME_ID: ab6b6aff-03f3-43f9-9174-04dfe9742f88] Create New Game
+DigOut - 2024-11-10 01:51:15(INFO): [GAME_ID: ab6b6aff-03f3-43f9-9174-04dfe9742f88] create new Survivor. NAME: TED, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Uwielbiał wykopywać skarby , chociaż bardziej lubił opowieści niż kopanie , chociaż nie wiedział, jak używać kilofa., AGE: 55
+DigOut - 2024-11-10 01:51:15(INFO): [GAME_ID: ab6b6aff-03f3-43f9-9174-04dfe9742f88] create new Survivor. NAME: KEN, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Nie rozstawał się ze swoim ekwipunkiem , choć bał się ciemności , mimo że kopanie szło mu jak po grudzie., AGE: 63
+DigOut - 2024-11-10 01:51:15(INFO): [GAME_ID: ab6b6aff-03f3-43f9-9174-04dfe9742f88] create new Survivor. NAME: MAX, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Kiedyś był najlepszym górnikiem w okolicy , lecz nie odnalazł jeszcze skarbu , i tak naprawdę bał się myszy., AGE: 59
+DigOut - 2024-11-10 01:51:15(INFO): [GAME_ID: ab6b6aff-03f3-43f9-9174-04dfe9742f88] create new Survivor. NAME: TIM, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Nie rozstawał się z łopatą , chociaż bardziej lubił opowieści niż kopanie , ale najczęściej szukał pretekstu, żeby nie pracować., AGE: 27
+DigOut - 2024-11-10 01:51:52(INFO): pause()
+DigOut - 2024-11-10 01:51:52(INFO): dispose()
+DigOut - 2024-11-10 01:51:52(INFO): EIXT GAME
+
+DigOut - 2024-11-10 01:52:53(INFO): create()
+DigOut - 2024-11-10 01:52:58(INFO): Open new game screen
+DigOut - 2024-11-10 01:52:59(INFO): [GAME_ID: c9311fc1-1f59-491e-9514-29dffe8ae962] Generate new ID for new Game: c9311fc1-1f59-491e-9514-29dffe8ae962
+DigOut - 2024-11-10 01:52:59(INFO): [GAME_ID: c9311fc1-1f59-491e-9514-29dffe8ae962] Coordinates of Base room [6, 1]
+DigOut - 2024-11-10 01:52:59(INFO): [GAME_ID: c9311fc1-1f59-491e-9514-29dffe8ae962] Coordinates of Exit room [8, 10]
+DigOut - 2024-11-10 01:52:59(INFO): [GAME_ID: c9311fc1-1f59-491e-9514-29dffe8ae962] create new Survivor. NAME: TED, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Zawsze miał przy sobie termos z kawą , choć bał się ciemności , choć zawsze miał nadzieję na awans do biura., AGE: 21
+DigOut - 2024-11-10 01:52:59(INFO): [GAME_ID: c9311fc1-1f59-491e-9514-29dffe8ae962] Create New Game
+DigOut - 2024-11-10 01:53:01(INFO): [GAME_ID: c9311fc1-1f59-491e-9514-29dffe8ae962] create new Survivor. NAME: AL, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Kiedyś był złotnikiem , a jego siła była legendarna , choć zawsze miał nadzieję na awans do biura., AGE: 52
+DigOut - 2024-11-10 01:53:01(INFO): [GAME_ID: c9311fc1-1f59-491e-9514-29dffe8ae962] create new Survivor. NAME: STEVE, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Kiedyś był złotnikiem , lecz nie odnalazł jeszcze skarbu , mimo że kopanie szło mu jak po grudzie., AGE: 61
+DigOut - 2024-11-10 01:53:01(INFO): [GAME_ID: c9311fc1-1f59-491e-9514-29dffe8ae962] create new Survivor. NAME: AL 1, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Kiedyś był najlepszym górnikiem w okolicy , choć bał się ciemności , ale najczęściej szukał pretekstu, żeby nie pracować., AGE: 32
+DigOut - 2024-11-10 01:53:01(INFO): [GAME_ID: c9311fc1-1f59-491e-9514-29dffe8ae962] create new Survivor. NAME: MAX, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Pracował w kopalni od dekady , ale nigdy nie znalazł złota , choć przyszedł tu, myśląc, że to biblioteka., AGE: 56
+DigOut - 2024-11-10 01:53:19(INFO): pause()
+DigOut - 2024-11-10 01:53:19(INFO): dispose()
+DigOut - 2024-11-10 01:53:19(INFO): EIXT GAME
+
+DigOut - 2024-11-10 02:25:39(INFO): create()
+DigOut - 2024-11-10 02:25:44(INFO): Open new game screen
+DigOut - 2024-11-10 02:25:45(INFO): [GAME_ID: 1e317afe-c531-48fe-989f-0455b9ab8863] Generate new ID for new Game: 1e317afe-c531-48fe-989f-0455b9ab8863
+DigOut - 2024-11-10 02:25:45(INFO): [GAME_ID: 1e317afe-c531-48fe-989f-0455b9ab8863] Coordinates of Base room [4, 1]
+DigOut - 2024-11-10 02:25:45(INFO): [GAME_ID: 1e317afe-c531-48fe-989f-0455b9ab8863] Coordinates of Exit room [1, 10]
+DigOut - 2024-11-10 02:25:45(INFO): [GAME_ID: 1e317afe-c531-48fe-989f-0455b9ab8863] create new Survivor. NAME: BILL, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Kiedyś był złotnikiem , lecz praca pod ziemią go męczyła , mimo że kopanie szło mu jak po grudzie., AGE: 65
+DigOut - 2024-11-10 02:25:45(INFO): [GAME_ID: 1e317afe-c531-48fe-989f-0455b9ab8863] Create New Game
+DigOut - 2024-11-10 02:25:48(INFO): [GAME_ID: 1e317afe-c531-48fe-989f-0455b9ab8863] create new Survivor. NAME: GUS, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Zawsze marzył o znalezieniu diamentów , a jego siła była legendarna , ale najczęściej szukał pretekstu, żeby nie pracować., AGE: 21
+DigOut - 2024-11-10 02:25:48(INFO): [GAME_ID: 1e317afe-c531-48fe-989f-0455b9ab8863] create new Survivor. NAME: KURT, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Znany był jako mistrz kilofa , a jego siła była legendarna , choć zawsze miał nadzieję na awans do biura., AGE: 38
+DigOut - 2024-11-10 02:25:48(INFO): [GAME_ID: 1e317afe-c531-48fe-989f-0455b9ab8863] create new Survivor. NAME: AL, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Zawsze marzył o znalezieniu diamentów , lecz nie odnalazł jeszcze skarbu , ale najczęściej szukał pretekstu, żeby nie pracować., AGE: 35
+DigOut - 2024-11-10 02:25:48(INFO): [GAME_ID: 1e317afe-c531-48fe-989f-0455b9ab8863] create new Survivor. NAME: KEN, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Znany z tego, że zna wszystkie tunele na pamięć , choć nigdy nie lubił się brudzić , chociaż liczył na znalezienie zapomnianego skarbu., AGE: 71
+DigOut - 2024-11-10 02:26:26(INFO): pause()
+DigOut - 2024-11-10 02:26:40(INFO): resume()
+DigOut - 2024-11-10 02:27:21(INFO): pause()
+DigOut - 2024-11-10 02:27:21(INFO): dispose()
+DigOut - 2024-11-10 02:27:21(INFO): EIXT GAME
+
+DigOut - 2024-11-10 02:36:02(INFO): create()
+DigOut - 2024-11-10 02:36:07(INFO): Open new game screen
+DigOut - 2024-11-10 02:36:08(INFO): [GAME_ID: c1c44661-976e-4011-be35-1e554b10d5b7] Generate new ID for new Game: c1c44661-976e-4011-be35-1e554b10d5b7
+DigOut - 2024-11-10 02:36:08(INFO): [GAME_ID: c1c44661-976e-4011-be35-1e554b10d5b7] Coordinates of Base room [8, 1]
+DigOut - 2024-11-10 02:36:08(INFO): [GAME_ID: c1c44661-976e-4011-be35-1e554b10d5b7] Coordinates of Exit room [9, 10]
+DigOut - 2024-11-10 02:36:08(INFO): [GAME_ID: c1c44661-976e-4011-be35-1e554b10d5b7] create new Survivor. NAME: JIM, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Kiedyś był najlepszym górnikiem w okolicy , choć nigdy nie lubił się brudzić , choć zawsze miał nadzieję na awans do biura., AGE: 49
+DigOut - 2024-11-10 02:36:08(INFO): [GAME_ID: c1c44661-976e-4011-be35-1e554b10d5b7] Create New Game
+DigOut - 2024-11-10 02:36:10(INFO): [GAME_ID: c1c44661-976e-4011-be35-1e554b10d5b7] create new Survivor. NAME: JIM 1, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Kiedyś był najlepszym górnikiem w okolicy , mimo że nie lubił kopalń , choć zawsze marzył o emeryturze na plaży., AGE: 49
+DigOut - 2024-11-10 02:36:10(INFO): [GAME_ID: c1c44661-976e-4011-be35-1e554b10d5b7] create new Survivor. NAME: DAN, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Znany był jako mistrz kilofa , ale ostatnio miał zły dzień , mimo że kopanie szło mu jak po grudzie., AGE: 44
+DigOut - 2024-11-10 02:36:10(INFO): [GAME_ID: c1c44661-976e-4011-be35-1e554b10d5b7] create new Survivor. NAME: ZAC, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Zawsze miał przy sobie termos z kawą , mimo że nie lubił kopalń , choć przyszedł tu, myśląc, że to biblioteka., AGE: 33
+DigOut - 2024-11-10 02:36:10(INFO): [GAME_ID: c1c44661-976e-4011-be35-1e554b10d5b7] create new Survivor. NAME: KURT, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Nie rozstawał się ze swoim ekwipunkiem , ale nigdy nie znalazł złota , chociaż liczył na znalezienie zapomnianego skarbu., AGE: 27
+DigOut - 2024-11-10 02:36:56(INFO): pause()
+DigOut - 2024-11-10 02:36:56(INFO): dispose()
+DigOut - 2024-11-10 02:36:56(INFO): EIXT GAME
+
+DigOut - 2024-11-10 02:41:03(INFO): create()
+DigOut - 2024-11-10 02:41:11(INFO): Open new game screen
+DigOut - 2024-11-10 02:41:12(INFO): [GAME_ID: c0c61dc8-78b3-4919-bc9a-035f89baf48f] Generate new ID for new Game: c0c61dc8-78b3-4919-bc9a-035f89baf48f
+DigOut - 2024-11-10 02:41:12(INFO): [GAME_ID: c0c61dc8-78b3-4919-bc9a-035f89baf48f] Coordinates of Base room [8, 1]
+DigOut - 2024-11-10 02:41:12(INFO): [GAME_ID: c0c61dc8-78b3-4919-bc9a-035f89baf48f] Coordinates of Exit room [9, 10]
+DigOut - 2024-11-10 02:41:12(INFO): [GAME_ID: c0c61dc8-78b3-4919-bc9a-035f89baf48f] create new Survivor. NAME: TED, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Zawsze miał przy sobie termos z kawą , choć bał się ciemności , choć przyszedł tu, myśląc, że to biblioteka., AGE: 67
+DigOut - 2024-11-10 02:41:12(INFO): [GAME_ID: c0c61dc8-78b3-4919-bc9a-035f89baf48f] Create New Game
+DigOut - 2024-11-10 02:41:14(INFO): [GAME_ID: c0c61dc8-78b3-4919-bc9a-035f89baf48f] create new Survivor. NAME: MIKE, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Znany z tego, że zna wszystkie tunele na pamięć , chociaż bardziej lubił opowieści niż kopanie , choć przyszedł tu, myśląc, że to biblioteka., AGE: 46
+DigOut - 2024-11-10 02:41:14(INFO): [GAME_ID: c0c61dc8-78b3-4919-bc9a-035f89baf48f] create new Survivor. NAME: WILL, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Zawsze miał przy sobie termos z kawą , a jego siła była legendarna , chociaż nie wiedział, jak używać kilofa., AGE: 25
+DigOut - 2024-11-10 02:41:14(INFO): [GAME_ID: c0c61dc8-78b3-4919-bc9a-035f89baf48f] create new Survivor. NAME: TOM, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Pracował w kopalni od dekady , a jego koledzy zawsze się z niego śmiali , ale najczęściej szukał pretekstu, żeby nie pracować., AGE: 38
+DigOut - 2024-11-10 02:41:14(INFO): [GAME_ID: c0c61dc8-78b3-4919-bc9a-035f89baf48f] create new Survivor. NAME: JIM, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Pracował w kopalni od dekady , lecz praca pod ziemią go męczyła , bo pomylił kask z wiadrem., AGE: 59
+DigOut - 2024-11-10 02:42:00(INFO): create()
+DigOut - 2024-11-10 02:42:05(INFO): Open new game screen
+DigOut - 2024-11-10 02:42:06(INFO): [GAME_ID: ee38380d-a560-481b-b07e-6f65d6b86d46] Generate new ID for new Game: ee38380d-a560-481b-b07e-6f65d6b86d46
+DigOut - 2024-11-10 02:42:06(INFO): [GAME_ID: ee38380d-a560-481b-b07e-6f65d6b86d46] Coordinates of Base room [5, 1]
+DigOut - 2024-11-10 02:42:06(INFO): [GAME_ID: ee38380d-a560-481b-b07e-6f65d6b86d46] Coordinates of Exit room [8, 10]
+DigOut - 2024-11-10 02:42:06(INFO): [GAME_ID: ee38380d-a560-481b-b07e-6f65d6b86d46] create new Survivor. NAME: KEN, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Znany był jako mistrz kilofa , chociaż bardziej lubił opowieści niż kopanie , bo pomylił kask z wiadrem., AGE: 68
+DigOut - 2024-11-10 02:42:06(INFO): [GAME_ID: ee38380d-a560-481b-b07e-6f65d6b86d46] Create New Game
+DigOut - 2024-11-10 02:42:08(INFO): [GAME_ID: ee38380d-a560-481b-b07e-6f65d6b86d46] create new Survivor. NAME: TED, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Znany był jako mistrz kilofa , lecz praca pod ziemią go męczyła , choć zawsze marzył o emeryturze na plaży., AGE: 80
+DigOut - 2024-11-10 02:42:08(INFO): [GAME_ID: ee38380d-a560-481b-b07e-6f65d6b86d46] create new Survivor. NAME: STEVE, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Zawsze marzył o znalezieniu diamentów , a jego siła była legendarna , choć zawsze marzył o emeryturze na plaży., AGE: 33
+DigOut - 2024-11-10 02:42:08(INFO): [GAME_ID: ee38380d-a560-481b-b07e-6f65d6b86d46] create new Survivor. NAME: ZAC, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Uwielbiał wykopywać skarby , a jego koledzy zawsze się z niego śmiali , choć zawsze miał nadzieję na awans do biura., AGE: 18
+DigOut - 2024-11-10 02:42:08(INFO): [GAME_ID: ee38380d-a560-481b-b07e-6f65d6b86d46] create new Survivor. NAME: TED 1, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Pracował w kopalni od dekady , a jego koledzy zawsze się z niego śmiali , i tak naprawdę bał się myszy., AGE: 48
+DigOut - 2024-11-10 02:42:14(INFO): [GAME_ID: ee38380d-a560-481b-b07e-6f65d6b86d46] Survivor: TED 1Unpin task: WAIT
+DigOut - 2024-11-10 02:42:24(INFO): [GAME_ID: ee38380d-a560-481b-b07e-6f65d6b86d46] Survivor: TED 1Unpin task: WAIT
+DigOut - 2024-11-10 02:42:32(INFO): [GAME_ID: ee38380d-a560-481b-b07e-6f65d6b86d46] Survivor: TED 1Unpin task: WAIT
+DigOut - 2024-11-10 02:42:36(INFO): pause()
+DigOut - 2024-11-10 02:42:36(INFO): dispose()
+DigOut - 2024-11-10 02:42:36(INFO): EIXT GAME
+
+DigOut - 2024-11-10 02:58:53(INFO): create()
+DigOut - 2024-11-10 02:59:05(INFO): Open new game screen
+DigOut - 2024-11-10 02:59:06(INFO): [GAME_ID: 55a19cbf-fab4-4325-acda-66f206b251e7] Generate new ID for new Game: 55a19cbf-fab4-4325-acda-66f206b251e7
+DigOut - 2024-11-10 02:59:06(INFO): [GAME_ID: 55a19cbf-fab4-4325-acda-66f206b251e7] Coordinates of Base room [9, 1]
+DigOut - 2024-11-10 02:59:06(INFO): [GAME_ID: 55a19cbf-fab4-4325-acda-66f206b251e7] Coordinates of Exit room [3, 10]
+DigOut - 2024-11-10 02:59:06(INFO): [GAME_ID: 55a19cbf-fab4-4325-acda-66f206b251e7] create new Survivor. NAME: MAX, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Nie rozstawał się ze swoim ekwipunkiem , a jego siła była legendarna , bo pomylił kask z wiadrem., AGE: 69
+DigOut - 2024-11-10 02:59:06(INFO): [GAME_ID: 55a19cbf-fab4-4325-acda-66f206b251e7] Create New Game
+DigOut - 2024-11-10 02:59:09(INFO): [GAME_ID: 55a19cbf-fab4-4325-acda-66f206b251e7] create new Survivor. NAME: BILL, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Nie rozstawał się ze swoim ekwipunkiem , ale ostatnio miał zły dzień , bo tak naprawdę wolał szydełkować., AGE: 25
+DigOut - 2024-11-10 02:59:09(INFO): [GAME_ID: 55a19cbf-fab4-4325-acda-66f206b251e7] create new Survivor. NAME: RYAN, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Znany był jako mistrz kilofa , a jego siła była legendarna , choć zawsze marzył o emeryturze na plaży., AGE: 61
+DigOut - 2024-11-10 02:59:09(INFO): [GAME_ID: 55a19cbf-fab4-4325-acda-66f206b251e7] create new Survivor. NAME: MAX 1, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Nie rozstawał się z łopatą , ale ostatnio miał zły dzień , choć zawsze miał nadzieję na awans do biura., AGE: 69
+DigOut - 2024-11-10 02:59:09(INFO): [GAME_ID: 55a19cbf-fab4-4325-acda-66f206b251e7] create new Survivor. NAME: BOB, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Zawsze marzył o znalezieniu diamentów , choć nigdy nie lubił się brudzić , choć zawsze miał nadzieję na awans do biura., AGE: 42
+DigOut - 2024-11-10 02:59:18(INFO): [GAME_ID: 55a19cbf-fab4-4325-acda-66f206b251e7] Survivor: RYANUnpin task: WAIT
+DigOut - 2024-11-10 02:59:39(INFO): pause()
+DigOut - 2024-11-10 02:59:39(INFO): dispose()
+DigOut - 2024-11-10 02:59:39(INFO): EIXT GAME
+

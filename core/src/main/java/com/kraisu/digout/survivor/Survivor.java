@@ -19,6 +19,7 @@ public class Survivor {
     private String profileInformation;
     private int age;
     private Texture img;
+    private Task task;
 
     public Survivor(UUID gameId, String name, int energy, Constants.Survivors profession, Equipment equipment, String profileInformation, int age, Texture img) {
         this.gameId = gameId;
@@ -29,6 +30,7 @@ public class Survivor {
         this.profileInformation = profileInformation;
         this.age = age;
         this.img = img;
+        this.task = null;
     }
 
     public UUID getGameId() {
@@ -95,6 +97,15 @@ public class Survivor {
         this.img = img;
     }
 
+    public Task getTask() {
+        return task;
+    }
+
+    public void setTask(Task task) {
+        this.task = task;
+    }
+
+
     public void reduceEnergy(int amount) {
         this.energy = Math.max(this.energy - amount, Constants.SurvivorLimitations.MIN_SURVIVOR_ENERGY);
     }
@@ -106,15 +117,6 @@ public class Survivor {
             this.energy = Constants.SurvivorLimitations.MAX_SURVIVOR_ENERGY;
         }
     }
-
-    public void giveEquipment(Equipment equipment){
-        if(this.equipment == null){
-            this.equipment = equipment;
-        }else{
-            System.out.println("Nie można dodać: " + equipment.getName() + ", ponieważ ocalały ma już ekwipunek: " + this.equipment.getName());
-        }
-    }
-
 
     public Drawable getIconDrawable() {
         return new TextureRegionDrawable(new TextureRegion(img));
@@ -136,6 +138,7 @@ public class Survivor {
             ", profileInformation='" + profileInformation + '\'' +
             ", age=" + age +
             ", img=" + img +
+            ", task=" + task +
             '}';
     }
 }

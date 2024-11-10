@@ -9,8 +9,10 @@
   },
   com.badlogic.gdx.graphics.Color: {
     green: { a: 1, b: 0, g: 1, r: 0 },
+    dark-green: { a: 1.0, b: 0.0, g: 0.5647059, r: 0.0 },
     white: { a: 1, b: 1, g: 1, r: 1 },
     red: { a: 1, b: 0, g: 0, r: 1 },
+    dark-red: { a: 1.0, b: 0.0, g: 0.0, r: 0.5529412 },
     black: { a: 1, b: 0, g: 0, r: 0 },
     gold: { a: 1.0, b: 0.09019608, g: 0.5647059, r: 0.57254905 },
     yellow: { a: 1.0, b: 0.105882354, g: 0.9254902, r: 0.93333334 },
@@ -35,6 +37,11 @@
     warnFont: { font: medium-font, fontColor: yellow },
     errorFont: { font: medium-font, fontColor: red },
     infoFont: { font: medium-font, fontColor: light-blue }
+
+    greenMediumFont: { font: medium-font, fontColor: dark-green},
+    greenSmallFont: { font: small-font, fontColor: dark-green},
+    redMediumFont: { font: medium-font, fontColor: dark-red},
+    redSmallFont: { font: small-font, fontColor: dark-red}
   },
   com.badlogic.gdx.scenes.scene2d.ui.TextField$TextFieldStyle: {
     black: {font: big-font, fontColor: gold, background: blackBox}
