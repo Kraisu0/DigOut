@@ -13,7 +13,7 @@ import com.kraisu.digout.survivor.Survivor;
 import java.io.File;
 import java.util.*;
 
-import static com.kraisu.digout.help.ConstantsGenerator.ConstructionResourcesDropPercentages.*;
+import static com.kraisu.digout.help.ConstantsGenerator.MaterialsDropPercentages.*;
 import static com.kraisu.digout.help.ConstantsGenerator.EQDropPercentages.*;
 import static com.kraisu.digout.help.ConstantsGenerator.EquipmentDropPercentages.*;
 import static com.kraisu.digout.help.ConstantsGenerator.FoodDropPercentages.*;

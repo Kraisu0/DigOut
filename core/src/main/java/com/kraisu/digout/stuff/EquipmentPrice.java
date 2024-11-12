@@ -1,26 +1,26 @@
 package com.kraisu.digout.stuff;
 
 public class EquipmentPrice {
-    int constructionResources;
+    int materials;
     int tools;
     int food;
     int workingDays;
     //int survivorType;
 
-    public EquipmentPrice(int constructionResources, int tools, int food, int workingDays) {
-        this.constructionResources = constructionResources;
+    public EquipmentPrice(int materials, int tools, int food, int workingDays) {
+        this.materials = materials;
         this.tools = tools;
         this.food = food;
         this.workingDays = workingDays;
         //this.survivorType = survivorType;
     }
 
-    public int getConstructionResources() {
-        return constructionResources;
+    public int getMaterials() {
+        return materials;
     }
 
-    public void setConstructionResources(int constructionResources) {
-        this.constructionResources = constructionResources;
+    public void setMaterials(int materials) {
+        this.materials = materials;
     }
 
     public int getTools() {

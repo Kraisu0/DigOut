@@ -26,7 +26,7 @@ public class Constants {
     }
 
     public enum Resources{
-        CONSTRUCTION_RESOURCES,
+        MATERIALS,
         FOOD,
         TOOLS,
         ELECTRICITY;

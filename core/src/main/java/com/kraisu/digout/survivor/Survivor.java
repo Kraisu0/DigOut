@@ -18,10 +18,11 @@ public class Survivor {
     private Equipment equipment;
     private String profileInformation;
     private int age;
+    private String imgPath;
     private Texture img;
     private Task task;
 
-    public Survivor(UUID gameId, String name, int energy, Constants.Survivors profession, Equipment equipment, String profileInformation, int age, Texture img) {
+    public Survivor(UUID gameId, String name, int energy, Constants.Survivors profession, Equipment equipment, String profileInformation, int age, String avatarPath) {
         this.gameId = gameId;
         this.name = name;
         this.energy = energy;
@@ -29,7 +30,7 @@ public class Survivor {
         this.equipment = equipment;
         this.profileInformation = profileInformation;
         this.age = age;
-        this.img = img;
+        this.img = new Texture(avatarPath);
         this.task = null;
     }
 
@@ -89,12 +90,24 @@ public class Survivor {
         this.age = age;
     }
 
+    public String getImgPath() {
+        return imgPath;
+    }
+
+    public void setImgPath(String imgPath) {
+        this.imgPath = imgPath;
+    }
+
     public Texture getImg() {
         return img;
     }
 
     public void setImg(Texture img) {
         this.img = img;
+    }
+
+    public void setImgFromPath(String path){
+        this.img = new Texture(path);
     }
 
     public Task getTask() {
@@ -125,6 +138,20 @@ public class Survivor {
     public Drawable getEnergyIconDrawable() {
         Texture energyTexture = new Texture(Gdx.files.internal("energy/ENERGY_" + energy + ".png"));
         return new TextureRegionDrawable(new TextureRegion(energyTexture));
+    }
+
+    public void changeImgForWork(){
+        String[] parts = imgPath.split("\\.", 2);
+        String path = parts[0] + ".work.png";
+        setImgPath(path);
+        setImgFromPath(path);
+    }
+
+    public void changeImgForNotWork(){
+        String[] parts = imgPath.split("\\.", 3);
+        String path = parts[0] + ".png";
+        setImgPath(path);
+        setImgFromPath(path);
     }
 
     @Override

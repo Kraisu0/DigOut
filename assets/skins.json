@@ -19,15 +19,6 @@
     light-blue: { a: 1.0, b: 0.93333334, g: 0.8784314, r: 0.6117647 },
     grey: { a: 1.0, b: 0.11372549, g: 0.11372549, r: 0.11372549 }
   },
-  com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle: {
-    default: { down: buttonDOWN, up: buttonUP, disabled: buttonDISABLE, pressedOffsetX: 1, pressedOffsetY: -1}
-    //toggle: { down: default-round-down, checked: default-round-down, up: default-round }
-  },
-  com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle: {
-    default: { down: buttonDOWN, up: buttonUP, disabled: buttonDISABLE, pressedOffsetX: -2, pressedOffsetY: 2, font: gold-button-font },
-    small: { down: buttonDOWN, up: buttonUP, disabled: buttonDISABLE, pressedOffsetX: -2, pressedOffsetY: 2, font: small-gold-button-font }
-    //toggle: { down: default-round-down, checked: default-round-down, up: default-round }
-  },
   com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle: {
     bigFont: { font: big-font, fontColor: white },
     smallFont: { font: small-font, fontColor: white },
@@ -44,7 +35,7 @@
     redSmallFont: { font: small-font, fontColor: dark-red}
   },
   com.badlogic.gdx.scenes.scene2d.ui.TextField$TextFieldStyle: {
-    black: {font: big-font, fontColor: gold, background: blackBox}
+    black: {font: big-font, fontColor: gold, background: box.black}
   },
   com.badlogic.gdx.scenes.scene2d.ui.TextTooltip$TextTooltipStyle: {
     default: {label: {font: small-font}, background: tooltip, wrapWidth: 300 }

@@ -1,10 +1,6 @@
 package com.kraisu.digout.managers;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.kraisu.digout.genertor.Generators;
 import com.kraisu.digout.help.Constants;
-import com.kraisu.digout.logs.DateLogs;
 import com.kraisu.digout.rooms.Coordinate;
 import com.kraisu.digout.rooms.DiscoveredRoom;
 import com.kraisu.digout.rooms.Room;
@@ -14,8 +10,6 @@ import com.kraisu.digout.scenes.GameScreen;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
-
-import static com.kraisu.digout.logs.DateLogs.logs;
 
 public class RoomManager {
     private Map<Coordinate, Room> rooms;
@@ -30,6 +24,24 @@ public class RoomManager {
 
     public Room getRoom(Coordinate coord) {
         return rooms.get(coord);
+    }
+
+    public boolean hasBuildOfType(Constants.Buildings roomType) {
+        for (Room room : rooms.values()) {
+            if (room.getType().equals(roomType)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean hasRoomOfType(Constants.RoomType roomType) {
+        for (Room room : rooms.values()) {
+            if (room.getType().equals(roomType)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public Room getExitRoom() {

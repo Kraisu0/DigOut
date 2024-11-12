@@ -73,7 +73,7 @@ public class SurvivorManager {
             null,
             "profileInformation",
             0,
-            null
+            "assets/avatars/temp.work.png"
         );
         temp = setRandomBio(
             temp,
@@ -91,9 +91,20 @@ public class SurvivorManager {
     public static String getRandomAvatarPath() {
         File folder = new File("assets/avatars");
         File[] files = folder.listFiles();
+
         if (files != null && files.length > 1) {
-            int randomIndex = generateRandomNumber(0, files.length - 1);
-            return files[randomIndex].getPath();
+            List<File> validFiles = new ArrayList<>();
+
+            for (File file : files) {
+                if (!file.getName().endsWith(".work.png")) {
+                    validFiles.add(file);
+                }
+            }
+
+            if (!validFiles.isEmpty()) {
+                int randomIndex = new Random().nextInt(validFiles.size());
+                return validFiles.get(randomIndex).getPath();
+            }
         }
         return null;
     }
@@ -139,6 +150,7 @@ public class SurvivorManager {
         survivor.setAge(age);
         survivor.setName(name);
         survivor.setProfileInformation(bio);
+        survivor.setImgPath(avatarPath);
         survivor.setImg(new Texture(avatarPath));
 
         return survivor;

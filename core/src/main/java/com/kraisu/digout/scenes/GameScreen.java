@@ -38,7 +38,7 @@ public class GameScreen implements Screen {
         roomsTable, infoTable, infoButtonTable, survivorsTable, miniMenuTable, survivorInfoTable,
         eqInfoTable, diaryInfoTable;
     private static Table menuTable;
-    private Map<Constants.Resources, Integer> resourceStatus;
+    private Map<Constants.Resources, Integer> resourceStatus, resourceAllocatedStatus;
     private LinkedHashMap<Constants.Equipment, Integer> equipmentStatus;
     private Map<Constants.Resources, String> resourceName;
     private LinkedHashMap<Constants.Equipment, String> equipmentName, equipmentDescription;
@@ -114,7 +114,7 @@ public class GameScreen implements Screen {
         menuTable.setSize(Gdx.graphics.getWidth()/2f, Gdx.graphics.getHeight()/3f);
         menuTable.setVisible(false);
 
-        menuTable.setBackground(DigOutGame.skin.getDrawable("box.grey"));
+        menuTable.setBackground(DigOutGame.skin.getDrawable("box.gray"));
 
         Button backToGameButton = new TextButton("BACK TO GAME", DigOutGame.skinButton.get("default", TextButton.TextButtonStyle.class));
         backToGameButton.addListener(new ChangeListener() {
@@ -157,6 +157,7 @@ public class GameScreen implements Screen {
 
 
         //name //TODO ograć to jak jest dłuższa nazwa
+        nameTable.setBackground(DigOutGame.skin.getDrawable("box.dark"));
         name = game.getPlayer().getName();
         Label nameLabel;
         int nameLength = name.length();
@@ -262,8 +263,8 @@ public class GameScreen implements Screen {
         infoButtonTable.add(diaryButton).expand().fill().center().height(Gdx.graphics.getHeight()/14f);
 
         survivorInfoTable.setBackground(DigOutGame.skin.getDrawable("box"));
-        eqInfoTable.setBackground(DigOutGame.skin.getDrawable("box.grey"));
-        diaryInfoTable.setBackground(DigOutGame.skin.getDrawable("blackBox"));
+        eqInfoTable.setBackground(DigOutGame.skin.getDrawable("box.gray"));
+        diaryInfoTable.setBackground(DigOutGame.skin.getDrawable("box.dark"));
 
 
 
@@ -325,6 +326,7 @@ public class GameScreen implements Screen {
             survivorEntryFull.addListener(new ClickListener() {
                 @Override
                 public void clicked(InputEvent event, float x, float y) {
+                    addEqAndTaskTable.clear();
                     survivorInfoTable.clear();
                     survivorInfoTable.add(showSurvivorInfo(survivor));
                     changeToInfoSurvivor();
@@ -332,11 +334,11 @@ public class GameScreen implements Screen {
             });
 
             survivorsTable.add(survivorEntryFull).size(survivorBoxWidth, survivorBoxHeight);
-
         }
 
 
         //mini menu
+        miniMenuTable.setBackground(DigOutGame.skin.getDrawable("box.dark"));
         roundNumber = game.getRound();
         Label statusRoundGame = new Label("Day: " + roundNumber, DigOutGame.skin.get("bigFont", Label.LabelStyle.class));
         Button menuButton = new TextButton("MENU", DigOutGame.skinButton.get("small", TextButton.TextButtonStyle.class));
@@ -380,10 +382,76 @@ public class GameScreen implements Screen {
 //        survivorsTable.debug();
 //        nameTable.debug();
 //        miniMenuTable.debug();
+//        addEqAndTaskTable.debug();
 
         stage.addActor(outerTable);
         stage.addActor(outerMenuTable);
         stage.addActor(outerAddEqTable);
+    }
+
+    @Override
+    public void render(float delta) {
+        Gdx.gl.glClearColor(0, 0, 0, 1);
+        Gdx.gl.glClear(Gdx.gl.GL_COLOR_BUFFER_BIT);
+
+        //this.game = game;
+        //refreshEqInfoTable();
+
+        if (needsRefreshAfterAddEQ) {
+            refreshEqInfoTable();
+            refreshSurvivorBar();
+            refreshResourceBar();
+            survivorInfoTable.clear();
+            survivorInfoTable.add(showSurvivorInfo(tempSurvivor));
+            needsRefreshAfterAddEQ = false;
+        }
+
+        if(needsRefreshAfterAddTask){
+            refreshSurvivorBar();
+            refreshResourceBar();
+            survivorInfoTable.clear();
+            survivorInfoTable.add(showSurvivorInfo(tempSurvivor));
+            needsRefreshAfterAddTask = false;
+        }
+
+        if(menuTable.isVisible()) {
+            outerTable.setColor(0, 0, 0, 0.3f);
+            outerTable.setTouchable(Touchable.disabled);
+        } else {
+            outerTable.setColor(0, 0, 0, 1f);
+            outerTable.setTouchable(Touchable.enabled);
+        }
+
+        game.getRoomManager().makeAbleToDiscoveredNearestRooms(game.getRoomManager().getBaseRoom().getCoordinates(), game.getGameId());
+
+        fps.setText("FPS: " + Gdx.graphics.getFramesPerSecond());
+
+        openMenu();
+
+
+
+
+        stage.act(delta);
+        stage.draw();
+    }
+
+    @Override
+    public void resize(int width, int height) {
+        //stage.getViewport().update(width, height, true);
+    }
+
+    @Override
+    public void pause() {}
+
+    @Override
+    public void resume() {}
+
+    @Override
+    public void hide() {}
+
+    @Override
+    public void dispose() {
+        stage.dispose();
     }
 
     public static void openMenu() {
@@ -394,13 +462,14 @@ public class GameScreen implements Screen {
     }
 
     private Table showSurvivorInfo(Survivor survivor){
+        addEqAndTaskTable.clear();
         Table info = new Table();
 
         Image icon = new Image(new TextureRegionDrawable(new TextureRegion(survivor.getImg())));
         info.add(icon).size(256,256).expandX().fillX().center().pad(2).colspan(2).row();
 
         Image energyIcon = new Image(survivor.getEnergyIconDrawable());
-        info.add(energyIcon).size(256,64).expandX().fillX().center().pad(2).colspan(2).row();
+        info.add(energyIcon).size(224,32).expandX().fillX().center().pad(2).colspan(2).row();
 
         Label name = new Label("Name: " + survivor.getName(), DigOutGame.skin.get("mediumFont", Label.LabelStyle.class));
         info.add(name).expandX().fillX().center().pad(2).colspan(2).row();
@@ -473,8 +542,10 @@ public class GameScreen implements Screen {
                     displayConfirmBox(stage, "Do you want to unpin a task from a survivor?", confirmed -> {
                         if (confirmed) {
                             logs(DateLogs.LogType.INFO, game.getGameId(), "Survivor: " + survivor.getName() + ", Unpin task: " + survivor.getTask().getTask(), null);
+                            backResources(survivor, game);
                             survivor.setTask(null);
                             needsRefreshAfterAddTask = true;
+                            survivor.changeImgForNotWork();
                         }
                     });
                 }
@@ -485,6 +556,24 @@ public class GameScreen implements Screen {
 
 
         return info;
+    }
+
+    private void backResources(Survivor survivor, Game game) {
+        game.getResourceManager().getResource(Constants.Resources.MATERIALS).setAllocatedAmount
+            (game.getResourceManager().getResource(Constants.Resources.MATERIALS).getAllocatedAmount()
+                - survivor.getTask().getCost().getMaterials());
+
+        game.getResourceManager().getResource(Constants.Resources.TOOLS).setAllocatedAmount
+            (game.getResourceManager().getResource(Constants.Resources.TOOLS).getAllocatedAmount()
+                - survivor.getTask().getCost().getTools());
+
+        game.getResourceManager().getResource(Constants.Resources.FOOD).setAllocatedAmount
+            (game.getResourceManager().getResource(Constants.Resources.FOOD).getAllocatedAmount()
+                - survivor.getTask().getCost().getFood());
+
+        game.getResourceManager().getResource(Constants.Resources.ELECTRICITY).setAllocatedAmount
+            (game.getResourceManager().getResource(Constants.Resources.ELECTRICITY).getAllocatedAmount()
+                - (survivor.getTask().getCost().isElectricityRequired() ? 1 : 0));
     }
 
     private void changeToInfoSurvivor(){
@@ -560,72 +649,6 @@ public class GameScreen implements Screen {
 //                return "DefaultRoom"; // Domyślny obrazek
 //        }
 //    }
-
-
-
-    @Override
-    public void render(float delta) {
-        Gdx.gl.glClearColor(0, 0, 0, 1);
-        Gdx.gl.glClear(Gdx.gl.GL_COLOR_BUFFER_BIT);
-
-        this.game = game;
-        refreshEqInfoTable();
-
-        if (needsRefreshAfterAddEQ) {
-            refreshSurvivorBar();
-            refreshResourceBar();
-            survivorInfoTable.clear();
-            survivorInfoTable.add(showSurvivorInfo(tempSurvivor));
-            needsRefreshAfterAddEQ = false;
-        }
-
-        if(needsRefreshAfterAddTask){
-            refreshSurvivorBar();
-            refreshResourceBar();
-            survivorInfoTable.clear();
-            survivorInfoTable.add(showSurvivorInfo(tempSurvivor));
-            needsRefreshAfterAddTask = false;
-        }
-
-        if(menuTable.isVisible()) {
-            outerTable.setColor(0, 0, 0, 0.3f);
-            outerTable.setTouchable(Touchable.disabled);
-        } else {
-            outerTable.setColor(0, 0, 0, 1f);
-            outerTable.setTouchable(Touchable.enabled);
-        }
-
-        game.getRoomManager().makeAbleToDiscoveredNearestRooms(game.getRoomManager().getBaseRoom().getCoordinates(), game.getGameId());
-
-        fps.setText("FPS: " + Gdx.graphics.getFramesPerSecond());
-
-        openMenu();
-
-
-
-
-        stage.act(delta);
-        stage.draw();
-    }
-
-    @Override
-    public void resize(int width, int height) {
-        //stage.getViewport().update(width, height, true);
-    }
-
-    @Override
-    public void pause() {}
-
-    @Override
-    public void resume() {}
-
-    @Override
-    public void hide() {}
-
-    @Override
-    public void dispose() {
-        stage.dispose();
-    }
 
     private void populateEqInfoTable() {
         equipmentStatus = game.getEquipmentManager().getEquipmentStatus();
@@ -734,39 +757,55 @@ public class GameScreen implements Screen {
 
     private void populateResourceBar(){
         resourcesTable.clear();
+        resourcesTable.setBackground(DigOutGame.skin.getDrawable("box.wood"));
 
         resourceStatus = game.getResourceManager().getResourceStatus();
+        resourceAllocatedStatus = game.getResourceManager().getAllocatedResourcesStatus();
         resourceName = game.getResourceManager().getResourceNames();
         resourceDescription = game.getResourceManager().getResourceDescription();
 
-        for(Map.Entry<Constants.Resources, Integer> entry : resourceStatus.entrySet()) {
+        for (Map.Entry<Constants.Resources, Integer> entry : resourceStatus.entrySet()) {
             Constants.Resources resource = entry.getKey();
+            int allocatedResource =  entry.getValue() - resourceAllocatedStatus.get(resource);
             String description = resourceDescription.get(resource);
+            String name = resourceName.get(resource);
 
-            Image resourceIcon = new Image(new Texture(Gdx.files.internal("assets/resources/" + entry.getKey().toString()+ "_icon_64.png")));
+            Table resourceEntry = new Table();
+            Table resourceEntryNames = new Table();
+            Table resourceEntryFull = new Table();
+
+            Image resourceIcon = new Image(new Texture(Gdx.files.internal("assets/resources/" + resource.toString() + "_icon_64.png")));
             resourceIcon.setScaling(Scaling.none);
             resourceIcon.setSize(64, 64);
 
-            TextTooltip tooltip = new TextTooltip(description, DigOutGame.skin);
-            tooltip.setInstant(true);
-            //tooltip.getContainer().pad(5);
-            resourceIcon.addListener(tooltip);
-
-
+            TextTooltip imageTooltip = new TextTooltip(description, DigOutGame.skin);
+            imageTooltip.setInstant(true);
+            resourceIcon.addListener(imageTooltip);
 
             String formattedAmount = String.format("%02d", entry.getValue());
             Label resourceAmountLabel = new Label(formattedAmount, DigOutGame.skin.get("mediumFont", Label.LabelStyle.class));
 
-            resourcesTable.add(resourceIcon).size(64, 64).expandX().fillX().center();
-            resourcesTable.add(resourceAmountLabel).expandX().fillX().center();
-        }
+            Label stringLabel = new Label("[RED] -> ", DigOutGame.skin.get("mediumFont", Label.LabelStyle.class));
 
-        resourcesTable.row();
+            String formattedAllocatedAmount = "[GRAY]" +  String.format("%02d", allocatedResource);
+            Label resourceAllocatedAmountLabel = new Label(formattedAllocatedAmount, DigOutGame.skin.get("mediumFont", Label.LabelStyle.class));
 
-        for(Map.Entry<Constants.Resources, String> entry : resourceName.entrySet()) {
-            Label resourceNameLabel = new Label(entry.getValue(), DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
+            TextTooltip allocatedAmountTooltip = new TextTooltip("Resource value after assigning tasks.", DigOutGame.skin);
+            allocatedAmountTooltip.setInstant(true);
+            resourceAllocatedAmountLabel.addListener(allocatedAmountTooltip);
 
-            resourcesTable.add(resourceNameLabel).expandX().colspan(2).center();
+            Label resourceNameLabel = new Label(name, DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
+
+            resourceEntry.add(resourceIcon).size(64, 64).expandX().fillX().center();
+            resourceEntryNames.add(resourceAmountLabel).expandX().fillX().pad(5).center();
+            resourceEntryNames.add(stringLabel).expandX().fillX().center().pad(5);
+            resourceEntryNames.add(resourceAllocatedAmountLabel).expandX().fillX().center().pad(5).row();
+            resourceEntryNames.add(resourceNameLabel).colspan(3).expandX().fillX().center().pad(5);
+
+            resourceEntryFull.add(resourceEntry);
+            resourceEntryFull.add(resourceEntryNames);
+
+            resourcesTable.add(resourceEntryFull).expandX().fillX();
         }
     }
 

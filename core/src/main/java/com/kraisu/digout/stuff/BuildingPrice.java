@@ -1,15 +1,15 @@
 package com.kraisu.digout.stuff;
 
 public class BuildingPrice {
-    int constructionResources;
+    int materials;
     int tools;
     int food;
     int requiredNumberOfWorkers;
     int workingDays;
     boolean isElectricityRequired;
 
-    public BuildingPrice(int constructionResources, int tools, int food, int requiredNumberOfWorkers, int workingDays, boolean isElectricityRequired) {
-        this.constructionResources = constructionResources;
+    public BuildingPrice(int materials, int tools, int food, int requiredNumberOfWorkers, int workingDays, boolean isElectricityRequired) {
+        this.materials = materials;
         this.tools = tools;
         this.food = food;
         this.requiredNumberOfWorkers = requiredNumberOfWorkers;
@@ -18,12 +18,12 @@ public class BuildingPrice {
 
     }
 
-    public int getConstructionResources() {
-        return constructionResources;
+    public int getMaterials() {
+        return materials;
     }
 
-    public void setConstructionResources(int constructionResources) {
-        this.constructionResources = constructionResources;
+    public void setMaterials(int materials) {
+        this.materials = materials;
     }
 
     public int getTools() {
