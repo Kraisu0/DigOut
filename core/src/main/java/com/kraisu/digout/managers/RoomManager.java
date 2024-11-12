@@ -105,20 +105,20 @@ public class RoomManager {
 
         if (coordinate.getX() == 1 && !rooms.containsKey(tempRight)) {
             roomR = ableToDiscoveredRoom(tempRight, id);
-            GameScreen.colorTileAtCoordinate(tempRight, roomR, "LIGHT_ROOK_TYPE_L_0");
+            GameScreen.colorTileAtCoordinate(tempRight, roomR, "LIGHT_ROOK_TYPE_R_0");
         }
 
-        if (coordinate.getY() == 10 && !rooms.containsKey(tempLeft)) {
+        if (coordinate.getX() == 10 && !rooms.containsKey(tempLeft)) {
             roomL = ableToDiscoveredRoom(tempLeft, id);
-            GameScreen.colorTileAtCoordinate(tempRight, roomL, "LIGHT_ROOK_TYPE_R_0");
+            GameScreen.colorTileAtCoordinate(tempLeft, roomL, "LIGHT_ROOK_TYPE_L_0");
         }
 
         if (!rooms.containsKey(tempRight) && !rooms.containsKey(tempLeft))
         {
             roomR = ableToDiscoveredRoom(tempRight, id);
-            GameScreen.colorTileAtCoordinate(tempRight, roomR, "LIGHT_ROOK_TYPE_L_0");
+            GameScreen.colorTileAtCoordinate(tempRight, roomR, "LIGHT_ROOK_TYPE_R_0");
             roomL = ableToDiscoveredRoom(tempLeft, id);
-            GameScreen.colorTileAtCoordinate(tempLeft, roomL, "LIGHT_ROOK_TYPE_R_0");
+            GameScreen.colorTileAtCoordinate(tempLeft, roomL, "LIGHT_ROOK_TYPE_L_0");
         }
 
     }

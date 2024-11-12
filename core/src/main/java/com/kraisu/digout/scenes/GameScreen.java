@@ -180,7 +180,7 @@ public class GameScreen implements Screen {
 
         //screen 10x10
         for (int i = 10; i >= 1; i--) {
-            for (int j = 10; j >= 1; j--) {
+            for (int j = 1; j <= 10; j++) {
                 Coordinate tempCoordinate = new Coordinate(j, i);
                 Table tempTable = new Table();
                 tempTable.setSize(roomWidth, roomHeight);
@@ -203,7 +203,7 @@ public class GameScreen implements Screen {
         }
 
         for (int i = 10; i >= 1; i--) {
-            for (int j = 10; j >= 1; j--) {
+            for (int j = 1; j <= 10; j++) {
                 Coordinate tempCoordinate = new Coordinate(j, i);
                 Table tempTable = gameTable.get(tempCoordinate);
                 tempTable.setSize(roomWidth, roomHeight);
@@ -218,7 +218,6 @@ public class GameScreen implements Screen {
             }
             roomsTable.row();
         }
-
 
         colorTileAtCoordinateBaseRoom(game.getRoomManager().getBaseRoom());
 
