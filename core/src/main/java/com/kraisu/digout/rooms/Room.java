@@ -1,12 +1,16 @@
 package com.kraisu.digout.rooms;
 
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.kraisu.digout.game.Game;
 import com.kraisu.digout.help.Constants;
+import com.kraisu.digout.logs.DateLogs;
 import com.kraisu.digout.stuff.Equipment;
 import com.kraisu.digout.survivor.Survivor;
 
 import java.util.List;
 import java.util.UUID;
+
+import static com.kraisu.digout.logs.DateLogs.logs;
 
 public abstract class Room {
     private UUID gameId; //ID gry w jakiej znajduje się pokój
@@ -17,11 +21,12 @@ public abstract class Room {
     private Constants.Buildings buildUp; //nic, baza, kuchnia, restroom, winda, warsztat, elektrownia, pompa powietrza, majsterkowania
     private boolean ableToBuild; //czy pokój można zabudować
     private int amountOfSpace; //ile jest miejsca w pokoju
+    private int amountOfSurvivors;
     private boolean isFull; //Czy pokój jest w pełni wypełniony
-    private Skin roomSkins;
+    private String actualPicture;
 
     public Room(UUID gameId, Coordinate coordinates, Constants.RoomType type, boolean discovered, boolean ableToDiscover,
-                Constants.Buildings buildUp, boolean ableToBuild, int amountOfSpace, Skin roomSkins) {
+                Constants.Buildings buildUp, boolean ableToBuild, int amountOfSpace, String actualPicture) {
         this.gameId = gameId;
         this.coordinates = coordinates;
         this.type = type;
@@ -31,7 +36,8 @@ public abstract class Room {
         this.ableToBuild = ableToBuild;
         this.amountOfSpace = amountOfSpace;
         this.isFull = false;
-        this.roomSkins = roomSkins;
+        this.amountOfSurvivors = 0;
+        this.actualPicture = actualPicture;
     }
 
     public UUID getGameId() {
@@ -98,6 +104,14 @@ public abstract class Room {
         this.amountOfSpace = amountOfSpace;
     }
 
+    public int getAmountOfSurvivors() {
+        return amountOfSurvivors;
+    }
+
+    public void setAmountOfSurvivors(int amountOfSurvivors) {
+        this.amountOfSurvivors = amountOfSurvivors;
+    }
+
     public boolean isFull() {
         return isFull;
     }
@@ -106,17 +120,27 @@ public abstract class Room {
         isFull = full;
     }
 
-    public Skin getRoomSkins() {
-        return roomSkins;
+    public String getActualPicture() {
+        return actualPicture;
     }
 
-    public void setRoomSkins(Skin roomSkins) {
-        this.roomSkins = roomSkins;
+    public void setActualPicture(String actualPicture) {
+        this.actualPicture = actualPicture;
     }
 
-    public void changeImgForWork(){
+    public void updatePicture(){
+        String[] parts = this.actualPicture.split("\\.", 2);
+        this.actualPicture = parts[0] + "." + getAmountOfSurvivors();
     }
 
-    public void changeImgForNotWork(){
+    public void updateSpace(Game game){
+        if(getAmountOfSpace() == getAmountOfSurvivors())
+            setFull(true);
+        else if (getAmountOfSpace() > getAmountOfSurvivors())
+            setFull(false);
+        else
+            logs(DateLogs.LogType.ERROR, game.getGameId(), "Something happened that shouldn't have" +
+                " happened. There are more survivors in the room than there can be.", null);
     }
+
 }

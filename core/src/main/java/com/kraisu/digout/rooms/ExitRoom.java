@@ -10,15 +10,14 @@ import static com.kraisu.digout.help.Constants.RoomType.EXIT_TYPE;
 
 public class ExitRoom extends Room {
     public ExitRoom(Coordinate coordinates, UUID id) {
-        super (id,
-            coordinates,
+        super (id, coordinates,
             EXIT_TYPE,
             false,
             false,
             NOTHING,
             false,
             1,
-        new Skin(Gdx.files.internal("rooms/EmptyRoomTexture.json"))); //TODO do zmiany
+            "EXIT_ROOM.0");
     }
 
 }

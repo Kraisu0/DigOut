@@ -1323,8 +1323,10 @@ public class uiHelps {
         needsRefreshAfterAddTask = true;
         tempSurvivor = survivor;
         survivor.changeImgForWork();
-        game.getRoomManager().getRoom(coordinate).setFull(true);
-        game.getRoomManager().getRoom(coordinate).changeImgForWork();
+
+        game.getRoomManager().getRoom(coordinate).setAmountOfSurvivors(game.getRoomManager().getRoom(coordinate).getAmountOfSurvivors() + 1);
+        game.getRoomManager().getRoom(coordinate).updateSpace(game);
+        game.getRoomManager().getRoom(coordinate).updatePicture();
 
         addEqAndTaskTable.clear();
         needsRefreshAfterAddEQ = true;

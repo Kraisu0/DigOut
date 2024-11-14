@@ -1,13 +1,14 @@
 package com.kraisu.digout.managers;
 
+import com.kraisu.digout.game.Game;
 import com.kraisu.digout.help.Constants;
-import com.kraisu.digout.rooms.Coordinate;
-import com.kraisu.digout.rooms.DiscoveredRoom;
-import com.kraisu.digout.rooms.Room;
-import com.kraisu.digout.rooms.UndiscoveredRoom;
+import com.kraisu.digout.logs.DateLogs;
+import com.kraisu.digout.rooms.*;
 import com.kraisu.digout.scenes.GameScreen;
 
 import java.util.*;
+
+import static com.kraisu.digout.logs.DateLogs.logs;
 
 public class RoomManager {
     private Map<Coordinate, Room> rooms;
@@ -86,7 +87,7 @@ public class RoomManager {
         if(!rooms.containsKey(coordinate)) {
             if(coordinate.getY() > 8) {
                 if(!exitRoom.getCoordinates().equals(coordinate)) {
-                    Room temp = new UndiscoveredRoom(coordinate, id, Constants.RoomType.HARD_ROOK_TYPE);
+                    Room temp = new UndiscoveredHardRoom(coordinate, id);
                     rooms.put(coordinate, temp);
                     return temp;
                 }
@@ -95,7 +96,7 @@ public class RoomManager {
                     return exitRoom;
                 }
             } else {
-                Room temp = new UndiscoveredRoom(coordinate, id, Constants.RoomType.LIGHT_ROOK_TYPE);
+                Room temp = new UndiscoveredLightRoom(coordinate, id);
                 rooms.put(coordinate, temp);
                 return temp;
             }
@@ -123,20 +124,24 @@ public class RoomManager {
 
         if (coordinate.getX() == 1 && !rooms.containsKey(tempRight)) {
             roomR = ableToDiscoveredRoom(tempRight, id);
-            GameScreen.colorTileAtCoordinate(tempRight, roomR, "LIGHT_ROOK_TYPE_R_0");
+            GameScreen.colorTileAtCoordinate(tempRight, roomR, "LIGHT_ROOM_R.0");
+            roomR.setActualPicture("LIGHT_ROOM_R.0");
         }
 
         if (coordinate.getX() == 10 && !rooms.containsKey(tempLeft)) {
             roomL = ableToDiscoveredRoom(tempLeft, id);
-            GameScreen.colorTileAtCoordinate(tempLeft, roomL, "LIGHT_ROOK_TYPE_L_0");
+            GameScreen.colorTileAtCoordinate(tempLeft, roomL, "LIGHT_ROOM_L.0");
+            roomL.setActualPicture("LIGHT_ROOM_L.0");
         }
 
         if (!rooms.containsKey(tempRight) && !rooms.containsKey(tempLeft))
         {
             roomR = ableToDiscoveredRoom(tempRight, id);
-            GameScreen.colorTileAtCoordinate(tempRight, roomR, "LIGHT_ROOK_TYPE_R_0");
+            GameScreen.colorTileAtCoordinate(tempRight, roomR, "LIGHT_ROOM_R.0");
+            roomR.setActualPicture("LIGHT_ROOM_R.0");
             roomL = ableToDiscoveredRoom(tempLeft, id);
-            GameScreen.colorTileAtCoordinate(tempLeft, roomL, "LIGHT_ROOK_TYPE_L_0");
+            GameScreen.colorTileAtCoordinate(tempLeft, roomL, "LIGHT_ROOM_L.0");
+            roomL.setActualPicture("LIGHT_ROOM_L.0");
         }
 
     }

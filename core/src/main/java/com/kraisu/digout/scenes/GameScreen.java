@@ -406,24 +406,7 @@ public class GameScreen implements Screen {
 
         //game.getSurvivorManager().showDisable();
 
-        if (needsRefreshAfterAddEQ) {
-            refreshEqInfoTable();
-            refreshSurvivorBar();
-            refreshResourceBar();
-            survivorInfoTable.clear();
-            survivorInfoTable.add(showSurvivorInfo(tempSurvivor));
-            needsRefreshAfterAddEQ = false;
-            survivorsTable.setTouchable(Touchable.enabled);
-        }
-
-        if(needsRefreshAfterAddTask){
-            refreshSurvivorBar();
-            refreshResourceBar();
-            survivorInfoTable.clear();
-            survivorInfoTable.add(showSurvivorInfo(tempSurvivor));
-            needsRefreshAfterAddTask = false;
-            survivorsTable.setTouchable(Touchable.enabled);
-        }
+        checkNeedsRefresh();
 
         if(menuTable.isVisible()) {
             outerTable.setColor(0, 0, 0, 0.3f);
@@ -463,6 +446,28 @@ public class GameScreen implements Screen {
     @Override
     public void dispose() {
         stage.dispose();
+    }
+
+    private void checkNeedsRefresh(){
+        if (needsRefreshAfterAddEQ) {
+            refreshEqInfoTable();
+            refreshSurvivorBar();
+            refreshResourceBar();
+            survivorInfoTable.clear();
+            survivorInfoTable.add(showSurvivorInfo(tempSurvivor));
+            needsRefreshAfterAddEQ = false;
+            survivorsTable.setTouchable(Touchable.enabled);
+        }
+
+        if(needsRefreshAfterAddTask){
+            updateColorRoom();
+            refreshSurvivorBar();
+            refreshResourceBar();
+            survivorInfoTable.clear();
+            survivorInfoTable.add(showSurvivorInfo(tempSurvivor));
+            needsRefreshAfterAddTask = false;
+            survivorsTable.setTouchable(Touchable.enabled);
+        }
     }
 
     public static void openMenu() {
@@ -555,8 +560,11 @@ public class GameScreen implements Screen {
                             tempSurvivor = survivor;
                             logs(DateLogs.LogType.INFO, game.getGameId(), "Survivor: " + survivor.getName() + ", Unpin task: " + survivor.getTask().getTask(), null);
                             backResources(survivor, game);
-                            game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setFull(false);
-                            game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).changeImgForNotWork();
+                            game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setAmountOfSurvivors(
+                                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).getAmountOfSurvivors() - 1
+                            );
+                            game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).updateSpace(game);
+                            game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).updatePicture();
                             survivor.setTask(null);
                             needsRefreshAfterAddTask = true;
                             survivor.changeImgForNotWork();
@@ -604,17 +612,24 @@ public class GameScreen implements Screen {
         Table tile = gameTable.get(coordinate);
         tile.setSize(roomWidth,roomHeight);
 
-        ShapeRenderer shapeRenderer = new ShapeRenderer();
-
-        shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
-        shapeRenderer.setColor(Color.WHITE);
-        shapeRenderer.rect(tile.getX(), tile.getY(), tile.getWidth(), tile.getHeight());
-        shapeRenderer.end();
-
         if (tile != null) {
-            tile.setBackground(room.getRoomSkins().getDrawable("BaseRoom"));
+            tile.setBackground(DigOutGame.skinRoom.getDrawable(room.getActualPicture()));
         } else {
             logs(DateLogs.LogType.INFO, game.getGameId(), "Error: No tile found at coordinate: " + coordinate, null);
+        }
+    }
+
+    public void updateColorRoom(){
+        Map<Coordinate, Room> rooms = game.getRoomManager().getRooms();
+
+        for (Map.Entry<Coordinate, Room> entry : rooms.entrySet()) {
+            Room room = entry.getValue();
+
+            if(room.getType() == Constants.RoomType.EXIT_TYPE && !room.isAbleToBuild())
+                continue;
+
+            colorTileAtCoordinateBaseRoom(room);
+
         }
     }
 
@@ -622,47 +637,13 @@ public class GameScreen implements Screen {
 
         Table tile = gameTable.get(coordinate);
         tile.setSize(roomWidth,roomHeight);
-        ShapeRenderer shapeRenderer = new ShapeRenderer();
-
-        shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
-        shapeRenderer.setColor(Color.WHITE);
-        shapeRenderer.rect(tile.getX(), tile.getY(), tile.getWidth(), tile.getHeight());
-        shapeRenderer.end();
-
 
         if (tile != null) {
-            tile.setBackground(room.getRoomSkins().getDrawable(name));
+            tile.setBackground(DigOutGame.skinRoom.getDrawable(name));
         } else {
             logs(DateLogs.LogType.INFO, game.getGameId(), "Error: No tile found at coordinate: " + coordinate, null);
         }
     }
-
-//    public void colorTileAtCoordinate(Room room) {
-//        Coordinate coordinate = room.getCoordinates();
-//        Table tile = gameTable.get(coordinate);
-//        tile.setSize(roomWidth, roomHeight);
-//
-//        if (tile != null) {
-//            String drawableName = getDrawableNameForRoomType(room.getType());
-//            tile.setBackground(room.getRoomSkins().getDrawable(drawableName));
-//        } else {
-//            logs(DateLogs.LogType.INFO, game.getGameId(), "Error: No tile found at coordinate: " + coordinate, null);
-//        }
-//    }
-//
-//    private String getDrawableNameForRoomType(Constants.RoomType type) {
-//        switch (type) {
-//            case HARD_ROOK_TYPE:
-//                return "HARD_ROOK_TYPE";
-//            case LIGHT_ROOK_TYPE:
-//                return "LIGHT_ROOK_TYPE";
-//            case BASE_TYPE:
-//                return "BaseRoom";
-//
-//            default:
-//                return "DefaultRoom"; // Domyślny obrazek
-//        }
-//    }
 
     private void populateEqInfoTable() {
         equipmentStatus = game.getEquipmentManager().getEquipmentStatus();
