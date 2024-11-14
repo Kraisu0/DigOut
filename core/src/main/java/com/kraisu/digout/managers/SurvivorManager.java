@@ -1,8 +1,10 @@
 package com.kraisu.digout.managers;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.kraisu.digout.game.Game;
 import com.kraisu.digout.help.Constants;
 import com.kraisu.digout.logs.DateLogs;
+import com.kraisu.digout.rooms.Coordinate;
 import com.kraisu.digout.stuff.Equipment;
 import com.kraisu.digout.survivor.Survivor;
 
@@ -34,6 +36,14 @@ public class SurvivorManager {
         return survivors.values();
     }
 
+    public static Map<String, Survivor> getSurvivors() {
+        return survivors;
+    }
+
+    public static void setSurvivors(Map<String, Survivor> survivors) {
+        SurvivorManager.survivors = survivors;
+    }
+
     private static String generateUniqueName(List<String> names) {
         String baseName;
         int randomIndex = generateRandomNumber(0, names.size() - 1);
@@ -62,11 +72,11 @@ public class SurvivorManager {
 
 
 
-    public static Survivor generateNewSurvivors(UUID id, Constants.Survivors survivorType){
+    public static Survivor generateNewSurvivors(Game game, Constants.Survivors survivorType){
         Survivor temp = null;
 
         temp = new Survivor(
-            id,
+            game.getGameId(),
             "name",
             4,
             survivorType,
@@ -81,9 +91,12 @@ public class SurvivorManager {
             descriptions
         );
 
-        logs(DateLogs.LogType.INFO, id, "create new Survivor. NAME: " + temp.getName() + ", ENERGY: "
+        logs(DateLogs.LogType.INFO, game.getGameId(), "create new Survivor. NAME: " + temp.getName() + ", ENERGY: "
             + temp.getEnergy() + ", SURVIVOR TYPE: " + survivorType + ", PI: " + temp.getProfileInformation() +
             ", AGE: " + temp.getAge(), null);
+
+        if(temp.getProfession() == Constants.Survivors.MINER)
+            temp.setEquipment(game.getEquipmentManager().getEquipment(Constants.Equipment.PICKAXE));
 
         return temp;
     }
@@ -154,6 +167,34 @@ public class SurvivorManager {
         survivor.setImg(new Texture(avatarPath));
 
         return survivor;
+    }
+
+    public Survivor whoIsInTheRoom(Coordinate coordinate){
+        Map<String, Survivor> survivorsMap = getSurvivors();
+        for(Map.Entry<String, Survivor> entry : survivorsMap.entrySet()){
+            if(entry.getValue().getTask() != null) {
+                if (entry.getValue().getTask().getCoordinateOfRoom() == coordinate) {
+                    return entry.getValue();
+                }
+            }else{
+                continue;
+            }
+        }
+        return null;
+    }
+
+    public void showDisable(){
+        Map<String, Survivor> survivorsMap = getSurvivors();
+        for(Map.Entry<String, Survivor> entry : survivorsMap.entrySet()){
+            if(entry.getValue().getTask() != null) {
+                System.out.println("Coordinate for " + entry.getValue().getName() + ": " +
+                    entry.getValue().getTask().getCoordinateOfRoom().getX() + " ," +
+                    entry.getValue().getTask().getCoordinateOfRoom().getY());
+            }else{
+                System.out.println("Coordinate for " + entry.getValue().getName() + ": null, null");
+            }
+        }
+        System.out.println("\n\n");
     }
 
 }

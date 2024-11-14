@@ -17,6 +17,7 @@ public abstract class Room {
     private Constants.Buildings buildUp; //nic, baza, kuchnia, restroom, winda, warsztat, elektrownia, pompa powietrza, majsterkowania
     private boolean ableToBuild; //czy pokój można zabudować
     private int amountOfSpace; //ile jest miejsca w pokoju
+    private boolean isFull; //Czy pokój jest w pełni wypełniony
     private Skin roomSkins;
 
     public Room(UUID gameId, Coordinate coordinates, Constants.RoomType type, boolean discovered, boolean ableToDiscover,
@@ -29,6 +30,7 @@ public abstract class Room {
         this.buildUp = buildUp;
         this.ableToBuild = ableToBuild;
         this.amountOfSpace = amountOfSpace;
+        this.isFull = false;
         this.roomSkins = roomSkins;
     }
 
@@ -96,11 +98,25 @@ public abstract class Room {
         this.amountOfSpace = amountOfSpace;
     }
 
+    public boolean isFull() {
+        return isFull;
+    }
+
+    public void setFull(boolean full) {
+        isFull = full;
+    }
+
     public Skin getRoomSkins() {
         return roomSkins;
     }
 
     public void setRoomSkins(Skin roomSkins) {
         this.roomSkins = roomSkins;
+    }
+
+    public void changeImgForWork(){
+    }
+
+    public void changeImgForNotWork(){
     }
 }

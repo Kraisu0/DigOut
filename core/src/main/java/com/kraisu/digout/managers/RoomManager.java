@@ -7,9 +7,7 @@ import com.kraisu.digout.rooms.Room;
 import com.kraisu.digout.rooms.UndiscoveredRoom;
 import com.kraisu.digout.scenes.GameScreen;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 public class RoomManager {
     private Map<Coordinate, Room> rooms;
@@ -24,6 +22,10 @@ public class RoomManager {
 
     public Room getRoom(Coordinate coord) {
         return rooms.get(coord);
+    }
+
+    public Map<Coordinate, Room> getRooms() {
+        return rooms;
     }
 
     public boolean hasBuildOfType(Constants.Buildings roomType) {
@@ -60,6 +62,22 @@ public class RoomManager {
         }
         System.out.println("Brak pokoju wejścia");
         return null;
+    }
+
+    public Coordinate[] getRoomsByType(Constants.RoomType roomType, Constants.Buildings buildings) {
+        List<Coordinate> coordinates = new ArrayList<>();
+        Map<Coordinate, Room> rooms = getRooms();
+
+        for (Map.Entry<Coordinate, Room> entry : rooms.entrySet()) {
+            Room room = entry.getValue();
+
+            if ((roomType != null && room.getType() == roomType) ||
+                (buildings != null && room.getBuildUp() == buildings)) {
+                coordinates.add(entry.getKey());
+            }
+        }
+
+        return coordinates.toArray(new Coordinate[0]);
     }
 
 

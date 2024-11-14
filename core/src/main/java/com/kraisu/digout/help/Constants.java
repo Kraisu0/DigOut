@@ -65,6 +65,16 @@ public class Constants {
         public static final EquipmentPrice TOOLS_PRICE = new EquipmentPrice(1,0,0,1);
     }
 
+    public static class TaskCost{
+        public static BuildingPrice SEARCHLIGHT_ = new BuildingPrice(4,0,0,1,1,false);
+        public static BuildingPrice KITCHEN_PRICE = new BuildingPrice(2,0,2,1,1,false);
+        public static BuildingPrice ELEVATOR_PRICE = new BuildingPrice(3,0,0,1,1,false);
+        public static BuildingPrice WORKSHOP_PRICE = new BuildingPrice(3,1,0,2,1,false);
+        public static BuildingPrice POWER_STATION_PRICE = new BuildingPrice(4,3,0,2,1,false);
+        public static BuildingPrice AIR_PUMP_PRICE = new BuildingPrice(3,1,4,2,1,true);
+        public static BuildingPrice TINKER_ROOM_PRICE = new BuildingPrice(6,1,1,2,2,true);
+    }
+
     public enum GameState{
         GAME_IN_PROGRESS,
         GAME_OVER,

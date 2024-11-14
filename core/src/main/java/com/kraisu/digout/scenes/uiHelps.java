@@ -2,9 +2,7 @@ package com.kraisu.digout.scenes;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.*;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
@@ -14,6 +12,7 @@ import com.kraisu.digout.DigOutGame;
 import com.kraisu.digout.game.Game;
 import com.kraisu.digout.help.Constants;
 import com.kraisu.digout.logs.DateLogs;
+import com.kraisu.digout.rooms.Coordinate;
 import com.kraisu.digout.stuff.BuildingPrice;
 import com.kraisu.digout.stuff.EquipmentPrice;
 import com.kraisu.digout.survivor.Survivor;
@@ -23,7 +22,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static com.kraisu.digout.logs.DateLogs.logs;
-import static com.kraisu.digout.scenes.GameScreen.addEqAndTaskTable;
+import static com.kraisu.digout.scenes.GameScreen.*;
 
 
 public class uiHelps {
@@ -129,8 +128,7 @@ public class uiHelps {
         closeButton.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
-                table.setVisible(false);
-                addEqAndTaskTable.clear();
+                actionAfterCloseByX(table);
             }
         });
 
@@ -180,8 +178,8 @@ public class uiHelps {
 
                                 addButton.setDisabled(true);
                                 addEqAndTaskTable.clear();
-                                GameScreen.needsRefreshAfterAddEQ = true;
-                                GameScreen.tempSurvivor = survivor;
+                                needsRefreshAfterAddEQ = true;
+                                tempSurvivor = survivor;
                             }
                         });
                     }
@@ -205,8 +203,8 @@ public class uiHelps {
                             survivor.setProfession(Constants.Survivors.WORKER);
                             addToolButton.setDisabled(true);
                             addEqAndTaskTable.clear();
-                            GameScreen.needsRefreshAfterAddEQ = true;
-                            GameScreen.tempSurvivor = survivor;
+                            needsRefreshAfterAddEQ = true;
+                            tempSurvivor = survivor;
 
                             logs(DateLogs.LogType.INFO, game.getGameId(), "Survivor: " + survivor.getName() + "was trained as a Worker.", null);
                         }
@@ -229,8 +227,7 @@ public class uiHelps {
         closeButton.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
-                table.setVisible(false);
-                addEqAndTaskTable.clear();
+                actionAfterCloseByX(table);
             }
         });
 
@@ -244,11 +241,8 @@ public class uiHelps {
 
         waitingButton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
-                survivor.setTask(new Task(null, Constants.Tasks.WAIT, new BuildingPrice(0, 1, 0, 0, 0, false)));
-                reloadResources(survivor, game);
-                GameScreen.needsRefreshAfterAddTask = true;
-                GameScreen.tempSurvivor = survivor;
-                survivor.changeImgForWork();
+                addEqAndTaskTable.clear();
+                showRoomChooser(stage, survivor,game, Constants.Tasks.WAIT);
             }
         });
 
@@ -273,7 +267,8 @@ public class uiHelps {
 
         restingButton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
-                System.out.println("Survivor go rest");
+                addEqAndTaskTable.clear();
+                showRoomChooser(stage, survivor,game, Constants.Tasks.REST);
             }
         });
 
@@ -285,7 +280,8 @@ public class uiHelps {
 
         eatingButton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
-                System.out.println("Survivor go eat");
+                addEqAndTaskTable.clear();
+                showRoomChooser(stage, survivor,game, Constants.Tasks.EAT);
             }
         });
 
@@ -321,9 +317,8 @@ public class uiHelps {
 
         digOutingButton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
-                System.out.println("Survivor go digout");
-                displayInfoBox(stage, "Chose room for survivor's task.", Mark.INFO);
                 addEqAndTaskTable.clear();
+                showRoomChooser(stage, survivor,game, Constants.Tasks.DIG_OUT);
             }
         });
 
@@ -349,8 +344,7 @@ public class uiHelps {
         closeButton.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
-                table.setVisible(false);
-                addEqAndTaskTable.clear();
+                actionAfterCloseByX(table);
             }
         });
 
@@ -364,7 +358,8 @@ public class uiHelps {
 
         trainingToCookButton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
-                System.out.println("Survivor go training to Cook");
+                addEqAndTaskTable.clear();
+                showRoomChooser(stage, survivor,game, Constants.Tasks.TRAIN_TO_COOK);
             }
         });
 
@@ -376,7 +371,8 @@ public class uiHelps {
 
         trainingToEngineerButton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
-                System.out.println("Survivor go training to Engineer");
+                addEqAndTaskTable.clear();
+                showRoomChooser(stage, survivor,game, Constants.Tasks.TRAIN_TO_ENGINEER);
             }
         });
 
@@ -395,8 +391,7 @@ public class uiHelps {
         closeButton.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
-                table.setVisible(false);
-                addEqAndTaskTable.clear();
+                actionAfterCloseByX(table);
             }
         });
 
@@ -410,7 +405,8 @@ public class uiHelps {
 
         buildingRestroomButton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
-                System.out.println("Survivor go building a Restroom");
+                addEqAndTaskTable.clear();
+                showRoomChooser(stage, survivor,game, Constants.Tasks.BUILD_RESTROOM);
             }
         });
 
@@ -422,7 +418,8 @@ public class uiHelps {
 
         buildingKitchenButton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
-                System.out.println("Survivor go building a Kitchen");
+                addEqAndTaskTable.clear();
+                showRoomChooser(stage, survivor,game, Constants.Tasks.BUILD_KITCHEN);
             }
         });
 
@@ -434,7 +431,8 @@ public class uiHelps {
 
         buildingElevatorButton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
-                System.out.println("Survivor go building a Elevator");
+                addEqAndTaskTable.clear();
+                showRoomChooser(stage, survivor,game, Constants.Tasks.BUILD_ELEVATOR);
             }
         });
 
@@ -446,7 +444,8 @@ public class uiHelps {
 
         buildingWorkshopButton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
-                System.out.println("Survivor go building a Workshop");
+                addEqAndTaskTable.clear();
+                showRoomChooser(stage, survivor,game, Constants.Tasks.BUILD_WORKSHOP);
             }
         });
 
@@ -458,7 +457,8 @@ public class uiHelps {
 
         buildingPowerStationButton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
-                System.out.println("Survivor go building a PowerStation");
+                addEqAndTaskTable.clear();
+                showRoomChooser(stage, survivor,game, Constants.Tasks.BUILD_POWER_STATION);
             }
         });
 
@@ -470,7 +470,8 @@ public class uiHelps {
 
         buildingAirPumpButton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
-                System.out.println("Survivor go building a AirPump");
+                addEqAndTaskTable.clear();
+                showRoomChooser(stage, survivor,game, Constants.Tasks.BUILD_AIR_PUMP);
             }
         });
 
@@ -482,7 +483,8 @@ public class uiHelps {
 
         buildingTinkerRoomButton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
-                System.out.println("Survivor go building a TinkerRoom");
+                addEqAndTaskTable.clear();
+                showRoomChooser(stage, survivor,game, Constants.Tasks.BUILD_TINKER_ROOM);
             }
         });
 
@@ -516,8 +518,7 @@ public class uiHelps {
         closeButton.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
-                table.setVisible(false);
-                addEqAndTaskTable.clear();
+                actionAfterCloseByX(table);
             }
         });
 
@@ -531,7 +532,8 @@ public class uiHelps {
 
         creatingFoodButton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
-                System.out.println("Survivor go creating a Food");
+                addEqAndTaskTable.clear();
+                showRoomChooser(stage, survivor,game, Constants.Tasks.CREAT_FOOD);
             }
         });
 
@@ -543,7 +545,8 @@ public class uiHelps {
 
         creatingToolsButton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
-                System.out.println("Survivor go creating a Tools");
+                addEqAndTaskTable.clear();
+                showRoomChooser(stage, survivor,game, Constants.Tasks.CREAT_TOOLS);
             }
         });
 
@@ -555,7 +558,8 @@ public class uiHelps {
 
         creatingSearchlightButton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
-                System.out.println("Survivor go creating a Searchlight");
+                addEqAndTaskTable.clear();
+                showRoomChooser(stage, survivor,game, Constants.Tasks.CREAT_SEARCHLIGHT);
             }
         });
 
@@ -567,7 +571,8 @@ public class uiHelps {
 
         creatingKitchenRobotButton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
-                System.out.println("Survivor go creating a Kitchen Robot");
+                addEqAndTaskTable.clear();
+                showRoomChooser(stage, survivor,game, Constants.Tasks.CREAT_KITCHEN_ROBOT);
             }
         });
 
@@ -579,7 +584,8 @@ public class uiHelps {
 
         creatingOxygenMaskButton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
-                System.out.println("Survivor go creating a Oxygen mask");
+                addEqAndTaskTable.clear();
+                showRoomChooser(stage, survivor,game, Constants.Tasks.CREAT_OXYGEN_MASK);
             }
         });
 
@@ -591,7 +597,8 @@ public class uiHelps {
 
         creatingPickaxeButton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
-                System.out.println("Survivor go creating a Pickaxe");
+                addEqAndTaskTable.clear();
+                showRoomChooser(stage, survivor,game, Constants.Tasks.CREAT_PICKAXE);
             }
         });
 
@@ -1089,6 +1096,250 @@ public class uiHelps {
         game.getResourceManager().getResource(Constants.Resources.ELECTRICITY).setAllocatedAmount
             (game.getResourceManager().getResource(Constants.Resources.ELECTRICITY).getAllocatedAmount()
                 + (survivor.getTask().getCost().isElectricityRequired() ? 1 : 0));
+    }
+
+    private static void showRoomChooser( Stage stage, Survivor survivor, Game game, Constants.Tasks task){
+        survivorsTable.setTouchable(Touchable.disabled);
+        Table table = new Table();
+        table.setSize(centerTable.getWidth(), Gdx.graphics.getHeight()/7f);
+        table.left().bottom();
+        table.setPosition(0,0);
+
+        createBorderRooms(stage, survivor, game, task);
+
+        table.setBackground(DigOutGame.skin.getDrawable("box"));
+        Label label = new Label("Select the room on the map above to which you want to assign the survivor.\n" +
+            "[GRAY] Rooms marked with [GREEN]GREEN[GRAY] border can be selected for this task, there is no one inside so the survivor can complete the task here.\n" +
+            "Rooms marked with [YELLOW]YELLOW[GRAY] border mean that someone is already assigned to that room, you can assign the current survivor here, but the previous one will lose the assigned task.\n" +
+            "The room marked with [ORANGE]ORANGE[GRAY] border is the BASE, you can assign more than one survivor here.\n" +
+            "Rooms marked with NO border mean that the tasks the survivor has selected cannot be completed in that room.", DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
+
+        label.setWrap(true);
+        label.setAlignment(1);
+        label.setWidth(Gdx.graphics.getWidth()*3/4f);
+
+        TextButton closeButton = new TextButton("X", DigOutGame.skinButton.get("small-dark-red", TextButton.TextButtonStyle.class));
+        closeButton.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                actionAfterCloseByX(table);
+            }
+        });
+
+        table.add(closeButton).size(30, 30).top().right().row();
+        table.add(label).expandX().fillX().left().bottom().padLeft(5).padRight(5).padBottom(5);
+        outerPinRoomTable.addActor(table);
+
+    }
+
+    private static void createBorderRooms(Stage stage, Survivor survivor, Game game, Constants.Tasks task){
+
+        switch (task){
+            case WAIT:
+            case EAT:
+                drawAvailableRooms(game, stage, survivor, game.getRoomManager().getRoomsByType(null, Constants.Buildings.RESTROOM), task);
+                drawBaseRoom(game, stage, survivor, task);
+                break;
+            case REST:
+                drawAvailableRooms(game, stage, survivor, game.getRoomManager().getRoomsByType(null, Constants.Buildings.RESTROOM), task);
+                break;
+            case TRAIN_TO_COOK:
+            case CREAT_FOOD:
+                drawAvailableRooms(game, stage, survivor, game.getRoomManager().getRoomsByType(null, Constants.Buildings.KITCHEN), task);
+                break;
+            case TRAIN_TO_ENGINEER:
+            case CREAT_SEARCHLIGHT:
+            case CREAT_KITCHEN_ROBOT:
+            case CREAT_OXYGEN_MASK:
+            case CREAT_PICKAXE:
+                drawAvailableRooms(game, stage, survivor, game.getRoomManager().getRoomsByType(null, Constants.Buildings.TINKER_ROOM), task);
+                break;
+            case BUILD_RESTROOM:
+            case BUILD_KITCHEN:
+            case BUILD_ELEVATOR:
+            case BUILD_WORKSHOP:
+            case BUILD_POWER_STATION:
+            case BUILD_AIR_PUMP:
+            case BUILD_TINKER_ROOM:
+                drawAvailableRooms(game, stage, survivor, game.getRoomManager().getRoomsByType(Constants.RoomType.ROOM_TO_ARRANGE, null), task);
+                break;
+            case CREAT_TOOLS:
+                drawAvailableRooms(game, stage, survivor, game.getRoomManager().getRoomsByType(null, Constants.Buildings.WORKSHOP), task);
+                break;
+            case DIG_OUT:
+                if(survivor.getProfession() == Constants.Survivors.WORKER)
+                    drawAvailableRooms(game, stage, survivor, game.getRoomManager().getRoomsByType(Constants.RoomType.LIGHT_ROOK_TYPE, null), task);
+                if(survivor.getProfession() == Constants.Survivors.MINER)
+                    drawAvailableRooms(game, stage, survivor, game.getRoomManager().getRoomsByType(Constants.RoomType.HARD_ROOK_TYPE, null), task);
+                break;
+        }
+    }
+
+    private static void drawAvailableRooms(Game game, Stage stage, Survivor survivor, Coordinate[] c1, Constants.Tasks task){
+        for (Coordinate entry : c1) {
+            String color;
+
+            if(game.getRoomManager().getRoom(entry).isFull()){
+                color = "YELLOW_BORDER";
+            }else{
+                color = "GREEN_BORDER";
+            }
+
+            Table table = new Table();
+            table.setSize(roomWidth, roomHeight);
+            table.setPosition(gameTable.get(entry).getX() - 2, gameTable.get(entry).getY() + Gdx.graphics.getHeight()/7f + 1);
+            table.setBackground(DigOutGame.borderSkin.getDrawable(color));
+            table.setTouchable(Touchable.enabled);
+
+            table.addListener(new ClickListener() {
+                @Override
+                public void clicked(InputEvent event, float x, float y) {
+                    if(color.equals("GREEN_BORDER")){
+                        displayConfirmBox(stage, "Do you want " + survivor.getName() + " to " + task + " in the selected room?", confirmed -> {
+                            if (confirmed) {
+                                survivorGotTask(survivor, entry, task, table, game);
+                            }
+                        });
+                    }else {
+                        Survivor temp = null;
+                        try {
+                            temp = game.getSurvivorManager().whoIsInTheRoom(entry);
+                            Survivor finalTemp = temp;
+                            displayConfirmBox(stage, "Do you want " + temp.getName() + " to be disconnected from his task and " + survivor.getName() + " to " + task + " in the selected room?", confirmed -> {
+                                if (confirmed) {
+                                    logs(DateLogs.LogType.INFO, game.getGameId(), "Survivor: " + finalTemp.getName() + ", Unpin task: " + finalTemp.getTask().getTask(), null);
+                                    backResources(finalTemp, game);
+                                    finalTemp.setTask(null);
+                                    finalTemp.changeImgForNotWork();
+                                    survivorGotTask(survivor, entry, task, table, game);
+                                     }
+                            });
+                        } catch (NullPointerException e) {
+                            logs(DateLogs.LogType.ERROR, game.getGameId(), "Survivor that should be unpinned returns NULL", e);
+                        }
+                    }
+                }
+            });
+
+            table.addListener(new InputListener() {
+                @Override
+                public void enter(InputEvent event, float x, float y, int pointer, Actor fromActor) {
+                    table.setBackground(DigOutGame.borderSkin.getDrawable("WHITELIGHT_ROOM"));
+                }
+
+                @Override
+                public void exit(InputEvent event, float x, float y, int pointer, Actor toActor) {
+                    table.setBackground(DigOutGame.borderSkin.getDrawable(color));
+                }
+            });
+
+
+            outerPinRoomTable.addActor(table);
+        }
+    }
+
+    private static void drawBaseRoom(Game game, Stage stage, Survivor survivor, Constants.Tasks task){
+        Coordinate cb = game.getRoomManager().getBaseRoom().getCoordinates();
+        Table table = new Table();
+        table.setSize(roomWidth, roomHeight);
+        table.setPosition(gameTable.get(cb).getX() + - 2, gameTable.get(cb).getY() + Gdx.graphics.getHeight()/7f + 1);
+        table.setBackground(DigOutGame.borderSkin.getDrawable("ORANGE_BORDER"));
+        table.setTouchable(Touchable.enabled);
+        table.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                displayConfirmBox(stage, "Do you want " + survivor.getName() + " to " + task + " in the selected room?", confirmed -> {
+                    if (confirmed) {
+                        survivorGotTask(survivor, cb, task, table, game);
+                    }
+                });
+            }
+        });
+
+        table.addListener(new InputListener() {
+            @Override
+            public void enter(InputEvent event, float x, float y, int pointer, Actor fromActor) {
+                table.setBackground(DigOutGame.borderSkin.getDrawable("WHITELIGHT_ROOM"));
+            }
+
+            @Override
+            public void exit(InputEvent event, float x, float y, int pointer, Actor toActor) {
+                table.setBackground(DigOutGame.borderSkin.getDrawable("ORANGE_BORDER"));
+            }
+        });
+
+
+        outerPinRoomTable.addActor(table);
+
+    }
+
+    private static BuildingPrice costOfTask(Constants.Tasks task){
+        BuildingPrice blank = new BuildingPrice(0,0,0,0, 1, false);
+        switch(task){
+            case WAIT:
+            case REST:
+            case TRAIN_TO_COOK:
+            case CREAT_FOOD:
+            case TRAIN_TO_ENGINEER:
+            case DIG_OUT:
+                return blank;
+            case EAT:
+                return new BuildingPrice(0,0,1,0, 1, false);
+            case CREAT_SEARCHLIGHT:
+                return eqPriceToBuildPrice(Constants.EquipmentPrices.SEARCHLIGHT_PRICE);
+            case CREAT_KITCHEN_ROBOT:
+                return eqPriceToBuildPrice(Constants.EquipmentPrices.KITCHEN_ROBOT_PRICE);
+            case CREAT_OXYGEN_MASK:
+                return eqPriceToBuildPrice(Constants.EquipmentPrices.OXYGEN_MASK_PRICE);
+            case CREAT_PICKAXE:
+                return eqPriceToBuildPrice(Constants.EquipmentPrices.PICKAXE_PRICE);
+            case BUILD_RESTROOM:
+                return Constants.BuildingPrices.RESTROOM_PRICE;
+            case BUILD_KITCHEN:
+                return Constants.BuildingPrices.KITCHEN_PRICE;
+            case BUILD_ELEVATOR:
+                return Constants.BuildingPrices.ELEVATOR_PRICE;
+            case BUILD_WORKSHOP:
+                return Constants.BuildingPrices.WORKSHOP_PRICE;
+            case BUILD_POWER_STATION:
+                return Constants.BuildingPrices.POWER_STATION_PRICE;
+            case BUILD_AIR_PUMP:
+                return Constants.BuildingPrices.AIR_PUMP_PRICE;
+            case BUILD_TINKER_ROOM:
+                return Constants.BuildingPrices.TINKER_ROOM_PRICE;
+            case CREAT_TOOLS:
+                return eqPriceToBuildPrice(Constants.EquipmentPrices.TOOLS_PRICE);
+        }
+        return blank;
+    }
+
+    private static BuildingPrice eqPriceToBuildPrice(EquipmentPrice equipmentPrice){
+        return new BuildingPrice(equipmentPrice.getMaterials(), equipmentPrice.getTools(), equipmentPrice.getFood(), equipmentPrice.getWorkingDays(), equipmentPrice.getWorkingDays(), false);
+    }
+
+    private static void survivorGotTask(Survivor survivor, Coordinate coordinate, Constants.Tasks task, Table table, Game game){
+        survivor.setTask(new Task(coordinate, task, costOfTask(task)));
+        reloadResources(survivor, game);
+        needsRefreshAfterAddTask = true;
+        tempSurvivor = survivor;
+        survivor.changeImgForWork();
+        game.getRoomManager().getRoom(coordinate).setFull(true);
+        game.getRoomManager().getRoom(coordinate).changeImgForWork();
+
+        addEqAndTaskTable.clear();
+        needsRefreshAfterAddEQ = true;
+
+        table.setTouchable(Touchable.disabled);
+        outerPinRoomTable.clear();
+
+        logs(DateLogs.LogType.INFO, game.getGameId(), "Survivor: " + survivor.getName() + " got a task: " + survivor.getTask().getTask() + " , in room: " + game.getRoomManager().getRoom(coordinate) + " , cords: " + coordinate.getX() + ", " + coordinate.getY(), null);
+    }
+
+    private static void actionAfterCloseByX(Table table){
+        table.setVisible(false);
+        addEqAndTaskTable.clear();
+        outerPinRoomTable.clear();
+        survivorsTable.setTouchable(Touchable.enabled);
     }
 
 }

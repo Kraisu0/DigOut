@@ -34,8 +34,8 @@ public class GameScreen implements Screen {
 
     private static Game game;
     private Stage stage;
-    private Table outerTable, outerMenuTable, outerAddEqTable, rightTable, centerTable, nameTable, resourcesTable,
-        roomsTable, infoTable, infoButtonTable, survivorsTable, miniMenuTable, survivorInfoTable,
+    private Table outerTable, outerMenuTable, outerAddEqTable, rightTable, nameTable, resourcesTable,
+        infoTable, infoButtonTable, miniMenuTable, survivorInfoTable,
         eqInfoTable, diaryInfoTable;
     private static Table menuTable;
     private Map<Constants.Resources, Integer> resourceStatus, resourceAllocatedStatus;
@@ -43,22 +43,21 @@ public class GameScreen implements Screen {
     private Map<Constants.Resources, String> resourceName;
     private LinkedHashMap<Constants.Equipment, String> equipmentName, equipmentDescription;
     private LinkedHashMap<Constants.Resources, String> resourceDescription;
-    private static Map<Coordinate, Table> gameTable = Map.of();
     private Button infoButton, eqButton, diaryButton;
     private Label fps;
-    private static final float roomWidth = Gdx.graphics.getWidth() * 4 / 5f / 10;
-    private static final float roomHeight = Gdx.graphics.getHeight() *11 / 14f / 10 - 2;
-
 
     private String name;
     private int roundNumber;
 
-    private static boolean isMenuOpen, isInfoBoxOpen;
 
+    public static final float roomWidth = Gdx.graphics.getWidth() * 4 / 5f / 10;
+    public static final float roomHeight = Gdx.graphics.getHeight() *11 / 14f / 10 - 2;
+    private static boolean isMenuOpen, isInfoBoxOpen;
     public static boolean needsRefreshAfterAddEQ = false;
     public static boolean needsRefreshAfterAddTask = false;
     public static Survivor tempSurvivor = null;
-    public static Table addEqAndTaskTable;
+    public static Table addEqAndTaskTable, outerPinRoomTable, centerTable, survivorsTable, roomsTable;
+    public static Map<Coordinate, Table> gameTable = Map.of();
 
 
     public GameScreen(Game game) {
@@ -84,6 +83,8 @@ public class GameScreen implements Screen {
         outerMenuTable.setFillParent(true);
         outerAddEqTable = new Table();
         outerAddEqTable.setFillParent(true);
+        outerPinRoomTable = new Table();
+        outerPinRoomTable.setFillParent(true);
 
         centerTable = new Table();
         rightTable = new Table();
@@ -186,6 +187,13 @@ public class GameScreen implements Screen {
                 tempTable.setSize(roomWidth, roomHeight);
                 gameTable.put(tempCoordinate, tempTable);
 
+                tempTable.addListener(new ClickListener() {
+                    @Override
+                    public void clicked(InputEvent event, float x, float y) {
+                        System.out.println("Coordinates: " + tempCoordinate.getX() + ", " + tempCoordinate.getY());
+                    }
+                });
+
 //                tempTable.addListener(new InputListener() {
 //                    @Override
 //                    public boolean mouseMoved(InputEvent event, float x, float y) {
@@ -220,7 +228,6 @@ public class GameScreen implements Screen {
         }
 
         colorTileAtCoordinateBaseRoom(game.getRoomManager().getBaseRoom());
-
 
 
         //infoTable
@@ -272,14 +279,14 @@ public class GameScreen implements Screen {
         refreshEqInfoTable();
 
         //addEqTable
-        addEqAndTaskTable.setSize(Gdx.graphics.getWidth() / 3f, Gdx.graphics.getHeight() / 2f);
+        //addEqAndTaskTable.setSize(Gdx.graphics.getWidth() / 3f, Gdx.graphics.getHeight() / 2f);
         outerAddEqTable.add(addEqAndTaskTable);
 
 
-        game.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(game.getGameId(), Constants.Survivors.COOK));
-        game.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(game.getGameId(), Constants.Survivors.ENGINEER));
-        game.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(game.getGameId(), Constants.Survivors.MINER));
-        game.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(game.getGameId(), Constants.Survivors.UNTRAINED));
+        game.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(game, Constants.Survivors.COOK));
+        game.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(game, Constants.Survivors.ENGINEER));
+        game.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(game, Constants.Survivors.MINER));
+        game.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(game, Constants.Survivors.UNTRAINED));
 
         //survivors bar
         float survivorBoxWidth = 150f;
@@ -384,8 +391,9 @@ public class GameScreen implements Screen {
 //        addEqAndTaskTable.debug();
 
         stage.addActor(outerTable);
-        stage.addActor(outerMenuTable);
         stage.addActor(outerAddEqTable);
+        stage.addActor(outerPinRoomTable);
+        stage.addActor(outerMenuTable);
     }
 
     @Override
@@ -396,6 +404,8 @@ public class GameScreen implements Screen {
         //this.game = game;
         //refreshEqInfoTable();
 
+        //game.getSurvivorManager().showDisable();
+
         if (needsRefreshAfterAddEQ) {
             refreshEqInfoTable();
             refreshSurvivorBar();
@@ -403,6 +413,7 @@ public class GameScreen implements Screen {
             survivorInfoTable.clear();
             survivorInfoTable.add(showSurvivorInfo(tempSurvivor));
             needsRefreshAfterAddEQ = false;
+            survivorsTable.setTouchable(Touchable.enabled);
         }
 
         if(needsRefreshAfterAddTask){
@@ -411,6 +422,7 @@ public class GameScreen implements Screen {
             survivorInfoTable.clear();
             survivorInfoTable.add(showSurvivorInfo(tempSurvivor));
             needsRefreshAfterAddTask = false;
+            survivorsTable.setTouchable(Touchable.enabled);
         }
 
         if(menuTable.isVisible()) {
@@ -540,8 +552,11 @@ public class GameScreen implements Screen {
                 public void changed(ChangeEvent event, Actor actor) {
                     displayConfirmBox(stage, "Do you want to unpin a task from a survivor?", confirmed -> {
                         if (confirmed) {
+                            tempSurvivor = survivor;
                             logs(DateLogs.LogType.INFO, game.getGameId(), "Survivor: " + survivor.getName() + ", Unpin task: " + survivor.getTask().getTask(), null);
                             backResources(survivor, game);
+                            game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setFull(false);
+                            game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).changeImgForNotWork();
                             survivor.setTask(null);
                             needsRefreshAfterAddTask = true;
                             survivor.changeImgForNotWork();
@@ -557,7 +572,7 @@ public class GameScreen implements Screen {
         return info;
     }
 
-    private void backResources(Survivor survivor, Game game) {
+    public static void backResources(Survivor survivor, Game game) {
         game.getResourceManager().getResource(Constants.Resources.MATERIALS).setAllocatedAmount
             (game.getResourceManager().getResource(Constants.Resources.MATERIALS).getAllocatedAmount()
                 - survivor.getTask().getCost().getMaterials());
@@ -810,6 +825,18 @@ public class GameScreen implements Screen {
 
     private void refreshResourceBar() {
         populateResourceBar();
+    }
+
+    public static void setTouchableEnabledGameRooms(){
+        for (Map.Entry<Coordinate, Table> entry : gameTable.entrySet()) {
+            entry.getValue().setTouchable(Touchable.enabled);
+        }
+    }
+
+    public static void setTouchableDisabledGameRooms(){
+        for (Map.Entry<Coordinate, Table> entry : gameTable.entrySet()) {
+            entry.getValue().setTouchable(Touchable.disabled);
+        }
     }
 
 }

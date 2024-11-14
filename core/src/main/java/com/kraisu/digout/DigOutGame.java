@@ -25,6 +25,7 @@ public class DigOutGame extends Game {
     public static Skin uiskin;
     public static Skin skinSurvivorBox;
     public static Skin skinAvatars;
+    public static Skin borderSkin;
 
     public static final String TITLE = "DIG OUT", VERSION = "0.0.5";
     public static File LOGFILE = new File("./logs/digout.log");
@@ -40,6 +41,7 @@ public class DigOutGame extends Game {
         uiskin = new Skin(Gdx.files.internal("uiskin.json"));
         skinSurvivorBox = new Skin(Gdx.files.internal("SurvivorsBox.json"));
         skinAvatars = new Skin(Gdx.files.internal("avatars.json"));
+        borderSkin = new Skin(Gdx.files.internal("borderRoom.json"));
         logs(DateLogs.LogType.INFO, null, "create()", null);
 
 //        skin = new Skin();

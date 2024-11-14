@@ -45,8 +45,10 @@ public class NewGame {
         UUID uuid = generateUUID();
         generatePlayer(gameName);
 
+        game = new Game(UUID.fromString("11111111-1111-1111-1111-111111111111"), null, 1, null, null, null, null);
+
         generateStartRooms(uuid); //wylosowanie lokalizacji bazy i wyjścia
-        generateFirstSurvivor(uuid); //wygenerowanie pierwszego ocalałego
+        generateFirstSurvivor(game); //wygenerowanie pierwszego ocalałego
 
         roomManager.addRoom(baseRoom);
         roomManager.addRoom(exitRoom);
@@ -76,8 +78,8 @@ public class NewGame {
         exitRoom = Generators.generateExitRoom(gameId);
     }
 
-    private void generateFirstSurvivor(UUID gameId){
-        firstSurvivor = survivorManager.generateNewSurvivors(gameId, Constants.Survivors.WORKER);
+    private void generateFirstSurvivor(Game game){
+        firstSurvivor = survivorManager.generateNewSurvivors(game, Constants.Survivors.WORKER);
     }
 
     public Game getGame() {
