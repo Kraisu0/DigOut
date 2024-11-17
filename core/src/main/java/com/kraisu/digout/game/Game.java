@@ -1,9 +1,6 @@
 package com.kraisu.digout.game;
 
-import com.kraisu.digout.managers.EquipmentManager;
-import com.kraisu.digout.managers.ResourceManager;
-import com.kraisu.digout.managers.RoomManager;
-import com.kraisu.digout.managers.SurvivorManager;
+import com.kraisu.digout.managers.*;
 import com.kraisu.digout.stuff.Equipment;
 import com.kraisu.digout.rooms.Room;
 import com.kraisu.digout.survivor.Survivor;
@@ -19,9 +16,10 @@ public class Game {
     private SurvivorManager survivorManager;
     private EquipmentManager equipmentManager;
     private ResourceManager resourceManager;
+    private DiaryManager diaryManager;
 
     public Game(UUID gameId, Player player, int round, RoomManager roomManager, SurvivorManager survivorManager,
-                EquipmentManager equipmentManager, ResourceManager resourceManager) {
+                EquipmentManager equipmentManager, ResourceManager resourceManager, DiaryManager diaryManager) {
         this.gameId = gameId;
         this.player = player;
         this.round = round;
@@ -29,6 +27,7 @@ public class Game {
         this.survivorManager = survivorManager;
         this.equipmentManager = equipmentManager;
         this.resourceManager = resourceManager;
+        this.diaryManager = diaryManager;
     }
 
     public UUID getGameId() {
@@ -87,6 +86,13 @@ public class Game {
         this.resourceManager = resourceManager;
     }
 
+    public DiaryManager getDiaryManager() {
+        return diaryManager;
+    }
+
+    public void setDiaryManager(DiaryManager diaryManager) {
+        this.diaryManager = diaryManager;
+    }
 
     //TODO zrobić volume
     public float getVolume() {
@@ -94,5 +100,9 @@ public class Game {
     }
 
     public void setVolume(float value) {
+    }
+
+    public void increaseRound(){
+        this.round += 1;
     }
 }

@@ -3,16 +3,19 @@ package com.kraisu.digout.survivor;
 import com.kraisu.digout.help.Constants;
 import com.kraisu.digout.rooms.Coordinate;
 import com.kraisu.digout.stuff.BuildingPrice;
+import com.kraisu.digout.stuff.ReceivedStuff;
 
 public class Task {
     private Coordinate coordinateOfRoom;
     private Constants.Tasks task;
     private BuildingPrice cost;
+    private ReceivedStuff receivedStuff;
 
-    public Task(Coordinate coordinateOfRoom, Constants.Tasks task, BuildingPrice cost) {
+    public Task(Coordinate coordinateOfRoom, Constants.Tasks task, BuildingPrice cost, ReceivedStuff receivedStuff) {
         this.coordinateOfRoom = coordinateOfRoom;
         this.task = task;
         this.cost = cost;
+        this.receivedStuff = receivedStuff;
     }
 
     public Coordinate getCoordinateOfRoom() {
@@ -41,6 +44,14 @@ public class Task {
 
     public void setCost(BuildingPrice cost) {
         this.cost = cost;
+    }
+
+    public ReceivedStuff getReceivedStuff() {
+        return receivedStuff;
+    }
+
+    public void setReceivedStuff(ReceivedStuff receivedStuff) {
+        this.receivedStuff = receivedStuff;
     }
 }
 

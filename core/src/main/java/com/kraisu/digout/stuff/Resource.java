@@ -1,5 +1,7 @@
 package com.kraisu.digout.stuff;
 
+import com.kraisu.digout.help.Constants;
+
 public class Resource {
     private String name;
     private String description;
@@ -58,5 +60,9 @@ public class Resource {
     public void consumeAllocatedResources() {
         totalAmount -= allocatedAmount;
         resetAllocatedAmount();
+    }
+
+    public void increaseResource(int amount) {
+            this.totalAmount = this.totalAmount + amount;
     }
 }

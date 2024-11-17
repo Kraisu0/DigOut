@@ -2,10 +2,12 @@ package com.kraisu.digout.managers;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.kraisu.digout.game.Game;
+import com.kraisu.digout.genertor.Generators;
 import com.kraisu.digout.help.Constants;
 import com.kraisu.digout.logs.DateLogs;
 import com.kraisu.digout.rooms.Coordinate;
 import com.kraisu.digout.stuff.Equipment;
+import com.kraisu.digout.stuff.ReceivedStuff;
 import com.kraisu.digout.survivor.Survivor;
 
 import java.io.File;
@@ -26,6 +28,10 @@ public class SurvivorManager {
 
     public void addSurvivor(Survivor survivor) {
         survivors.put(survivor.getName(), survivor);
+    }
+
+    public void removeSurvivor(String name) {
+        survivors.remove(name);
     }
 
     public Survivor getSurvivors(String name) {
@@ -181,6 +187,96 @@ public class SurvivorManager {
             }
         }
         return null;
+    }
+
+    public boolean checkIfAllSurvivorHaveTask() {
+        Map<String, Survivor> survivorsMap = getSurvivors();
+        for (Map.Entry<String, Survivor> entry : survivorsMap.entrySet()) {
+            if (entry.getValue().getTask() == null) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static ReceivedStuff survivorGotReceivedStuff(Constants.Tasks task){
+
+        switch(task){
+            case WAIT:
+            case TRAIN_TO_COOK:
+            case TRAIN_TO_ENGINEER:
+            case BUILD_RESTROOM:
+            case BUILD_KITCHEN:
+            case BUILD_ELEVATOR:
+            case BUILD_WORKSHOP:
+            case BUILD_AIR_PUMP:
+            case BUILD_TINKER_ROOM:
+                return new ReceivedStuff(0,0,0,0,-1,0,0,0,0,null);
+            case REST:
+                return new ReceivedStuff(0,0,0,0,1,0,0,0,0,null);
+            case CREAT_FOOD:
+                return new ReceivedStuff(0,0,1,0,-1,0,0,0,0,null);
+            case DIG_OUT:
+                int eq = Generators.generateRandomEquipment();
+                if(eq == 0){
+                    return new ReceivedStuff(Generators.generateRandomCR(),Generators.generateRandomTools(),
+                        Generators.generateRandomFood(),0,-1,
+                        1,0,0,0, Generators.generateRandomSurvivor());
+                }else if(eq == 1){
+                    return new ReceivedStuff(Generators.generateRandomCR(),Generators.generateRandomTools(),
+                        Generators.generateRandomFood(),0,-1,
+                        0,0,1,0, Generators.generateRandomSurvivor());
+                }else if(eq == 2){
+                    return new ReceivedStuff(Generators.generateRandomCR(),Generators.generateRandomTools(),
+                        Generators.generateRandomFood(),0,-1,
+                        0,1,0,0, Generators.generateRandomSurvivor());
+                }else{
+                    return new ReceivedStuff(Generators.generateRandomCR(),Generators.generateRandomTools(),
+                        Generators.generateRandomFood(),0,-1,
+                        0,0,0,0, Generators.generateRandomSurvivor());
+                }
+            case EAT:
+                return new ReceivedStuff(0,0,0,0,3,0,0,0,0,null);
+            case CREAT_SEARCHLIGHT:
+                return new ReceivedStuff(0,0,0,0,-1,1,0,0,0,null);
+            case CREAT_KITCHEN_ROBOT:
+                return new ReceivedStuff(0,0,0,0,-1,0,0,1,0,null);
+            case CREAT_OXYGEN_MASK:
+                return new ReceivedStuff(0,0,0,0,-1,0,1,0,0,null);
+            case CREAT_PICKAXE:
+                return new ReceivedStuff(0,0,0,0,-1,0,0,0,1,null);
+            case BUILD_POWER_STATION:
+                return new ReceivedStuff(0,0,0,4,-1,0,0,0,0,null);
+            case CREAT_TOOLS:
+                return new ReceivedStuff(0,1,0,0,-1,0,0,0,0,null);
+        }
+        return new ReceivedStuff(0,0,0,0,0,0,0,0,0,null);
+    }
+
+    public void allSurvivorGotReceivedStuff(){
+        Map<String, Survivor> survivorsMap = getSurvivors();
+        for (Map.Entry<String, Survivor> entry : survivorsMap.entrySet()) {
+                entry.getValue().getTask().setReceivedStuff(survivorGotReceivedStuff(entry.getValue().getTask().getTask()));
+        }
+    }
+
+    public void clearSurvivorsTasks(Game game){
+        Map<String, Survivor> survivorsMap = getSurvivors();
+        for (Map.Entry<String, Survivor> entry : survivorsMap.entrySet()) {
+            if(entry.getValue().getTask() != null) {
+                if(game.getRoomManager().getRoom(entry.getValue().getTask().getCoordinateOfRoom()).getAmountOfSurvivors() != 0) {
+                    game.getRoomManager().getRoom(entry.getValue().getTask().getCoordinateOfRoom()).setAmountOfSurvivors(
+                        game.getRoomManager().getRoom(entry.getValue().getTask().getCoordinateOfRoom()).getAmountOfSurvivors() - 1
+                    );
+                }
+                game.getRoomManager().getRoom(entry.getValue().getTask().getCoordinateOfRoom()).updateSpace(game);
+                game.getRoomManager().getRoom(entry.getValue().getTask().getCoordinateOfRoom()).updatePicture();
+                entry.getValue().setTask(null);
+                entry.getValue().changeImgForNotWork();
+            }else{
+                continue;
+            }
+        }
     }
 
     public void showDisable(){

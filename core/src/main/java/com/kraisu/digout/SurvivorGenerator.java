@@ -33,7 +33,7 @@ public class SurvivorGenerator extends ApplicationAdapter {
     public BitmapFont font;
     private GlyphLayout layout;
 
-    private Game game = new Game(UUID.fromString("11111111-1111-1111-1111-111111111111"), null, 1, null, null, null, null);
+    private Game game = new Game(UUID.fromString("11111111-1111-1111-1111-111111111111"), null, 1, null, null, null, null, null);
 
     @Override
     public void create() {

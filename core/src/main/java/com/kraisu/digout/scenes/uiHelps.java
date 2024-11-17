@@ -10,14 +10,18 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.Align;
 import com.kraisu.digout.DigOutGame;
 import com.kraisu.digout.game.Game;
+import com.kraisu.digout.genertor.Generators;
 import com.kraisu.digout.help.Constants;
 import com.kraisu.digout.logs.DateLogs;
+import com.kraisu.digout.managers.SurvivorManager;
 import com.kraisu.digout.rooms.Coordinate;
 import com.kraisu.digout.stuff.BuildingPrice;
 import com.kraisu.digout.stuff.EquipmentPrice;
+import com.kraisu.digout.stuff.ReceivedStuff;
 import com.kraisu.digout.survivor.Survivor;
 import com.kraisu.digout.survivor.Task;
 
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -727,6 +731,8 @@ public class uiHelps {
         boolean hasHardRock = game.getRoomManager().hasRoomOfType(Constants.RoomType.HARD_ROOK_TYPE);
         boolean hasRoomToArrange = game.getRoomManager().hasRoomOfType(Constants.RoomType.ROOM_TO_ARRANGE);
 
+        System.out.println("Restroom: " + hasRestroom);
+
         switch(profession){
             case UNTRAINED:
                 switch(tasks){
@@ -774,32 +780,32 @@ public class uiHelps {
                         if(!hasKitchen) {
                             tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]There is no Kitchen to do this action.");
                             button.setDisabled(true);
-                            break;
                         }
+                        break;
                     case TRAIN_TO_ENGINEER:
                         if(!hasTinkerRoom) {
                         tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]There is no Tinker Room to do this action.");
                         button.setDisabled(true);
+                        }
                         break;
-                    }
                     case REST:
                         if(!hasRestroom) {
                             tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]There is no Restroom to do this action.");
                             button.setDisabled(true);
-                            break;
                         }
+                        break;
                     case EAT:
                         if(game.getResourceManager().getResource(Constants.Resources.FOOD).getTotalAmount() - game.getResourceManager().getResource(Constants.Resources.FOOD).getAllocatedAmount() == 0) {
                             tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]There is no Food to eat.");
                             button.setDisabled(true);
-                            break;
                         }
+                        break;
                     case BUILD:
                         if(!hasRoomToArrange) {
                             tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]There is no room to build infrastructure here.");
                             button.setDisabled(true);
-                            break;
                         }
+                        break;
                     case BUILD_RESTROOM:
                         if(isEnoughResources(game, null, Constants.BuildingPrices.RESTROOM_PRICE)) {
                             tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]Not enough resources to build Restroom.");
@@ -882,20 +888,20 @@ public class uiHelps {
                         if(!hasTinkerRoom) {
                             tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]There is no Tinker Room to do this action.");
                             button.setDisabled(true);
-                            break;
                         }
+                        break;
                     case REST:
                         if(!hasRestroom) {
                             tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]There is no Restroom to do this action.");
                             button.setDisabled(true);
-                            break;
                         }
+                        break;
                     case EAT:
                         if(game.getResourceManager().getResource(Constants.Resources.FOOD).getTotalAmount() - game.getResourceManager().getResource(Constants.Resources.FOOD).getAllocatedAmount() == 0) {
                             tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]There is no Food to eat.");
                             button.setDisabled(true);
-                            break;
                         }
+                        break;
                     case BUILD:
                         tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]Only Workers can build.");
                         button.setDisabled(true);
@@ -929,24 +935,24 @@ public class uiHelps {
                         if(!hasKitchen) {
                             tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]There is no Kitchen to do this action.");
                             button.setDisabled(true);
-                            break;
                         }
+                        break;
                     case TRAIN_TO_ENGINEER:
-                            tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]A engineer cannot be trained as a engineer.");
-                            button.setDisabled(true);
-                            break;
+                        tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]A engineer cannot be trained as a engineer.");
+                        button.setDisabled(true);
+                        break;
                     case REST:
                         if(!hasRestroom) {
                             tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]There is no Restroom to do this action.");
                             button.setDisabled(true);
-                            break;
                         }
+                        break;
                     case EAT:
                         if(game.getResourceManager().getResource(Constants.Resources.FOOD).getTotalAmount() - game.getResourceManager().getResource(Constants.Resources.FOOD).getAllocatedAmount() == 0) {
                             tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]There is no Food to eat.");
                             button.setDisabled(true);
-                            break;
                         }
+                        break;
                     case BUILD:
                         tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]Only Workers can build.");
                         button.setDisabled(true);
@@ -1015,26 +1021,26 @@ public class uiHelps {
                         if(!hasKitchen) {
                             tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]There is no Kitchen to do this action.");
                             button.setDisabled(true);
-                            break;
                         }
+                        break;
                     case TRAIN_TO_ENGINEER:
                         if(!hasTinkerRoom) {
                             tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]There is no Tinker Room to do this action.");
                             button.setDisabled(true);
-                            break;
                         }
+                        break;
                     case REST:
                         if(!hasRestroom) {
                             tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]There is no Restroom to do this action.");
                             button.setDisabled(true);
-                            break;
                         }
+                        break;
                     case EAT:
                         if(game.getResourceManager().getResource(Constants.Resources.FOOD).getTotalAmount() - game.getResourceManager().getResource(Constants.Resources.FOOD).getAllocatedAmount() == 0) {
                             tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]There is no Food to eat.");
                             button.setDisabled(true);
-                            break;
                         }
+                        break;
                     case BUILD:
                         tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]Only Workers can build.");
                         button.setDisabled(true);
@@ -1060,24 +1066,24 @@ public class uiHelps {
         if (equipmentPrice != null)
         {
             if(game.getResourceManager().getResource(Constants.Resources.TOOLS).getTotalAmount() -
-                game.getResourceManager().getResource(Constants.Resources.TOOLS).getAllocatedAmount() > equipmentPrice.getTools() &&
+                game.getResourceManager().getResource(Constants.Resources.TOOLS).getAllocatedAmount() < equipmentPrice.getTools() ||
                 game.getResourceManager().getResource(Constants.Resources.FOOD).getTotalAmount() -
-                    game.getResourceManager().getResource(Constants.Resources.FOOD).getAllocatedAmount() > equipmentPrice.getFood() &&
+                    game.getResourceManager().getResource(Constants.Resources.FOOD).getAllocatedAmount() < equipmentPrice.getFood() ||
                 game.getResourceManager().getResource(Constants.Resources.MATERIALS).getTotalAmount() -
-                    game.getResourceManager().getResource(Constants.Resources.MATERIALS).getAllocatedAmount() > equipmentPrice.getMaterials()
-            ) return false;
+                    game.getResourceManager().getResource(Constants.Resources.MATERIALS).getAllocatedAmount() < equipmentPrice.getMaterials()
+            ) return true;
         }else{
             if(game.getResourceManager().getResource(Constants.Resources.TOOLS).getTotalAmount() -
-                game.getResourceManager().getResource(Constants.Resources.TOOLS).getAllocatedAmount() > buildingPrice.getTools() &&
+                game.getResourceManager().getResource(Constants.Resources.TOOLS).getAllocatedAmount() < buildingPrice.getTools() ||
                 game.getResourceManager().getResource(Constants.Resources.FOOD).getTotalAmount() -
-                    game.getResourceManager().getResource(Constants.Resources.FOOD).getAllocatedAmount() > buildingPrice.getFood() &&
+                    game.getResourceManager().getResource(Constants.Resources.FOOD).getAllocatedAmount() < buildingPrice.getFood() ||
                 game.getResourceManager().getResource(Constants.Resources.MATERIALS).getTotalAmount() -
-                    game.getResourceManager().getResource(Constants.Resources.MATERIALS).getAllocatedAmount() > buildingPrice.getMaterials() &&
+                    game.getResourceManager().getResource(Constants.Resources.MATERIALS).getAllocatedAmount() < buildingPrice.getMaterials() ||
                 game.getResourceManager().getResource( Constants.Resources.ELECTRICITY).getTotalAmount() -
-                    game.getResourceManager().getResource(Constants.Resources.ELECTRICITY).getAllocatedAmount() > (buildingPrice.isElectricityRequired() ? 1 : 0)
-            )return false;
+                    game.getResourceManager().getResource(Constants.Resources.ELECTRICITY).getAllocatedAmount() < (buildingPrice.isElectricityRequired() ? 1 : 0)
+            ) return true;
         }
-        return true;
+        return false;
     }
 
     private static void reloadResources(Survivor survivor, Game game) {
@@ -1126,8 +1132,8 @@ public class uiHelps {
             }
         });
 
-        table.add(closeButton).size(30, 30).top().right().row();
-        table.add(label).expandX().fillX().left().bottom().padLeft(5).padRight(5).padBottom(5);
+        table.add(label).expandX().fillX().left().bottom().padLeft(5).padBottom(5);
+        table.add(closeButton).size(30, 30).top().right();
         outerPinRoomTable.addActor(table);
 
     }
@@ -1161,16 +1167,16 @@ public class uiHelps {
             case BUILD_POWER_STATION:
             case BUILD_AIR_PUMP:
             case BUILD_TINKER_ROOM:
-                drawAvailableRooms(game, stage, survivor, game.getRoomManager().getRoomsByType(Constants.RoomType.ROOM_TO_ARRANGE, null), task);
+                drawAvailableRooms(game, stage, survivor, game.getRoomManager().getRoomsByType(Constants.RoomType.ROOM_TO_ARRANGE, Constants.Buildings.NOTHING), task);
                 break;
             case CREAT_TOOLS:
                 drawAvailableRooms(game, stage, survivor, game.getRoomManager().getRoomsByType(null, Constants.Buildings.WORKSHOP), task);
                 break;
             case DIG_OUT:
                 if(survivor.getProfession() == Constants.Survivors.WORKER)
-                    drawAvailableRooms(game, stage, survivor, game.getRoomManager().getRoomsByType(Constants.RoomType.LIGHT_ROOK_TYPE, null), task);
+                    drawAvailableRooms(game, stage, survivor, game.getRoomManager().getRoomsByType(Constants.RoomType.LIGHT_ROOK_TYPE, Constants.Buildings.NOTHING), task);
                 if(survivor.getProfession() == Constants.Survivors.MINER)
-                    drawAvailableRooms(game, stage, survivor, game.getRoomManager().getRoomsByType(Constants.RoomType.HARD_ROOK_TYPE, null), task);
+                    drawAvailableRooms(game, stage, survivor, game.getRoomManager().getRoomsByType(Constants.RoomType.HARD_ROOK_TYPE, Constants.Buildings.NOTHING), task);
                 break;
         }
     }
@@ -1209,8 +1215,11 @@ public class uiHelps {
                                 if (confirmed) {
                                     logs(DateLogs.LogType.INFO, game.getGameId(), "Survivor: " + finalTemp.getName() + ", Unpin task: " + finalTemp.getTask().getTask(), null);
                                     backResources(finalTemp, game);
+
+
                                     finalTemp.setTask(null);
                                     finalTemp.changeImgForNotWork();
+                                    game.getRoomManager().getRoom(entry).setAmountOfSurvivors(game.getRoomManager().getRoom(entry).getAmountOfSurvivors() - 1);
                                     survivorGotTask(survivor, entry, task, table, game);
                                      }
                             });
@@ -1318,7 +1327,7 @@ public class uiHelps {
     }
 
     private static void survivorGotTask(Survivor survivor, Coordinate coordinate, Constants.Tasks task, Table table, Game game){
-        survivor.setTask(new Task(coordinate, task, costOfTask(task)));
+        survivor.setTask(new Task(coordinate, task, costOfTask(task), null));
         reloadResources(survivor, game);
         needsRefreshAfterAddTask = true;
         tempSurvivor = survivor;
@@ -1337,11 +1346,171 @@ public class uiHelps {
         logs(DateLogs.LogType.INFO, game.getGameId(), "Survivor: " + survivor.getName() + " got a task: " + survivor.getTask().getTask() + " , in room: " + game.getRoomManager().getRoom(coordinate) + " , cords: " + coordinate.getX() + ", " + coordinate.getY(), null);
     }
 
-    private static void actionAfterCloseByX(Table table){
+    private static void actionAfterCloseByX(Table table) {
         table.setVisible(false);
         addEqAndTaskTable.clear();
         outerPinRoomTable.clear();
         survivorsTable.setTouchable(Touchable.enabled);
+    }
+
+    public static void doTheTasks(Game game){
+        Map<String, Survivor> survivorsMap = new HashMap<>(SurvivorManager.getSurvivors());
+        for(Map.Entry<String, Survivor> entry : survivorsMap.entrySet()){
+            if(entry.getValue().getTask() != null) {
+                doSurvivorTask(game, entry.getValue());
+            } else {
+                continue;
+            }
+        }
+    }
+
+
+    public static void doSurvivorTask(Game game, Survivor survivor){
+        switch(survivor.getTask().getTask()){
+            case WAIT:
+            case REST:
+            case EAT:
+                survivor.increaseEnergy(survivor.getTask().getReceivedStuff().getEnergyForSurvivor());
+                break;
+            case TRAIN_TO_COOK:
+                survivor.setProfession(Constants.Survivors.COOK);
+                survivor.increaseEnergy(survivor.getTask().getReceivedStuff().getEnergyForSurvivor());
+                break;
+            case CREAT_FOOD:
+                game.getResourceManager().getResource(Constants.Resources.FOOD).increaseResource(
+                    survivor.getTask().getReceivedStuff().getFood()
+                );
+                survivor.increaseEnergy(survivor.getTask().getReceivedStuff().getEnergyForSurvivor());
+                break;
+            case TRAIN_TO_ENGINEER:
+                survivor.setProfession(Constants.Survivors.ENGINEER);
+                survivor.increaseEnergy(survivor.getTask().getReceivedStuff().getEnergyForSurvivor());
+                break;
+            case DIG_OUT:
+                game.getResourceManager().getResource(Constants.Resources.FOOD).increaseResource(survivor.getTask().getReceivedStuff().getFood());
+                game.getResourceManager().getResource(Constants.Resources.TOOLS).increaseResource(survivor.getTask().getReceivedStuff().getTools());
+                game.getResourceManager().getResource(Constants.Resources.MATERIALS).increaseResource(survivor.getTask().getReceivedStuff().getMaterials());
+                game.getResourceManager().getResource(Constants.Resources.ELECTRICITY).increaseResource(survivor.getTask().getReceivedStuff().getElectricity());
+                game.getEquipmentManager().getEquipment(Constants.Equipment.SEARCHLIGHT).increaseEquipment(survivor.getTask().getReceivedStuff().getSearchlight());
+                game.getEquipmentManager().getEquipment(Constants.Equipment.OXYGEN_MASK).increaseEquipment(survivor.getTask().getReceivedStuff().getOxygenMask());
+                game.getEquipmentManager().getEquipment(Constants.Equipment.KITCHEN_ROBOT).increaseEquipment(survivor.getTask().getReceivedStuff().getKitchenRobot());
+                game.getEquipmentManager().getEquipment(Constants.Equipment.PICKAXE).increaseEquipment(survivor.getTask().getReceivedStuff().getPickaxe());
+
+                if(survivor.getTask().getReceivedStuff().getSurvivor() != null)
+                    game.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(game, survivor.getTask().getReceivedStuff().getSurvivor()));
+
+                if(survivor.getEquipment() == game.getEquipmentManager().getEquipment(Constants.Equipment.SEARCHLIGHT)){
+                    game.getResourceManager().getResource(Constants.Resources.FOOD).increaseResource(survivor.getTask().getReceivedStuff().getFood());
+                    game.getResourceManager().getResource(Constants.Resources.TOOLS).increaseResource(survivor.getTask().getReceivedStuff().getTools());
+                    game.getResourceManager().getResource(Constants.Resources.MATERIALS).increaseResource(survivor.getTask().getReceivedStuff().getMaterials());
+                    game.getResourceManager().getResource(Constants.Resources.ELECTRICITY).increaseResource(survivor.getTask().getReceivedStuff().getElectricity());
+                    game.getEquipmentManager().getEquipment(Constants.Equipment.SEARCHLIGHT).increaseEquipment(survivor.getTask().getReceivedStuff().getSearchlight());
+                    game.getEquipmentManager().getEquipment(Constants.Equipment.OXYGEN_MASK).increaseEquipment(survivor.getTask().getReceivedStuff().getOxygenMask());
+                    game.getEquipmentManager().getEquipment(Constants.Equipment.KITCHEN_ROBOT).increaseEquipment(survivor.getTask().getReceivedStuff().getKitchenRobot());
+                    game.getEquipmentManager().getEquipment(Constants.Equipment.PICKAXE).increaseEquipment(survivor.getTask().getReceivedStuff().getPickaxe());
+
+                    if(survivor.getTask().getReceivedStuff().getSurvivor() != null)
+                        game.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(game, survivor.getTask().getReceivedStuff().getSurvivor()));
+                }
+
+                survivor.increaseEnergy(survivor.getTask().getReceivedStuff().getEnergyForSurvivor());
+
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setAmountOfSurvivors(0);
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setDiscovered(true);
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setAbleToBuild(true);
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setType(Constants.RoomType.ROOM_TO_ARRANGE);
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setActualPicture("ROOM_TO_ARRANGE.0");
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).updateSpace(game);
+                break;
+            case CREAT_SEARCHLIGHT:
+                game.getEquipmentManager().getEquipment(Constants.Equipment.SEARCHLIGHT).increaseEquipment(
+                    survivor.getTask().getReceivedStuff().getSearchlight()
+                );
+                survivor.increaseEnergy(survivor.getTask().getReceivedStuff().getEnergyForSurvivor());
+                break;
+            case CREAT_KITCHEN_ROBOT:
+                game.getEquipmentManager().getEquipment(Constants.Equipment.KITCHEN_ROBOT).increaseEquipment(
+                    survivor.getTask().getReceivedStuff().getKitchenRobot()
+                );
+                survivor.increaseEnergy(survivor.getTask().getReceivedStuff().getEnergyForSurvivor());
+                break;
+            case CREAT_OXYGEN_MASK:
+                game.getEquipmentManager().getEquipment(Constants.Equipment.OXYGEN_MASK).increaseEquipment(
+                    survivor.getTask().getReceivedStuff().getOxygenMask()
+                );
+                survivor.increaseEnergy(survivor.getTask().getReceivedStuff().getEnergyForSurvivor());
+                break;
+            case CREAT_PICKAXE:
+                game.getEquipmentManager().getEquipment(Constants.Equipment.PICKAXE).increaseEquipment(
+                    survivor.getTask().getReceivedStuff().getPickaxe()
+                );
+                survivor.increaseEnergy(survivor.getTask().getReceivedStuff().getEnergyForSurvivor());
+                break;
+            case BUILD_RESTROOM:
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setAmountOfSurvivors(0);
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setBuildUp(Constants.Buildings.RESTROOM);
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setActualPicture("RESTROOM.0");
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).updateSpace(game);
+
+                survivor.increaseEnergy(survivor.getTask().getReceivedStuff().getEnergyForSurvivor());
+                break;
+            case BUILD_KITCHEN:
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setAmountOfSurvivors(0);
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setBuildUp(Constants.Buildings.KITCHEN);
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setActualPicture("KITCHEN.0");
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).updateSpace(game);
+
+                survivor.increaseEnergy(survivor.getTask().getReceivedStuff().getEnergyForSurvivor());
+                break;
+            case BUILD_ELEVATOR:
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setAmountOfSurvivors(0);
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setBuildUp(Constants.Buildings.ELEVATOR);
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setActualPicture("ELEVATOR.0");
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).updateSpace(game);
+
+                survivor.increaseEnergy(survivor.getTask().getReceivedStuff().getEnergyForSurvivor());
+                break;
+            case BUILD_WORKSHOP:
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setAmountOfSurvivors(0);
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setBuildUp(Constants.Buildings.WORKSHOP);
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setActualPicture("WORKSHOP.0");
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).updateSpace(game);
+
+                survivor.increaseEnergy(survivor.getTask().getReceivedStuff().getEnergyForSurvivor());
+                break;
+            case BUILD_POWER_STATION:
+                game.getResourceManager().getResource(Constants.Resources.ELECTRICITY).increaseResource(survivor.getTask().getReceivedStuff().getElectricity());
+
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setAmountOfSurvivors(0);
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setBuildUp(Constants.Buildings.POWER_STATION);
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setActualPicture("POWER_STATION.0");
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).updateSpace(game);
+
+                survivor.increaseEnergy(survivor.getTask().getReceivedStuff().getEnergyForSurvivor());
+                break;
+            case BUILD_AIR_PUMP:
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setAmountOfSurvivors(0);
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setBuildUp(Constants.Buildings.POWER_STATION);
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setActualPicture("POWER_STATION.0");
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).updateSpace(game);
+
+                survivor.increaseEnergy(survivor.getTask().getReceivedStuff().getEnergyForSurvivor());
+                break;
+            case BUILD_TINKER_ROOM:
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setAmountOfSurvivors(0);
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setBuildUp(Constants.Buildings.TINKER_ROOM);
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setActualPicture("TINKER_ROOM.0");
+                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).updateSpace(game);
+
+                survivor.increaseEnergy(survivor.getTask().getReceivedStuff().getEnergyForSurvivor());
+                break;
+            case CREAT_TOOLS:
+                game.getResourceManager().getResource(Constants.Resources.TOOLS).increaseResource(
+                    survivor.getTask().getReceivedStuff().getTools()
+                );
+                survivor.increaseEnergy(survivor.getTask().getReceivedStuff().getEnergyForSurvivor());
+                break;
+        }
     }
 
 }

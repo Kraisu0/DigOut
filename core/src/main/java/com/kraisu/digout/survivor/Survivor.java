@@ -124,7 +124,7 @@ public class Survivor {
     }
 
     public void increaseEnergy(int amount) {
-        if(this.energy < Constants.SurvivorLimitations.MAX_SURVIVOR_ENERGY) {
+        if(this.energy + amount < Constants.SurvivorLimitations.MAX_SURVIVOR_ENERGY) {
             this.energy = this.energy + amount;
         }else{
             this.energy = Constants.SurvivorLimitations.MAX_SURVIVOR_ENERGY;

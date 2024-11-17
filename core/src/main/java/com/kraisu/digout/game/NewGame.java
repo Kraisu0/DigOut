@@ -5,10 +5,7 @@ import com.kraisu.digout.help.Constants;
 import com.kraisu.digout.help.Instruction;
 import com.kraisu.digout.loaders.JsonLoader;
 import com.kraisu.digout.logs.DateLogs;
-import com.kraisu.digout.managers.EquipmentManager;
-import com.kraisu.digout.managers.ResourceManager;
-import com.kraisu.digout.managers.RoomManager;
-import com.kraisu.digout.managers.SurvivorManager;
+import com.kraisu.digout.managers.*;
 import com.kraisu.digout.rooms.Room;
 import com.kraisu.digout.survivor.Survivor;
 
@@ -27,6 +24,7 @@ public class NewGame {
     private SurvivorManager survivorManager;
     private EquipmentManager equipmentManager;
     private ResourceManager resourceManager;
+    private DiaryManager diaryManager;
 
 
     public NewGame(String gameName){
@@ -41,11 +39,13 @@ public class NewGame {
         survivorManager = new SurvivorManager();
         equipmentManager = new EquipmentManager();
         resourceManager = new ResourceManager();
+        diaryManager = new DiaryManager();
+
 
         UUID uuid = generateUUID();
         generatePlayer(gameName);
 
-        game = new Game(UUID.fromString("11111111-1111-1111-1111-111111111111"), null, 1, null, null, null, null);
+        game = new Game(UUID.fromString("11111111-1111-1111-1111-111111111111"), null, 1, null, null, null, null, null);
 
         generateStartRooms(uuid); //wylosowanie lokalizacji bazy i wyjścia
         generateFirstSurvivor(game); //wygenerowanie pierwszego ocalałego
@@ -56,7 +56,7 @@ public class NewGame {
         survivorManager.addSurvivor(firstSurvivor);
 
 
-        game = new Game(uuid, player, 0, roomManager,survivorManager,equipmentManager,resourceManager);
+        game = new Game(uuid, player, 1, roomManager,survivorManager,equipmentManager,resourceManager,diaryManager);
 
 
         //TODO stowrznie pliku JSON do zapisu gry

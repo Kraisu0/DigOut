@@ -31,7 +31,7 @@ public class RoomManager {
 
     public boolean hasBuildOfType(Constants.Buildings roomType) {
         for (Room room : rooms.values()) {
-            if (room.getType().equals(roomType)) {
+            if (room.getBuildUp().equals(roomType)) {
                 return true;
             }
         }
@@ -72,8 +72,8 @@ public class RoomManager {
         for (Map.Entry<Coordinate, Room> entry : rooms.entrySet()) {
             Room room = entry.getValue();
 
-            if ((roomType != null && room.getType() == roomType) ||
-                (buildings != null && room.getBuildUp() == buildings)) {
+            if ((roomType != null && room.getType() == roomType && room.getBuildUp() == buildings) ||
+                (buildings != null && room.getBuildUp() == buildings && buildings != Constants.Buildings.NOTHING)) {
                 coordinates.add(entry.getKey());
             }
         }
@@ -82,13 +82,15 @@ public class RoomManager {
     }
 
 
-    private Room ableToDiscoveredRoom(Coordinate coordinate, UUID id) {
+    private Room ableToDiscoveredRoom(Coordinate coordinate, Game game) {
         Room exitRoom = getExitRoom();
         if(!rooms.containsKey(coordinate)) {
             if(coordinate.getY() > 8) {
                 if(!exitRoom.getCoordinates().equals(coordinate)) {
-                    Room temp = new UndiscoveredHardRoom(coordinate, id);
+                    Room temp = new UndiscoveredHardRoom(coordinate, game.getGameId());
                     rooms.put(coordinate, temp);
+                    logs(DateLogs.LogType.INFO, game.getGameId(), "Open Hard room to discover on cord: ("
+                        + temp.getCoordinates().getX() + ", " + temp.getCoordinates().getY() + ")" , null);
                     return temp;
                 }
                 else {
@@ -96,9 +98,12 @@ public class RoomManager {
                     return exitRoom;
                 }
             } else {
-                Room temp = new UndiscoveredLightRoom(coordinate, id);
+                Room temp = new UndiscoveredLightRoom(coordinate, game.getGameId());
                 rooms.put(coordinate, temp);
+                logs(DateLogs.LogType.INFO, game.getGameId(), "Open Light room to discover on cord: ("
+                    + temp.getCoordinates().getX() + ", " + temp.getCoordinates().getY() + ")" , null);
                 return temp;
+
             }
         }
         return null;
@@ -115,48 +120,46 @@ public class RoomManager {
         }
     }
 
-    public void makeAbleToDiscoveredNearestRooms(Coordinate coordinate, UUID id) {
+    public void makeAbleToDiscoveredNearestRooms(Coordinate coordinate, Game game) {
         Coordinate tempRight = new Coordinate(coordinate.getX() + 1, coordinate.getY());
         Coordinate tempLeft = new Coordinate(coordinate.getX() - 1, coordinate.getY());
         Room roomL;
         Room roomR;
 
 
-        if (coordinate.getX() == 1 && !rooms.containsKey(tempRight)) {
-            roomR = ableToDiscoveredRoom(tempRight, id);
+        if (coordinate.getX() == 1 && !rooms.containsKey(tempRight) || (!rooms.containsKey(tempRight) && rooms.containsKey(tempLeft) && coordinate.getX() != 10)) {
+            roomR = ableToDiscoveredRoom(tempRight, game);
             GameScreen.colorTileAtCoordinate(tempRight, roomR, "LIGHT_ROOM_R.0");
             roomR.setActualPicture("LIGHT_ROOM_R.0");
         }
 
-        if (coordinate.getX() == 10 && !rooms.containsKey(tempLeft)) {
-            roomL = ableToDiscoveredRoom(tempLeft, id);
+        if ((coordinate.getX() == 10 && !rooms.containsKey(tempLeft)) || (rooms.containsKey(tempRight) && !rooms.containsKey(tempLeft) && coordinate.getX() != 1)) {
+            roomL = ableToDiscoveredRoom(tempLeft, game);
             GameScreen.colorTileAtCoordinate(tempLeft, roomL, "LIGHT_ROOM_L.0");
             roomL.setActualPicture("LIGHT_ROOM_L.0");
         }
 
         if (!rooms.containsKey(tempRight) && !rooms.containsKey(tempLeft))
         {
-            roomR = ableToDiscoveredRoom(tempRight, id);
+            roomR = ableToDiscoveredRoom(tempRight, game);
             GameScreen.colorTileAtCoordinate(tempRight, roomR, "LIGHT_ROOM_R.0");
             roomR.setActualPicture("LIGHT_ROOM_R.0");
-            roomL = ableToDiscoveredRoom(tempLeft, id);
+            roomL = ableToDiscoveredRoom(tempLeft, game);
             GameScreen.colorTileAtCoordinate(tempLeft, roomL, "LIGHT_ROOM_L.0");
             roomL.setActualPicture("LIGHT_ROOM_L.0");
         }
 
     }
 
-    public void makeAbleToDiscoveredUpperRooms(Coordinate coordinate, UUID id) {
+    public void makeAbleToDiscoveredUpperRooms(Coordinate coordinate, Game game) {
         Coordinate tempUp = new Coordinate(coordinate.getY() + 1, coordinate.getY());
         Room room;
 
         if(!rooms.containsKey(tempUp) && coordinate.getY() != 10) {
-            room = ableToDiscoveredRoom(tempUp, id);
+            room = ableToDiscoveredRoom(tempUp, game);
 
         }
     }
-
-
 
     public void buildBuilding(Room room, Constants.Buildings type, UUID id) {
         //TODO zrobić to

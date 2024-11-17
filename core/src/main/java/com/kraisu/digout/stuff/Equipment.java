@@ -72,5 +72,9 @@ public class Equipment { ;
         resetAllocatedAmount();
     }
 
+    public void increaseEquipment(int amount) {
+        this.totalAmount = this.totalAmount + amount;
+    }
+
 
 }
