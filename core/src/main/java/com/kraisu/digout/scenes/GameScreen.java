@@ -182,7 +182,9 @@ public class GameScreen implements Screen {
 
 
         //resources bar
-        game.getResourceManager().getResource(Constants.Resources.TOOLS).setTotalAmount(5);
+        game.getResourceManager().getResource(Constants.Resources.TOOLS).setTotalAmount(2);
+        game.getResourceManager().getResource(Constants.Resources.MATERIALS).setTotalAmount(10);
+        game.getResourceManager().getResource(Constants.Resources.FOOD).setTotalAmount(2);
         populateResourceBar();
 
 
@@ -461,13 +463,14 @@ public class GameScreen implements Screen {
             game.getSurvivorManager().allSurvivorGotReceivedStuff();
             game.getResourceManager().consumeAllocatedResources();
             doTheTasks(game);
+            game.getSurvivorManager().checkOxygenForAllLevels();
             Diary diary = new Diary();
             diary.makeEntryForAllSurvivors(game);
             game.getDiaryManager().makeDiaryEntryPerDay(game, diary);
             changeToDiary();
             displaySumBox(stage, diary, game);
-            //TODO Tlen po taskach
             game.getSurvivorManager().clearSurvivorsTasks(game);
+            game.getSurvivorManager().checkSurvivorStatus();
             refreshEqInfoTable();
             survivorInfoTable.clear();
             refreshSurvivorBar();
@@ -645,7 +648,7 @@ public class GameScreen implements Screen {
         for (Map.Entry<Coordinate, Room> entry : rooms.entrySet()) {
             Room room = entry.getValue();
 
-            if (room.getType() == Constants.RoomType.ROOM_TO_ARRANGE) {
+            if (room.getType() == Constants.RoomType.ROOM_TO_ARRANGE || room.getBuildUp() == Constants.Buildings.ELEVATOR) {
                 if (room.getType() == Constants.RoomType.EXIT_TYPE && !room.isAbleToBuild())
                     continue;
 

@@ -731,8 +731,6 @@ public class uiHelps {
         boolean hasHardRock = game.getRoomManager().hasRoomOfType(Constants.RoomType.HARD_ROOK_TYPE);
         boolean hasRoomToArrange = game.getRoomManager().hasRoomOfType(Constants.RoomType.ROOM_TO_ARRANGE);
 
-        System.out.println("Restroom: " + hasRestroom);
-
         switch(profession){
             case UNTRAINED:
                 switch(tasks){
@@ -843,7 +841,7 @@ public class uiHelps {
                         }
                         break;
                     case BUILD_TINKER_ROOM:
-                        if(isEnoughResources(game, null, Constants.BuildingPrices.RESTROOM_PRICE)) {
+                        if(isEnoughResources(game, null, Constants.BuildingPrices.TINKER_ROOM_PRICE)) {
                             tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]Not enough resources to build Tinker Room.");
                             button.setDisabled(true);
                         }

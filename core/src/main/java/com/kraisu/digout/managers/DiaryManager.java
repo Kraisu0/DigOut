@@ -40,7 +40,7 @@ public class DiaryManager {
     public void makeDiaryEntryPerDay(Game game, Diary diary){
         String text = "";
 
-        text = "  Day: " + game.getRound() + "\n\n";
+        text = "[BROWN]Day:[BLACK] " + game.getRound() + "\n\n";
 
         Map<Survivor, String> diaryMap = diary.getDiaryEntries();
         for(Map.Entry<Survivor, String> entry : diaryMap.entrySet()){
@@ -191,7 +191,7 @@ public class DiaryManager {
 
         table.pack();
         stage.addActor(table);
-        table.setPosition(Gdx.graphics.getWidth() / 2f - table.getWidth()/2, Gdx.graphics.getHeight() / 3f - table.getHeight()/2);
+        table.setPosition(Gdx.graphics.getWidth() / 2f - table.getWidth()/2, Gdx.graphics.getHeight() / 3f + table.getHeight()/2);
     }
 
 

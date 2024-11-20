@@ -279,6 +279,55 @@ public class SurvivorManager {
         }
     }
 
+    public void checkSurvivorStatus() {
+        Map<String, Survivor> survivorsMap = getSurvivors();
+        Iterator<Map.Entry<String, Survivor>> iterator = survivorsMap.entrySet().iterator();
+
+        while (iterator.hasNext()) {
+            Map.Entry<String, Survivor> entry = iterator.next();
+            if (entry.getValue().getEnergy() <= 0) {
+                iterator.remove(); // Bezpieczne usuwanie
+            }
+        }
+    }
+
+    public void adjustOxygenLevelsAtLevel(int yLevel) {
+        List<Survivor> survivorsAtLevel = new ArrayList<>();
+
+        for (Survivor survivor : survivors.values()) {
+            if (survivor.getTask() != null && survivor.getTask().getCoordinateOfRoom().getY() == yLevel) {
+                Equipment equipment = survivor.getEquipment();
+                if (equipment == null || !equipment.getName().equals("Oxygen Mask")) {
+                    survivorsAtLevel.add(survivor);
+                }
+            }
+        }
+
+        int survivorCount = survivorsAtLevel.size();
+
+        int energyToRemove = 0;
+        if (survivorCount == 4) {
+            energyToRemove = 1;
+        } else if (survivorCount == 5) {
+            energyToRemove = 2;
+        } else if (survivorCount == 6) {
+            energyToRemove = 3;
+        } else if (survivorCount >= 7) {
+            energyToRemove = 4;
+        }
+
+        for (Survivor survivor : survivorsAtLevel) {
+            survivor.reduceEnergy(energyToRemove);
+        }
+    }
+
+    public void checkOxygenForAllLevels(){
+        for(int i = 1; i <= 10; i++){
+            adjustOxygenLevelsAtLevel(i);
+        }
+    }
+
+
     public void showDisable(){
         Map<String, Survivor> survivorsMap = getSurvivors();
         for(Map.Entry<String, Survivor> entry : survivorsMap.entrySet()){

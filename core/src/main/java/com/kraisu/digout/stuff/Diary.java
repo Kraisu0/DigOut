@@ -129,7 +129,7 @@ public class Diary {
             text = text.substring(0, text.length() - 1);
         }
         if(areThereAnyReceivedStuff()){
-            text += "\nReceivedStuff of the day: ";
+            text += "\nReceived stuff of the day: ";
             if(getAllReceivedStuff().materials != 0)
                 text += getAllReceivedStuff().materials + "-MATERIALS,";
             if(getAllReceivedStuff().food != 0)
