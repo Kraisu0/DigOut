@@ -1,11 +1,12 @@
 package com.kraisu.digout.managers;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.kraisu.digout.game.Game;
+import com.kraisu.digout.game.MyGame;
 import com.kraisu.digout.genertor.Generators;
 import com.kraisu.digout.help.Constants;
 import com.kraisu.digout.logs.DateLogs;
 import com.kraisu.digout.rooms.Coordinate;
+import com.kraisu.digout.scenes.GameScreen;
 import com.kraisu.digout.stuff.Equipment;
 import com.kraisu.digout.stuff.ReceivedStuff;
 import com.kraisu.digout.survivor.Survivor;
@@ -13,7 +14,6 @@ import com.kraisu.digout.survivor.Survivor;
 import java.io.File;
 import java.util.*;
 
-import static com.kraisu.digout.genertor.Generators.generateRandomCR;
 import static com.kraisu.digout.genertor.Generators.generateRandomNumber;
 import static com.kraisu.digout.help.ConstantsGenerator.JsonData.descriptions;
 import static com.kraisu.digout.help.ConstantsGenerator.JsonData.names;
@@ -78,11 +78,11 @@ public class SurvivorManager {
 
 
 
-    public static Survivor generateNewSurvivors(Game game, Constants.Survivors survivorType){
+    public static Survivor generateNewSurvivors(MyGame myGame, Constants.Survivors survivorType){
         Survivor temp = null;
 
         temp = new Survivor(
-            game.getGameId(),
+            myGame.getGameId(),
             "name",
             4,
             survivorType,
@@ -97,12 +97,12 @@ public class SurvivorManager {
             descriptions
         );
 
-        logs(DateLogs.LogType.INFO, game.getGameId(), "create new Survivor. NAME: " + temp.getName() + ", ENERGY: "
+        logs(DateLogs.LogType.INFO, myGame.getGameId(), "create new Survivor. NAME: " + temp.getName() + ", ENERGY: "
             + temp.getEnergy() + ", SURVIVOR TYPE: " + survivorType + ", PI: " + temp.getProfileInformation() +
             ", AGE: " + temp.getAge(), null);
 
         if(temp.getProfession() == Constants.Survivors.MINER)
-            temp.setEquipment(game.getEquipmentManager().getEquipment(Constants.Equipment.PICKAXE));
+            temp.setEquipment(myGame.getEquipmentManager().getEquipment(Constants.Equipment.PICKAXE));
 
         return temp;
     }
@@ -260,17 +260,17 @@ public class SurvivorManager {
         }
     }
 
-    public void clearSurvivorsTasks(Game game){
+    public void clearSurvivorsTasks(MyGame myGame){
         Map<String, Survivor> survivorsMap = getSurvivors();
         for (Map.Entry<String, Survivor> entry : survivorsMap.entrySet()) {
             if(entry.getValue().getTask() != null) {
-                if(game.getRoomManager().getRoom(entry.getValue().getTask().getCoordinateOfRoom()).getAmountOfSurvivors() != 0) {
-                    game.getRoomManager().getRoom(entry.getValue().getTask().getCoordinateOfRoom()).setAmountOfSurvivors(
-                        game.getRoomManager().getRoom(entry.getValue().getTask().getCoordinateOfRoom()).getAmountOfSurvivors() - 1
+                if(myGame.getRoomManager().getRoom(entry.getValue().getTask().getCoordinateOfRoom()).getAmountOfSurvivors() != 0) {
+                    myGame.getRoomManager().getRoom(entry.getValue().getTask().getCoordinateOfRoom()).setAmountOfSurvivors(
+                        myGame.getRoomManager().getRoom(entry.getValue().getTask().getCoordinateOfRoom()).getAmountOfSurvivors() - 1
                     );
                 }
-                game.getRoomManager().getRoom(entry.getValue().getTask().getCoordinateOfRoom()).updateSpace(game);
-                game.getRoomManager().getRoom(entry.getValue().getTask().getCoordinateOfRoom()).updatePicture();
+                myGame.getRoomManager().getRoom(entry.getValue().getTask().getCoordinateOfRoom()).updateSpace(myGame);
+                myGame.getRoomManager().getRoom(entry.getValue().getTask().getCoordinateOfRoom()).updatePicture();
                 entry.getValue().setTask(null);
                 entry.getValue().changeImgForNotWork();
             }else{
@@ -286,7 +286,7 @@ public class SurvivorManager {
         while (iterator.hasNext()) {
             Map.Entry<String, Survivor> entry = iterator.next();
             if (entry.getValue().getEnergy() <= 0) {
-                iterator.remove(); // Bezpieczne usuwanie
+                iterator.remove();
             }
         }
     }
@@ -325,6 +325,11 @@ public class SurvivorManager {
         for(int i = 1; i <= 10; i++){
             adjustOxygenLevelsAtLevel(i);
         }
+    }
+
+    public void checkLoseGame(){
+        if(survivors.isEmpty())
+            GameScreen.setGameLose(true);
     }
 
 

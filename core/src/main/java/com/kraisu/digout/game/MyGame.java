@@ -1,14 +1,10 @@
 package com.kraisu.digout.game;
 
 import com.kraisu.digout.managers.*;
-import com.kraisu.digout.stuff.Equipment;
-import com.kraisu.digout.rooms.Room;
-import com.kraisu.digout.survivor.Survivor;
 
-import java.util.List;
 import java.util.UUID;
 
-public class Game {
+public class MyGame {
     private UUID gameId;
     private Player player;
     private int round;
@@ -18,8 +14,8 @@ public class Game {
     private ResourceManager resourceManager;
     private DiaryManager diaryManager;
 
-    public Game(UUID gameId, Player player, int round, RoomManager roomManager, SurvivorManager survivorManager,
-                EquipmentManager equipmentManager, ResourceManager resourceManager, DiaryManager diaryManager) {
+    public MyGame(UUID gameId, Player player, int round, RoomManager roomManager, SurvivorManager survivorManager,
+                  EquipmentManager equipmentManager, ResourceManager resourceManager, DiaryManager diaryManager) {
         this.gameId = gameId;
         this.player = player;
         this.round = round;

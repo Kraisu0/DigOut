@@ -1,13 +1,9 @@
 package com.kraisu.digout.rooms;
 
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.kraisu.digout.game.Game;
+import com.kraisu.digout.game.MyGame;
 import com.kraisu.digout.help.Constants;
 import com.kraisu.digout.logs.DateLogs;
-import com.kraisu.digout.stuff.Equipment;
-import com.kraisu.digout.survivor.Survivor;
 
-import java.util.List;
 import java.util.UUID;
 
 import static com.kraisu.digout.logs.DateLogs.logs;
@@ -133,13 +129,13 @@ public abstract class Room {
         this.actualPicture = parts[0] + "." + getAmountOfSurvivors();
     }
 
-    public void updateSpace(Game game){
+    public void updateSpace(MyGame myGame){
         if(getAmountOfSpace() == getAmountOfSurvivors())
             setFull(true);
         else if (getAmountOfSpace() > getAmountOfSurvivors())
             setFull(false);
         else
-            logs(DateLogs.LogType.ERROR, game.getGameId(), "Something happened that shouldn't have" +
+            logs(DateLogs.LogType.ERROR, myGame.getGameId(), "Something happened that shouldn't have" +
                 " happened. There are more survivors in the room than there can be.", null);
     }
 

@@ -1,24 +1,17 @@
 package com.kraisu.digout.genertor;
 
-import com.badlogic.gdx.graphics.Texture;
-import com.kraisu.digout.game.Game;
 import com.kraisu.digout.help.Constants;
 import com.kraisu.digout.logs.DateLogs;
 import com.kraisu.digout.rooms.BaseRoom;
 import com.kraisu.digout.rooms.Coordinate;
 import com.kraisu.digout.rooms.ExitRoom;
-import com.kraisu.digout.rooms.Room;
-import com.kraisu.digout.survivor.Survivor;
 
-import java.io.File;
 import java.util.*;
 
 import static com.kraisu.digout.help.ConstantsGenerator.MaterialsDropPercentages.*;
 import static com.kraisu.digout.help.ConstantsGenerator.EQDropPercentages.*;
 import static com.kraisu.digout.help.ConstantsGenerator.EquipmentDropPercentages.*;
 import static com.kraisu.digout.help.ConstantsGenerator.FoodDropPercentages.*;
-import static com.kraisu.digout.help.ConstantsGenerator.JsonData.descriptions;
-import static com.kraisu.digout.help.ConstantsGenerator.JsonData.names;
 import static com.kraisu.digout.help.ConstantsGenerator.ProfessionDropPercentages.*;
 import static com.kraisu.digout.help.ConstantsGenerator.SurvivorsDropPercentages.*;
 import static com.kraisu.digout.help.ConstantsGenerator.ToolsDropPercentages.*;

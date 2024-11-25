@@ -9,14 +9,12 @@ import com.kraisu.digout.managers.*;
 import com.kraisu.digout.rooms.Room;
 import com.kraisu.digout.survivor.Survivor;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
 import static com.kraisu.digout.logs.DateLogs.logs;
 
 public class NewGame {
-    private Game game;
+    private MyGame myGame;
     private Player player;
     private Room baseRoom, exitRoom;
     private Survivor firstSurvivor;
@@ -45,10 +43,10 @@ public class NewGame {
         UUID uuid = generateUUID();
         generatePlayer(gameName);
 
-        game = new Game(UUID.fromString("11111111-1111-1111-1111-111111111111"), null, 1, null, null, null, null, null);
+        myGame = new MyGame(UUID.fromString("11111111-1111-1111-1111-111111111111"), null, 1, null, null, null, null, null);
 
         generateStartRooms(uuid); //wylosowanie lokalizacji bazy i wyjścia
-        generateFirstSurvivor(game); //wygenerowanie pierwszego ocalałego
+        generateFirstSurvivor(myGame); //wygenerowanie pierwszego ocalałego
 
         roomManager.addRoom(baseRoom);
         roomManager.addRoom(exitRoom);
@@ -56,7 +54,7 @@ public class NewGame {
         survivorManager.addSurvivor(firstSurvivor);
 
 
-        game = new Game(uuid, player, 1, roomManager,survivorManager,equipmentManager,resourceManager,diaryManager);
+        myGame = new MyGame(uuid, player, 1, roomManager,survivorManager,equipmentManager,resourceManager,diaryManager);
 
 
         //TODO stowrznie pliku JSON do zapisu gry
@@ -69,7 +67,7 @@ public class NewGame {
 
     private UUID generateUUID(){
         UUID uuid = UUID.randomUUID();
-        logs(DateLogs.LogType.INFO, uuid, "Generate new ID for new Game: " + uuid, null);
+        logs(DateLogs.LogType.INFO, uuid, "Generate new ID for new MyGame: " + uuid, null);
         return uuid;
     }
 
@@ -78,11 +76,11 @@ public class NewGame {
         exitRoom = Generators.generateExitRoom(gameId);
     }
 
-    private void generateFirstSurvivor(Game game){
-        firstSurvivor = survivorManager.generateNewSurvivors(game, Constants.Survivors.WORKER);
+    private void generateFirstSurvivor(MyGame myGame){
+        firstSurvivor = survivorManager.generateNewSurvivors(myGame, Constants.Survivors.WORKER);
     }
 
-    public Game getGame() {
-        return game;
+    public MyGame getGame() {
+        return myGame;
     }
 }

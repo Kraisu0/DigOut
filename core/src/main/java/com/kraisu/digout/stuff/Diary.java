@@ -1,15 +1,11 @@
 package com.kraisu.digout.stuff;
 
-import com.kraisu.digout.game.Game;
-import com.kraisu.digout.help.Constants;
+import com.kraisu.digout.game.MyGame;
 import com.kraisu.digout.survivor.Survivor;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import static com.kraisu.digout.managers.SurvivorManager.getSurvivors;
 import static com.kraisu.digout.stuff.DiaryEntry.entryByTasks;
 
 public class Diary {
@@ -69,8 +65,8 @@ public class Diary {
         this.newSurvivors = newSurvivors;
     }
 
-    public void makeEntryForAllSurvivors(Game game){
-        Map<String, Survivor> survivorsMap = game.getSurvivorManager().getSurvivors();
+    public void makeEntryForAllSurvivors(MyGame myGame){
+        Map<String, Survivor> survivorsMap = myGame.getSurvivorManager().getSurvivors();
         for(Map.Entry<String, Survivor> entry : survivorsMap.entrySet()){
             if(entry.getValue().getTask() != null) {
                 makeEntry(entry.getValue());
@@ -177,11 +173,11 @@ public class Diary {
             return true;
     }
 
-    public String writeDeadSurvivors(Game game) {
+    public String writeDeadSurvivors(MyGame myGame) {
         String text = "";
         int s = 0;
         text = "\n\nUnfortunately, they did not survive that day:";
-        Map<String, Survivor> survivorsMap = game.getSurvivorManager().getSurvivors();
+        Map<String, Survivor> survivorsMap = myGame.getSurvivorManager().getSurvivors();
         for (Map.Entry<String, Survivor> entry : survivorsMap.entrySet()) {
             if (entry.getValue().getEnergy() == 0) {
                 text += " " + entry.getValue().getName() + ",";

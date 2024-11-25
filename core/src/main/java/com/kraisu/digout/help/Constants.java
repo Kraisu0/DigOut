@@ -81,6 +81,12 @@ public class Constants {
         GAME_WON;
     }
 
+    public enum WhereSplashGo{
+        LOSE,
+        WIN,
+        EXIT;
+    }
+
     public static class SurvivorLimitations{
         public static final int MAX_SURVIVOR_ENERGY = 4;
         public static final int MIN_SURVIVOR_ENERGY = 0;

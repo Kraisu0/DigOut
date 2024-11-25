@@ -38,6 +38,8 @@ public class DigOutGame extends Game {
         skin = new Skin(Gdx.files.internal("skins.json"));
         skin.getFont("small-font").getData().markupEnabled = true;
         skin.getFont("medium-font").getData().markupEnabled = true;
+        skin.getFont("big-font").getData().markupEnabled = true;
+        skin.getFont("huge-font").getData().markupEnabled = true;
         skinButton = new Skin(Gdx.files.internal("buttons.json"));
         uiskin = new Skin(Gdx.files.internal("uiskin.json"));
         skinSurvivorBox = new Skin(Gdx.files.internal("SurvivorsBox.json"));

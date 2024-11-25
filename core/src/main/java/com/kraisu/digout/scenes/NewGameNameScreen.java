@@ -59,7 +59,7 @@ public class NewGameNameScreen implements Screen {
             public void clicked(InputEvent event, float x, float y) {
                 if (!createButton.isDisabled()) {
                     ((Game) Gdx.app.getApplicationListener()).setScreen(new NewGameSplashScreen(newName));
-                    System.out.println("New Game Name: " + newName);
+                    System.out.println("New MyGame Name: " + newName);
                 }
             }
         });

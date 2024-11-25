@@ -6,7 +6,6 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.scenes.scene2d.*;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
@@ -16,10 +15,9 @@ import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Scaling;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.kraisu.digout.DigOutGame;
-import com.kraisu.digout.game.Game;
+import com.kraisu.digout.game.MyGame;
 import com.kraisu.digout.help.Constants;
 import com.kraisu.digout.logs.DateLogs;
-import com.kraisu.digout.managers.SurvivorManager;
 import com.kraisu.digout.rooms.Coordinate;
 import com.kraisu.digout.rooms.Room;
 import com.kraisu.digout.stuff.Diary;
@@ -37,7 +35,7 @@ import static com.kraisu.digout.scenes.uiHelps.*;
 
 public class GameScreen implements Screen {
 
-    private static Game game;
+    private static MyGame myGame;
     private Stage stage;
     private Table outerTable, outerMenuTable, outerAddEqTable, rightTable, nameTable, resourcesTable,
         infoTable, infoButtonTable, miniMenuTable, survivorInfoTable,
@@ -55,20 +53,26 @@ public class GameScreen implements Screen {
     private int roundNumber;
     private TextTooltip endRoundTooltip;
 
+    private static Button addTask;
+    private static boolean needsRefreshAfterAddEQ = false;
+    private static boolean needsRefreshAfterAddTask = false;
+    private static boolean needsRefreshAfterEndRound = false;
+    private static boolean isGameWin = false;
+    private static boolean isGameLose = false;
+    private static boolean isXWasClicked = true;
+    private static boolean isChooseRoomVisible = false;
+    private static Survivor tempSurvivor = null;
+    private static Table addEqAndTaskTable, outerPinRoomTable, centerTable, survivorsTable, roomsTable;
+    private static boolean isMenuOpen, isInfoBoxOpen;
+    private static Map<Coordinate, Table> gameTable = Map.of();
 
     public static final float roomWidth = Gdx.graphics.getWidth() * 4 / 5f / 10;
     public static final float roomHeight = Gdx.graphics.getHeight() *11 / 14f / 10 - 2;
-    private static boolean isMenuOpen, isInfoBoxOpen;
-    public static boolean needsRefreshAfterAddEQ = false;
-    public static boolean needsRefreshAfterAddTask = false;
-    public static boolean needsRefreshAfterEndRound = false;
-    public static Survivor tempSurvivor = null;
-    public static Table addEqAndTaskTable, outerPinRoomTable, centerTable, survivorsTable, roomsTable;
-    public static Map<Coordinate, Table> gameTable = Map.of();
 
 
-    public GameScreen(Game game) {
-        this.game = game;
+
+    public GameScreen(MyGame myGame) {
+        this.myGame = myGame;
         this.resourceStatus = new LinkedHashMap<>();
         this.resourceName = new LinkedHashMap<>();
         this.equipmentStatus = new LinkedHashMap<Constants.Equipment, Integer>();
@@ -141,17 +145,17 @@ public class GameScreen implements Screen {
 
         //TODO Dodać slidera mojego
         Slider volumeSlider = new Slider(0, 1, 0.1f, false, DigOutGame.uiskin);
-        volumeSlider.setValue(game.getVolume());
+        volumeSlider.setValue(myGame.getVolume());
         volumeSlider.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
-                game.setVolume(volumeSlider.getValue());
+                myGame.setVolume(volumeSlider.getValue());
             }
         });
 
         Button exitButton = new TextButton("EXIT TO MAIN MENU", DigOutGame.skinButton.get("default", TextButton.TextButtonStyle.class));
         exitButton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
-                ((com.badlogic.gdx.Game) Gdx.app.getApplicationListener()).setScreen(new MainMenuScreen());
+                ((com.badlogic.gdx.Game) Gdx.app.getApplicationListener()).setScreen(new SplashToNextScreen(Constants.WhereSplashGo.EXIT, myGame));
             }
         });
 
@@ -166,7 +170,7 @@ public class GameScreen implements Screen {
 
         //name //TODO ograć to jak jest dłuższa nazwa
         nameTable.setBackground(DigOutGame.skin.getDrawable("box.dark"));
-        name = game.getPlayer().getName();
+        name = myGame.getPlayer().getName();
         Label nameLabel;
         int nameLength = name.length();
 
@@ -182,9 +186,9 @@ public class GameScreen implements Screen {
 
 
         //resources bar
-        game.getResourceManager().getResource(Constants.Resources.TOOLS).setTotalAmount(2);
-        game.getResourceManager().getResource(Constants.Resources.MATERIALS).setTotalAmount(10);
-        game.getResourceManager().getResource(Constants.Resources.FOOD).setTotalAmount(2);
+        myGame.getResourceManager().getResource(Constants.Resources.TOOLS).setTotalAmount(2);
+        myGame.getResourceManager().getResource(Constants.Resources.MATERIALS).setTotalAmount(10);
+        myGame.getResourceManager().getResource(Constants.Resources.FOOD).setTotalAmount(2);
         populateResourceBar();
 
 
@@ -229,15 +233,15 @@ public class GameScreen implements Screen {
                     roomsTable.add(tempTable).size(roomWidth, roomHeight).maxSize(roomWidth, roomHeight).expand().fill();
                 } else {
                     logs(DateLogs.LogType.INFO,
-                        game.getGameId(),
+                        myGame.getGameId(),
                         "Error: tempTable is null for coordinate: " + tempCoordinate, null);
                 }
             }
             roomsTable.row();
         }
 
-        colorTileAtCoordinateBaseRoom(game.getRoomManager().getBaseRoom());
-        game.getRoomManager().makeAbleToDiscoveredNearestRooms(game.getRoomManager().getBaseRoom().getCoordinates(), game);
+        colorTileAtCoordinateBaseRoom(myGame.getRoomManager().getBaseRoom());
+        myGame.getRoomManager().makeAbleToDiscoveredNearestRooms(myGame.getRoomManager().getBaseRoom().getCoordinates(), myGame);
 
         //infoTable
         infoButton = new TextButton("Info", DigOutGame.skinButton.get("list-small", TextButton.TextButtonStyle.class));
@@ -279,15 +283,15 @@ public class GameScreen implements Screen {
 
 
         //eq table
-        game.getEquipmentManager().getEquipment(Constants.Equipment.SEARCHLIGHT).setTotalAmount(5);
+        myGame.getEquipmentManager().getEquipment(Constants.Equipment.SEARCHLIGHT).setTotalAmount(5);
         refreshEqInfoTable();
 
         //addEqTable
         //addEqAndTaskTable.setSize(Gdx.graphics.getWidth() / 3f, Gdx.graphics.getHeight() / 2f);
         outerAddEqTable.add(addEqAndTaskTable);
 
-//        game.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(game, Constants.Survivors.WORKER));
-//        game.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(game, Constants.Survivors.UNTRAINED));
+//        MyGame.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(MyGame, Constants.Survivors.WORKER));
+//        MyGame.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(MyGame, Constants.Survivors.UNTRAINED));
 
         //survivors bar
         float survivorBoxWidth = 150f;
@@ -295,10 +299,10 @@ public class GameScreen implements Screen {
 
         survivorsTable.align(Align.left | Align.top);
 
-        int survivorCount = game.getSurvivorManager().getAllSurvivors().size();
+        int survivorCount = myGame.getSurvivorManager().getAllSurvivors().size();
 
         for (int i = 0; i < survivorCount; i++) {
-            Survivor survivor = game.getSurvivorManager().getAllSurvivors().toArray(new Survivor[0])[i];
+            Survivor survivor = myGame.getSurvivorManager().getAllSurvivors().toArray(new Survivor[0])[i];
 
 
             Table survivorEntry = new Table();
@@ -387,14 +391,27 @@ public class GameScreen implements Screen {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(Gdx.gl.GL_COLOR_BUFFER_BIT);
 
-        //this.game = game;
+        //this.MyGame = MyGame;
         //refreshEqInfoTable();
 
-        //game.getSurvivorManager().showDisable();
+        //MyGame.getSurvivorManager().showDisable();
 
-        checkNeedsRefresh();
+        try {
+            checkNeedsRefresh();
+        } catch (InterruptedException e) {
+            logs(DateLogs.LogType.ERROR, myGame.getGameId(), "Error while doing checkNeedsRefresh", e);
+            throw new RuntimeException(e);
+        }
 
         if(menuTable.isVisible()) {
+            outerTable.setColor(0, 0, 0, 0.3f);
+            outerTable.setTouchable(Touchable.disabled);
+        } else {
+            outerTable.setColor(0, 0, 0, 1f);
+            outerTable.setTouchable(Touchable.enabled);
+        }
+
+        if(!isXWasClicked) {
             outerTable.setColor(0, 0, 0, 0.3f);
             outerTable.setTouchable(Touchable.disabled);
         } else {
@@ -432,7 +449,7 @@ public class GameScreen implements Screen {
         stage.dispose();
     }
 
-    private void checkNeedsRefresh(){
+    private void checkNeedsRefresh() throws InterruptedException {
         if (needsRefreshAfterAddEQ) {
             needsRefreshAfterAddEQ = false;
             refreshEqInfoTable();
@@ -453,33 +470,66 @@ public class GameScreen implements Screen {
             survivorInfoTable.clear();
             survivorInfoTable.add(showSurvivorInfo(tempSurvivor));
             survivorsTable.setTouchable(Touchable.enabled);
-            checkAbleToEndRound(game, endRoundTooltip ,endRoundButton);
+            checkAbleToEndRound(myGame, endRoundTooltip ,endRoundButton);
 
 
         }
 
         if(needsRefreshAfterEndRound){
             needsRefreshAfterEndRound = false;
-            game.getSurvivorManager().allSurvivorGotReceivedStuff();
-            game.getResourceManager().consumeAllocatedResources();
-            doTheTasks(game);
-            game.getSurvivorManager().checkOxygenForAllLevels();
+            isXWasClicked = false;
+            myGame.getSurvivorManager().allSurvivorGotReceivedStuff();
+            myGame.getResourceManager().consumeAllocatedResources();
+            doTheTasks(myGame);
+            myGame.getSurvivorManager().checkOxygenForAllLevels();
             Diary diary = new Diary();
-            diary.makeEntryForAllSurvivors(game);
-            game.getDiaryManager().makeDiaryEntryPerDay(game, diary);
+            diary.makeEntryForAllSurvivors(myGame);
+            myGame.getDiaryManager().makeDiaryEntryPerDay(myGame, diary);
             changeToDiary();
-            displaySumBox(stage, diary, game);
-            game.getSurvivorManager().clearSurvivorsTasks(game);
-            game.getSurvivorManager().checkSurvivorStatus();
+            displaySumBox(stage, diary, myGame);
+            myGame.getSurvivorManager().clearSurvivorsTasks(myGame);
+            myGame.getSurvivorManager().checkSurvivorStatus();
             refreshEqInfoTable();
             survivorInfoTable.clear();
             refreshSurvivorBar();
             refreshResourceBar();
-            discoveredRooms(game);
+            discoveredRooms(myGame);
             updateColorRoom();
-            game.increaseRound();
+            myGame.increaseRound();
             refreshMiniMenu();
+            myGame.getSurvivorManager().checkLoseGame();
+            myGame.getRoomManager().checkWinGame();
         }
+
+        if (isXWasClicked && isGameLose) {
+            endRoundButton.setDisabled(true);
+            isGameLose = false;
+            isXWasClicked = false;
+            displayInfoBox(stage, "You lost, unfortunately you lost all survivors :c", Mark.ERROR, () -> {
+                System.out.println("Sprawdz2");
+                ((com.badlogic.gdx.Game) Gdx.app.getApplicationListener()).setScreen(new SplashToNextScreen(Constants.WhereSplashGo.LOSE, myGame));
+            });
+        }
+
+        if (isXWasClicked && !isGameLose && isGameWin) {
+            endRoundButton.setDisabled(true);
+            isGameWin = false;
+            isXWasClicked = false;
+            displayInfoBox(stage, "Yeyy you Win! Good job! all the surviving survivors are happy c:", Mark.INFO, () -> {
+                System.out.println("Sprawdz2");
+                ((com.badlogic.gdx.Game) Gdx.app.getApplicationListener()).setScreen(new SplashToNextScreen(Constants.WhereSplashGo.WIN, myGame));
+            });
+        }
+
+        if(addTask != null) {
+            if (isChooseRoomVisible) {
+                addTask.setDisabled(true);
+            } else {
+                addTask.setDisabled(false);
+            }
+        }
+
+
     }
 
     public static void openMenu() {
@@ -538,7 +588,7 @@ public class GameScreen implements Screen {
 
             addEQ.addListener(new ChangeListener() {
                 public void changed(ChangeEvent event, Actor actor) {
-                    Table equipmentTable = tableAddEq(survivor, stage, game);
+                    Table equipmentTable = tableAddEq(survivor, stage, myGame);
                     equipmentTable.setVisible(true);
                     addEqAndTaskTable.clear();
                     addEqAndTaskTable.add(equipmentTable).pad(5);
@@ -566,10 +616,10 @@ public class GameScreen implements Screen {
 
         if(survivor.getTask() == null)
         {
-            Button addTask = new TextButton("Add Task", DigOutGame.skinButton.get("small", TextButton.TextButtonStyle.class));
+            addTask = new TextButton("Add Task", DigOutGame.skinButton.get("small", TextButton.TextButtonStyle.class));
             addTask.addListener(new ChangeListener() {
                 public void changed(ChangeEvent event, Actor actor) {
-                    Table addTaskTable = addChoseTask(stage, survivor, game);
+                    Table addTaskTable = addChoseTask(stage, survivor, myGame);
                     addTaskTable.setVisible(true);
                     addEqAndTaskTable.clear();
                     addEqAndTaskTable.add(addTaskTable).pad(5);
@@ -584,13 +634,13 @@ public class GameScreen implements Screen {
                     displayConfirmBox(stage, "Do you want to unpin a task from a survivor?", confirmed -> {
                         if (confirmed) {
                             tempSurvivor = survivor;
-                            logs(DateLogs.LogType.INFO, game.getGameId(), "Survivor: " + survivor.getName() + ", Unpin task: " + survivor.getTask().getTask(), null);
-                            backResources(survivor, game);
-                            game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setAmountOfSurvivors(
-                                game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).getAmountOfSurvivors() - 1
+                            logs(DateLogs.LogType.INFO, myGame.getGameId(), "Survivor: " + survivor.getName() + ", Unpin task: " + survivor.getTask().getTask(), null);
+                            backResources(survivor, myGame);
+                            myGame.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setAmountOfSurvivors(
+                                myGame.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).getAmountOfSurvivors() - 1
                             );
-                            game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).updateSpace(game);
-                            game.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).updatePicture();
+                            myGame.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).updateSpace(myGame);
+                            myGame.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).updatePicture();
                             survivor.setTask(null);
                             needsRefreshAfterAddTask = true;
                             survivor.changeImgForNotWork();
@@ -604,21 +654,21 @@ public class GameScreen implements Screen {
         return info;
     }
 
-    public static void backResources(Survivor survivor, Game game) {
-        game.getResourceManager().getResource(Constants.Resources.MATERIALS).setAllocatedAmount
-            (game.getResourceManager().getResource(Constants.Resources.MATERIALS).getAllocatedAmount()
+    public static void backResources(Survivor survivor, MyGame myGame) {
+        myGame.getResourceManager().getResource(Constants.Resources.MATERIALS).setAllocatedAmount
+            (myGame.getResourceManager().getResource(Constants.Resources.MATERIALS).getAllocatedAmount()
                 - survivor.getTask().getCost().getMaterials());
 
-        game.getResourceManager().getResource(Constants.Resources.TOOLS).setAllocatedAmount
-            (game.getResourceManager().getResource(Constants.Resources.TOOLS).getAllocatedAmount()
+        myGame.getResourceManager().getResource(Constants.Resources.TOOLS).setAllocatedAmount
+            (myGame.getResourceManager().getResource(Constants.Resources.TOOLS).getAllocatedAmount()
                 - survivor.getTask().getCost().getTools());
 
-        game.getResourceManager().getResource(Constants.Resources.FOOD).setAllocatedAmount
-            (game.getResourceManager().getResource(Constants.Resources.FOOD).getAllocatedAmount()
+        myGame.getResourceManager().getResource(Constants.Resources.FOOD).setAllocatedAmount
+            (myGame.getResourceManager().getResource(Constants.Resources.FOOD).getAllocatedAmount()
                 - survivor.getTask().getCost().getFood());
 
-        game.getResourceManager().getResource(Constants.Resources.ELECTRICITY).setAllocatedAmount
-            (game.getResourceManager().getResource(Constants.Resources.ELECTRICITY).getAllocatedAmount()
+        myGame.getResourceManager().getResource(Constants.Resources.ELECTRICITY).setAllocatedAmount
+            (myGame.getResourceManager().getResource(Constants.Resources.ELECTRICITY).getAllocatedAmount()
                 - (survivor.getTask().getCost().isElectricityRequired() ? 1 : 0));
     }
 
@@ -641,8 +691,8 @@ public class GameScreen implements Screen {
         diaryButton.setDisabled(true);
     }
 
-    public void discoveredRooms(Game game) {
-        Map<Coordinate, Room> rooms = game.getRoomManager().getRooms();
+    public void discoveredRooms(MyGame myGame) {
+        Map<Coordinate, Room> rooms = myGame.getRoomManager().getRooms();
         List<Coordinate> coordinatesToProcess = new ArrayList<>();
 
         for (Map.Entry<Coordinate, Room> entry : rooms.entrySet()) {
@@ -657,7 +707,7 @@ public class GameScreen implements Screen {
         }
 
         for (Coordinate coordinate : coordinatesToProcess) {
-            game.getRoomManager().makeAbleToDiscoveredNearestRooms(coordinate, game);
+            myGame.getRoomManager().makeAbleToDiscoveredNearestRooms(coordinate, myGame);
         }
     }
 
@@ -670,12 +720,12 @@ public class GameScreen implements Screen {
         if (tile != null) {
             tile.setBackground(DigOutGame.skinRoom.getDrawable(room.getActualPicture()));
         } else {
-            logs(DateLogs.LogType.INFO, game.getGameId(), "Error: No tile found at coordinate: " + coordinate, null);
+            logs(DateLogs.LogType.INFO, myGame.getGameId(), "Error: No tile found at coordinate: " + coordinate, null);
         }
     }
 
     public void updateColorRoom(){
-        Map<Coordinate, Room> rooms = game.getRoomManager().getRooms();
+        Map<Coordinate, Room> rooms = myGame.getRoomManager().getRooms();
 
         for (Map.Entry<Coordinate, Room> entry : rooms.entrySet()) {
             Room room = entry.getValue();
@@ -696,14 +746,14 @@ public class GameScreen implements Screen {
         if (tile != null) {
             tile.setBackground(DigOutGame.skinRoom.getDrawable(name));
         } else {
-            logs(DateLogs.LogType.INFO, game.getGameId(), "Error: No tile found at coordinate: " + coordinate, null);
+            logs(DateLogs.LogType.INFO, myGame.getGameId(), "Error: No tile found at coordinate: " + coordinate, null);
         }
     }
 
     private void populateEqInfoTable() {
-        equipmentStatus = game.getEquipmentManager().getEquipmentStatus();
-        equipmentName = game.getEquipmentManager().getEquipmentNames();
-        equipmentDescription = game.getEquipmentManager().getEquipmentDescription();
+        equipmentStatus = myGame.getEquipmentManager().getEquipmentStatus();
+        equipmentName = myGame.getEquipmentManager().getEquipmentNames();
+        equipmentDescription = myGame.getEquipmentManager().getEquipmentDescription();
 
         eqInfoTable.clear();
 
@@ -747,10 +797,10 @@ public class GameScreen implements Screen {
 
         survivorsTable.align(Align.left | Align.top);
 
-        int survivorCount = game.getSurvivorManager().getAllSurvivors().size();
+        int survivorCount = myGame.getSurvivorManager().getAllSurvivors().size();
 
         for (int i = 0; i < survivorCount; i++) {
-            Survivor survivor = game.getSurvivorManager().getAllSurvivors().toArray(new Survivor[0])[i];
+            Survivor survivor = myGame.getSurvivorManager().getAllSurvivors().toArray(new Survivor[0])[i];
 
 
             Table survivorEntry = new Table();
@@ -812,7 +862,7 @@ public class GameScreen implements Screen {
 
         Label nameLabel = new Label("[BLACK]DIARY", DigOutGame.skin.get("mediumFont", Label.LabelStyle.class));
 
-        Label descriptionLabel = new Label("[BLACK]" + game.getDiaryManager().updateDiaryBox()
+        Label descriptionLabel = new Label("[BLACK]" + myGame.getDiaryManager().updateDiaryBox()
             , DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
         descriptionLabel.setWrap(true);
 
@@ -838,10 +888,10 @@ public class GameScreen implements Screen {
         resourcesTable.clear();
         resourcesTable.setBackground(DigOutGame.skin.getDrawable("box.wood"));
 
-        resourceStatus = game.getResourceManager().getResourceStatus();
-        resourceAllocatedStatus = game.getResourceManager().getAllocatedResourcesStatus();
-        resourceName = game.getResourceManager().getResourceNames();
-        resourceDescription = game.getResourceManager().getResourceDescription();
+        resourceStatus = myGame.getResourceManager().getResourceStatus();
+        resourceAllocatedStatus = myGame.getResourceManager().getAllocatedResourcesStatus();
+        resourceName = myGame.getResourceManager().getResourceNames();
+        resourceDescription = myGame.getResourceManager().getResourceDescription();
 
         for (Map.Entry<Constants.Resources, Integer> entry : resourceStatus.entrySet()) {
             Constants.Resources resource = entry.getKey();
@@ -904,9 +954,9 @@ public class GameScreen implements Screen {
         }
     }
 
-    private void checkAbleToEndRound(Game game, TextTooltip tooltip, Button button){
+    private void checkAbleToEndRound(MyGame myGame, TextTooltip tooltip, Button button){
         boolean a = true;
-        a = game.getSurvivorManager().checkIfAllSurvivorHaveTask();
+        a = myGame.getSurvivorManager().checkIfAllSurvivorHaveTask();
         button.setDisabled(!a);
 
         System.out.println(a);
@@ -928,7 +978,7 @@ public class GameScreen implements Screen {
     private void populateMiniMenu(){
         miniMenuTable.clear();
         miniMenuTable.setBackground(DigOutGame.skin.getDrawable("box.dark"));
-        roundNumber = game.getRound();
+        roundNumber = myGame.getRound();
         Label statusRoundGame = new Label("Day: " + roundNumber, DigOutGame.skin.get("mediumFont", Label.LabelStyle.class));
 
         endRoundButton = new TextButton("END ROUND", DigOutGame.skinButton.get("small", TextButton.TextButtonStyle.class));
@@ -948,7 +998,7 @@ public class GameScreen implements Screen {
         endRoundTooltip.setInstant(true);
         endRoundButton.addListener(endRoundTooltip);
 
-        checkAbleToEndRound(game, endRoundTooltip, endRoundButton);
+        checkAbleToEndRound(myGame, endRoundTooltip, endRoundButton);
 
         Button menuButton = new TextButton("MENU", DigOutGame.skinButton.get("small", TextButton.TextButtonStyle.class));
         menuButton.addListener(new ChangeListener() {
@@ -972,4 +1022,139 @@ public class GameScreen implements Screen {
         populateMiniMenu();
     }
 
+    public static boolean isNeedsRefreshAfterAddEQ() {
+        return needsRefreshAfterAddEQ;
+    }
+
+    public static void setNeedsRefreshAfterAddEQ(boolean needsRefreshAfterAddEQ1) {
+        needsRefreshAfterAddEQ = needsRefreshAfterAddEQ1;
+    }
+
+    public static boolean isNeedsRefreshAfterAddTask() {
+        return needsRefreshAfterAddTask;
+    }
+
+    public static void setNeedsRefreshAfterAddTask(boolean needsRefreshAfterAddTask1) {
+        needsRefreshAfterAddTask = needsRefreshAfterAddTask1;
+    }
+
+    public static boolean isNeedsRefreshAfterEndRound() {
+        return needsRefreshAfterEndRound;
+    }
+
+    public static void setNeedsRefreshAfterEndRound(boolean needsRefreshAfterEndRound1) {
+        needsRefreshAfterEndRound = needsRefreshAfterEndRound1;
+    }
+
+    public static boolean isGameWin() {
+        return isGameWin;
+    }
+
+    public static void setGameWin(boolean gameWin) {
+        isGameWin = gameWin;
+    }
+
+    public static boolean isGameLose() {
+        return isGameLose;
+    }
+
+    public static void setGameLose(boolean gameLose) {
+        isGameLose = gameLose;
+    }
+
+    public static boolean isXWasClicked() {
+        return isXWasClicked;
+    }
+
+    public static void setXWasClicked(boolean XWasClicked) {
+        isXWasClicked = XWasClicked;
+    }
+
+    public static boolean isIsChooseRoomVisible() {
+        return isChooseRoomVisible;
+    }
+
+    public static void setIsChooseRoomVisible(boolean chooseRoomVisible) {
+        isChooseRoomVisible = chooseRoomVisible;
+    }
+
+    public static Survivor getTempSurvivor() {
+        return tempSurvivor;
+    }
+
+    public static void setTempSurvivor(Survivor tempSurvivor1) {
+        tempSurvivor = tempSurvivor1;
+    }
+
+    public static Table getAddEqAndTaskTable() {
+        return addEqAndTaskTable;
+    }
+
+    public static void setAddEqAndTaskTable(Table addEqAndTaskTable1) {
+        addEqAndTaskTable = addEqAndTaskTable1;
+    }
+
+    public static Table getOuterPinRoomTable() {
+        return outerPinRoomTable;
+    }
+
+    public static void setOuterPinRoomTable(Table outerPinRoomTable1) {
+        outerPinRoomTable = outerPinRoomTable1;
+    }
+
+    public static Table getCenterTable() {
+        return centerTable;
+    }
+
+    public static void setCenterTable(Table centerTable1) {
+        centerTable = centerTable1;
+    }
+
+    public static Table getSurvivorsTable() {
+        return survivorsTable;
+    }
+
+    public static void setSurvivorsTable(Table survivorsTable1) {
+        survivorsTable = survivorsTable1;
+    }
+
+    public static Table getRoomsTable() {
+        return roomsTable;
+    }
+
+    public static void setRoomsTable(Table roomsTable1) {
+        roomsTable = roomsTable1;
+    }
+
+    public static boolean isIsMenuOpen() {
+        return isMenuOpen;
+    }
+
+    public static void setIsMenuOpen(boolean isMenuOpen) {
+        GameScreen.isMenuOpen = isMenuOpen;
+    }
+
+    public static boolean isIsInfoBoxOpen() {
+        return isInfoBoxOpen;
+    }
+
+    public static void setIsInfoBoxOpen(boolean isInfoBoxOpen) {
+        GameScreen.isInfoBoxOpen = isInfoBoxOpen;
+    }
+
+    public static Map<Coordinate, Table> getGameTable() {
+        return gameTable;
+    }
+
+    public static void setGameTable(Map<Coordinate, Table> gameTable) {
+        GameScreen.gameTable = gameTable;
+    }
+
+    public static Button getAddTask() {
+        return addTask;
+    }
+
+    public static void setAddTask(Button addTask) {
+        GameScreen.addTask = addTask;
+    }
 }

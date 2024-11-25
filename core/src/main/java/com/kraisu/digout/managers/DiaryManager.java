@@ -2,28 +2,19 @@ package com.kraisu.digout.managers;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
-import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Align;
 import com.kraisu.digout.DigOutGame;
-import com.kraisu.digout.game.Game;
+import com.kraisu.digout.game.MyGame;
 import com.kraisu.digout.help.Constants;
-import com.kraisu.digout.rooms.Coordinate;
-import com.kraisu.digout.rooms.Room;
-import com.kraisu.digout.scenes.uiHelps;
-import com.kraisu.digout.stuff.BuildingPrice;
+import com.kraisu.digout.scenes.GameScreen;
 import com.kraisu.digout.stuff.Diary;
-import com.kraisu.digout.stuff.DiaryEntry;
 import com.kraisu.digout.survivor.Survivor;
 
 import java.util.HashMap;
@@ -37,10 +28,10 @@ public class DiaryManager {
         diaries = new HashMap<Integer, String>();
     }
 
-    public void makeDiaryEntryPerDay(Game game, Diary diary){
+    public void makeDiaryEntryPerDay(MyGame myGame, Diary diary){
         String text = "";
 
-        text = "[BROWN]Day:[BLACK] " + game.getRound() + "\n\n";
+        text = "[BROWN]Day: " + myGame.getRound() + "[BLACK]\n\n";
 
         Map<Survivor, String> diaryMap = diary.getDiaryEntries();
         for(Map.Entry<Survivor, String> entry : diaryMap.entrySet()){
@@ -49,11 +40,11 @@ public class DiaryManager {
 
         text +=diary.writeCostAndStuff();
 
-        text += diary.writeDeadSurvivors(game);
+        text += diary.writeDeadSurvivors(myGame);
 
         text += "\n\n\n";
 
-        diaries.put(game.getRound(), text);
+        diaries.put(myGame.getRound(), text);
     }
 
     public String updateDiaryBox(){
@@ -65,7 +56,7 @@ public class DiaryManager {
         return text;
     }
 
-    public static void displaySumBox(Stage stage, Diary diary, Game game) {
+    public static void displaySumBox(Stage stage, Diary diary, MyGame myGame) {
         Table table = new Table();
         table.setBackground(DigOutGame.skin.getDrawable("box"));
 
@@ -74,6 +65,7 @@ public class DiaryManager {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
                 table.remove();
+                GameScreen.setXWasClicked(true);
             }
         });
 
@@ -172,7 +164,7 @@ public class DiaryManager {
 
         String text = "";
         int s = 0;
-        Map<String, Survivor> survivorsMap = game.getSurvivorManager().getSurvivors();
+        Map<String, Survivor> survivorsMap = myGame.getSurvivorManager().getSurvivors();
         for (Map.Entry<String, Survivor> entry : survivorsMap.entrySet()) {
             if (entry.getValue().getEnergy() == 0) {
                 text += " " + entry.getValue().getName() + ",";

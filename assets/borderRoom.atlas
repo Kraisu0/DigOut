@@ -1,8 +1,11 @@
 borderRoom.png
 size:512,128
 repeat:none
-GREEN_BORDER
+BLUE_BORDER
 bounds:248,2,80,80
+split:2,2,2,2
+GREEN_BORDER
+bounds:330,2,80,80
 split:2,2,2,2
 ORANGE_BORDER
 bounds:166,2,80,80
