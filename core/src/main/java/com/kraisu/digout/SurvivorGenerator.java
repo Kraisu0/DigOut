@@ -12,6 +12,7 @@ import com.badlogic.gdx.Input;
 
 import java.util.UUID;
 
+import com.kraisu.digout.game.MyGame;
 import com.kraisu.digout.help.Constants;
 import com.kraisu.digout.loaders.JsonLoader;
 import com.kraisu.digout.logs.DateLogs;
@@ -31,6 +32,8 @@ public class SurvivorGenerator extends ApplicationAdapter {
     private UUID staticUUID = UUID.fromString("11111111-1111-1111-1111-111111111111");
     public BitmapFont font;
     private GlyphLayout layout;
+
+    private MyGame myGame = new MyGame(UUID.fromString("11111111-1111-1111-1111-111111111111"), null, 1, null, null, null, null, null);
 
     @Override
     public void create() {
@@ -84,7 +87,7 @@ public class SurvivorGenerator extends ApplicationAdapter {
     private void generateNewSurvivorRend() {
         Constants.Survivors survivorType = generateRandomSurvivor();
         if (survivorType != null) {
-            Survivor survivor = generateNewSurvivors(staticUUID, survivorType);
+            Survivor survivor = generateNewSurvivors(myGame, survivorType);
             avatar = survivor.getImg();
             name = survivor.getName();
             age = survivor.getAge();

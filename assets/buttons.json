@@ -7,6 +7,7 @@
     green: { a: 1, b: 0, g: 1, r: 0 },
     white: { a: 1, b: 1, g: 1, r: 1 },
     red: { a: 1, b: 0, g: 0, r: 1 },
+    dark-red: { a: 1.0, b: 0.0, g: 0.0, r: 0.60784316 },
     black: { a: 1, b: 0, g: 0, r: 0 },
     gold: { a: 1.0, b: 0.09019608, g: 0.5647059, r: 0.57254905 },
     grey: { a: 1.0, b: 0.11372549, g: 0.11372549, r: 0.11372549 }
@@ -20,6 +21,7 @@
     small: { down: button.wood.down, up: button.wood.up, disabled: button.wood.disable, pressedOffsetX: 1, pressedOffsetY: -1, font: small-font },
     small-green: { down: button.wood.down, up: button.wood.up, disabled: button.wood.disable, pressedOffsetX: 1, pressedOffsetY: -1, font: small-font, fontColor: green },
     small-red: { down: button.wood.down, up: button.wood.up, disabled: button.wood.disable, pressedOffsetX: 1, pressedOffsetY: -1, font: small-font, fontColor: red },
+    small-dark-red: { down: button.wood.down, up: button.wood.up, disabled: button.wood.disable, pressedOffsetX: 1, pressedOffsetY: -1, font: small-font, fontColor: dark-red },
     list-small: { down: button.wood.down, up: button.wood.up, disabled: button.wood.down, pressedOffsetX: 1, pressedOffsetY: -1, font: small-font }
     //toggle: { down: default-round-down, checked: default-round-down, up: default-round }
   }

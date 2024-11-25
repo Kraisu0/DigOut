@@ -62,7 +62,7 @@ public class MainMenuScreen implements Screen {
         buttonLoadGame = new TextButton("LOAD GAME", DigOutGame.skinButton.get("default", TextButton.TextButtonStyle.class));
         buttonLoadGame.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y) {
-                //((Game) Gdx.app.getApplicationListener()).setScreen(new LoadGameScreen());
+                //((MyGame) Gdx.app.getApplicationListener()).setScreen(new LoadGameScreen());
                 logs(DateLogs.LogType.INFO, null,"Open load game screen", null);
             }
         });
@@ -70,7 +70,7 @@ public class MainMenuScreen implements Screen {
         buttonSettings = new TextButton("SETTINGS", DigOutGame.skinButton.get("default", TextButton.TextButtonStyle.class));
         buttonSettings.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y) {
-                //((Game) Gdx.app.getApplicationListener()).setScreen(new SettingsScreen());
+                //((MyGame) Gdx.app.getApplicationListener()).setScreen(new SettingsScreen());
                 logs(DateLogs.LogType.INFO, null,"Open settings screen", null);
             }
         });

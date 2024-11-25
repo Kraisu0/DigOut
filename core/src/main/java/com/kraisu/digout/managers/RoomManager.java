@@ -1,19 +1,12 @@
 package com.kraisu.digout.managers;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.kraisu.digout.genertor.Generators;
+import com.kraisu.digout.game.MyGame;
 import com.kraisu.digout.help.Constants;
 import com.kraisu.digout.logs.DateLogs;
-import com.kraisu.digout.rooms.Coordinate;
-import com.kraisu.digout.rooms.DiscoveredRoom;
-import com.kraisu.digout.rooms.Room;
-import com.kraisu.digout.rooms.UndiscoveredRoom;
+import com.kraisu.digout.rooms.*;
 import com.kraisu.digout.scenes.GameScreen;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 import static com.kraisu.digout.logs.DateLogs.logs;
 
@@ -32,12 +25,34 @@ public class RoomManager {
         return rooms.get(coord);
     }
 
+    public Map<Coordinate, Room> getRooms() {
+        return rooms;
+    }
+
+    public boolean hasBuildOfType(Constants.Buildings roomType) {
+        for (Room room : rooms.values()) {
+            if (room.getBuildUp().equals(roomType)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean hasRoomOfType(Constants.RoomType roomType) {
+        for (Room room : rooms.values()) {
+            if (room.getType().equals(roomType)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public Room getExitRoom() {
         for (Room room : rooms.values()) {
             if (room.getType().equals(Constants.RoomType.EXIT_TYPE))
                 return room;
         }
-        System.out.println("Brak pokoju wyjscia");
+        System.out.println("There is no exit room");
         return null;
     }
 
@@ -46,31 +61,33 @@ public class RoomManager {
             if (room.getType().equals(Constants.RoomType.BASE_TYPE))
                 return room;
         }
-        System.out.println("Brak pokoju wejścia");
+        System.out.println("There is no base room");
         return null;
     }
 
+//    public Room getElevator() {
+//        for (Room room : rooms.values()) {
+//            if (room.getBuildUp().equals(Constants.Buildings.ELEVATOR))
+//                return room;
+//        }
+//        System.out.println("There isn't any elevator");
+//        return null;
+//    }
 
-    private Room ableToDiscoveredRoom(Coordinate coordinate, UUID id) {
-        Room exitRoom = getExitRoom();
-        if(!rooms.containsKey(coordinate)) {
-            if(coordinate.getY() > 8) {
-                if(!exitRoom.getCoordinates().equals(coordinate)) {
-                    Room temp = new UndiscoveredRoom(coordinate, id, Constants.RoomType.HARD_ROOK_TYPE);
-                    rooms.put(coordinate, temp);
-                    return temp;
-                }
-                else {
-                    exitRoom.setAbleToDiscover(true);
-                    return exitRoom;
-                }
-            } else {
-                Room temp = new UndiscoveredRoom(coordinate, id, Constants.RoomType.LIGHT_ROOK_TYPE);
-                rooms.put(coordinate, temp);
-                return temp;
+    public Coordinate[] getRoomsByType(Constants.RoomType roomType, Constants.Buildings buildings) {
+        List<Coordinate> coordinates = new ArrayList<>();
+        Map<Coordinate, Room> rooms = getRooms();
+
+        for (Map.Entry<Coordinate, Room> entry : rooms.entrySet()) {
+            Room room = entry.getValue();
+
+            if ((roomType != null && room.getType() == roomType && room.getBuildUp() == buildings) ||
+                (buildings != null && room.getBuildUp() == buildings && buildings != Constants.Buildings.NOTHING)) {
+                coordinates.add(entry.getKey());
             }
         }
-        return null;
+
+        return coordinates.toArray(new Coordinate[0]);
     }
 
     public void discoveredRoom(Room room, UUID id) {
@@ -84,73 +101,223 @@ public class RoomManager {
         }
     }
 
-    public void makeAbleToDiscoveredNearestRooms(Coordinate coordinate, UUID id) {
+    private Room ableToDiscoveredRoom(Coordinate coordinate, MyGame myGame) {
+        Room exitRoom = getExitRoom();
+        if(!rooms.containsKey(coordinate)) {
+            if(coordinate.getY() > 8) {
+                if(!exitRoom.getCoordinates().equals(coordinate)) {
+                    Room temp = new UndiscoveredHardRoom(coordinate, myGame.getGameId());
+                    rooms.put(coordinate, temp);
+                    logs(DateLogs.LogType.INFO, myGame.getGameId(), "Open Hard room to discover on cord: ("
+                        + temp.getCoordinates().getX() + ", " + temp.getCoordinates().getY() + ")" , null);
+                    return temp;
+                }
+                else {
+                    exitRoom.setAbleToDiscover(true);
+                    return exitRoom;
+                }
+            } else {
+                Room temp = new UndiscoveredLightRoom(coordinate, myGame.getGameId());
+                rooms.put(coordinate, temp);
+                logs(DateLogs.LogType.INFO, myGame.getGameId(), "Open Light room to discover on cord: ("
+                    + temp.getCoordinates().getX() + ", " + temp.getCoordinates().getY() + ")" , null);
+                return temp;
+
+            }
+        }
+        return null;
+    }
+
+    public void makeAbleToDiscoveredNearestRooms(Coordinate coordinate, MyGame myGame) {
         Coordinate tempRight = new Coordinate(coordinate.getX() + 1, coordinate.getY());
+        Coordinate tempUpRight = new Coordinate(coordinate.getX() + 1, coordinate.getY() + 1);
+        Coordinate temp2Right = new Coordinate(coordinate.getX() + 2, coordinate.getY());
         Coordinate tempLeft = new Coordinate(coordinate.getX() - 1, coordinate.getY());
+        Coordinate tempUpLeft = new Coordinate(coordinate.getX() - 1, coordinate.getY() + 1);
+        Coordinate temp2Left = new Coordinate(coordinate.getX() - 2, coordinate.getY());
+        Coordinate tempUp = new Coordinate(coordinate.getX(), coordinate.getY() + 1);
         Room roomL;
         Room roomR;
+        Room roomU;
 
+        //TODO jeżeli będą dodatkowe grafiki
+//        if(coordinate.getY() != 10 && checkElevator(coordinate) && checkRoomToArrange(tempUpRight) && checkRoomToArrange(tempUpLeft) &&
+//        checkIsInRooms(tempUp)){
+//            String name = checkNewRoomType(tempUp);
+//            roomU = ableToDiscoveredRoom(tempUp, MyGame);
+//            GameScreen.colorTileAtCoordinate(tempUp, roomU, name + "_U_R_L.0");
+//            roomU.setActualPicture(name + "_U_R_L.0");
+//        }else if(coordinate.getY() != 10 && coordinate.getX() != 10 && checkElevator(coordinate) && checkRoomToArrange(tempUpRight) &&
+//        checkIsInRooms(tempUp)){
+//            String name = checkNewRoomType(tempUp);
+//            roomU = ableToDiscoveredRoom(tempUp, MyGame);
+//            GameScreen.colorTileAtCoordinate(tempUp, roomU, name + "_U_L.0");
+//            roomU.setActualPicture(name + "_U_L.0");
+//        }else if(coordinate.getY() != 10 && coordinate.getX() != 1 && checkElevator(coordinate) && checkRoomToArrange(tempUpLeft) &&
+//            checkIsInRooms(tempUp)){
+//            String name = checkNewRoomType(tempUp);
+//            roomU = ableToDiscoveredRoom(tempUp, MyGame);
+//            GameScreen.colorTileAtCoordinate(tempUp, roomU, name + "_U_R.0");
+//            roomU.setActualPicture(name + "_U_R.0");
+//        }else if(coordinate.getY() != 10 && checkElevator(coordinate) &&
+//            checkIsInRooms(tempUp)){
+//            String name = checkNewRoomType(tempUp);
+//            roomU = ableToDiscoveredRoom(tempUp, MyGame);
+//            GameScreen.colorTileAtCoordinate(tempUp, roomU, name + "_U.0");
+//            roomU.setActualPicture(name + "_U.0");
+//        }else if (checkRoomToArrange(temp2Right) && checkIsInRooms(tempRight)) {
+//            String name = checkNewRoomType(tempRight);
+//            roomR = ableToDiscoveredRoom(tempRight, MyGame);
+//            GameScreen.colorTileAtCoordinate(tempRight, roomR, name + "_R_L.0");
+//            roomR.setActualPicture(name + "_R_L.0");
+//        }else if (checkRoomToArrange(temp2Left) && checkIsInRooms(tempLeft)) {
+//            String name = checkNewRoomType(tempLeft);
+//            roomL = ableToDiscoveredRoom(tempLeft, MyGame);
+//            GameScreen.colorTileAtCoordinate(tempLeft, roomL, name + "_R_L.0");
+//            roomL.setActualPicture(name + "_R_L.0");
+//        }else if (coordinate.getX() != 1 && checkIsInRooms(tempLeft)) {
+//            String name = checkNewRoomType(tempLeft);
+//            roomL = ableToDiscoveredRoom(tempLeft, MyGame);
+//            GameScreen.colorTileAtCoordinate(tempLeft, roomL, name + "_L.0");
+//            roomL.setActualPicture(name + "_L.0");
+//        }else if (coordinate.getX() != 10 && checkIsInRooms(tempRight)) {
+//            String name = checkNewRoomType(tempRight);
+//            roomR = ableToDiscoveredRoom(tempRight, MyGame);
+//            GameScreen.colorTileAtCoordinate(tempRight, roomR, name + "_R.0");
+//            roomR.setActualPicture(name + "_R.0");
+//        }else if ((coordinate.getX() != 10 && checkIsInRooms(tempRight)) && (coordinate.getX() != 1 && checkIsInRooms(tempLeft))) {
+//            String name = checkNewRoomType(tempRight);
+//            String name1 = checkNewRoomType(tempLeft);
+//            roomR = ableToDiscoveredRoom(tempRight, MyGame);
+//            roomL = ableToDiscoveredRoom(tempLeft, MyGame);
+//            GameScreen.colorTileAtCoordinate(tempRight, roomR, name + "_R.0");
+//            GameScreen.colorTileAtCoordinate(tempLeft, roomR, name + "_L.0");
+//            roomR.setActualPicture(name + "_R.0");
+//            roomL.setActualPicture(name + "_L.0");
+//        }else{
+//            System.out.println("There is no room to set able to discovered");
+//        }
 
-        if (coordinate.getX() == 1 && !rooms.containsKey(tempRight)) {
-            roomR = ableToDiscoveredRoom(tempRight, id);
-            GameScreen.colorTileAtCoordinate(tempRight, roomR, "LIGHT_ROOK_TYPE_L_0");
-        }
+        if(rooms.get(coordinate) == getExitRoom() && !getExitRoom().isDiscovered()) {
+            System.out.println("Check unable Exit room");
+        }else{
+            if(coordinate.getY() != 10 && checkElevator(coordinate) && !checkIsInRooms(tempUp) ||
+                coordinate.getY() != 10 && checkElevator(coordinate) && checkRoomToArrange(tempUpRight) && checkRoomToArrange(tempUpLeft) &&
+                    !checkIsInRooms(tempUp) ||
+                coordinate.getY() != 10 && coordinate.getX() != 10 && checkElevator(coordinate) && checkRoomToArrange(tempUpRight) &&
+                    !checkIsInRooms(tempUp) ||
+                coordinate.getY() != 10 && coordinate.getX() != 1 && checkElevator(coordinate) && checkRoomToArrange(tempUpLeft) &&
+                    !checkIsInRooms(tempUp)){
+                String name = checkNewRoomType(tempUp);
+                roomU = ableToDiscoveredRoom(tempUp, myGame);
+                GameScreen.colorTileAtCoordinate(tempUp, roomU, name + "_U.0");
+                roomU.setActualPicture(name + "_U.0");
+            }
 
-        if (coordinate.getY() == 10 && !rooms.containsKey(tempLeft)) {
-            roomL = ableToDiscoveredRoom(tempLeft, id);
-            GameScreen.colorTileAtCoordinate(tempRight, roomL, "LIGHT_ROOK_TYPE_R_0");
-        }
+            if (checkIsAbleToDiscovered(tempUp) && checkElevator(coordinate) && (checkRoomToArrange(tempUpLeft) ||
+                checkRoomToArrange(tempUpRight)) && checkIsRookRoom(tempUp)){
+                String name = checkNewRoomType(tempUp);
+                GameScreen.colorTileAtCoordinate(tempRight, getRoom(tempUp), name + "_U.0");
+                getRoom(tempUp).setActualPicture(name + "_U.0");
+            }
 
-        if (!rooms.containsKey(tempRight) && !rooms.containsKey(tempLeft))
-        {
-            roomR = ableToDiscoveredRoom(tempRight, id);
-            GameScreen.colorTileAtCoordinate(tempRight, roomR, "LIGHT_ROOK_TYPE_L_0");
-            roomL = ableToDiscoveredRoom(tempLeft, id);
-            GameScreen.colorTileAtCoordinate(tempLeft, roomL, "LIGHT_ROOK_TYPE_R_0");
+            if (checkRoomToArrange(temp2Left) && !checkIsInRooms(tempLeft)) {
+                String name = checkNewRoomType(tempLeft);
+                roomL = ableToDiscoveredRoom(tempLeft, myGame);
+                GameScreen.colorTileAtCoordinate(tempLeft, roomL, name + "_R_L.0");
+                roomL.setActualPicture(name + "_R_L.0");
+            }
+
+            if (checkRoomToArrange(temp2Left) && checkIsAbleToDiscovered(tempLeft) && checkIsRookRoom(tempLeft)) {
+                String name = checkNewRoomType(tempLeft);
+                GameScreen.colorTileAtCoordinate(tempLeft, getRoom(tempLeft), name + "_R_L.0");
+                getRoom(tempLeft).setActualPicture(name + "_R_L.0");
+            }
+
+            if (checkRoomToArrange(temp2Right) && checkIsAbleToDiscovered(tempRight) && checkIsRookRoom(tempRight)) {
+                String name = checkNewRoomType(tempRight);
+                GameScreen.colorTileAtCoordinate(tempRight, getRoom(tempRight), name + "_R_L.0");
+                getRoom(tempRight).setActualPicture(name + "_R_L.0");
+            }
+
+            if ((coordinate.getX() != 10 && !checkIsInRooms(tempRight)) && (coordinate.getX() != 1 && !checkIsInRooms(tempLeft))){
+                String name = checkNewRoomType(tempRight);
+                String name1 = checkNewRoomType(tempLeft);
+                roomR = ableToDiscoveredRoom(tempRight, myGame);
+                roomL = ableToDiscoveredRoom(tempLeft, myGame);
+                GameScreen.colorTileAtCoordinate(tempRight, roomR, name + "_R.0");
+                GameScreen.colorTileAtCoordinate(tempLeft, roomR, name1 + "_L.0");
+                roomR.setActualPicture(name + "_R.0");
+                roomL.setActualPicture(name + "_L.0");
+            }
+
+            if (coordinate.getX() != 1 && !checkIsInRooms(tempLeft)) {
+                String name = checkNewRoomType(tempLeft);
+                roomL = ableToDiscoveredRoom(tempLeft, myGame);
+                GameScreen.colorTileAtCoordinate(tempLeft, roomL, name + "_L.0");
+                roomL.setActualPicture(name + "_L.0");
+            }
+
+            if (coordinate.getX() != 10 && !checkIsInRooms(tempRight)) {
+                String name = checkNewRoomType(tempRight);
+                roomR = ableToDiscoveredRoom(tempRight, myGame);
+                GameScreen.colorTileAtCoordinate(tempRight, roomR, name + "_R.0");
+                roomR.setActualPicture(name + "_R.0");
+            }
+
         }
 
     }
 
-    public void makeAbleToDiscoveredUpperRooms(Coordinate coordinate, UUID id) {
-        Coordinate tempUp = new Coordinate(coordinate.getY() + 1, coordinate.getY());
-        Room room;
+    public String checkNewRoomType (Coordinate coordinate) {
 
-        if(!rooms.containsKey(tempUp) && coordinate.getY() != 10) {
-            room = ableToDiscoveredRoom(tempUp, id);
-
-        }
+        if(coordinate.getY() > 8){
+            if(coordinate.getY() == 10 && coordinate.getX() == getExitRoom().getCoordinates().getX())
+                return "EXIT_ROOM";
+            else
+                return "HARD_ROOM";
+        }else
+            return "LIGHT_ROOM";
     }
 
+    public boolean checkElevator(Coordinate coordinate) {
+        if(rooms.get(coordinate) == null)
+            return false;
+        else
+            return rooms.get(coordinate).getBuildUp().equals(Constants.Buildings.ELEVATOR);
+    }
 
+    public boolean checkRoomToArrange(Coordinate coordinate) {
+        if(rooms.get(coordinate) == null)
+            return false;
+        else
+            return rooms.get(coordinate).getType().equals(Constants.RoomType.ROOM_TO_ARRANGE);
+    }
 
-    public void buildBuilding(Room room, Constants.Buildings type, UUID id) {
-        //TODO zrobić to
-        switch (type) {
-            case KITCHEN:
+    public boolean checkIsInRooms(Coordinate coordinate) {
+        if(rooms.get(coordinate) == null)
+            return false;
+        else
+            return rooms.containsKey(coordinate);
+    }
 
-                break;
-            case RESTROOM:
+    public boolean checkIsAbleToDiscovered(Coordinate coordinate) {
+        if(rooms.get(coordinate) == null)
+            return false;
+        else
+            return rooms.get(coordinate).isAbleToDiscover();
+    }
 
-                break;
-            case ELEVATOR:
+    public boolean checkIsRookRoom(Coordinate coordinate) {
+        if(rooms.get(coordinate).getType() == Constants.RoomType.HARD_ROOK_TYPE || rooms.get(coordinate).getType() == Constants.RoomType.LIGHT_ROOK_TYPE)
+            return true;
+        else
+            return false;
+    }
 
-                break;
-            case WORKSHOP:
-
-                break;
-            case POWER_STATION:
-
-                break;
-            case AIR_PUMP:
-
-                break;
-            case TINKER_ROOM:
-
-                break;
-            default:
-                System.out.println("Błąd w budowaniu buildBuliding w RoomManager");
-                break;
-        }
+    public void checkWinGame(){
+        if(getExitRoom().getBuildUp() == Constants.Buildings.ELEVATOR)
+            GameScreen.setGameWin(true);
     }
 
 }

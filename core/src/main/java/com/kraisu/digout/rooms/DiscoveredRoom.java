@@ -23,6 +23,6 @@ public class DiscoveredRoom extends Room {
             NOTHING,
             true,
             1,
-        new Skin(Gdx.files.internal("rooms/EmptyRoomTexture.json")));
+            "EMPTY_ROOM.0");
     }
 }

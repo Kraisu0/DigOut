@@ -42,7 +42,7 @@ public class NewGameSplashScreen implements Screen {
 
         //Create new game
         NewGame newGame = new NewGame(gameName);
-        logs(DateLogs.LogType.INFO, newGame.getGame().getGameId(), "Create New Game", null);
+        logs(DateLogs.LogType.INFO, newGame.getGame().getGameId(), "Create New MyGame", null);
 
 
 

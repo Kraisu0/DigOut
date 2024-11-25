@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class ConstantsGenerator {
 
-    public static class ConstructionResourcesDropPercentages{
+    public static class MaterialsDropPercentages{
         public static final int TRIPLE_CR_DROP = 10;
         public static final int DOUBLE_CR_DROP = 30;
         public static final int SINGLE_CR_DROP = 40;

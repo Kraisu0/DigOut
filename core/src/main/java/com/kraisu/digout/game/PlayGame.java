@@ -1,10 +1,8 @@
 package com.kraisu.digout.game;
 
-import com.kraisu.digout.rooms.Room;
-
 public class PlayGame {
 
-    public void gameInProgress(Game game){
+    public void gameInProgress(MyGame myGame){
         //TODO inkrementacja nowej rundy
 
         //TODO sprawdzenie stanu ocalałych (mozliwy koniec gry)
@@ -24,7 +22,7 @@ public class PlayGame {
         //TODO wyswietleni informacji o nowych ocalałych i zasobach
     }
 
-//    private int checkSurvivorsCondition(Game game){
+//    private int checkSurvivorsCondition(MyGame game){
 //
 //        if(
 //

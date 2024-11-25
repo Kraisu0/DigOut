@@ -30,7 +30,7 @@ public class NewGameNameScreen implements Screen {
 
         table = new Table();
         table.setSize(Gdx.graphics.getWidth()/2f, Gdx.graphics.getHeight()/3f);
-        table.setBackground(DigOutGame.skin.getDrawable("box.grey"));
+        table.setBackground(DigOutGame.skin.getDrawable("box.gray"));
 
         // Heading & label
         heading = new Label("NEW GAME NAME", DigOutGame.skin.get("hugeFont", Label.LabelStyle.class));
@@ -59,7 +59,7 @@ public class NewGameNameScreen implements Screen {
             public void clicked(InputEvent event, float x, float y) {
                 if (!createButton.isDisabled()) {
                     ((Game) Gdx.app.getApplicationListener()).setScreen(new NewGameSplashScreen(newName));
-                    System.out.println("New Game Name: " + newName);
+                    System.out.println("New MyGame Name: " + newName);
                 }
             }
         });

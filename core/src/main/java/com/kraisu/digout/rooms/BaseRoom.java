@@ -18,6 +18,16 @@ public class BaseRoom extends Room{
             BASE,
             false,
             50,
-            new Skin(Gdx.files.internal("rooms/BaseRoomTexture.json")));
+            "BASE_ROOM.0");
+    }
+
+    @Override
+    public void updatePicture() {
+        if(getAmountOfSurvivors() < 5){
+            super.updatePicture();
+        }else{
+            String[] parts = getActualPicture().split("\\.", 2);
+            setActualPicture(parts[0] + ".4");
+        }
     }
 }

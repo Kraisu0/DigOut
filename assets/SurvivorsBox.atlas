@@ -9,7 +9,7 @@ bounds:2,2,200,200
 split:7,7,7,7
 box.MINER
 bounds:406,2,200,200
-split:8,7,7,7
+split:7,7,7,7
 box.UNTRAINED
 bounds:608,2,200,200
 split:7,7,7,7

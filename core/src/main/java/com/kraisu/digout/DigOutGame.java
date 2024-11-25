@@ -24,8 +24,11 @@ public class DigOutGame extends Game {
     public static Skin skinButton;
     public static Skin uiskin;
     public static Skin skinSurvivorBox;
+    public static Skin skinAvatars;
+    public static Skin borderSkin;
+    public static Skin skinRoom;
 
-    public static final String TITLE = "DigOut", VERSION = "0.0.1";
+    public static final String TITLE = "DIG OUT", VERSION = "0.5.0";
     public static File LOGFILE = new File("./logs/digout.log");
     public static Integer titleBarHeight = null;
 
@@ -33,9 +36,16 @@ public class DigOutGame extends Game {
     public void create() {
         //TextureAtlas atlas = new TextureAtlas(Gdx.files.internal("ui/skins.atlas"));
         skin = new Skin(Gdx.files.internal("skins.json"));
+        skin.getFont("small-font").getData().markupEnabled = true;
+        skin.getFont("medium-font").getData().markupEnabled = true;
+        skin.getFont("big-font").getData().markupEnabled = true;
+        skin.getFont("huge-font").getData().markupEnabled = true;
         skinButton = new Skin(Gdx.files.internal("buttons.json"));
         uiskin = new Skin(Gdx.files.internal("uiskin.json"));
         skinSurvivorBox = new Skin(Gdx.files.internal("SurvivorsBox.json"));
+        skinAvatars = new Skin(Gdx.files.internal("avatars.json"));
+        borderSkin = new Skin(Gdx.files.internal("borderRoom.json"));
+        skinRoom = new Skin(Gdx.files.internal("rooms/Rooms.json"));
         logs(DateLogs.LogType.INFO, null, "create()", null);
 
 //        skin = new Skin();

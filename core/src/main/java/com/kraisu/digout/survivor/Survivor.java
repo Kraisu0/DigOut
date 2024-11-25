@@ -18,9 +18,11 @@ public class Survivor {
     private Equipment equipment;
     private String profileInformation;
     private int age;
+    private String imgPath;
     private Texture img;
+    private Task task;
 
-    public Survivor(UUID gameId, String name, int energy, Constants.Survivors profession, Equipment equipment, String profileInformation, int age, Texture img) {
+    public Survivor(UUID gameId, String name, int energy, Constants.Survivors profession, Equipment equipment, String profileInformation, int age, String avatarPath) {
         this.gameId = gameId;
         this.name = name;
         this.energy = energy;
@@ -28,7 +30,8 @@ public class Survivor {
         this.equipment = equipment;
         this.profileInformation = profileInformation;
         this.age = age;
-        this.img = img;
+        this.img = new Texture(avatarPath);
+        this.task = null;
     }
 
     public UUID getGameId() {
@@ -87,6 +90,14 @@ public class Survivor {
         this.age = age;
     }
 
+    public String getImgPath() {
+        return imgPath;
+    }
+
+    public void setImgPath(String imgPath) {
+        this.imgPath = imgPath;
+    }
+
     public Texture getImg() {
         return img;
     }
@@ -95,26 +106,30 @@ public class Survivor {
         this.img = img;
     }
 
+    public void setImgFromPath(String path){
+        this.img = new Texture(path);
+    }
+
+    public Task getTask() {
+        return task;
+    }
+
+    public void setTask(Task task) {
+        this.task = task;
+    }
+
+
     public void reduceEnergy(int amount) {
         this.energy = Math.max(this.energy - amount, Constants.SurvivorLimitations.MIN_SURVIVOR_ENERGY);
     }
 
     public void increaseEnergy(int amount) {
-        if(this.energy < Constants.SurvivorLimitations.MAX_SURVIVOR_ENERGY) {
+        if(this.energy + amount < Constants.SurvivorLimitations.MAX_SURVIVOR_ENERGY) {
             this.energy = this.energy + amount;
         }else{
             this.energy = Constants.SurvivorLimitations.MAX_SURVIVOR_ENERGY;
         }
     }
-
-    public void giveEquipment(Equipment equipment){
-        if(this.equipment == null){
-            this.equipment = equipment;
-        }else{
-            System.out.println("Nie można dodać: " + equipment.getName() + ", ponieważ ocalały ma już ekwipunek: " + this.equipment.getName());
-        }
-    }
-
 
     public Drawable getIconDrawable() {
         return new TextureRegionDrawable(new TextureRegion(img));
@@ -123,6 +138,20 @@ public class Survivor {
     public Drawable getEnergyIconDrawable() {
         Texture energyTexture = new Texture(Gdx.files.internal("energy/ENERGY_" + energy + ".png"));
         return new TextureRegionDrawable(new TextureRegion(energyTexture));
+    }
+
+    public void changeImgForWork(){
+        String[] parts = imgPath.split("\\.", 2);
+        String path = parts[0] + ".work.png";
+        setImgPath(path);
+        setImgFromPath(path);
+    }
+
+    public void changeImgForNotWork(){
+        String[] parts = imgPath.split("\\.", 3);
+        String path = parts[0] + ".png";
+        setImgPath(path);
+        setImgFromPath(path);
     }
 
     @Override
@@ -136,6 +165,7 @@ public class Survivor {
             ", profileInformation='" + profileInformation + '\'' +
             ", age=" + age +
             ", img=" + img +
+            ", task=" + task +
             '}';
     }
 }

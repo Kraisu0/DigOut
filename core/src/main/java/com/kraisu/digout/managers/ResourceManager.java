@@ -16,7 +16,7 @@ public class ResourceManager {
     }
 
     private void initializeResources() {
-        resources.put(Constants.Resources.CONSTRUCTION_RESOURCES, new Resource("Construction Resources", "Materials for building", "assets/resources/CONSTRUCTION_RESOURCES_icon_64.png", 0));
+        resources.put(Constants.Resources.MATERIALS, new Resource("Materials", "Materials for building", "assets/resources/MATERIALS_icon_64.png", 0));
         resources.put(Constants.Resources.FOOD, new Resource("Food Supplies", "Food for survivors", "assets/resources/FOODS_icon_64.png", 0));
         resources.put(Constants.Resources.TOOLS, new Resource("Tools", "Tools for workers and for building", "assets/resources/TOOLS_icon_64.png", 0));
         resources.put(Constants.Resources.ELECTRICITY, new Resource("Electricity", "Power for power supply", "assets/resources/ELECTRICITY_icon_64.png", 0));

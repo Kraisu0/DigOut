@@ -1,0 +1,17 @@
+borderRoom.png
+size:512,128
+repeat:none
+BLUE_BORDER
+bounds:248,2,80,80
+split:2,2,2,2
+GREEN_BORDER
+bounds:330,2,80,80
+split:2,2,2,2
+ORANGE_BORDER
+bounds:166,2,80,80
+split:2,2,2,2
+WHITELIGHT_ROOM
+bounds:84,2,80,80
+YELLOW_BORDER
+bounds:2,2,80,80
+split:2,2,2,2
