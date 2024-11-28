@@ -28,7 +28,7 @@ public class DigOutGame extends Game {
     public static Skin borderSkin;
     public static Skin skinRoom;
 
-    public static final String TITLE = "DIG OUT", VERSION = "0.5.0";
+    public static final String TITLE = "DIG OUT", VERSION = "0.9.0";
     public static File LOGFILE = new File("./logs/digout.log");
     public static Integer titleBarHeight = null;
 
@@ -47,18 +47,6 @@ public class DigOutGame extends Game {
         borderSkin = new Skin(Gdx.files.internal("borderRoom.json"));
         skinRoom = new Skin(Gdx.files.internal("rooms/Rooms.json"));
         logs(DateLogs.LogType.INFO, null, "create()", null);
-
-//        skin = new Skin();
-//        skin.add("default-font", new BitmapFont(Gdx.files.internal("fonts/default.fnt")));
-//        skin.add("df.white", new Label.LabelStyle(skin.getFont("default-font"), Color.WHITE));
-//        skin.add("df.black", new Label.LabelStyle(skin.getFont("default-font"), Color.BLACK));
-//        skin.add("df.red", new Label.LabelStyle(skin.getFont("default-font"), Color.RED));
-//        skin.add("df.green", new Label.LabelStyle(skin.getFont("default-font"), Color.GREEN));
-//        skin.add("pixel-font", new BitmapFont(Gdx.files.internal("fonts/myfont.fnt")));
-//        skin.add("pf.white", new Label.LabelStyle(skin.getFont("pixel-font"), Color.WHITE));
-//        skin.add("pf.black", new Label.LabelStyle(skin.getFont("pixel-font"), Color.BLACK));
-//        skin.add("pf.red", new Label.LabelStyle(skin.getFont("pixel-font"), Color.RED));
-//        skin.add("pf.green", new Label.LabelStyle(skin.getFont("pixel-font"), Color.GREEN));
 
         setScreen(new SplashScreen());
 

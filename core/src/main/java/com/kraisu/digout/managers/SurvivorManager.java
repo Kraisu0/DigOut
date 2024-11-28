@@ -169,8 +169,20 @@ public class SurvivorManager {
         survivor.setAge(age);
         survivor.setName(name);
         survivor.setProfileInformation(bio);
+
+        //BORBO
+        if(avatarPath.endsWith("37_22_64.png")){
+            List<String> names1 = new ArrayList<>();
+            names1.add("BORBO");
+            survivor.setAge(22);
+            survivor.setName(getRandomName(names1));
+            survivor.setProfileInformation("He has no idea what he's doing here, he was dragged here by accident.");
+        }
+
         survivor.setImgPath(avatarPath);
         survivor.setImg(new Texture(avatarPath));
+
+
 
         return survivor;
     }

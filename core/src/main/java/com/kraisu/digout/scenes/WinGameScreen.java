@@ -5,12 +5,10 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Label;
-import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
-import com.badlogic.gdx.scenes.scene2d.ui.TextField;
+import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
@@ -18,13 +16,16 @@ import com.kraisu.digout.DigOutGame;
 import com.kraisu.digout.game.MyGame;
 import com.kraisu.digout.help.Constants;
 import com.kraisu.digout.logs.DateLogs;
+import com.kraisu.digout.stuff.Equipment;
+import com.kraisu.digout.stuff.EquipmentPrice;
+import com.kraisu.digout.stuff.Resource;
 
 import static com.kraisu.digout.logs.DateLogs.logs;
 
 public class WinGameScreen implements Screen {
 
     private Stage stage;
-    private Table table, outerTable;
+    private Table table, staffTable, outerTable;
     private Label heading, conLabel, winLabel;
     private TextButton backButton;
     private MyGame myGame;
@@ -44,7 +45,7 @@ public class WinGameScreen implements Screen {
         outerTable.setFillParent(true);
 
         table = new Table();
-        table.setSize(Gdx.graphics.getWidth() / 2f, Gdx.graphics.getHeight() / 2f);
+        table.setSize(Gdx.graphics.getWidth() / 2f, Gdx.graphics.getHeight() - 40f);
         table.setBackground(DigOutGame.skin.getDrawable("box"));
 
         // Heading & label
@@ -57,6 +58,10 @@ public class WinGameScreen implements Screen {
         winLabel.setWrap(true);
         winLabel.setAlignment(Align.center);
         winLabel.setWidth(1000);
+
+        staffTable = new Table();
+        staffTable = connectStaff(myGame);
+
 
         // button
         backButton = new TextButton("BACK TO MAIN MENU", DigOutGame.skinButton.get("default", TextButton.TextButtonStyle.class));
@@ -74,6 +79,8 @@ public class WinGameScreen implements Screen {
         table.add(conLabel).center();
         table.row().pad(20);
         table.add(winLabel).center().expandX().fillX();
+        table.row().pad(20);
+        table.add(staffTable).center().expandX().fillX();
         table.row().pad(20);
         table.add(backButton);
 
@@ -117,6 +124,77 @@ public class WinGameScreen implements Screen {
 
     @Override
     public void dispose() {
-        //stage.clear();
+        stage.clear();
+    }
+
+    private Table createResourceStaffBlock(Resource resources){
+        Table table = new Table();
+
+        Label name = new Label( resources.getName() + ": ", DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
+        Image image = new Image(new Texture(Gdx.files.internal(resources.getIconPath())));
+        Label quantity = new Label(String.valueOf(resources.getTotalAmount()) , DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
+
+        table.add(image).size(32, 32).padRight(2).center();
+        table.add(name).padRight(5).padLeft(10).center();
+        table.add(quantity).padRight(5).center();
+
+        return table;
+    }
+
+    private Table createEquipmentStaffBlock(Equipment equipment){
+        Table table = new Table();
+
+        Label name = new Label( equipment.getName() + ": ", DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
+        Image image = new Image(new Texture(Gdx.files.internal(equipment.getIconPath())));
+        Label quantity = new Label(String.valueOf(equipment.getTotalAmount()) , DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
+
+        table.add(image).size(32, 32).padRight(2).center();
+        table.add(name).padRight(5).padLeft(10).center();
+        table.add(quantity).padRight(5).center();
+
+        return table;
+    }
+
+    private Table createBuilding(MyGame myGame){
+        Table table = new Table();
+
+        Label name = new Label( "Number of buildings constructed: ", DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
+        Image image = new Image(new Texture(Gdx.files.internal("assets/img/BUILDING_BLANK.png")));
+        Label quantity = new Label(String.valueOf(myGame.getRoomManager().countBuildingsWinGame()) , DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
+
+        table.add(image).size(32, 32).padRight(2).center();
+        table.add(name).padRight(5).padLeft(10).center();
+        table.add(quantity).padRight(5).center();
+
+        return table;
+    }
+
+    private Table createSurvivors(MyGame myGame){
+        Table table = new Table();
+
+        Label name = new Label( "Number of survivors saved: ", DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
+        Image image = new Image(new Texture(Gdx.files.internal("assets/img/SURVIVOR_BLANK.png")));
+        Label quantity = new Label(String.valueOf(myGame.getSurvivorManager().getSurvivors().size()) , DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
+
+        table.add(image).size(32, 32).padRight(2).center();
+        table.add(name).padRight(5).padLeft(10).center();
+        table.add(quantity).padRight(5).center();
+
+        return table;
+    }
+
+    private Table connectStaff(MyGame myGame){
+        Table table = new Table();
+        table.add(createResourceStaffBlock(myGame.getResourceManager().getResource(Constants.Resources.MATERIALS))).pad(10).left().expandX().fillX().row();
+        table.add(createResourceStaffBlock(myGame.getResourceManager().getResource(Constants.Resources.FOOD))).pad(10).left().expandX().fillX().row();
+        table.add(createResourceStaffBlock(myGame.getResourceManager().getResource(Constants.Resources.TOOLS))).pad(10).left().expandX().fillX().row();
+        table.add(createResourceStaffBlock(myGame.getResourceManager().getResource(Constants.Resources.ELECTRICITY))).pad(10).left().expandX().fillX().row();
+        table.add(createEquipmentStaffBlock(myGame.getEquipmentManager().getEquipment(Constants.Equipment.SEARCHLIGHT))).pad(10).left().expandX().fillX().row();
+        table.add(createEquipmentStaffBlock(myGame.getEquipmentManager().getEquipment(Constants.Equipment.KITCHEN_ROBOT))).pad(10).left().expandX().fillX().row();
+        table.add(createEquipmentStaffBlock(myGame.getEquipmentManager().getEquipment(Constants.Equipment.OXYGEN_MASK))).pad(10).left().expandX().fillX().row();
+        table.add(createEquipmentStaffBlock(myGame.getEquipmentManager().getEquipment(Constants.Equipment.PICKAXE))).pad(10).left().expandX().fillX().row();
+        table.add(createBuilding(myGame)).pad(10).left().expandX().fillX().row();
+        table.add(createSurvivors(myGame)).pad(10).left().expandX().fillX().row();
+        return table;
     }
 }

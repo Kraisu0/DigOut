@@ -4,7 +4,7 @@
       medium-font: { file: fonts/medium.fnt },
       big-font: { file: fonts/big.fnt },
       huge-font: { file: fonts/huge.fnt },
-      gold-button-font: {file: fonts/pf80gold.fnt},
+      gold-button-font: {file: fonts/buttonGoldFont.fnt},
       small-gold-button-font: {file: fonts/pixelgold.fnt}
   },
   com.badlogic.gdx.graphics.Color: {

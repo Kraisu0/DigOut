@@ -17,7 +17,7 @@ public class ExitRoom extends Room {
             NOTHING,
             false,
             1,
-            "EXIT_ROOM.0");
+            "EXIT_ROOM_U.0");
     }
 
 }

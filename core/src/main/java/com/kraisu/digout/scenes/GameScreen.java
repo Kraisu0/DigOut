@@ -18,6 +18,7 @@ import com.kraisu.digout.DigOutGame;
 import com.kraisu.digout.game.MyGame;
 import com.kraisu.digout.help.Constants;
 import com.kraisu.digout.logs.DateLogs;
+import com.kraisu.digout.managers.SurvivorManager;
 import com.kraisu.digout.rooms.Coordinate;
 import com.kraisu.digout.rooms.Room;
 import com.kraisu.digout.stuff.Diary;
@@ -188,7 +189,7 @@ public class GameScreen implements Screen {
         //resources bar
         myGame.getResourceManager().getResource(Constants.Resources.TOOLS).setTotalAmount(2);
         myGame.getResourceManager().getResource(Constants.Resources.MATERIALS).setTotalAmount(10);
-        myGame.getResourceManager().getResource(Constants.Resources.FOOD).setTotalAmount(2);
+        myGame.getResourceManager().getResource(Constants.Resources.FOOD).setTotalAmount(30);
         populateResourceBar();
 
 
@@ -283,14 +284,14 @@ public class GameScreen implements Screen {
 
 
         //eq table
-        myGame.getEquipmentManager().getEquipment(Constants.Equipment.SEARCHLIGHT).setTotalAmount(5);
+        myGame.getEquipmentManager().getEquipment(Constants.Equipment.PICKAXE).setTotalAmount(2);
         refreshEqInfoTable();
 
         //addEqTable
         //addEqAndTaskTable.setSize(Gdx.graphics.getWidth() / 3f, Gdx.graphics.getHeight() / 2f);
         outerAddEqTable.add(addEqAndTaskTable);
 
-//        MyGame.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(MyGame, Constants.Survivors.WORKER));
+        myGame.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(myGame, Constants.Survivors.WORKER));
 //        MyGame.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(MyGame, Constants.Survivors.UNTRAINED));
 
         //survivors bar
@@ -298,6 +299,7 @@ public class GameScreen implements Screen {
         float survivorBoxHeight = Gdx.graphics.getHeight()/14f;
 
         survivorsTable.align(Align.left | Align.top);
+        survivorsTable.setBackground(DigOutGame.skin.getDrawable("box.wood"));
 
         int survivorCount = myGame.getSurvivorManager().getAllSurvivors().size();
 
@@ -501,12 +503,12 @@ public class GameScreen implements Screen {
             myGame.getRoomManager().checkWinGame();
         }
 
+
         if (isXWasClicked && isGameLose) {
             endRoundButton.setDisabled(true);
             isGameLose = false;
             isXWasClicked = false;
             displayInfoBox(stage, "You lost, unfortunately you lost all survivors :c", Mark.ERROR, () -> {
-                System.out.println("Sprawdz2");
                 ((com.badlogic.gdx.Game) Gdx.app.getApplicationListener()).setScreen(new SplashToNextScreen(Constants.WhereSplashGo.LOSE, myGame));
             });
         }
@@ -516,7 +518,6 @@ public class GameScreen implements Screen {
             isGameWin = false;
             isXWasClicked = false;
             displayInfoBox(stage, "Yeyy you Win! Good job! all the surviving survivors are happy c:", Mark.INFO, () -> {
-                System.out.println("Sprawdz2");
                 ((com.badlogic.gdx.Game) Gdx.app.getApplicationListener()).setScreen(new SplashToNextScreen(Constants.WhereSplashGo.WIN, myGame));
             });
         }
@@ -698,9 +699,13 @@ public class GameScreen implements Screen {
         for (Map.Entry<Coordinate, Room> entry : rooms.entrySet()) {
             Room room = entry.getValue();
 
-            if (room.getType() == Constants.RoomType.ROOM_TO_ARRANGE || room.getBuildUp() == Constants.Buildings.ELEVATOR) {
-                if (room.getType() == Constants.RoomType.EXIT_TYPE && !room.isAbleToBuild())
+            if (room.getType() == Constants.RoomType.ROOM_TO_ARRANGE || room.getBuildUp() == Constants.Buildings.ELEVATOR ||
+                (room == myGame.getRoomManager().getExitRoom() && myGame.getRoomManager().getExitRoom().isDiscovered())) {
+
+                if (room.getType() == Constants.RoomType.EXIT_TYPE && !room.isDiscovered()) {
+                    System.out.println("Wywołane przy cooradach: " + room.getCoordinates().getX() + ", " + room.getCoordinates().getY());
                     continue;
+                }
 
                 coordinatesToProcess.add(room.getCoordinates());
             }
@@ -730,7 +735,7 @@ public class GameScreen implements Screen {
         for (Map.Entry<Coordinate, Room> entry : rooms.entrySet()) {
             Room room = entry.getValue();
 
-            if(room.getType() == Constants.RoomType.EXIT_TYPE && !room.isAbleToBuild())
+            if(room.getType() == Constants.RoomType.EXIT_TYPE && !room.isAbleToDiscover())
                 continue;
 
             colorTileAtCoordinateBaseRoom(room);

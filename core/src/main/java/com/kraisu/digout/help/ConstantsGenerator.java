@@ -24,9 +24,9 @@ public class ConstantsGenerator {
         public static final int NO_TOOLS_DROP = 80;
     }
 
-    public static class SurvivorsDropPercentages{
-        public static final int SURVIVOR_DROP = 40;
-        public static final int NO_SURVIVOR_DROP = 60;
+    public static class SurvivorsDropPercentages{ //TODO zmienić na jakieś 30/70 przed wypuszczeniem gry
+        public static final int SURVIVOR_DROP = 5;
+        public static final int NO_SURVIVOR_DROP = 95;
     }
 
     public static class ProfessionDropPercentages{

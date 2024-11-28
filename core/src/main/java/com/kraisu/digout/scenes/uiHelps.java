@@ -1161,11 +1161,15 @@ public class uiHelps {
                 break;
             case BUILD_RESTROOM:
             case BUILD_KITCHEN:
-            case BUILD_ELEVATOR:
             case BUILD_WORKSHOP:
             case BUILD_POWER_STATION:
             case BUILD_AIR_PUMP:
             case BUILD_TINKER_ROOM:
+                drawAvailableRooms(myGame, stage, survivor, myGame.getRoomManager().getRoomsByType(Constants.RoomType.ROOM_TO_ARRANGE, Constants.Buildings.NOTHING), task);
+                break;
+            case BUILD_ELEVATOR:
+                if(myGame.getRoomManager().getExitRoom().isAbleToBuild())
+                    drawAvailableRooms(myGame, stage, survivor, myGame.getRoomManager().getExitRoomToBuild(), task);
                 drawAvailableRooms(myGame, stage, survivor, myGame.getRoomManager().getRoomsByType(Constants.RoomType.ROOM_TO_ARRANGE, Constants.Buildings.NOTHING), task);
                 break;
             case CREAT_TOOLS:
@@ -1174,8 +1178,12 @@ public class uiHelps {
             case DIG_OUT:
                 if(survivor.getProfession() == Constants.Survivors.WORKER)
                     drawAvailableRooms(myGame, stage, survivor, myGame.getRoomManager().getRoomsByType(Constants.RoomType.LIGHT_ROOK_TYPE, Constants.Buildings.NOTHING), task);
-                if(survivor.getProfession() == Constants.Survivors.MINER)
+                if(survivor.getProfession() == Constants.Survivors.MINER) {
+                    if (myGame.getRoomManager().getExitRoom().isAbleToDiscover()) {
+                        drawAvailableRooms(myGame, stage, survivor, myGame.getRoomManager().getExitRoomToBuild(), task);
+                    }
                     drawAvailableRooms(myGame, stage, survivor, myGame.getRoomManager().getRoomsByType(Constants.RoomType.HARD_ROOK_TYPE, Constants.Buildings.NOTHING), task);
+                }
                 break;
         }
     }
@@ -1427,8 +1435,14 @@ public class uiHelps {
                 myGame.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setAmountOfSurvivors(0);
                 myGame.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setDiscovered(true);
                 myGame.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setAbleToBuild(true);
-                myGame.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setType(Constants.RoomType.ROOM_TO_ARRANGE);
-                myGame.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setActualPicture("ROOM_TO_ARRANGE.0");
+
+                if(myGame.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()) == myGame.getRoomManager().getExitRoom()){
+                    myGame.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setActualPicture("EXIT_ROOM_RTA.0");
+                }else {
+                    myGame.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setType(Constants.RoomType.ROOM_TO_ARRANGE);
+                    myGame.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setActualPicture("ROOM_TO_ARRANGE.0");
+                }
+
                 myGame.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).updateSpace(myGame);
                 break;
             case CREAT_SEARCHLIGHT:
@@ -1474,7 +1488,11 @@ public class uiHelps {
             case BUILD_ELEVATOR:
                 myGame.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setAmountOfSurvivors(0);
                 myGame.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setBuildUp(Constants.Buildings.ELEVATOR);
-                myGame.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setActualPicture("ELEVATOR.0");
+                if(myGame.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()) == myGame.getRoomManager().getExitRoom()){
+                    myGame.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setActualPicture("EXIT_ROOM_W.0");
+                }else {
+                    myGame.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).setActualPicture("ELEVATOR.0");
+                }
                 myGame.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).updateSpace(myGame);
 
                 survivor.increaseEnergy(survivor.getTask().getReceivedStuff().getEnergyForSurvivor());
