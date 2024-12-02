@@ -6,11 +6,12 @@ import com.kraisu.digout.logs.DateLogs;
 import com.kraisu.digout.rooms.*;
 import com.kraisu.digout.scenes.GameScreen;
 
+import java.io.Serializable;
 import java.util.*;
 
 import static com.kraisu.digout.logs.DateLogs.logs;
 
-public class RoomManager {
+public class RoomManager implements Serializable {
     private Map<Coordinate, Room> rooms;
 
     public RoomManager() {

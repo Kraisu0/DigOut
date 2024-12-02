@@ -5,7 +5,9 @@ import com.kraisu.digout.rooms.Coordinate;
 import com.kraisu.digout.stuff.BuildingPrice;
 import com.kraisu.digout.stuff.ReceivedStuff;
 
-public class Task {
+import java.io.Serializable;
+
+public class Task implements Serializable {
     private Coordinate coordinateOfRoom;
     private Constants.Tasks task;
     private BuildingPrice cost;

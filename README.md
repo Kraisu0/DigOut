@@ -1,36 +1,47 @@
-# DigOut
+# DIG OUT
 
-A [libGDX](https://libgdx.com/) project generated with [gdx-liftoff](https://github.com/libgdx/gdx-liftoff).
+## Game Overview
+The game revolves around managing survivors in a collapsed mine, gathering resources, and constructing infrastructure to escape to the surface. Players must plan the actions of survivors, explore new spaces, build essential structures, and manage energy and resources to save as many people as possible. The objective is to evacuate survivors effectively using strategic thinking and management skills.
 
-This project was generated with a template including simple application launchers and an `ApplicationAdapter` extension that draws libGDX logo.
+## Gameplay Details
+The game begins at the lowest part of the mine, with one survivor and optional starting resources. As the game progresses, the player manages an increasing number of survivors, assigning them tasks and maintaining resources.
 
-## Platforms
+The game board is divided into 10 levels, each containing 10 rooms. The player starts at the lowest level, with the goal of reaching the exit at the top level of the mine.
 
-- `core`: Main module with the application logic shared by all platforms.
-- `lwjgl3`: Primary desktop platform using LWJGL3; was called 'desktop' in older docs.
-- `lwjgl2`: Legacy desktop platform using LWJGL2.
+### Core Gameplay Elements
+- **Exploring Spaces**:
+    - Survivors can excavate adjacent tiles, uncovering resources, other survivors, or items.
+    - Excavating already-discovered tiles is not allowed.
+    - Hard rocks on higher levels require special tools, such as a pickaxe.
 
-## Gradle
+- **Constructing Infrastructure**:
+    - Players can commission the construction of structures, such as:
+        - **Elevator** – allows movement between levels.
+        - **Restroom** – a resting area for survivors.
+        - **Kitchen** – trains cooks and prepares food.
+        - **Air Pump** – increases the maximum number of survivors on a level.
+        - **Power Plant** – provides energy for Air Pumps and other buildings.
 
-This project uses [Gradle](https://gradle.org/) to manage dependencies.
-The Gradle wrapper was included, so you can run Gradle tasks using `gradlew.bat` or `./gradlew` commands.
-Useful Gradle tasks and flags:
+- **Managing Survivors**:
+    - Each survivor has 4 energy points, consumed during tasks.
+    - Survivors with zero energy at the start of a round die.
+    - Survivors can be trained in specialized buildings to change their professions.
 
-- `--continue`: when using this flag, errors will not stop the tasks from running.
-- `--daemon`: thanks to this flag, Gradle daemon will be used to run chosen tasks.
-- `--offline`: when using this flag, cached dependency archives will be used.
-- `--refresh-dependencies`: this flag forces validation of all dependencies. Useful for snapshot versions.
-- `build`: builds sources and archives of every project.
-- `cleanEclipse`: removes Eclipse project data.
-- `cleanIdea`: removes IntelliJ project data.
-- `clean`: removes `build` folders, which store compiled classes and built archives.
-- `eclipse`: generates Eclipse project data.
-- `idea`: generates IntelliJ project data.
-- `lwjgl2:jar`: builds application's runnable jar, which can be found at `lwjgl2/build/libs`.
-- `lwjgl2:run`: starts the application.
-- `lwjgl3:jar`: builds application's runnable jar, which can be found at `lwjgl3/build/libs`.
-- `lwjgl3:run`: starts the application.
-- `test`: runs unit tests (if any).
+- **Managing Resources**:
+    - Available resources: Building Material, Food, Tools.
+    - Special items, such as oxygen masks, help survivors survive difficult conditions.
 
-Note that most tasks that are not specific to a single project can be run with `name:` prefix, where the `name` should be replaced with the ID of a specific project.
-For example, `core:clean` removes `build` folder only from the `core` project.
+### Survivor Professions
+1. **Worker** – excavates spaces and constructs buildings.
+2. **Cook** – prepares food.
+3. **Technician** – crafts tools in the Workshop.
+4. **Untrained** – no specialization; can be trained in appropriate buildings.
+
+### Game Objective
+The goal is to manage survivors and resources effectively to evacuate as many people as possible from the mine. Points are awarded based on the number of survivors saved and resources gathered.
+
+## Technical Requirements
+- **Java**: Version 18 or higher.
+- **Screen Resolution**: Full HD (1920x1080) with a 16:9 or 16:10 aspect ratio.
+- **Operating System**: Windows 10 or newer (likely works on older versions as well).  
+

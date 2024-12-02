@@ -1,8 +1,9 @@
 package com.kraisu.digout.rooms;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Coordinate {
+public class Coordinate implements Serializable {
     private int x;
     private int y;
 
@@ -45,4 +46,11 @@ public class Coordinate {
         return Objects.hash(x, y);
     }
 
+    @Override
+    public String toString() {
+        return "Coordinate{" +
+            "x=" + x +
+            ", y=" + y +
+            '}';
+    }
 }

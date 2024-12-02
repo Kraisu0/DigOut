@@ -62,7 +62,7 @@ public class MainMenuScreen implements Screen {
         buttonLoadGame = new TextButton("LOAD GAME", DigOutGame.skinButton.get("default", TextButton.TextButtonStyle.class));
         buttonLoadGame.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y) {
-                //((MyGame) Gdx.app.getApplicationListener()).setScreen(new LoadGameScreen());
+                ((Game) Gdx.app.getApplicationListener()).setScreen(new LoadGameScreen());
                 logs(DateLogs.LogType.INFO, null,"Open load game screen", null);
             }
         });

@@ -8,9 +8,10 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.kraisu.digout.help.Constants;
 import com.kraisu.digout.stuff.Equipment;
 
+import java.io.Serializable;
 import java.util.UUID;
 
-public class Survivor {
+public class Survivor implements Serializable {
     private UUID gameId;
     private String name;
     private int energy;
@@ -19,7 +20,7 @@ public class Survivor {
     private String profileInformation;
     private int age;
     private String imgPath;
-    private Texture img;
+    private transient Texture img;
     private Task task;
 
     public Survivor(UUID gameId, String name, int energy, Constants.Survivors profession, Equipment equipment, String profileInformation, int age, String avatarPath) {
@@ -30,6 +31,7 @@ public class Survivor {
         this.equipment = equipment;
         this.profileInformation = profileInformation;
         this.age = age;
+        this.imgPath = avatarPath;
         this.img = new Texture(avatarPath);
         this.task = null;
     }

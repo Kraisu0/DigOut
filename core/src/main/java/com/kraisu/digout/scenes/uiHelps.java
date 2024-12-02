@@ -1,6 +1,7 @@
 package com.kraisu.digout.scenes;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.*;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
@@ -8,9 +9,13 @@ import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.Align;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.kraisu.digout.DigOutGame;
 import com.kraisu.digout.game.MyGame;
 import com.kraisu.digout.help.Constants;
+import com.kraisu.digout.loaders.CoordinateAdapter;
+import com.kraisu.digout.loaders.JsonLoader;
 import com.kraisu.digout.logs.DateLogs;
 import com.kraisu.digout.managers.SurvivorManager;
 import com.kraisu.digout.rooms.Coordinate;
@@ -19,6 +24,11 @@ import com.kraisu.digout.stuff.EquipmentPrice;
 import com.kraisu.digout.survivor.Survivor;
 import com.kraisu.digout.survivor.Task;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -1363,8 +1373,8 @@ public class uiHelps {
         getSurvivorsTable().setTouchable(Touchable.enabled);
     }
 
-    public static void doTheTasks(MyGame myGame){
-        Map<String, Survivor> survivorsMap = new HashMap<>(SurvivorManager.getSurvivors());
+    public void doTheTasks(MyGame myGame){
+        Map<String, Survivor> survivorsMap = new HashMap<>(myGame.getSurvivorManager().getSurvivors());
         for(Map.Entry<String, Survivor> entry : survivorsMap.entrySet()){
             if(entry.getValue().getTask() != null) {
                 doSurvivorTask(myGame, entry.getValue());
@@ -1375,7 +1385,7 @@ public class uiHelps {
     }
 
 
-    public static void doSurvivorTask(MyGame myGame, Survivor survivor){
+    public void doSurvivorTask(MyGame myGame, Survivor survivor){
         switch(survivor.getTask().getTask()){
             case WAIT:
             case REST:
@@ -1414,7 +1424,7 @@ public class uiHelps {
                 myGame.getEquipmentManager().getEquipment(Constants.Equipment.PICKAXE).increaseEquipment(survivor.getTask().getReceivedStuff().getPickaxe());
 
                 if(survivor.getTask().getReceivedStuff().getSurvivor() != null)
-                    myGame.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(myGame, survivor.getTask().getReceivedStuff().getSurvivor()));
+                    myGame.getSurvivorManager().addSurvivor(myGame.getSurvivorManager().generateNewSurvivors(myGame, survivor.getTask().getReceivedStuff().getSurvivor()));
 
                 if(survivor.getEquipment() == myGame.getEquipmentManager().getEquipment(Constants.Equipment.SEARCHLIGHT)){
                     myGame.getResourceManager().getResource(Constants.Resources.FOOD).increaseResource(survivor.getTask().getReceivedStuff().getFood());
@@ -1427,7 +1437,7 @@ public class uiHelps {
                     myGame.getEquipmentManager().getEquipment(Constants.Equipment.PICKAXE).increaseEquipment(survivor.getTask().getReceivedStuff().getPickaxe());
 
                     if(survivor.getTask().getReceivedStuff().getSurvivor() != null)
-                        myGame.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(myGame, survivor.getTask().getReceivedStuff().getSurvivor()));
+                        myGame.getSurvivorManager().addSurvivor(myGame.getSurvivorManager().generateNewSurvivors(myGame, survivor.getTask().getReceivedStuff().getSurvivor()));
                 }
 
                 survivor.increaseEnergy(survivor.getTask().getReceivedStuff().getEnergyForSurvivor());
@@ -1539,5 +1549,85 @@ public class uiHelps {
                 break;
         }
     }
+
+    public static void saveGame(Stage stage, MyGame myGame) {
+        // Folder do zapisu
+        FileHandle saveFolder = Gdx.files.local("saves/");
+        if (!saveFolder.exists()) {
+            saveFolder.mkdirs();
+        }
+
+        // Tworzenie nazwy pliku
+        String timeStamp = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss").format(new Date());
+        String baseFileName = myGame.getPlayer().getName() + "-" + timeStamp;
+
+        // Dane gry
+        FileHandle gameFile = Gdx.files.local("saves/" + baseFileName + ".bin");
+        try (ObjectOutputStream oos = new ObjectOutputStream(gameFile.write(false))) {
+            oos.writeObject(myGame); // Zapis obiektu MyGame
+        } catch (IOException e) {
+            e.printStackTrace();
+            displayInfoBox(stage, "Error saving game: " + e.getMessage(), uiHelps.Mark.ERROR, () -> {
+                System.out.println("Error saving game!");
+            });
+            return;
+        }
+
+        // Dane metadanych
+        FileHandle metaFile = Gdx.files.local("saves/" + baseFileName + ".meta");
+        try (ObjectOutputStream oos = new ObjectOutputStream(metaFile.write(false))) {
+            LoadGameScreen.SaveFileData saveFileData = new LoadGameScreen.SaveFileData(myGame.getPlayer().getName(), new Date());
+            oos.writeObject(saveFileData); // Zapis danych meta
+        } catch (IOException e) {
+            e.printStackTrace();
+            displayInfoBox(stage, "Error saving metadata: " + e.getMessage(), uiHelps.Mark.ERROR, () -> {
+                System.out.println("Error saving metadata!");
+            });
+            return;
+        }
+
+        // Wyświetlenie potwierdzenia
+        displayInfoBox(stage, "Game saved successfully to: " + baseFileName, uiHelps.Mark.INFO, () -> {
+            System.out.println("Game saved successfully!");
+        });
+    }
+
+
+    public static MyGame loadGame(String baseFileName) {
+        // Odczytanie pliku gry
+        FileHandle gameFile = Gdx.files.local("saves/" + baseFileName + ".bin");
+
+        if (!gameFile.exists()) {
+            System.out.println("Error: Game file not found!");
+            return null;
+        }
+
+        JsonLoader.mainLoader();
+        try (ObjectInputStream ois = new ObjectInputStream(gameFile.read())) {
+            return (MyGame) ois.readObject(); // Odczyt MyGame
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    private LoadGameScreen.SaveFileData readMetaFile(String baseFileName) {
+        FileHandle metaFile = Gdx.files.local("saves/" + baseFileName + ".meta");
+
+        if (!metaFile.exists()) {
+            System.out.println("Error: Metadata file not found!");
+            return null;
+        }
+
+        try (ObjectInputStream ois = new ObjectInputStream(metaFile.read())) {
+            return (LoadGameScreen.SaveFileData) ois.readObject(); // Odczyt SaveFileData
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+
+
 
 }

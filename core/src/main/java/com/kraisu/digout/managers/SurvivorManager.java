@@ -12,6 +12,7 @@ import com.kraisu.digout.stuff.ReceivedStuff;
 import com.kraisu.digout.survivor.Survivor;
 
 import java.io.File;
+import java.io.Serializable;
 import java.util.*;
 
 import static com.kraisu.digout.genertor.Generators.generateRandomNumber;
@@ -19,8 +20,8 @@ import static com.kraisu.digout.help.ConstantsGenerator.JsonData.descriptions;
 import static com.kraisu.digout.help.ConstantsGenerator.JsonData.names;
 import static com.kraisu.digout.logs.DateLogs.logs;
 
-public class SurvivorManager {
-    private static Map<String, Survivor> survivors;
+public class SurvivorManager implements Serializable {
+    private Map<String, Survivor> survivors;
 
     public SurvivorManager() {
         survivors = new HashMap<>();
@@ -34,7 +35,7 @@ public class SurvivorManager {
         survivors.remove(name);
     }
 
-    public Survivor getSurvivors(String name) {
+    public Survivor getSurvivor(String name) {
         return survivors.get(name);
     }
 
@@ -42,15 +43,15 @@ public class SurvivorManager {
         return survivors.values();
     }
 
-    public static Map<String, Survivor> getSurvivors() {
+    public Map<String, Survivor> getSurvivors() {
         return survivors;
     }
 
-    public static void setSurvivors(Map<String, Survivor> survivors) {
-        SurvivorManager.survivors = survivors;
+    public void setSurvivors(Map<String, Survivor> survivors) {
+        this.survivors = survivors;
     }
 
-    private static String generateUniqueName(List<String> names) {
+    private String generateUniqueName(List<String> names) {
         String baseName;
         int randomIndex = generateRandomNumber(0, names.size() - 1);
         baseName = names.get(randomIndex);
@@ -78,7 +79,7 @@ public class SurvivorManager {
 
 
 
-    public static Survivor generateNewSurvivors(MyGame myGame, Constants.Survivors survivorType){
+    public Survivor generateNewSurvivors(MyGame myGame, Constants.Survivors survivorType){
         Survivor temp = null;
 
         temp = new Survivor(
@@ -151,7 +152,7 @@ public class SurvivorManager {
         return beginning + " " + middle + " " + end;
     }
 
-    public static Survivor setRandomBio(Survivor survivor, List<String> names, Map<String, List<String>> descriptions) {
+    public Survivor setRandomBio(Survivor survivor, List<String> names, Map<String, List<String>> descriptions) {
         String avatarPath = getRandomAvatarPath();
         if (avatarPath == null)
             return survivor;

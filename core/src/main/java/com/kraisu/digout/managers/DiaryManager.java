@@ -17,10 +17,11 @@ import com.kraisu.digout.scenes.GameScreen;
 import com.kraisu.digout.stuff.Diary;
 import com.kraisu.digout.survivor.Survivor;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DiaryManager {
+public class DiaryManager implements Serializable {
 
     private Map<Integer, String> diaries;
 

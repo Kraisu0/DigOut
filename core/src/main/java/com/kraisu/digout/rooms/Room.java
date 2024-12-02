@@ -4,11 +4,12 @@ import com.kraisu.digout.game.MyGame;
 import com.kraisu.digout.help.Constants;
 import com.kraisu.digout.logs.DateLogs;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 import static com.kraisu.digout.logs.DateLogs.logs;
 
-public abstract class Room {
+public abstract class Room implements Serializable {
     private UUID gameId; //ID gry w jakiej znajduje się pokój
     private Coordinate coordinates;
     private Constants.RoomType type; //baza, kamienie, skały, wyjście

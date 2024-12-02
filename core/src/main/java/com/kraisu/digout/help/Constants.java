@@ -84,7 +84,8 @@ public class Constants {
     public enum WhereSplashGo{
         LOSE,
         WIN,
-        EXIT;
+        EXIT,
+        GAME;
     }
 
     public static class SurvivorLimitations{
