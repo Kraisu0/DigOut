@@ -43,7 +43,7 @@ public class NewGame {
         UUID uuid = generateUUID();
         generatePlayer(gameName);
 
-        myGame = new MyGame(UUID.fromString("11111111-1111-1111-1111-111111111111"), null, 1, null, null, null, null, null);
+        myGame = new MyGame(uuid, null, 1, null, null, null, null, null);
 
         generateStartRooms(uuid); //wylosowanie lokalizacji bazy i wyjścia
         generateFirstSurvivor(myGame); //wygenerowanie pierwszego ocalałego
@@ -56,8 +56,6 @@ public class NewGame {
 
         myGame = new MyGame(uuid, player, 1, roomManager,survivorManager,equipmentManager,resourceManager,diaryManager);
 
-
-        //TODO stowrznie pliku JSON do zapisu gry
 
     }
 

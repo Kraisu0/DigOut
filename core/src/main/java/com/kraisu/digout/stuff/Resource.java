@@ -2,7 +2,9 @@ package com.kraisu.digout.stuff;
 
 import com.kraisu.digout.help.Constants;
 
-public class Resource {
+import java.io.Serializable;
+
+public class Resource implements Serializable {
     private String name;
     private String description;
     private String iconPath;

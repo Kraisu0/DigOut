@@ -3,12 +3,13 @@ package com.kraisu.digout.stuff;
 import com.kraisu.digout.game.MyGame;
 import com.kraisu.digout.survivor.Survivor;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
 import static com.kraisu.digout.stuff.DiaryEntry.entryByTasks;
 
-public class Diary {
+public class Diary implements Serializable {
 
     private Map<Survivor, String> diaryEntries;
 

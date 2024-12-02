@@ -16,7 +16,7 @@ public class DateLogs {
 
     private static String dateLog(){
         LocalDateTime currentDateTime = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH-mm-ss");
         return currentDateTime.format(formatter);
     }
 

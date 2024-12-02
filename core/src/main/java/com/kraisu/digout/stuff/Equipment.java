@@ -1,6 +1,8 @@
 package com.kraisu.digout.stuff;
 
-public class Equipment { ;
+import java.io.Serializable;
+
+public class Equipment implements Serializable {
     private String name;
     private String description;
     private String iconPath;

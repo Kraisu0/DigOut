@@ -49,7 +49,7 @@ public class GameScreen implements Screen {
     private LinkedHashMap<Constants.Resources, String> resourceDescription;
     private Button infoButton, eqButton, diaryButton, endRoundButton;
     private Label fps;
-
+    private uiHelps uiHelps1;
     private String name;
     private int roundNumber;
     private TextTooltip endRoundTooltip;
@@ -80,6 +80,7 @@ public class GameScreen implements Screen {
         this.equipmentName = new LinkedHashMap<Constants.Equipment, String>();
         this.equipmentDescription = new LinkedHashMap<Constants.Equipment, String>();
         this.resourceDescription = new LinkedHashMap<Constants.Resources, String>();
+        this.uiHelps1 = new uiHelps();
         gameTable = new LinkedHashMap<>();
         isMenuOpen = false;
     }
@@ -140,7 +141,12 @@ public class GameScreen implements Screen {
         Button saveGameButton = new TextButton("SAVE GAME", DigOutGame.skinButton.get("default", TextButton.TextButtonStyle.class));
         saveGameButton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
-                //TODO logika zapisu gry FAZA 2/3
+                displayConfirmBox(stage, "Do you want save this file?", confirmed -> {
+                    if (confirmed) {
+                        uiHelps.saveGame(stage, myGame);
+                        logs(DateLogs.LogType.INFO, myGame.getGameId(), "Game saved!", null);
+                    }
+                });
             }
         });
 
@@ -156,7 +162,12 @@ public class GameScreen implements Screen {
         Button exitButton = new TextButton("EXIT TO MAIN MENU", DigOutGame.skinButton.get("default", TextButton.TextButtonStyle.class));
         exitButton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
-                ((com.badlogic.gdx.Game) Gdx.app.getApplicationListener()).setScreen(new SplashToNextScreen(Constants.WhereSplashGo.EXIT, myGame));
+                displayConfirmBox(stage, "Are you sure you want to exit without saving?", confirmed -> {
+                    if (confirmed) {
+                        ((com.badlogic.gdx.Game) Gdx.app.getApplicationListener()).setScreen(new SplashToNextScreen(Constants.WhereSplashGo.EXIT, myGame));
+                    }
+                });
+
             }
         });
 
@@ -169,11 +180,15 @@ public class GameScreen implements Screen {
         outerMenuTable.add(menuTable);
 
 
-        //name //TODO ograć to jak jest dłuższa nazwa
+        //name
         nameTable.setBackground(DigOutGame.skin.getDrawable("box.dark"));
         name = myGame.getPlayer().getName();
         Label nameLabel;
         int nameLength = name.length();
+
+        if (nameLength > 30) {
+            name = name.substring(0, 27) + "...";
+        }
 
         if(nameLength <= 15)
             nameLabel = new Label(name, DigOutGame.skin.get("bigFont", Label.LabelStyle.class));
@@ -208,19 +223,6 @@ public class GameScreen implements Screen {
                     }
                 });
 
-//                tempTable.addListener(new InputListener() {
-//                    @Override
-//                    public boolean mouseMoved(InputEvent event, float x, float y) {
-//                        tempTable.setColor(1, 1, 1, 0.3f);
-//                        return true; // sygnalizuje, że zdarzenie zostało przetworzone
-//                    }
-//
-//                    @Override
-//                    public void exit(InputEvent event, float x, float y, int pointer, Actor toActor) {
-//                        // Przywróć domyślny kolor
-//                        tempTable.setColor(1, 1, 1, 1); // domyślny kolor tła (pełna widoczność)
-//                    }
-//                });
             }
         }
 
@@ -243,6 +245,7 @@ public class GameScreen implements Screen {
 
         colorTileAtCoordinateBaseRoom(myGame.getRoomManager().getBaseRoom());
         myGame.getRoomManager().makeAbleToDiscoveredNearestRooms(myGame.getRoomManager().getBaseRoom().getCoordinates(), myGame);
+        updateColorRoom();
 
         //infoTable
         infoButton = new TextButton("Info", DigOutGame.skinButton.get("list-small", TextButton.TextButtonStyle.class));
@@ -284,14 +287,14 @@ public class GameScreen implements Screen {
 
 
         //eq table
-        myGame.getEquipmentManager().getEquipment(Constants.Equipment.PICKAXE).setTotalAmount(2);
+//        myGame.getEquipmentManager().getEquipment(Constants.Equipment.PICKAXE).setTotalAmount(2);
         refreshEqInfoTable();
 
         //addEqTable
         //addEqAndTaskTable.setSize(Gdx.graphics.getWidth() / 3f, Gdx.graphics.getHeight() / 2f);
         outerAddEqTable.add(addEqAndTaskTable);
 
-        myGame.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(myGame, Constants.Survivors.WORKER));
+//        myGame.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(myGame, Constants.Survivors.WORKER));
 //        MyGame.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(MyGame, Constants.Survivors.UNTRAINED));
 
         //survivors bar
@@ -311,7 +314,7 @@ public class GameScreen implements Screen {
             Table survivorEntryNames = new Table();
             Table survivorEntryFull = new Table();
 
-            Image icon = new Image(new TextureRegionDrawable(new TextureRegion(survivor.getImg())));
+            Image icon = new Image(new TextureRegionDrawable(new TextureRegion( new Texture(survivor.getImgPath()))));
             survivorEntry.add(icon).size(64, 64).padLeft(20);
 
             Label survivorNameLabel = new Label(survivor.getName(), DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
@@ -482,7 +485,7 @@ public class GameScreen implements Screen {
             isXWasClicked = false;
             myGame.getSurvivorManager().allSurvivorGotReceivedStuff();
             myGame.getResourceManager().consumeAllocatedResources();
-            doTheTasks(myGame);
+            uiHelps1.doTheTasks(myGame);
             myGame.getSurvivorManager().checkOxygenForAllLevels();
             Diary diary = new Diary();
             diary.makeEntryForAllSurvivors(myGame);
@@ -544,7 +547,7 @@ public class GameScreen implements Screen {
         addEqAndTaskTable.clear();
         Table info = new Table();
 
-        Image icon = new Image(new TextureRegionDrawable(new TextureRegion(survivor.getImg())));
+        Image icon = new Image(new TextureRegionDrawable(new TextureRegion( new Texture(survivor.getImgPath()))));
         info.add(icon).size(256,256).expandX().fillX().center().pad(2).colspan(2).row();
 
         Image energyIcon = new Image(survivor.getEnergyIconDrawable());
@@ -762,7 +765,7 @@ public class GameScreen implements Screen {
 
         eqInfoTable.clear();
 
-        float infoHeight = Gdx.graphics.getHeight() * 10 / 14f / 12;
+        float infoHeight = Gdx.graphics.getHeight() * 10 / 14f / 20;
 
         for (Map.Entry<Constants.Equipment, Integer> entry : equipmentStatus.entrySet()) {
             Constants.Equipment equipment = entry.getKey();
@@ -782,12 +785,21 @@ public class GameScreen implements Screen {
             Label equipmentAmountLabel = new Label(formattedAmount, DigOutGame.skin.get("mediumFont", Label.LabelStyle.class));
             Label equipmentNameLabel = new Label(name, DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
 
-            eqInfoTable.add(equipmentIcon).size(64, 64).expand().fill().center().height(infoHeight).padTop(10);
-            eqInfoTable.add(equipmentAmountLabel).expand().fill().center().height(infoHeight).padTop(10);
+            eqInfoTable.add(equipmentIcon).size(64, 64).expand().fill().center().height(infoHeight);
+            eqInfoTable.add(equipmentAmountLabel).expand().fill().center().height(infoHeight);
             eqInfoTable.row();
-            eqInfoTable.add(equipmentNameLabel).colspan(2).expandX().center().padBottom(infoHeight);
+            eqInfoTable.add(equipmentNameLabel).colspan(2).expandX().center().padBottom(5);
             eqInfoTable.row();
         }
+
+        Label descriptionLabel = new Label("Additional equipment can be made in the TINKER ROOM or found during DIG OUT (Not counting the [PURPLE] PICKICK[WHITE], it can only be crafted).\n" +
+            "Each piece of equipment can be assigned to a survivor, but cannot be recovered, so assign it well.", DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
+        descriptionLabel.setWrap(true);
+        descriptionLabel.setAlignment(Align.center);
+
+        eqInfoTable.add(descriptionLabel).colspan(2).expand().fill().center().height(infoHeight*3).padTop(2);
+        //eqInfoTable.debug();
+
     }
 
     private void refreshEqInfoTable() {
@@ -812,7 +824,7 @@ public class GameScreen implements Screen {
             Table survivorEntryNames = new Table();
             Table survivorEntryFull = new Table();
 
-            Image icon = new Image(new TextureRegionDrawable(new TextureRegion(survivor.getImg())));
+            Image icon = new Image(new TextureRegionDrawable(new TextureRegion( new Texture(survivor.getImgPath()))));
             survivorEntry.add(icon).size(64, 64).padLeft(20);
 
             Label survivorNameLabel = new Label(survivor.getName(), DigOutGame.skin.get("smallFont", Label.LabelStyle.class));

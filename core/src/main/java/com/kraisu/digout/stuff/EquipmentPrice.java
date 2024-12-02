@@ -1,6 +1,8 @@
 package com.kraisu.digout.stuff;
 
-public class EquipmentPrice {
+import java.io.Serializable;
+
+public class EquipmentPrice implements Serializable {
     int materials;
     int tools;
     int food;

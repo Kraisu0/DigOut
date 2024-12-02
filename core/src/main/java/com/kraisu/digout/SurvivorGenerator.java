@@ -20,7 +20,6 @@ import com.kraisu.digout.survivor.Survivor;
 
 import static com.kraisu.digout.genertor.Generators.generateRandomSurvivor;
 import static com.kraisu.digout.logs.DateLogs.logs;
-import static com.kraisu.digout.managers.SurvivorManager.generateNewSurvivors;
 
 public class SurvivorGenerator extends ApplicationAdapter {
     private SpriteBatch batch;
@@ -87,7 +86,7 @@ public class SurvivorGenerator extends ApplicationAdapter {
     private void generateNewSurvivorRend() {
         Constants.Survivors survivorType = generateRandomSurvivor();
         if (survivorType != null) {
-            Survivor survivor = generateNewSurvivors(myGame, survivorType);
+            Survivor survivor = myGame.getSurvivorManager().generateNewSurvivors(myGame, survivorType);
             avatar = survivor.getImg();
             name = survivor.getName();
             age = survivor.getAge();

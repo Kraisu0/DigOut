@@ -4,11 +4,12 @@ import com.kraisu.digout.help.Constants;
 import com.kraisu.digout.stuff.Equipment;
 import com.kraisu.digout.stuff.Resource;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class EquipmentManager {
+public class EquipmentManager implements Serializable {
     private Map<Constants.Equipment, Equipment> equipmentStuff;
 
     public EquipmentManager() {

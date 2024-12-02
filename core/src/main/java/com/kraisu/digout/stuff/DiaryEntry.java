@@ -4,70 +4,71 @@ import com.kraisu.digout.help.Constants;
 import com.kraisu.digout.rooms.Room;
 import com.kraisu.digout.survivor.Survivor;
 
+import java.io.Serializable;
 import java.util.Map;
 
-public class DiaryEntry {
+public class DiaryEntry implements Serializable {
 
     static String entryByTasks(Survivor survivor){
 
         switch(survivor.getTask().getTask()){
             case WAIT:
-                return survivor.getName() + " was waited in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
+                return survivor.getName() + " waited in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
                     ", " + survivor.getTask().getCoordinateOfRoom().getY() + ").\n";
             case REST:
-                return survivor.getName() + " was rested in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
+                return survivor.getName() + " rested in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
                     ", " + survivor.getTask().getCoordinateOfRoom().getY() + ").\n";
             case TRAIN_TO_COOK:
-                return survivor.getName() + " was trained as COOK in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
+                return survivor.getName() + " trained as COOK in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
                     ", " + survivor.getTask().getCoordinateOfRoom().getY() + ").\n";
             case CREAT_FOOD:
-                return survivor.getName() + " was created FOOD in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
+                return survivor.getName() + " created FOOD in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
                     ", " + survivor.getTask().getCoordinateOfRoom().getY() + "and he created " + survivor.getTask().getReceivedStuff().food + "-FOOD.\n";
             case TRAIN_TO_ENGINEER:
-                return survivor.getName() + " was trained as ENGINEER in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
+                return survivor.getName() + " trained as ENGINEER in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
                     ", " + survivor.getTask().getCoordinateOfRoom().getY() + ").\n";
             case DIG_OUT:
-                return survivor.getName() + " was dug out room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
+                return survivor.getName() + " dug out room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
                     ", " + survivor.getTask().getCoordinateOfRoom().getY() + ") " + howMuchStuffRevivedEntry(survivor.getTask().getReceivedStuff()) + ".\n";
             case EAT:
-                return survivor.getName() + " was ate in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
+                return survivor.getName() + " ate in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
                     ", " + survivor.getTask().getCoordinateOfRoom().getY() + ").\n";
             case CREAT_SEARCHLIGHT:
-                return survivor.getName() + " was created SEARCHLIGHT in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
+                return survivor.getName() + " created SEARCHLIGHT in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
                     ", " + survivor.getTask().getCoordinateOfRoom().getY() + ") and he created " + survivor.getTask().getReceivedStuff().searchlight + "-SEARCHLIGHT.\n";
             case CREAT_KITCHEN_ROBOT:
-                return survivor.getName() + " was created KITCHEN ROBOT in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
+                return survivor.getName() + " created KITCHEN ROBOT in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
                     ", " + survivor.getTask().getCoordinateOfRoom().getY() + ") and he created " + survivor.getTask().getReceivedStuff().kitchenRobot + "-KITCHEN ROBOT.\n";
             case CREAT_OXYGEN_MASK:
-                return survivor.getName() + " was created OXYGEN MASK in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
+                return survivor.getName() + " created OXYGEN MASK in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
                     ", " + survivor.getTask().getCoordinateOfRoom().getY() + ") and he created " + survivor.getTask().getReceivedStuff().oxygenMask + "-OXYGEN MASK.\n";
             case CREAT_PICKAXE:
-                return survivor.getName() + " was created PICKAXE in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
+                return survivor.getName() + " created PICKAXE in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
                     ", " + survivor.getTask().getCoordinateOfRoom().getY() + ") and he created " + survivor.getTask().getReceivedStuff().pickaxe + "-PICKAXE.\n";
             case BUILD_RESTROOM:
-                return survivor.getName() + " was built RESTROOM in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
+                return survivor.getName() + " built RESTROOM in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
                     ", " + survivor.getTask().getCoordinateOfRoom().getY() + ").\n";
             case BUILD_KITCHEN:
-                return survivor.getName() + " was built KITCHEN in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
+                return survivor.getName() + " built KITCHEN in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
                     ", " + survivor.getTask().getCoordinateOfRoom().getY() + ").\n";
             case BUILD_ELEVATOR:
-                return survivor.getName() + " was built ELEVATOR in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
+                return survivor.getName() + " built ELEVATOR in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
                     ", " + survivor.getTask().getCoordinateOfRoom().getY() + ").\n";
             case BUILD_WORKSHOP:
-                return survivor.getName() + " was built WORKSHOP in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
+                return survivor.getName() + " built WORKSHOP in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
                     ", " + survivor.getTask().getCoordinateOfRoom().getY() + ").\n";
             case BUILD_POWER_STATION:
-                return survivor.getName() + " was built POWER STATION in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
+                return survivor.getName() + " built POWER STATION in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
                     ", " + survivor.getTask().getCoordinateOfRoom().getY() + ") now Survivor have " + survivor.getTask().getReceivedStuff().electricity +
                     " more units of ELECTRICITY.\n";
             case BUILD_AIR_PUMP:
-                return survivor.getName() + " was built AIR PUMP in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
+                return survivor.getName() + " built AIR PUMP in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
                     ", " + survivor.getTask().getCoordinateOfRoom().getY() + ").\n";
             case BUILD_TINKER_ROOM:
-                return survivor.getName() + " was built TINKER ROOM in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
+                return survivor.getName() + " built TINKER ROOM in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
                     ", " + survivor.getTask().getCoordinateOfRoom().getY() + ").\n";
             case CREAT_TOOLS:
-                return survivor.getName() + " was created TOOLS in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
+                return survivor.getName() + " created TOOLS in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
                     ", " + survivor.getTask().getCoordinateOfRoom().getY() + ") and he created " + survivor.getTask().getReceivedStuff().tools + "-TOOLS.\n";
         }
         return survivor.getName() + " was founded in rooks.";

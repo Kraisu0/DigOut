@@ -2,7 +2,9 @@ package com.kraisu.digout.stuff;
 
 import com.kraisu.digout.help.Constants;
 
-public class ReceivedStuff {
+import java.io.Serializable;
+
+public class ReceivedStuff implements Serializable {
     int materials;
     int tools;
     int food;

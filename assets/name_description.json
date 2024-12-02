@@ -2,40 +2,40 @@
   "names": ["BOB", "TIM", "JOHN", "TED", "SAM", "RYAN", "JIM", "MIKE", "DAN", "KURT", "TOM", "MAX", "AL", "BILL", "RON", "KEN", "STEVE", "ZAC", "GUS", "WILL"],
   "descriptions": {
     "beginning": [
-      "Pracował w kopalni od dekady",
-      "Kiedyś był złotnikiem",
-      "Nie rozstawał się z łopatą",
-      "Znany był jako mistrz kilofa",
-      "Uwielbiał wykopywać skarby",
-      "Zawsze miał przy sobie termos z kawą",
-      "Znany z tego, że zna wszystkie tunele na pamięć",
-      "Zawsze marzył o znalezieniu diamentów",
-      "Kiedyś był najlepszym górnikiem w okolicy",
-      "Nie rozstawał się ze swoim ekwipunkiem"
+      "He had been working in the mine for a decade",
+      "He used to be a goldsmith",
+      "He never went anywhere without his trusty shovel",
+      "Known as the pickaxe master",
+      "He loved unearthing treasures",
+      "Always carried a thermos of coffee",
+      "Famous for knowing every tunnel by heart",
+      "He always dreamed of finding diamonds",
+      "Once, he was the best miner in town",
+      "He never parted with his mining gear"
     ],
     "middle": [
-      ", ale ostatnio miał zły dzień",
-      ", ale nigdy nie znalazł złota",
-      ", a jego siła była legendarna",
-      ", choć nigdy nie lubił się brudzić",
-      ", a jego koledzy zawsze się z niego śmiali",
-      ", lecz praca pod ziemią go męczyła",
-      ", lecz nie odnalazł jeszcze skarbu",
-      ", chociaż bardziej lubił opowieści niż kopanie",
-      ", choć bał się ciemności",
-      ", mimo że nie lubił kopalń"
+      ", but lately, his luck has run out",
+      ", yet he never struck gold",
+      ", and his strength was legendary",
+      ", though he hated getting his hands dirty",
+      ", while his coworkers always laughed at him",
+      ", but working underground was exhausting for him",
+      ", yet he hadn’t found a treasure yet",
+      ", although he preferred telling stories to mining",
+      ", though he was secretly afraid of the dark",
+      ", despite not actually liking the mines"
     ],
     "end": [
-      ", bo pomylił kask z wiadrem.",
-      ", chociaż nie wiedział, jak używać kilofa.",
-      ", mimo że kopanie szło mu jak po grudzie.",
-      ", choć zawsze marzył o emeryturze na plaży.",
-      ", i tak naprawdę bał się myszy.",
-      ", choć zawsze miał nadzieję na awans do biura.",
-      ", ale najczęściej szukał pretekstu, żeby nie pracować.",
-      ", bo tak naprawdę wolał szydełkować.",
-      ", chociaż liczył na znalezienie zapomnianego skarbu.",
-      ", choć przyszedł tu, myśląc, że to biblioteka."
+      ", because he mistook his helmet for a bucket.",
+      ", even though he didn’t know how to use a pickaxe.",
+      ", despite mining as if he were digging in quicksand.",
+      ", though he always dreamed of retiring on a beach.",
+      ", and was secretly terrified of mice.",
+      ", though he still hoped for a promotion to the office.",
+      ", but most of the time, he just looked for excuses not to work.",
+      ", because deep down, he preferred knitting.",
+      ", although he hoped to discover a forgotten treasure.",
+      ", though he came here thinking it was a library."
     ]
   }
 }

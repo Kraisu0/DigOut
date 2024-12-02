@@ -3,11 +3,12 @@ package com.kraisu.digout.managers;
 import com.kraisu.digout.help.Constants;
 import com.kraisu.digout.stuff.Resource;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class ResourceManager {
+public class ResourceManager implements Serializable {
     private Map<Constants.Resources, Resource> resources;
 
     public ResourceManager() {

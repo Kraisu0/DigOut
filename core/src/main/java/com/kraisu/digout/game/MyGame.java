@@ -2,9 +2,10 @@ package com.kraisu.digout.game;
 
 import com.kraisu.digout.managers.*;
 
+import java.io.Serializable;
 import java.util.UUID;
 
-public class MyGame {
+public class MyGame implements Serializable {
     private UUID gameId;
     private Player player;
     private int round;

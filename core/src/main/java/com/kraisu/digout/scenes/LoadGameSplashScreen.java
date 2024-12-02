@@ -11,21 +11,22 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.kraisu.digout.game.MyGame;
 import com.kraisu.digout.game.NewGame;
 import com.kraisu.digout.logs.DateLogs;
 import com.kraisu.digout.tween.SpriteAccessor;
 
 import static com.kraisu.digout.logs.DateLogs.logs;
 
-public class NewGameSplashScreen implements Screen {
+public class LoadGameSplashScreen implements Screen {
 
     private SpriteBatch batch;
     private Sprite splash;
     private TweenManager tweenManager;
-    private String gameName;
+    private String fileName;
 
-    public NewGameSplashScreen(String gameName) {
-        this.gameName = gameName;
+    public LoadGameSplashScreen(String fileName) {
+        this.fileName = fileName;
     }
 
     @Override
@@ -34,49 +35,39 @@ public class NewGameSplashScreen implements Screen {
         tweenManager = new TweenManager();
         Tween.registerAccessor(Sprite.class, new SpriteAccessor());
 
-        Texture splashTexture = new Texture("img/splashScreenNewGame.png");
+        Texture splashTexture = new Texture("img/splashLoading.png");
         splash = new Sprite(splashTexture);
         splash.setSize(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 
         splash.setColor(1, 1, 1, 0);
 
-        // Create new game
-        NewGame newGame = new NewGame(gameName);
-        logs(DateLogs.LogType.INFO, newGame.getGame().getGameId(), "Create New MyGame", null);
+        //Load game
+        MyGame myGame = uiHelps.loadGame(fileName);
+        logs(DateLogs.LogType.INFO, myGame.getGameId(), "Load game: " + myGame.getPlayer().getName(), null);
 
-        // Fade in animation
-        Tween.to(splash, SpriteAccessor.ALPHA, 3)
-            .target(1f)
-            .start(tweenManager);
+
+
+        Tween.to(splash, SpriteAccessor.ALPHA, 1).target(1f).repeatYoyo(1,0.2f).setCallback(new TweenCallback(){
+            @Override
+            public void onEvent(int type, BaseTween<?> source) {
+                ((Game) Gdx.app.getApplicationListener()).setScreen(new GameScreen(myGame));
+            }
+        }).start(tweenManager);
+
     }
 
     @Override
-    public void render(float delta) {
+    public void render(float v) {
         KeyUseScreen.resizeFullScreen();
 
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-        tweenManager.update(delta);
+        tweenManager.update(v);
 
         batch.begin();
         splash.draw(batch);
         batch.end();
-
-        // Check for space key press
-        if (Gdx.input.isKeyJustPressed(com.badlogic.gdx.Input.Keys.SPACE)) {
-            // Start fade-out animation and transition to GameScreen
-            Tween.to(splash, SpriteAccessor.ALPHA, 3)
-                .target(0f)
-                .setCallback(new TweenCallback() {
-                    @Override
-                    public void onEvent(int type, BaseTween<?> source) {
-                        NewGame newGame = new NewGame(gameName);
-                        ((Game) Gdx.app.getApplicationListener()).setScreen(new GameScreen(newGame.getGame()));
-                    }
-                })
-                .start(tweenManager);
-        }
     }
 
     @Override
