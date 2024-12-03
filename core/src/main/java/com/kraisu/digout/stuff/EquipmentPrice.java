@@ -6,13 +6,15 @@ public class EquipmentPrice implements Serializable {
     int materials;
     int tools;
     int food;
+    int electricity;
     int workingDays;
     //int survivorType;
 
-    public EquipmentPrice(int materials, int tools, int food, int workingDays) {
+    public EquipmentPrice(int materials, int tools, int food, int electricity, int workingDays) {
         this.materials = materials;
         this.tools = tools;
         this.food = food;
+        this.electricity = electricity;
         this.workingDays = workingDays;
         //this.survivorType = survivorType;
     }
@@ -39,6 +41,14 @@ public class EquipmentPrice implements Serializable {
 
     public void setFood(int food) {
         this.food = food;
+    }
+
+    public int getElectricity() {
+        return electricity;
+    }
+
+    public void setElectricity(int electricity) {
+        this.electricity = electricity;
     }
 
     public int getWorkingDays() {

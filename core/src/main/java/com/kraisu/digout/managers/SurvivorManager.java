@@ -304,7 +304,7 @@ public class SurvivorManager implements Serializable {
         }
     }
 
-    public void adjustOxygenLevelsAtLevel(int yLevel) {
+    public void adjustOxygenLevelsAtLevel(MyGame myGame, int yLevel) {
         List<Survivor> survivorsAtLevel = new ArrayList<>();
 
         for (Survivor survivor : survivors.values()) {
@@ -316,9 +316,13 @@ public class SurvivorManager implements Serializable {
             }
         }
 
+        int airPumps = myGame.getRoomManager().countAirPumpsAtLevel(yLevel);
         int survivorCount = survivorsAtLevel.size();
 
         int energyToRemove = 0;
+
+        survivorCount -= airPumps;
+
         if (survivorCount == 4) {
             energyToRemove = 1;
         } else if (survivorCount == 5) {
@@ -334,10 +338,31 @@ public class SurvivorManager implements Serializable {
         }
     }
 
-    public void checkOxygenForAllLevels(){
+    public void checkOxygenForAllLevels(MyGame myGame){
         for(int i = 1; i <= 10; i++){
-            adjustOxygenLevelsAtLevel(i);
+            adjustOxygenLevelsAtLevel(myGame, i);
         }
+    }
+
+    public boolean hasLevelWithMoreThanFourSurvivors(MyGame myGame) {
+        for (int yLevel = 1; yLevel <= 10; yLevel++) {
+            int survivorCount = 0;
+
+            for (Survivor survivor : survivors.values()) {
+                if (survivor.getTask() != null && survivor.getTask().getCoordinateOfRoom().getY() == yLevel) {
+                    Equipment equipment = survivor.getEquipment();
+                    if (equipment == null || !equipment.getName().equals("Oxygen Mask")) {
+                        survivorCount++;
+                    }
+                }
+            }
+
+            if (survivorCount >= 4) {
+                return true; // Znaleziono poziom z więcej niż 4 ocalałymi
+            }
+        }
+
+        return false; // Na żadnym poziomie nie było więcej niż 4 ocalałych
     }
 
     public void checkLoseGame(){

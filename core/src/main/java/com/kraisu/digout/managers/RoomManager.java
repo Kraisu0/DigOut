@@ -302,4 +302,17 @@ public class RoomManager implements Serializable {
         return i;
     }
 
+    public int countAirPumpsAtLevel(int yLevel) {
+        int count = 0;
+        Map<Coordinate, Room> rooms = getRooms();
+        for (Map.Entry<Coordinate, Room> entry : rooms.entrySet()) {
+            Room room = entry.getValue();
+
+            if (room.getCoordinates().getY() == yLevel && room.getBuildUp().equals(Constants.Buildings.AIR_PUMP)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
 }
