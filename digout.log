@@ -1572,3 +1572,665 @@ DIG OUT - 2024-12-02 02-17-22(INFO): pause()
 DIG OUT - 2024-12-02 02-17-22(INFO): dispose()
 DIG OUT - 2024-12-02 02-17-22(INFO): EIXT GAME
 
+DIG OUT - 2024-12-03 00-55-20(INFO): create()
+DIG OUT - 2024-12-03 00-55-28(INFO): Open new game screen
+DIG OUT - 2024-12-03 00-55-33(INFO): [GAME_ID: 9eca355d-f5b1-450f-9f06-a9a8a3bbc7d7] Generate new ID for new MyGame: 9eca355d-f5b1-450f-9f06-a9a8a3bbc7d7
+DIG OUT - 2024-12-03 00-55-33(INFO): [GAME_ID: 9eca355d-f5b1-450f-9f06-a9a8a3bbc7d7] Coordinates of Base room [2, 1]
+DIG OUT - 2024-12-03 00-55-33(INFO): [GAME_ID: 9eca355d-f5b1-450f-9f06-a9a8a3bbc7d7] Coordinates of Exit room [6, 10]
+DIG OUT - 2024-12-03 00-55-33(INFO): [GAME_ID: 9eca355d-f5b1-450f-9f06-a9a8a3bbc7d7] create new Survivor. NAME: STEVE, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: He used to be a goldsmith , while his coworkers always laughed at him , though he still hoped for a promotion to the office., AGE: 30
+DIG OUT - 2024-12-03 00-55-33(INFO): [GAME_ID: 9eca355d-f5b1-450f-9f06-a9a8a3bbc7d7] Create New MyGame
+DIG OUT - 2024-12-03 00-55-35(INFO): [GAME_ID: a3b169e8-d657-4444-b381-6340e04d0c4e] Generate new ID for new MyGame: a3b169e8-d657-4444-b381-6340e04d0c4e
+DIG OUT - 2024-12-03 00-55-35(INFO): [GAME_ID: a3b169e8-d657-4444-b381-6340e04d0c4e] Coordinates of Base room [4, 1]
+DIG OUT - 2024-12-03 00-55-35(INFO): [GAME_ID: a3b169e8-d657-4444-b381-6340e04d0c4e] Coordinates of Exit room [7, 10]
+DIG OUT - 2024-12-03 00-55-35(INFO): [GAME_ID: a3b169e8-d657-4444-b381-6340e04d0c4e] create new Survivor. NAME: TED, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: He never went anywhere without his trusty shovel , although he preferred telling stories to mining , though he always dreamed of retiring on a beach., AGE: 57
+DIG OUT - 2024-12-03 00-55-35(INFO): [GAME_ID: a3b169e8-d657-4444-b381-6340e04d0c4e] Create New MyGame
+DIG OUT - 2024-12-03 00-55-37(INFO): [GAME_ID: 471977d6-2029-4431-afd7-94d43e68dfda] Generate new ID for new MyGame: 471977d6-2029-4431-afd7-94d43e68dfda
+DIG OUT - 2024-12-03 00-55-37(INFO): [GAME_ID: 471977d6-2029-4431-afd7-94d43e68dfda] Coordinates of Base room [9, 1]
+DIG OUT - 2024-12-03 00-55-37(INFO): [GAME_ID: 471977d6-2029-4431-afd7-94d43e68dfda] Coordinates of Exit room [3, 10]
+DIG OUT - 2024-12-03 00-55-37(INFO): [GAME_ID: 471977d6-2029-4431-afd7-94d43e68dfda] create new Survivor. NAME: AL, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: He used to be a goldsmith , though he was secretly afraid of the dark , because deep down, he preferred knitting., AGE: 79
+DIG OUT - 2024-12-03 00-55-37(INFO): [GAME_ID: 471977d6-2029-4431-afd7-94d43e68dfda] Create New MyGame
+DIG OUT - 2024-12-03 00-55-42(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Generate new ID for new MyGame: 18854c2d-b9da-422c-9cbd-51f69cf331e5
+DIG OUT - 2024-12-03 00-55-42(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Coordinates of Base room [2, 1]
+DIG OUT - 2024-12-03 00-55-42(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Coordinates of Exit room [9, 10]
+DIG OUT - 2024-12-03 00-55-42(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] create new Survivor. NAME: TED, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Known as the pickaxe master , yet he never struck gold , despite mining as if he were digging in quicksand., AGE: 40
+DIG OUT - 2024-12-03 00-55-42(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 2, 1
+DIG OUT - 2024-12-03 00-55-42(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] discovered nearest room R at: 3, 1
+DIG OUT - 2024-12-03 00-55-42(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] discovered nearest room L at: 1, 1
+DIG OUT - 2024-12-03 00-55-42(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Open Light room to discover on cord: (3, 1)
+DIG OUT - 2024-12-03 00-55-42(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Open Light room to discover on cord: (1, 1)
+DIG OUT - 2024-12-03 00-55-49(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Survivor: TED got a task: DIG_OUT , in room: com.kraisu.digout.rooms.UndiscoveredLightRoom@5e5d171f , cords: 3, 1
+DIG OUT - 2024-12-03 00-55-50(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 3, 1
+DIG OUT - 2024-12-03 00-55-50(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] discovered nearest room R at: 3, 2
+DIG OUT - 2024-12-03 00-55-50(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Open Light room to discover on cord: (4, 1)
+DIG OUT - 2024-12-03 00-55-55(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Survivor: TED got a task: DIG_OUT , in room: com.kraisu.digout.rooms.UndiscoveredLightRoom@385e9564 , cords: 4, 1
+DIG OUT - 2024-12-03 00-55-56(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] create new Survivor. NAME: BORBO, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: He has no idea what he's doing here, he was dragged here by accident., AGE: 22
+DIG OUT - 2024-12-03 00-55-56(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 4, 1
+DIG OUT - 2024-12-03 00-55-56(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] discovered nearest room R at: 4, 2
+DIG OUT - 2024-12-03 00-55-56(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Open Light room to discover on cord: (5, 1)
+DIG OUT - 2024-12-03 00-55-56(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 3, 1
+DIG OUT - 2024-12-03 00-56-10(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Survivor: BORBO got a task: WAIT , in room: com.kraisu.digout.rooms.BaseRoom@192c3f1e , cords: 2, 1
+DIG OUT - 2024-12-03 00-56-16(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Survivor: TED got a task: BUILD_ELEVATOR , in room: com.kraisu.digout.rooms.UndiscoveredLightRoom@385e9564 , cords: 4, 1
+DIG OUT - 2024-12-03 00-56-17(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 4, 1
+DIG OUT - 2024-12-03 00-56-17(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] discovered nearest room Up at: 4, 2
+DIG OUT - 2024-12-03 00-56-17(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Open Light room to discover on cord: (4, 2)
+DIG OUT - 2024-12-03 00-56-17(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 3, 1
+DIG OUT - 2024-12-03 00-56-22(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Survivor: TED got a task: EAT , in room: com.kraisu.digout.rooms.BaseRoom@192c3f1e , cords: 2, 1
+DIG OUT - 2024-12-03 00-56-30(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Survivor: BORBOwas trained as a Worker.
+DIG OUT - 2024-12-03 00-56-33(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Survivor: BORBO got a task: DIG_OUT , in room: com.kraisu.digout.rooms.UndiscoveredLightRoom@683dbc2c , cords: 5, 1
+DIG OUT - 2024-12-03 00-56-35(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 5, 1
+DIG OUT - 2024-12-03 00-56-35(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] discovered nearest room R at: 5, 2
+DIG OUT - 2024-12-03 00-56-35(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Open Light room to discover on cord: (6, 1)
+DIG OUT - 2024-12-03 00-56-35(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 4, 1
+DIG OUT - 2024-12-03 00-56-35(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 3, 1
+DIG OUT - 2024-12-03 00-56-39(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Survivor: TED got a task: DIG_OUT , in room: com.kraisu.digout.rooms.UndiscoveredLightRoom@68267da0 , cords: 4, 2
+DIG OUT - 2024-12-03 00-56-42(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Survivor: BORBO got a task: DIG_OUT , in room: com.kraisu.digout.rooms.UndiscoveredLightRoom@2638011 , cords: 6, 1
+DIG OUT - 2024-12-03 00-56-44(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 6, 1
+DIG OUT - 2024-12-03 00-56-44(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] discovered nearest room R at: 6, 2
+DIG OUT - 2024-12-03 00-56-44(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Open Light room to discover on cord: (7, 1)
+DIG OUT - 2024-12-03 00-56-44(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 5, 1
+DIG OUT - 2024-12-03 00-56-44(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 4, 1
+DIG OUT - 2024-12-03 00-56-44(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 3, 1
+DIG OUT - 2024-12-03 00-56-44(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 4, 2
+DIG OUT - 2024-12-03 00-56-44(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] discovered nearest room R at: 5, 2
+DIG OUT - 2024-12-03 00-56-44(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] discovered nearest room L at: 3, 2
+DIG OUT - 2024-12-03 00-56-44(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Open Light room to discover on cord: (5, 2)
+DIG OUT - 2024-12-03 00-56-44(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Open Light room to discover on cord: (3, 2)
+DIG OUT - 2024-12-03 00-56-49(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Survivor: BORBO got a task: EAT , in room: com.kraisu.digout.rooms.BaseRoom@192c3f1e , cords: 2, 1
+DIG OUT - 2024-12-03 00-56-52(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Survivor: TED got a task: DIG_OUT , in room: com.kraisu.digout.rooms.UndiscoveredLightRoom@6ff29830 , cords: 5, 2
+DIG OUT - 2024-12-03 00-56-54(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 6, 1
+DIG OUT - 2024-12-03 00-56-54(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 5, 1
+DIG OUT - 2024-12-03 00-56-54(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 4, 1
+DIG OUT - 2024-12-03 00-56-54(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 5, 2
+DIG OUT - 2024-12-03 00-56-54(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] discovered nearest room R at: 5, 3
+DIG OUT - 2024-12-03 00-56-54(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Open Light room to discover on cord: (6, 2)
+DIG OUT - 2024-12-03 00-56-54(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 3, 1
+DIG OUT - 2024-12-03 00-56-54(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 4, 2
+DIG OUT - 2024-12-03 00-57-02(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Survivor: BORBO got a task: BUILD_ELEVATOR , in room: com.kraisu.digout.rooms.UndiscoveredLightRoom@6ff29830 , cords: 5, 2
+DIG OUT - 2024-12-03 00-57-11(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Survivor: TED got a task: DIG_OUT , in room: com.kraisu.digout.rooms.UndiscoveredLightRoom@6a2b953e , cords: 1, 1
+DIG OUT - 2024-12-03 00-57-12(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] create new Survivor. NAME: DAN, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: He never parted with his mining gear , although he preferred telling stories to mining , though he came here thinking it was a library., AGE: 51
+DIG OUT - 2024-12-03 00-57-12(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 1, 1
+DIG OUT - 2024-12-03 00-57-12(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 6, 1
+DIG OUT - 2024-12-03 00-57-12(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 5, 1
+DIG OUT - 2024-12-03 00-57-12(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 4, 1
+DIG OUT - 2024-12-03 00-57-12(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 5, 2
+DIG OUT - 2024-12-03 00-57-12(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] discovered nearest room Up at: 5, 3
+DIG OUT - 2024-12-03 00-57-12(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Open Light room to discover on cord: (5, 3)
+DIG OUT - 2024-12-03 00-57-12(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 3, 1
+DIG OUT - 2024-12-03 00-57-12(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 4, 2
+DIG OUT - 2024-12-03 00-57-22(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Survivor: TED got a task: EAT , in room: com.kraisu.digout.rooms.BaseRoom@192c3f1e , cords: 2, 1
+DIG OUT - 2024-12-03 00-57-28(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Survivor: BORBO got a task: BUILD_RESTROOM , in room: com.kraisu.digout.rooms.UndiscoveredLightRoom@2638011 , cords: 6, 1
+DIG OUT - 2024-12-03 00-57-35(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Survivor: DAN got a task: WAIT , in room: com.kraisu.digout.rooms.BaseRoom@192c3f1e , cords: 2, 1
+DIG OUT - 2024-12-03 00-57-36(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 1, 1
+DIG OUT - 2024-12-03 00-57-36(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 6, 1
+DIG OUT - 2024-12-03 00-57-36(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 5, 1
+DIG OUT - 2024-12-03 00-57-36(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 4, 1
+DIG OUT - 2024-12-03 00-57-36(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 5, 2
+DIG OUT - 2024-12-03 00-57-36(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 3, 1
+DIG OUT - 2024-12-03 00-57-36(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 4, 2
+DIG OUT - 2024-12-03 00-57-45(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Survivor: TED got a task: BUILD_ELEVATOR , in room: com.kraisu.digout.rooms.UndiscoveredLightRoom@5e5d171f , cords: 3, 1
+DIG OUT - 2024-12-03 00-57-55(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Survivor: DAN got a task: WAIT , in room: com.kraisu.digout.rooms.BaseRoom@192c3f1e , cords: 2, 1
+DIG OUT - 2024-12-03 00-58-00(INFO): pause()
+DIG OUT - 2024-12-03 00-58-04(INFO): resume()
+DIG OUT - 2024-12-03 00-58-05(INFO): pause()
+DIG OUT - 2024-12-03 00-59-51(INFO): resume()
+DIG OUT - 2024-12-03 01-00-00(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Survivor: TED, Unpin task: BUILD_ELEVATOR
+DIG OUT - 2024-12-03 01-00-13(INFO): pause()
+DIG OUT - 2024-12-03 01-05-09(INFO): resume()
+DIG OUT - 2024-12-03 01-05-23(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Survivor: TED got a task: DIG_OUT , in room: com.kraisu.digout.rooms.UndiscoveredLightRoom@2f54a33d , cords: 5, 3
+DIG OUT - 2024-12-03 01-05-27(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Survivor: BORBO got a task: DIG_OUT , in room: com.kraisu.digout.rooms.UndiscoveredLightRoom@1018bde2 , cords: 7, 1
+DIG OUT - 2024-12-03 01-05-28(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] create new Survivor. NAME: TIM, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: He never went anywhere without his trusty shovel , though he hated getting his hands dirty , though he came here thinking it was a library., AGE: 79
+DIG OUT - 2024-12-03 01-05-28(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 1, 1
+DIG OUT - 2024-12-03 01-05-28(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 7, 1
+DIG OUT - 2024-12-03 01-05-28(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] discovered nearest room R at: 7, 2
+DIG OUT - 2024-12-03 01-05-28(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Open Light room to discover on cord: (8, 1)
+DIG OUT - 2024-12-03 01-05-28(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 6, 1
+DIG OUT - 2024-12-03 01-05-28(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 5, 1
+DIG OUT - 2024-12-03 01-05-28(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 4, 1
+DIG OUT - 2024-12-03 01-05-28(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 5, 2
+DIG OUT - 2024-12-03 01-05-28(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 3, 1
+DIG OUT - 2024-12-03 01-05-28(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 4, 2
+DIG OUT - 2024-12-03 01-05-28(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Make able to discovered nearest room for room: 5, 3
+DIG OUT - 2024-12-03 01-05-28(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] discovered nearest room R at: 6, 3
+DIG OUT - 2024-12-03 01-05-28(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] discovered nearest room L at: 4, 3
+DIG OUT - 2024-12-03 01-05-28(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Open Light room to discover on cord: (6, 3)
+DIG OUT - 2024-12-03 01-05-28(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Open Light room to discover on cord: (4, 3)
+DIG OUT - 2024-12-03 01-05-35(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Survivor: TED got a task: DIG_OUT , in room: com.kraisu.digout.rooms.UndiscoveredLightRoom@65b3f4a4 , cords: 4, 3
+DIG OUT - 2024-12-03 01-05-41(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Survivor: DAN got a task: WAIT , in room: com.kraisu.digout.rooms.BaseRoom@192c3f1e , cords: 2, 1
+DIG OUT - 2024-12-03 01-05-45(INFO): [GAME_ID: 18854c2d-b9da-422c-9cbd-51f69cf331e5] Survivor: TIM got a task: WAIT , in room: com.kraisu.digout.rooms.BaseRoom@192c3f1e , cords: 2, 1
+DIG OUT - 2024-12-03 01-05-47(INFO): pause()
+DIG OUT - 2024-12-03 01-05-53(INFO): resume()
+DIG OUT - 2024-12-03 01-05-54(INFO): pause()
+DIG OUT - 2024-12-03 01-08-59(INFO): resume()
+DIG OUT - 2024-12-03 01-09-09(INFO): Open new game screen
+DIG OUT - 2024-12-03 01-09-11(INFO): [GAME_ID: 9f62a37b-743a-4e70-96c2-778eb82682d4] Generate new ID for new MyGame: 9f62a37b-743a-4e70-96c2-778eb82682d4
+DIG OUT - 2024-12-03 01-09-11(INFO): [GAME_ID: 9f62a37b-743a-4e70-96c2-778eb82682d4] Coordinates of Base room [10, 1]
+DIG OUT - 2024-12-03 01-09-11(INFO): [GAME_ID: 9f62a37b-743a-4e70-96c2-778eb82682d4] Coordinates of Exit room [6, 10]
+DIG OUT - 2024-12-03 01-09-11(INFO): [GAME_ID: 9f62a37b-743a-4e70-96c2-778eb82682d4] create new Survivor. NAME: SAM, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Famous for knowing every tunnel by heart , and his strength was legendary , though he still hoped for a promotion to the office., AGE: 73
+DIG OUT - 2024-12-03 01-09-11(INFO): [GAME_ID: 9f62a37b-743a-4e70-96c2-778eb82682d4] Create New MyGame
+DIG OUT - 2024-12-03 01-09-16(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] Generate new ID for new MyGame: 21a60b22-744f-4f77-974c-fe8dde2151e1
+DIG OUT - 2024-12-03 01-09-16(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] Coordinates of Base room [3, 1]
+DIG OUT - 2024-12-03 01-09-16(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] Coordinates of Exit room [2, 10]
+DIG OUT - 2024-12-03 01-09-16(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] create new Survivor. NAME: GUS, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: He always dreamed of finding diamonds , yet he never struck gold , though he still hoped for a promotion to the office., AGE: 53
+DIG OUT - 2024-12-03 01-09-16(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] Make able to discovered nearest room for room: 3, 1
+DIG OUT - 2024-12-03 01-09-16(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] discovered nearest room R at: 4, 1
+DIG OUT - 2024-12-03 01-09-16(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] discovered nearest room L at: 2, 1
+DIG OUT - 2024-12-03 01-09-16(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] Open Light room to discover on cord: (4, 1)
+DIG OUT - 2024-12-03 01-09-16(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] Open Light room to discover on cord: (2, 1)
+DIG OUT - 2024-12-03 01-09-19(INFO): pause()
+DIG OUT - 2024-12-03 01-09-24(INFO): resume()
+DIG OUT - 2024-12-03 01-09-30(INFO): pause()
+DIG OUT - 2024-12-03 01-11-05(INFO): resume()
+DIG OUT - 2024-12-03 01-11-06(INFO): pause()
+DIG OUT - 2024-12-03 01-11-20(INFO): resume()
+DIG OUT - 2024-12-03 01-11-21(INFO): pause()
+DIG OUT - 2024-12-03 01-13-33(INFO): resume()
+DIG OUT - 2024-12-03 01-13-36(INFO): pause()
+DIG OUT - 2024-12-03 01-20-11(INFO): resume()
+DIG OUT - 2024-12-03 01-20-16(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] Survivor: GUS got a task: DIG_OUT , in room: com.kraisu.digout.rooms.UndiscoveredLightRoom@157853da , cords: 4, 1
+DIG OUT - 2024-12-03 01-20-18(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] Make able to discovered nearest room for room: 4, 1
+DIG OUT - 2024-12-03 01-20-18(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] discovered nearest room R at: 4, 2
+DIG OUT - 2024-12-03 01-20-18(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] Open Light room to discover on cord: (5, 1)
+DIG OUT - 2024-12-03 01-20-22(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] Survivor: GUS got a task: DIG_OUT , in room: com.kraisu.digout.rooms.UndiscoveredLightRoom@236e3f4e , cords: 5, 1
+DIG OUT - 2024-12-03 01-20-23(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] Make able to discovered nearest room for room: 5, 1
+DIG OUT - 2024-12-03 01-20-23(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] discovered nearest room R at: 5, 2
+DIG OUT - 2024-12-03 01-20-23(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] Open Light room to discover on cord: (6, 1)
+DIG OUT - 2024-12-03 01-20-23(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] Make able to discovered nearest room for room: 4, 1
+DIG OUT - 2024-12-03 01-20-27(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] Survivor: GUS got a task: DIG_OUT , in room: com.kraisu.digout.rooms.UndiscoveredLightRoom@3cc1435c , cords: 6, 1
+DIG OUT - 2024-12-03 01-20-28(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] Make able to discovered nearest room for room: 6, 1
+DIG OUT - 2024-12-03 01-20-28(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] discovered nearest room R at: 6, 2
+DIG OUT - 2024-12-03 01-20-28(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] Open Light room to discover on cord: (7, 1)
+DIG OUT - 2024-12-03 01-20-28(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] Make able to discovered nearest room for room: 5, 1
+DIG OUT - 2024-12-03 01-20-28(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] Make able to discovered nearest room for room: 4, 1
+DIG OUT - 2024-12-03 01-20-36(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] Survivor: GUS got a task: EAT , in room: com.kraisu.digout.rooms.BaseRoom@6bf0219d , cords: 3, 1
+DIG OUT - 2024-12-03 01-20-38(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] Make able to discovered nearest room for room: 6, 1
+DIG OUT - 2024-12-03 01-20-38(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] Make able to discovered nearest room for room: 5, 1
+DIG OUT - 2024-12-03 01-20-38(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] Make able to discovered nearest room for room: 4, 1
+DIG OUT - 2024-12-03 01-20-44(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] Survivor: GUS got a task: DIG_OUT , in room: com.kraisu.digout.rooms.UndiscoveredLightRoom@dd0c991 , cords: 7, 1
+DIG OUT - 2024-12-03 01-20-45(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] create new Survivor. NAME: GUS 1, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Known as the pickaxe master , but lately, his luck has run out , and was secretly terrified of mice., AGE: 22
+DIG OUT - 2024-12-03 01-20-45(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] Make able to discovered nearest room for room: 7, 1
+DIG OUT - 2024-12-03 01-20-45(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] discovered nearest room R at: 7, 2
+DIG OUT - 2024-12-03 01-20-45(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] Open Light room to discover on cord: (8, 1)
+DIG OUT - 2024-12-03 01-20-45(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] Make able to discovered nearest room for room: 6, 1
+DIG OUT - 2024-12-03 01-20-45(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] Make able to discovered nearest room for room: 5, 1
+DIG OUT - 2024-12-03 01-20-45(INFO): [GAME_ID: 21a60b22-744f-4f77-974c-fe8dde2151e1] Make able to discovered nearest room for room: 4, 1
+DIG OUT - 2024-12-03 01-20-53(INFO): pause()
+DIG OUT - 2024-12-03 01-22-46(INFO): create()
+DIG OUT - 2024-12-03 01-22-51(INFO): Open new game screen
+DIG OUT - 2024-12-03 01-22-52(INFO): [GAME_ID: ee899dd8-23a2-43de-b420-1a8d0320bcd1] Generate new ID for new MyGame: ee899dd8-23a2-43de-b420-1a8d0320bcd1
+DIG OUT - 2024-12-03 01-22-52(INFO): [GAME_ID: ee899dd8-23a2-43de-b420-1a8d0320bcd1] Coordinates of Base room [1, 1]
+DIG OUT - 2024-12-03 01-22-52(INFO): [GAME_ID: ee899dd8-23a2-43de-b420-1a8d0320bcd1] Coordinates of Exit room [1, 10]
+DIG OUT - 2024-12-03 01-22-52(INFO): [GAME_ID: ee899dd8-23a2-43de-b420-1a8d0320bcd1] create new Survivor. NAME: DAN, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Known as the pickaxe master , yet he hadn’t found a treasure yet , because deep down, he preferred knitting., AGE: 59
+DIG OUT - 2024-12-03 01-22-52(INFO): [GAME_ID: ee899dd8-23a2-43de-b420-1a8d0320bcd1] Create New MyGame
+DIG OUT - 2024-12-03 01-22-56(INFO): [GAME_ID: 61d48b71-8594-4aa7-8ce9-4c48814f4a66] Generate new ID for new MyGame: 61d48b71-8594-4aa7-8ce9-4c48814f4a66
+DIG OUT - 2024-12-03 01-22-56(INFO): [GAME_ID: 61d48b71-8594-4aa7-8ce9-4c48814f4a66] Coordinates of Base room [3, 1]
+DIG OUT - 2024-12-03 01-22-56(INFO): [GAME_ID: 61d48b71-8594-4aa7-8ce9-4c48814f4a66] Coordinates of Exit room [10, 10]
+DIG OUT - 2024-12-03 01-22-56(INFO): [GAME_ID: 61d48b71-8594-4aa7-8ce9-4c48814f4a66] create new Survivor. NAME: BOB, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: He never went anywhere without his trusty shovel , though he hated getting his hands dirty , because he mistook his helmet for a bucket., AGE: 59
+DIG OUT - 2024-12-03 01-22-56(INFO): [GAME_ID: 61d48b71-8594-4aa7-8ce9-4c48814f4a66] Make able to discovered nearest room for room: 3, 1
+DIG OUT - 2024-12-03 01-22-56(INFO): [GAME_ID: 61d48b71-8594-4aa7-8ce9-4c48814f4a66] discovered nearest room R at: 4, 1
+DIG OUT - 2024-12-03 01-22-56(INFO): [GAME_ID: 61d48b71-8594-4aa7-8ce9-4c48814f4a66] discovered nearest room L at: 2, 1
+DIG OUT - 2024-12-03 01-22-56(INFO): [GAME_ID: 61d48b71-8594-4aa7-8ce9-4c48814f4a66] Open Light room to discover on cord: (4, 1)
+DIG OUT - 2024-12-03 01-22-56(INFO): [GAME_ID: 61d48b71-8594-4aa7-8ce9-4c48814f4a66] Open Light room to discover on cord: (2, 1)
+DIG OUT - 2024-12-03 01-22-56(INFO): [GAME_ID: 61d48b71-8594-4aa7-8ce9-4c48814f4a66] create new Survivor. NAME: BILL, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: He never parted with his mining gear , while his coworkers always laughed at him , although he hoped to discover a forgotten treasure., AGE: 41
+DIG OUT - 2024-12-03 01-22-56(INFO): [GAME_ID: 61d48b71-8594-4aa7-8ce9-4c48814f4a66] create new Survivor. NAME: DAN, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Once, he was the best miner in town , and his strength was legendary , and was secretly terrified of mice., AGE: 48
+DIG OUT - 2024-12-03 01-22-56(INFO): [GAME_ID: 61d48b71-8594-4aa7-8ce9-4c48814f4a66] create new Survivor. NAME: STEVE, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: He used to be a goldsmith , yet he never struck gold , though he always dreamed of retiring on a beach., AGE: 78
+DIG OUT - 2024-12-03 01-22-56(INFO): [GAME_ID: 61d48b71-8594-4aa7-8ce9-4c48814f4a66] create new Survivor. NAME: BOB 1, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Known as the pickaxe master , and his strength was legendary , but most of the time, he just looked for excuses not to work., AGE: 24
+DIG OUT - 2024-12-03 01-23-01(INFO): pause()
+DIG OUT - 2024-12-03 01-23-06(INFO): resume()
+DIG OUT - 2024-12-03 01-23-07(INFO): pause()
+DIG OUT - 2024-12-03 01-28-53(INFO): resume()
+DIG OUT - 2024-12-03 01-28-59(INFO): pause()
+DIG OUT - 2024-12-03 01-28-59(INFO): dispose()
+DIG OUT - 2024-12-03 01-28-59(INFO): EIXT GAME
+
+DIG OUT - 2024-12-03 01-29-08(INFO): create()
+DIG OUT - 2024-12-03 01-29-15(INFO): Open new game screen
+DIG OUT - 2024-12-03 01-29-16(INFO): [GAME_ID: bb73d12a-6878-414a-84cd-9a7944d51b96] Generate new ID for new MyGame: bb73d12a-6878-414a-84cd-9a7944d51b96
+DIG OUT - 2024-12-03 01-29-16(INFO): [GAME_ID: bb73d12a-6878-414a-84cd-9a7944d51b96] Coordinates of Base room [4, 1]
+DIG OUT - 2024-12-03 01-29-16(INFO): [GAME_ID: bb73d12a-6878-414a-84cd-9a7944d51b96] Coordinates of Exit room [1, 10]
+DIG OUT - 2024-12-03 01-29-16(INFO): [GAME_ID: bb73d12a-6878-414a-84cd-9a7944d51b96] create new Survivor. NAME: ZAC, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: He had been working in the mine for a decade , yet he never struck gold , despite mining as if he were digging in quicksand., AGE: 57
+DIG OUT - 2024-12-03 01-29-16(INFO): [GAME_ID: bb73d12a-6878-414a-84cd-9a7944d51b96] Create New MyGame
+DIG OUT - 2024-12-03 01-29-20(INFO): [GAME_ID: 3fd621fd-c6c9-4a50-95d7-1d9be2dc2eb1] Generate new ID for new MyGame: 3fd621fd-c6c9-4a50-95d7-1d9be2dc2eb1
+DIG OUT - 2024-12-03 01-29-20(INFO): [GAME_ID: 3fd621fd-c6c9-4a50-95d7-1d9be2dc2eb1] Coordinates of Base room [9, 1]
+DIG OUT - 2024-12-03 01-29-20(INFO): [GAME_ID: 3fd621fd-c6c9-4a50-95d7-1d9be2dc2eb1] Coordinates of Exit room [2, 10]
+DIG OUT - 2024-12-03 01-29-20(INFO): [GAME_ID: 3fd621fd-c6c9-4a50-95d7-1d9be2dc2eb1] create new Survivor. NAME: BOB, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Once, he was the best miner in town , but working underground was exhausting for him , and was secretly terrified of mice., AGE: 23
+DIG OUT - 2024-12-03 01-29-20(INFO): [GAME_ID: 3fd621fd-c6c9-4a50-95d7-1d9be2dc2eb1] Make able to discovered nearest room for room: 9, 1
+DIG OUT - 2024-12-03 01-29-20(INFO): [GAME_ID: 3fd621fd-c6c9-4a50-95d7-1d9be2dc2eb1] discovered nearest room R at: 10, 1
+DIG OUT - 2024-12-03 01-29-20(INFO): [GAME_ID: 3fd621fd-c6c9-4a50-95d7-1d9be2dc2eb1] discovered nearest room L at: 8, 1
+DIG OUT - 2024-12-03 01-29-20(INFO): [GAME_ID: 3fd621fd-c6c9-4a50-95d7-1d9be2dc2eb1] Open Light room to discover on cord: (10, 1)
+DIG OUT - 2024-12-03 01-29-20(INFO): [GAME_ID: 3fd621fd-c6c9-4a50-95d7-1d9be2dc2eb1] Open Light room to discover on cord: (8, 1)
+DIG OUT - 2024-12-03 01-29-20(INFO): [GAME_ID: 3fd621fd-c6c9-4a50-95d7-1d9be2dc2eb1] create new Survivor. NAME: AL, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Always carried a thermos of coffee , despite not actually liking the mines , because he mistook his helmet for a bucket., AGE: 30
+DIG OUT - 2024-12-03 01-29-20(INFO): [GAME_ID: 3fd621fd-c6c9-4a50-95d7-1d9be2dc2eb1] create new Survivor. NAME: DAN, ENERGY: 4, SURVIVOR TYPE: COOK, PI: He always dreamed of finding diamonds , yet he hadn’t found a treasure yet , but most of the time, he just looked for excuses not to work., AGE: 31
+DIG OUT - 2024-12-03 01-29-20(INFO): [GAME_ID: 3fd621fd-c6c9-4a50-95d7-1d9be2dc2eb1] create new Survivor. NAME: WILL, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Once, he was the best miner in town , despite not actually liking the mines , because he mistook his helmet for a bucket., AGE: 71
+DIG OUT - 2024-12-03 01-29-20(INFO): [GAME_ID: 3fd621fd-c6c9-4a50-95d7-1d9be2dc2eb1] create new Survivor. NAME: KEN, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: He never parted with his mining gear , yet he hadn’t found a treasure yet , although he hoped to discover a forgotten treasure., AGE: 35
+DIG OUT - 2024-12-03 01-29-22(INFO): pause()
+DIG OUT - 2024-12-03 01-29-26(INFO): resume()
+DIG OUT - 2024-12-03 01-29-27(INFO): pause()
+DIG OUT - 2024-12-03 01-30-14(INFO): resume()
+DIG OUT - 2024-12-03 01-30-16(INFO): pause()
+DIG OUT - 2024-12-03 01-37-05(INFO): resume()
+DIG OUT - 2024-12-03 01-37-07(INFO): pause()
+DIG OUT - 2024-12-03 01-49-24(INFO): resume()
+DIG OUT - 2024-12-03 01-49-28(INFO): [GAME_ID: 3fd621fd-c6c9-4a50-95d7-1d9be2dc2eb1] Survivor: KEN got a task: WAIT , in room: com.kraisu.digout.rooms.BaseRoom@7bedc48a , cords: 9, 1
+DIG OUT - 2024-12-03 01-49-32(INFO): [GAME_ID: 3fd621fd-c6c9-4a50-95d7-1d9be2dc2eb1] Survivor: BOB got a task: WAIT , in room: com.kraisu.digout.rooms.BaseRoom@7bedc48a , cords: 9, 1
+DIG OUT - 2024-12-03 01-49-35(INFO): [GAME_ID: 3fd621fd-c6c9-4a50-95d7-1d9be2dc2eb1] Survivor: AL got a task: WAIT , in room: com.kraisu.digout.rooms.BaseRoom@7bedc48a , cords: 9, 1
+DIG OUT - 2024-12-03 01-49-40(INFO): [GAME_ID: 3fd621fd-c6c9-4a50-95d7-1d9be2dc2eb1] Survivor: DAN got a task: WAIT , in room: com.kraisu.digout.rooms.BaseRoom@7bedc48a , cords: 9, 1
+DIG OUT - 2024-12-03 01-49-44(INFO): [GAME_ID: 3fd621fd-c6c9-4a50-95d7-1d9be2dc2eb1] Survivor: WILL got a task: WAIT , in room: com.kraisu.digout.rooms.BaseRoom@7bedc48a , cords: 9, 1
+DIG OUT - 2024-12-03 01-49-49(INFO): [GAME_ID: 3fd621fd-c6c9-4a50-95d7-1d9be2dc2eb1] Survivor: KEN got a task: WAIT , in room: com.kraisu.digout.rooms.BaseRoom@7bedc48a , cords: 9, 1
+DIG OUT - 2024-12-03 01-49-53(INFO): [GAME_ID: 3fd621fd-c6c9-4a50-95d7-1d9be2dc2eb1] Survivor: BOB got a task: WAIT , in room: com.kraisu.digout.rooms.BaseRoom@7bedc48a , cords: 9, 1
+DIG OUT - 2024-12-03 01-49-56(INFO): [GAME_ID: 3fd621fd-c6c9-4a50-95d7-1d9be2dc2eb1] Survivor: AL got a task: WAIT , in room: com.kraisu.digout.rooms.BaseRoom@7bedc48a , cords: 9, 1
+DIG OUT - 2024-12-03 01-49-59(INFO): [GAME_ID: 3fd621fd-c6c9-4a50-95d7-1d9be2dc2eb1] Survivor: DAN got a task: WAIT , in room: com.kraisu.digout.rooms.BaseRoom@7bedc48a , cords: 9, 1
+DIG OUT - 2024-12-03 01-50-02(INFO): [GAME_ID: 3fd621fd-c6c9-4a50-95d7-1d9be2dc2eb1] Survivor: WILL got a task: WAIT , in room: com.kraisu.digout.rooms.BaseRoom@7bedc48a , cords: 9, 1
+DIG OUT - 2024-12-03 01-50-07(INFO): pause()
+DIG OUT - 2024-12-03 01-50-09(INFO): resume()
+DIG OUT - 2024-12-03 01-50-13(INFO): Lose Game!
+DIG OUT - 2024-12-03 01-50-14(INFO): pause()
+DIG OUT - 2024-12-03 01-50-19(INFO): resume()
+DIG OUT - 2024-12-03 01-50-20(INFO): pause()
+DIG OUT - 2024-12-03 01-54-00(INFO): resume()
+DIG OUT - 2024-12-03 01-54-01(INFO): Back to main menu after Lose
+DIG OUT - 2024-12-03 01-54-04(INFO): Open new game screen
+DIG OUT - 2024-12-03 01-54-05(INFO): [GAME_ID: 86abf22c-c84e-4072-8827-50719091dc11] Generate new ID for new MyGame: 86abf22c-c84e-4072-8827-50719091dc11
+DIG OUT - 2024-12-03 01-54-05(INFO): [GAME_ID: 86abf22c-c84e-4072-8827-50719091dc11] Coordinates of Base room [10, 1]
+DIG OUT - 2024-12-03 01-54-05(INFO): [GAME_ID: 86abf22c-c84e-4072-8827-50719091dc11] Coordinates of Exit room [7, 10]
+DIG OUT - 2024-12-03 01-54-05(INFO): [GAME_ID: 86abf22c-c84e-4072-8827-50719091dc11] create new Survivor. NAME: TIM, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: He had been working in the mine for a decade , although he preferred telling stories to mining , and was secretly terrified of mice., AGE: 45
+DIG OUT - 2024-12-03 01-54-05(INFO): [GAME_ID: 86abf22c-c84e-4072-8827-50719091dc11] Create New MyGame
+DIG OUT - 2024-12-03 01-54-09(INFO): [GAME_ID: 080bd339-4643-4a63-8fc8-523740787f3c] Generate new ID for new MyGame: 080bd339-4643-4a63-8fc8-523740787f3c
+DIG OUT - 2024-12-03 01-54-09(INFO): [GAME_ID: 080bd339-4643-4a63-8fc8-523740787f3c] Coordinates of Base room [5, 1]
+DIG OUT - 2024-12-03 01-54-09(INFO): [GAME_ID: 080bd339-4643-4a63-8fc8-523740787f3c] Coordinates of Exit room [4, 10]
+DIG OUT - 2024-12-03 01-54-09(INFO): [GAME_ID: 080bd339-4643-4a63-8fc8-523740787f3c] create new Survivor. NAME: STEVE, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: He used to be a goldsmith , yet he hadn’t found a treasure yet , because deep down, he preferred knitting., AGE: 33
+DIG OUT - 2024-12-03 01-54-09(INFO): [GAME_ID: 080bd339-4643-4a63-8fc8-523740787f3c] Make able to discovered nearest room for room: 5, 1
+DIG OUT - 2024-12-03 01-54-09(INFO): [GAME_ID: 080bd339-4643-4a63-8fc8-523740787f3c] discovered nearest room R at: 6, 1
+DIG OUT - 2024-12-03 01-54-09(INFO): [GAME_ID: 080bd339-4643-4a63-8fc8-523740787f3c] discovered nearest room L at: 4, 1
+DIG OUT - 2024-12-03 01-54-09(INFO): [GAME_ID: 080bd339-4643-4a63-8fc8-523740787f3c] Open Light room to discover on cord: (6, 1)
+DIG OUT - 2024-12-03 01-54-09(INFO): [GAME_ID: 080bd339-4643-4a63-8fc8-523740787f3c] Open Light room to discover on cord: (4, 1)
+DIG OUT - 2024-12-03 01-54-09(INFO): [GAME_ID: 080bd339-4643-4a63-8fc8-523740787f3c] create new Survivor. NAME: SAM, ENERGY: 4, SURVIVOR TYPE: MINER, PI: He never went anywhere without his trusty shovel , but working underground was exhausting for him , though he came here thinking it was a library., AGE: 47
+DIG OUT - 2024-12-03 01-54-09(INFO): [GAME_ID: 080bd339-4643-4a63-8fc8-523740787f3c] create new Survivor. NAME: TIM, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Once, he was the best miner in town , but working underground was exhausting for him , though he always dreamed of retiring on a beach., AGE: 27
+DIG OUT - 2024-12-03 01-54-09(INFO): [GAME_ID: 080bd339-4643-4a63-8fc8-523740787f3c] create new Survivor. NAME: AL, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: He had been working in the mine for a decade , and his strength was legendary , because he mistook his helmet for a bucket., AGE: 23
+DIG OUT - 2024-12-03 01-54-09(INFO): [GAME_ID: 080bd339-4643-4a63-8fc8-523740787f3c] create new Survivor. NAME: KEN, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: He never parted with his mining gear , and his strength was legendary , but most of the time, he just looked for excuses not to work., AGE: 58
+DIG OUT - 2024-12-03 01-54-17(INFO): Open new game screen
+DIG OUT - 2024-12-03 01-54-18(INFO): [GAME_ID: 5a203924-5699-4405-8b31-42427d6e0d9f] Generate new ID for new MyGame: 5a203924-5699-4405-8b31-42427d6e0d9f
+DIG OUT - 2024-12-03 01-54-18(INFO): [GAME_ID: 5a203924-5699-4405-8b31-42427d6e0d9f] Coordinates of Base room [8, 1]
+DIG OUT - 2024-12-03 01-54-18(INFO): [GAME_ID: 5a203924-5699-4405-8b31-42427d6e0d9f] Coordinates of Exit room [3, 10]
+DIG OUT - 2024-12-03 01-54-18(INFO): [GAME_ID: 5a203924-5699-4405-8b31-42427d6e0d9f] create new Survivor. NAME: MIKE, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: He never went anywhere without his trusty shovel , despite not actually liking the mines , even though he didn’t know how to use a pickaxe., AGE: 63
+DIG OUT - 2024-12-03 01-54-18(INFO): [GAME_ID: 5a203924-5699-4405-8b31-42427d6e0d9f] Create New MyGame
+DIG OUT - 2024-12-03 01-54-24(INFO): [GAME_ID: a6850b7a-eeae-4ede-857c-7191ab9a41ba] Generate new ID for new MyGame: a6850b7a-eeae-4ede-857c-7191ab9a41ba
+DIG OUT - 2024-12-03 01-54-24(INFO): [GAME_ID: a6850b7a-eeae-4ede-857c-7191ab9a41ba] Coordinates of Base room [8, 1]
+DIG OUT - 2024-12-03 01-54-24(INFO): [GAME_ID: a6850b7a-eeae-4ede-857c-7191ab9a41ba] Coordinates of Exit room [9, 10]
+DIG OUT - 2024-12-03 01-54-24(INFO): [GAME_ID: a6850b7a-eeae-4ede-857c-7191ab9a41ba] create new Survivor. NAME: RYAN, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: He always dreamed of finding diamonds , yet he never struck gold , though he always dreamed of retiring on a beach., AGE: 48
+DIG OUT - 2024-12-03 01-54-24(INFO): [GAME_ID: a6850b7a-eeae-4ede-857c-7191ab9a41ba] Make able to discovered nearest room for room: 8, 1
+DIG OUT - 2024-12-03 01-54-24(INFO): [GAME_ID: a6850b7a-eeae-4ede-857c-7191ab9a41ba] discovered nearest room R at: 9, 1
+DIG OUT - 2024-12-03 01-54-24(INFO): [GAME_ID: a6850b7a-eeae-4ede-857c-7191ab9a41ba] discovered nearest room L at: 7, 1
+DIG OUT - 2024-12-03 01-54-24(INFO): [GAME_ID: a6850b7a-eeae-4ede-857c-7191ab9a41ba] Open Light room to discover on cord: (9, 1)
+DIG OUT - 2024-12-03 01-54-24(INFO): [GAME_ID: a6850b7a-eeae-4ede-857c-7191ab9a41ba] Open Light room to discover on cord: (7, 1)
+DIG OUT - 2024-12-03 01-54-24(INFO): [GAME_ID: a6850b7a-eeae-4ede-857c-7191ab9a41ba] create new Survivor. NAME: MIKE, ENERGY: 4, SURVIVOR TYPE: MINER, PI: He loved unearthing treasures , and his strength was legendary , though he still hoped for a promotion to the office., AGE: 38
+DIG OUT - 2024-12-03 01-54-24(INFO): [GAME_ID: a6850b7a-eeae-4ede-857c-7191ab9a41ba] create new Survivor. NAME: MAX, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Known as the pickaxe master , but working underground was exhausting for him , even though he didn’t know how to use a pickaxe., AGE: 59
+DIG OUT - 2024-12-03 01-54-24(INFO): [GAME_ID: a6850b7a-eeae-4ede-857c-7191ab9a41ba] create new Survivor. NAME: MIKE 1, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: He never went anywhere without his trusty shovel , though he hated getting his hands dirty , because deep down, he preferred knitting., AGE: 33
+DIG OUT - 2024-12-03 01-54-24(INFO): [GAME_ID: a6850b7a-eeae-4ede-857c-7191ab9a41ba] create new Survivor. NAME: MIKE 2, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: He had been working in the mine for a decade , and his strength was legendary , but most of the time, he just looked for excuses not to work., AGE: 47
+DIG OUT - 2024-12-03 01-54-37(INFO): pause()
+DIG OUT - 2024-12-03 01-54-37(INFO): dispose()
+DIG OUT - 2024-12-03 01-54-37(INFO): EIXT GAME
+
+DIG OUT - 2024-12-03 01-54-41(INFO): create()
+DIG OUT - 2024-12-03 01-54-47(INFO): Open new game screen
+DIG OUT - 2024-12-03 01-54-48(INFO): [GAME_ID: 432e7d75-708a-4d5b-8e89-20b7645a69a3] Generate new ID for new MyGame: 432e7d75-708a-4d5b-8e89-20b7645a69a3
+DIG OUT - 2024-12-03 01-54-48(INFO): [GAME_ID: 432e7d75-708a-4d5b-8e89-20b7645a69a3] Coordinates of Base room [9, 1]
+DIG OUT - 2024-12-03 01-54-48(INFO): [GAME_ID: 432e7d75-708a-4d5b-8e89-20b7645a69a3] Coordinates of Exit room [9, 10]
+DIG OUT - 2024-12-03 01-54-48(INFO): [GAME_ID: 432e7d75-708a-4d5b-8e89-20b7645a69a3] create new Survivor. NAME: ZAC, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Famous for knowing every tunnel by heart , yet he hadn’t found a treasure yet , although he hoped to discover a forgotten treasure., AGE: 63
+DIG OUT - 2024-12-03 01-54-48(INFO): [GAME_ID: 432e7d75-708a-4d5b-8e89-20b7645a69a3] Create New MyGame
+DIG OUT - 2024-12-03 01-54-52(INFO): [GAME_ID: b33b02c5-4dae-4699-889c-6ca00303ed9a] Generate new ID for new MyGame: b33b02c5-4dae-4699-889c-6ca00303ed9a
+DIG OUT - 2024-12-03 01-54-52(INFO): [GAME_ID: b33b02c5-4dae-4699-889c-6ca00303ed9a] Coordinates of Base room [2, 1]
+DIG OUT - 2024-12-03 01-54-52(INFO): [GAME_ID: b33b02c5-4dae-4699-889c-6ca00303ed9a] Coordinates of Exit room [4, 10]
+DIG OUT - 2024-12-03 01-54-52(INFO): [GAME_ID: b33b02c5-4dae-4699-889c-6ca00303ed9a] create new Survivor. NAME: KURT, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: He had been working in the mine for a decade , but working underground was exhausting for him , because deep down, he preferred knitting., AGE: 38
+DIG OUT - 2024-12-03 01-54-52(INFO): [GAME_ID: b33b02c5-4dae-4699-889c-6ca00303ed9a] Make able to discovered nearest room for room: 2, 1
+DIG OUT - 2024-12-03 01-54-52(INFO): [GAME_ID: b33b02c5-4dae-4699-889c-6ca00303ed9a] discovered nearest room R at: 3, 1
+DIG OUT - 2024-12-03 01-54-52(INFO): [GAME_ID: b33b02c5-4dae-4699-889c-6ca00303ed9a] discovered nearest room L at: 1, 1
+DIG OUT - 2024-12-03 01-54-52(INFO): [GAME_ID: b33b02c5-4dae-4699-889c-6ca00303ed9a] Open Light room to discover on cord: (3, 1)
+DIG OUT - 2024-12-03 01-54-52(INFO): [GAME_ID: b33b02c5-4dae-4699-889c-6ca00303ed9a] Open Light room to discover on cord: (1, 1)
+DIG OUT - 2024-12-03 01-54-52(INFO): [GAME_ID: b33b02c5-4dae-4699-889c-6ca00303ed9a] create new Survivor. NAME: RYAN, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Known as the pickaxe master , yet he never struck gold , even though he didn’t know how to use a pickaxe., AGE: 59
+DIG OUT - 2024-12-03 01-54-52(INFO): [GAME_ID: b33b02c5-4dae-4699-889c-6ca00303ed9a] create new Survivor. NAME: SAM, ENERGY: 4, SURVIVOR TYPE: COOK, PI: Once, he was the best miner in town , and his strength was legendary , and was secretly terrified of mice., AGE: 66
+DIG OUT - 2024-12-03 01-54-52(INFO): [GAME_ID: b33b02c5-4dae-4699-889c-6ca00303ed9a] create new Survivor. NAME: ZAC, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: He had been working in the mine for a decade , and his strength was legendary , though he still hoped for a promotion to the office., AGE: 65
+DIG OUT - 2024-12-03 01-54-52(INFO): [GAME_ID: b33b02c5-4dae-4699-889c-6ca00303ed9a] create new Survivor. NAME: TIM, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: He never parted with his mining gear , despite not actually liking the mines , though he came here thinking it was a library., AGE: 23
+DIG OUT - 2024-12-03 01-54-54(INFO): pause()
+DIG OUT - 2024-12-03 01-54-57(INFO): resume()
+DIG OUT - 2024-12-03 01-54-58(INFO): pause()
+DIG OUT - 2024-12-03 02-06-53(INFO): resume()
+DIG OUT - 2024-12-03 02-06-55(INFO): pause()
+DIG OUT - 2024-12-03 02-40-49(INFO): resume()
+DIG OUT - 2024-12-03 02-40-55(INFO): pause()
+DIG OUT - 2024-12-03 02-40-55(INFO): dispose()
+DIG OUT - 2024-12-03 02-40-55(INFO): EIXT GAME
+
+DIG OUT - 2024-12-03 20-03-51(INFO): create()
+DIG OUT - 2024-12-03 20-04-08(INFO): Open new game screen
+DIG OUT - 2024-12-03 20-04-10(INFO): [GAME_ID: 4faadf49-a614-4c29-affe-7fc8b262e0e3] Generate new ID for new MyGame: 4faadf49-a614-4c29-affe-7fc8b262e0e3
+DIG OUT - 2024-12-03 20-04-10(INFO): [GAME_ID: 4faadf49-a614-4c29-affe-7fc8b262e0e3] Coordinates of Base room [9, 1]
+DIG OUT - 2024-12-03 20-04-10(INFO): [GAME_ID: 4faadf49-a614-4c29-affe-7fc8b262e0e3] Coordinates of Exit room [8, 10]
+DIG OUT - 2024-12-03 20-04-10(INFO): [GAME_ID: 4faadf49-a614-4c29-affe-7fc8b262e0e3] create new Survivor. NAME: RON, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: He had been working in the mine for a decade , although he preferred telling stories to mining , despite mining as if he were digging in quicksand., AGE: 41
+DIG OUT - 2024-12-03 20-04-10(INFO): [GAME_ID: 4faadf49-a614-4c29-affe-7fc8b262e0e3] Create New MyGame
+DIG OUT - 2024-12-03 20-04-14(INFO): [GAME_ID: b7944036-aad7-4503-aa0b-5b4fbbfc3529] Generate new ID for new MyGame: b7944036-aad7-4503-aa0b-5b4fbbfc3529
+DIG OUT - 2024-12-03 20-04-14(INFO): [GAME_ID: b7944036-aad7-4503-aa0b-5b4fbbfc3529] Coordinates of Base room [5, 1]
+DIG OUT - 2024-12-03 20-04-14(INFO): [GAME_ID: b7944036-aad7-4503-aa0b-5b4fbbfc3529] Coordinates of Exit room [6, 10]
+DIG OUT - 2024-12-03 20-04-14(INFO): [GAME_ID: b7944036-aad7-4503-aa0b-5b4fbbfc3529] create new Survivor. NAME: RYAN, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: He loved unearthing treasures , yet he hadn’t found a treasure yet , though he always dreamed of retiring on a beach., AGE: 20
+DIG OUT - 2024-12-03 20-04-14(INFO): [GAME_ID: b7944036-aad7-4503-aa0b-5b4fbbfc3529] Make able to discovered nearest room for room: 5, 1
+DIG OUT - 2024-12-03 20-04-14(INFO): [GAME_ID: b7944036-aad7-4503-aa0b-5b4fbbfc3529] discovered nearest room R at: 6, 1
+DIG OUT - 2024-12-03 20-04-14(INFO): [GAME_ID: b7944036-aad7-4503-aa0b-5b4fbbfc3529] discovered nearest room L at: 4, 1
+DIG OUT - 2024-12-03 20-04-14(INFO): [GAME_ID: b7944036-aad7-4503-aa0b-5b4fbbfc3529] Open Light room to discover on cord: (6, 1)
+DIG OUT - 2024-12-03 20-04-14(INFO): [GAME_ID: b7944036-aad7-4503-aa0b-5b4fbbfc3529] Open Light room to discover on cord: (4, 1)
+DIG OUT - 2024-12-03 20-04-14(INFO): [GAME_ID: b7944036-aad7-4503-aa0b-5b4fbbfc3529] create new Survivor. NAME: JIM, ENERGY: 4, SURVIVOR TYPE: MINER, PI: He loved unearthing treasures , yet he hadn’t found a treasure yet , because he mistook his helmet for a bucket., AGE: 66
+DIG OUT - 2024-12-03 20-04-14(INFO): [GAME_ID: b7944036-aad7-4503-aa0b-5b4fbbfc3529] create new Survivor. NAME: AL, ENERGY: 4, SURVIVOR TYPE: COOK, PI: He loved unearthing treasures , and his strength was legendary , because he mistook his helmet for a bucket., AGE: 52
+DIG OUT - 2024-12-03 20-04-14(INFO): [GAME_ID: b7944036-aad7-4503-aa0b-5b4fbbfc3529] create new Survivor. NAME: STEVE, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: He always dreamed of finding diamonds , and his strength was legendary , even though he didn’t know how to use a pickaxe., AGE: 55
+DIG OUT - 2024-12-03 20-04-14(INFO): [GAME_ID: b7944036-aad7-4503-aa0b-5b4fbbfc3529] create new Survivor. NAME: KEN, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Once, he was the best miner in town , yet he never struck gold , but most of the time, he just looked for excuses not to work., AGE: 34
+DIG OUT - 2024-12-03 20-04-40(INFO): [GAME_ID: b7944036-aad7-4503-aa0b-5b4fbbfc3529] Survivor: AL got a task: WAIT , in room: com.kraisu.digout.rooms.BaseRoom@55b0dcab , cords: 5, 1
+DIG OUT - 2024-12-03 20-04-43(INFO): [GAME_ID: b7944036-aad7-4503-aa0b-5b4fbbfc3529] Survivor: KEN got a task: WAIT , in room: com.kraisu.digout.rooms.BaseRoom@55b0dcab , cords: 5, 1
+DIG OUT - 2024-12-03 20-04-47(INFO): [GAME_ID: b7944036-aad7-4503-aa0b-5b4fbbfc3529] Survivor: RYAN got a task: WAIT , in room: com.kraisu.digout.rooms.BaseRoom@55b0dcab , cords: 5, 1
+DIG OUT - 2024-12-03 20-04-53(INFO): [GAME_ID: b7944036-aad7-4503-aa0b-5b4fbbfc3529] Survivor: STEVE got a task: WAIT , in room: com.kraisu.digout.rooms.BaseRoom@55b0dcab , cords: 5, 1
+DIG OUT - 2024-12-03 20-04-58(INFO): [GAME_ID: b7944036-aad7-4503-aa0b-5b4fbbfc3529] Survivor: JIM got a task: WAIT , in room: com.kraisu.digout.rooms.BaseRoom@55b0dcab , cords: 5, 1
+DIG OUT - 2024-12-03 20-05-01(INFO): [GAME_ID: b7944036-aad7-4503-aa0b-5b4fbbfc3529] Survivor: JIM, Unpin task: WAIT
+DIG OUT - 2024-12-03 20-05-07(INFO): [GAME_ID: b7944036-aad7-4503-aa0b-5b4fbbfc3529] Survivor: AL, Unpin task: WAIT
+DIG OUT - 2024-12-03 20-05-15(INFO): [GAME_ID: b7944036-aad7-4503-aa0b-5b4fbbfc3529] Survivor: KEN, Unpin task: WAIT
+DIG OUT - 2024-12-03 20-05-19(INFO): [GAME_ID: b7944036-aad7-4503-aa0b-5b4fbbfc3529] Survivor: RYAN, Unpin task: WAIT
+DIG OUT - 2024-12-03 20-05-33(INFO): pause()
+DIG OUT - 2024-12-03 20-05-33(INFO): dispose()
+DIG OUT - 2024-12-03 20-05-33(INFO): EIXT GAME
+
+DIG OUT - 2024-12-03 20-07-30(INFO): create()
+DIG OUT - 2024-12-03 20-07-35(INFO): Open new game screen
+DIG OUT - 2024-12-03 20-07-36(INFO): [GAME_ID: d518ca42-1d5b-417d-9c69-8c90ff4d3e78] Generate new ID for new MyGame: d518ca42-1d5b-417d-9c69-8c90ff4d3e78
+DIG OUT - 2024-12-03 20-07-36(INFO): [GAME_ID: d518ca42-1d5b-417d-9c69-8c90ff4d3e78] Coordinates of Base room [10, 1]
+DIG OUT - 2024-12-03 20-07-36(INFO): [GAME_ID: d518ca42-1d5b-417d-9c69-8c90ff4d3e78] Coordinates of Exit room [1, 10]
+DIG OUT - 2024-12-03 20-07-36(INFO): [GAME_ID: d518ca42-1d5b-417d-9c69-8c90ff4d3e78] create new Survivor. NAME: RON, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: He always dreamed of finding diamonds , despite not actually liking the mines , though he still hoped for a promotion to the office., AGE: 45
+DIG OUT - 2024-12-03 20-07-36(INFO): [GAME_ID: d518ca42-1d5b-417d-9c69-8c90ff4d3e78] Create New MyGame
+DIG OUT - 2024-12-03 20-07-41(INFO): [GAME_ID: b137ff41-2bbf-47d8-9d97-bda7ba6efa89] Generate new ID for new MyGame: b137ff41-2bbf-47d8-9d97-bda7ba6efa89
+DIG OUT - 2024-12-03 20-07-41(INFO): [GAME_ID: b137ff41-2bbf-47d8-9d97-bda7ba6efa89] Coordinates of Base room [9, 1]
+DIG OUT - 2024-12-03 20-07-41(INFO): [GAME_ID: b137ff41-2bbf-47d8-9d97-bda7ba6efa89] Coordinates of Exit room [8, 10]
+DIG OUT - 2024-12-03 20-07-41(INFO): [GAME_ID: b137ff41-2bbf-47d8-9d97-bda7ba6efa89] create new Survivor. NAME: BOB, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Known as the pickaxe master , and his strength was legendary , because he mistook his helmet for a bucket., AGE: 57
+DIG OUT - 2024-12-03 20-07-41(INFO): [GAME_ID: b137ff41-2bbf-47d8-9d97-bda7ba6efa89] Make able to discovered nearest room for room: 9, 1
+DIG OUT - 2024-12-03 20-07-41(INFO): [GAME_ID: b137ff41-2bbf-47d8-9d97-bda7ba6efa89] discovered nearest room R at: 10, 1
+DIG OUT - 2024-12-03 20-07-41(INFO): [GAME_ID: b137ff41-2bbf-47d8-9d97-bda7ba6efa89] discovered nearest room L at: 8, 1
+DIG OUT - 2024-12-03 20-07-41(INFO): [GAME_ID: b137ff41-2bbf-47d8-9d97-bda7ba6efa89] Open Light room to discover on cord: (10, 1)
+DIG OUT - 2024-12-03 20-07-41(INFO): [GAME_ID: b137ff41-2bbf-47d8-9d97-bda7ba6efa89] Open Light room to discover on cord: (8, 1)
+DIG OUT - 2024-12-03 20-07-41(INFO): [GAME_ID: b137ff41-2bbf-47d8-9d97-bda7ba6efa89] create new Survivor. NAME: TED, ENERGY: 4, SURVIVOR TYPE: MINER, PI: He always dreamed of finding diamonds , and his strength was legendary , although he hoped to discover a forgotten treasure., AGE: 52
+DIG OUT - 2024-12-03 20-07-41(INFO): [GAME_ID: b137ff41-2bbf-47d8-9d97-bda7ba6efa89] create new Survivor. NAME: TIM, ENERGY: 4, SURVIVOR TYPE: COOK, PI: He used to be a goldsmith , despite not actually liking the mines , despite mining as if he were digging in quicksand., AGE: 57
+DIG OUT - 2024-12-03 20-07-41(INFO): [GAME_ID: b137ff41-2bbf-47d8-9d97-bda7ba6efa89] create new Survivor. NAME: JOHN, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: He loved unearthing treasures , yet he never struck gold , and was secretly terrified of mice., AGE: 41
+DIG OUT - 2024-12-03 20-07-41(INFO): [GAME_ID: b137ff41-2bbf-47d8-9d97-bda7ba6efa89] create new Survivor. NAME: RON, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: He never went anywhere without his trusty shovel , yet he hadn’t found a treasure yet , despite mining as if he were digging in quicksand., AGE: 51
+DIG OUT - 2024-12-03 20-07-47(INFO): [GAME_ID: b137ff41-2bbf-47d8-9d97-bda7ba6efa89] Survivor: BOB got a task: DIG_OUT , in room: com.kraisu.digout.rooms.UndiscoveredLightRoom@5e5d171f , cords: 8, 1
+DIG OUT - 2024-12-03 20-07-51(INFO): [GAME_ID: b137ff41-2bbf-47d8-9d97-bda7ba6efa89] Survivor: TED got a task: WAIT , in room: com.kraisu.digout.rooms.BaseRoom@305b7c14 , cords: 9, 1
+DIG OUT - 2024-12-03 20-07-56(INFO): [GAME_ID: b137ff41-2bbf-47d8-9d97-bda7ba6efa89] Survivor: JOHN got a task: WAIT , in room: com.kraisu.digout.rooms.BaseRoom@305b7c14 , cords: 9, 1
+DIG OUT - 2024-12-03 20-08-01(INFO): [GAME_ID: b137ff41-2bbf-47d8-9d97-bda7ba6efa89] Survivor: RON got a task: WAIT , in room: com.kraisu.digout.rooms.BaseRoom@305b7c14 , cords: 9, 1
+DIG OUT - 2024-12-03 20-08-06(INFO): [GAME_ID: b137ff41-2bbf-47d8-9d97-bda7ba6efa89] Survivor: TIM got a task: WAIT , in room: com.kraisu.digout.rooms.BaseRoom@305b7c14 , cords: 9, 1
+DIG OUT - 2024-12-03 20-08-14(INFO): [GAME_ID: b137ff41-2bbf-47d8-9d97-bda7ba6efa89] Survivor: BOB, Unpin task: DIG_OUT
+DIG OUT - 2024-12-03 20-08-21(INFO): pause()
+DIG OUT - 2024-12-03 20-08-21(INFO): dispose()
+DIG OUT - 2024-12-03 20-08-21(INFO): EIXT GAME
+
+DIG OUT - 2024-12-03 20-12-07(INFO): create()
+DIG OUT - 2024-12-03 20-12-13(INFO): Open new game screen
+DIG OUT - 2024-12-03 20-12-14(INFO): [GAME_ID: 8116b49f-9845-401a-8456-cde3d9e8b034] Generate new ID for new MyGame: 8116b49f-9845-401a-8456-cde3d9e8b034
+DIG OUT - 2024-12-03 20-12-14(INFO): [GAME_ID: 8116b49f-9845-401a-8456-cde3d9e8b034] Coordinates of Base room [3, 1]
+DIG OUT - 2024-12-03 20-12-14(INFO): [GAME_ID: 8116b49f-9845-401a-8456-cde3d9e8b034] Coordinates of Exit room [1, 10]
+DIG OUT - 2024-12-03 20-12-14(INFO): [GAME_ID: 8116b49f-9845-401a-8456-cde3d9e8b034] create new Survivor. NAME: JIM, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Known as the pickaxe master , though he was secretly afraid of the dark , even though he didn’t know how to use a pickaxe., AGE: 23
+DIG OUT - 2024-12-03 20-12-14(INFO): [GAME_ID: 8116b49f-9845-401a-8456-cde3d9e8b034] Create New MyGame
+DIG OUT - 2024-12-03 20-12-19(INFO): [GAME_ID: cbbd2e82-e040-474d-8b33-74bffcbc66ef] Generate new ID for new MyGame: cbbd2e82-e040-474d-8b33-74bffcbc66ef
+DIG OUT - 2024-12-03 20-12-19(INFO): [GAME_ID: cbbd2e82-e040-474d-8b33-74bffcbc66ef] Coordinates of Base room [9, 1]
+DIG OUT - 2024-12-03 20-12-19(INFO): [GAME_ID: cbbd2e82-e040-474d-8b33-74bffcbc66ef] Coordinates of Exit room [3, 10]
+DIG OUT - 2024-12-03 20-12-19(INFO): [GAME_ID: cbbd2e82-e040-474d-8b33-74bffcbc66ef] create new Survivor. NAME: TOM, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Known as the pickaxe master , but working underground was exhausting for him , because he mistook his helmet for a bucket., AGE: 32
+DIG OUT - 2024-12-03 20-12-19(INFO): [GAME_ID: cbbd2e82-e040-474d-8b33-74bffcbc66ef] Make able to discovered nearest room for room: 9, 1
+DIG OUT - 2024-12-03 20-12-19(INFO): [GAME_ID: cbbd2e82-e040-474d-8b33-74bffcbc66ef] discovered nearest room R at: 10, 1
+DIG OUT - 2024-12-03 20-12-19(INFO): [GAME_ID: cbbd2e82-e040-474d-8b33-74bffcbc66ef] discovered nearest room L at: 8, 1
+DIG OUT - 2024-12-03 20-12-19(INFO): [GAME_ID: cbbd2e82-e040-474d-8b33-74bffcbc66ef] Open Light room to discover on cord: (10, 1)
+DIG OUT - 2024-12-03 20-12-19(INFO): [GAME_ID: cbbd2e82-e040-474d-8b33-74bffcbc66ef] Open Light room to discover on cord: (8, 1)
+DIG OUT - 2024-12-03 20-12-19(INFO): [GAME_ID: cbbd2e82-e040-474d-8b33-74bffcbc66ef] create new Survivor. NAME: BOB, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Known as the pickaxe master , but working underground was exhausting for him , but most of the time, he just looked for excuses not to work., AGE: 74
+DIG OUT - 2024-12-03 20-12-19(INFO): [GAME_ID: cbbd2e82-e040-474d-8b33-74bffcbc66ef] create new Survivor. NAME: RON, ENERGY: 4, SURVIVOR TYPE: COOK, PI: He never went anywhere without his trusty shovel , though he hated getting his hands dirty , because he mistook his helmet for a bucket., AGE: 31
+DIG OUT - 2024-12-03 20-12-19(INFO): [GAME_ID: cbbd2e82-e040-474d-8b33-74bffcbc66ef] create new Survivor. NAME: MIKE, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: He never went anywhere without his trusty shovel , but lately, his luck has run out , and was secretly terrified of mice., AGE: 51
+DIG OUT - 2024-12-03 20-12-19(INFO): [GAME_ID: cbbd2e82-e040-474d-8b33-74bffcbc66ef] create new Survivor. NAME: BOB 1, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: He never parted with his mining gear , though he hated getting his hands dirty , even though he didn’t know how to use a pickaxe., AGE: 23
+DIG OUT - 2024-12-03 20-12-33(INFO): pause()
+DIG OUT - 2024-12-03 20-12-33(INFO): dispose()
+DIG OUT - 2024-12-03 20-12-33(INFO): EIXT GAME
+
+DIG OUT - 2024-12-03 20-20-04(INFO): create()
+DIG OUT - 2024-12-03 20-20-09(INFO): Open new game screen
+DIG OUT - 2024-12-03 20-20-10(INFO): [GAME_ID: 91ac8f0a-ac9a-4407-a82a-349f17e37f19] Generate new ID for new MyGame: 91ac8f0a-ac9a-4407-a82a-349f17e37f19
+DIG OUT - 2024-12-03 20-20-10(INFO): [GAME_ID: 91ac8f0a-ac9a-4407-a82a-349f17e37f19] Coordinates of Base room [4, 1]
+DIG OUT - 2024-12-03 20-20-10(INFO): [GAME_ID: 91ac8f0a-ac9a-4407-a82a-349f17e37f19] Coordinates of Exit room [2, 10]
+DIG OUT - 2024-12-03 20-20-10(INFO): [GAME_ID: 91ac8f0a-ac9a-4407-a82a-349f17e37f19] create new Survivor. NAME: BILL, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Famous for knowing every tunnel by heart , although he preferred telling stories to mining , despite mining as if he were digging in quicksand., AGE: 55
+DIG OUT - 2024-12-03 20-20-10(INFO): [GAME_ID: 91ac8f0a-ac9a-4407-a82a-349f17e37f19] Create New MyGame
+DIG OUT - 2024-12-03 20-20-16(INFO): [GAME_ID: 9fcf489e-ab12-4e00-8ecd-5e2b703f8578] Generate new ID for new MyGame: 9fcf489e-ab12-4e00-8ecd-5e2b703f8578
+DIG OUT - 2024-12-03 20-20-16(INFO): [GAME_ID: 9fcf489e-ab12-4e00-8ecd-5e2b703f8578] Coordinates of Base room [3, 1]
+DIG OUT - 2024-12-03 20-20-16(INFO): [GAME_ID: 9fcf489e-ab12-4e00-8ecd-5e2b703f8578] Coordinates of Exit room [10, 10]
+DIG OUT - 2024-12-03 20-20-16(INFO): [GAME_ID: 9fcf489e-ab12-4e00-8ecd-5e2b703f8578] create new Survivor. NAME: STEVE, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Known as the pickaxe master , though he was secretly afraid of the dark , though he still hoped for a promotion to the office., AGE: 19
+DIG OUT - 2024-12-03 20-20-16(INFO): [GAME_ID: 9fcf489e-ab12-4e00-8ecd-5e2b703f8578] Make able to discovered nearest room for room: 3, 1
+DIG OUT - 2024-12-03 20-20-16(INFO): [GAME_ID: 9fcf489e-ab12-4e00-8ecd-5e2b703f8578] discovered nearest room R at: 4, 1
+DIG OUT - 2024-12-03 20-20-16(INFO): [GAME_ID: 9fcf489e-ab12-4e00-8ecd-5e2b703f8578] discovered nearest room L at: 2, 1
+DIG OUT - 2024-12-03 20-20-16(INFO): [GAME_ID: 9fcf489e-ab12-4e00-8ecd-5e2b703f8578] Open Light room to discover on cord: (4, 1)
+DIG OUT - 2024-12-03 20-20-16(INFO): [GAME_ID: 9fcf489e-ab12-4e00-8ecd-5e2b703f8578] Open Light room to discover on cord: (2, 1)
+DIG OUT - 2024-12-03 20-20-16(INFO): [GAME_ID: 9fcf489e-ab12-4e00-8ecd-5e2b703f8578] create new Survivor. NAME: JIM, ENERGY: 4, SURVIVOR TYPE: MINER, PI: He always dreamed of finding diamonds , despite not actually liking the mines , even though he didn’t know how to use a pickaxe., AGE: 37
+DIG OUT - 2024-12-03 20-20-16(INFO): [GAME_ID: 9fcf489e-ab12-4e00-8ecd-5e2b703f8578] create new Survivor. NAME: STEVE 1, ENERGY: 4, SURVIVOR TYPE: COOK, PI: He used to be a goldsmith , but lately, his luck has run out , and was secretly terrified of mice., AGE: 24
+DIG OUT - 2024-12-03 20-20-16(INFO): [GAME_ID: 9fcf489e-ab12-4e00-8ecd-5e2b703f8578] create new Survivor. NAME: JIM 1, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Known as the pickaxe master , while his coworkers always laughed at him , though he still hoped for a promotion to the office., AGE: 44
+DIG OUT - 2024-12-03 20-20-16(INFO): [GAME_ID: 9fcf489e-ab12-4e00-8ecd-5e2b703f8578] create new Survivor. NAME: DAN, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Once, he was the best miner in town , despite not actually liking the mines , and was secretly terrified of mice., AGE: 51
+DIG OUT - 2024-12-03 20-20-39(INFO): pause()
+DIG OUT - 2024-12-03 20-20-39(INFO): dispose()
+DIG OUT - 2024-12-03 20-20-39(INFO): EIXT GAME
+
+DIG OUT - 2024-12-03 20-21-58(INFO): create()
+DIG OUT - 2024-12-03 20-22-04(INFO): Open new game screen
+DIG OUT - 2024-12-03 20-22-05(INFO): [GAME_ID: 5f437bee-af43-4f5b-92cd-98cc443f11bd] Generate new ID for new MyGame: 5f437bee-af43-4f5b-92cd-98cc443f11bd
+DIG OUT - 2024-12-03 20-22-05(INFO): [GAME_ID: 5f437bee-af43-4f5b-92cd-98cc443f11bd] Coordinates of Base room [1, 1]
+DIG OUT - 2024-12-03 20-22-05(INFO): [GAME_ID: 5f437bee-af43-4f5b-92cd-98cc443f11bd] Coordinates of Exit room [10, 10]
+DIG OUT - 2024-12-03 20-22-05(INFO): [GAME_ID: 5f437bee-af43-4f5b-92cd-98cc443f11bd] create new Survivor. NAME: RYAN, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: He never went anywhere without his trusty shovel , despite not actually liking the mines , though he always dreamed of retiring on a beach., AGE: 46
+DIG OUT - 2024-12-03 20-22-05(INFO): [GAME_ID: 5f437bee-af43-4f5b-92cd-98cc443f11bd] Create New MyGame
+DIG OUT - 2024-12-03 20-22-13(INFO): [GAME_ID: 7f1a206c-9491-4c39-8086-b543822574c1] Generate new ID for new MyGame: 7f1a206c-9491-4c39-8086-b543822574c1
+DIG OUT - 2024-12-03 20-22-13(INFO): [GAME_ID: 7f1a206c-9491-4c39-8086-b543822574c1] Coordinates of Base room [2, 1]
+DIG OUT - 2024-12-03 20-22-13(INFO): [GAME_ID: 7f1a206c-9491-4c39-8086-b543822574c1] Coordinates of Exit room [1, 10]
+DIG OUT - 2024-12-03 20-22-13(INFO): [GAME_ID: 7f1a206c-9491-4c39-8086-b543822574c1] create new Survivor. NAME: MIKE, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Once, he was the best miner in town , yet he hadn’t found a treasure yet , though he still hoped for a promotion to the office., AGE: 20
+DIG OUT - 2024-12-03 20-22-13(INFO): [GAME_ID: 7f1a206c-9491-4c39-8086-b543822574c1] Make able to discovered nearest room for room: 2, 1
+DIG OUT - 2024-12-03 20-22-13(INFO): [GAME_ID: 7f1a206c-9491-4c39-8086-b543822574c1] discovered nearest room R at: 3, 1
+DIG OUT - 2024-12-03 20-22-13(INFO): [GAME_ID: 7f1a206c-9491-4c39-8086-b543822574c1] discovered nearest room L at: 1, 1
+DIG OUT - 2024-12-03 20-22-13(INFO): [GAME_ID: 7f1a206c-9491-4c39-8086-b543822574c1] Open Light room to discover on cord: (3, 1)
+DIG OUT - 2024-12-03 20-22-13(INFO): [GAME_ID: 7f1a206c-9491-4c39-8086-b543822574c1] Open Light room to discover on cord: (1, 1)
+DIG OUT - 2024-12-03 20-22-13(INFO): [GAME_ID: 7f1a206c-9491-4c39-8086-b543822574c1] create new Survivor. NAME: KURT, ENERGY: 4, SURVIVOR TYPE: MINER, PI: He loved unearthing treasures , yet he hadn’t found a treasure yet , though he always dreamed of retiring on a beach., AGE: 47
+DIG OUT - 2024-12-03 20-22-13(INFO): [GAME_ID: 7f1a206c-9491-4c39-8086-b543822574c1] create new Survivor. NAME: BILL, ENERGY: 4, SURVIVOR TYPE: COOK, PI: He never went anywhere without his trusty shovel , while his coworkers always laughed at him , but most of the time, he just looked for excuses not to work., AGE: 25
+DIG OUT - 2024-12-03 20-22-13(INFO): [GAME_ID: 7f1a206c-9491-4c39-8086-b543822574c1] create new Survivor. NAME: RON, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: He never parted with his mining gear , though he hated getting his hands dirty , and was secretly terrified of mice., AGE: 26
+DIG OUT - 2024-12-03 20-22-13(INFO): [GAME_ID: 7f1a206c-9491-4c39-8086-b543822574c1] create new Survivor. NAME: STEVE, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: He always dreamed of finding diamonds , though he hated getting his hands dirty , even though he didn’t know how to use a pickaxe., AGE: 55
+DIG OUT - 2024-12-03 20-22-30(INFO): pause()
+DIG OUT - 2024-12-03 20-22-30(INFO): dispose()
+DIG OUT - 2024-12-03 20-22-30(INFO): EIXT GAME
+
+DIG OUT - 2024-12-03 20-24-44(INFO): create()
+DIG OUT - 2024-12-03 20-24-51(INFO): Open new game screen
+DIG OUT - 2024-12-03 20-24-52(INFO): [GAME_ID: 8ff56d34-a471-49ea-9c7f-a46c2652abe0] Generate new ID for new MyGame: 8ff56d34-a471-49ea-9c7f-a46c2652abe0
+DIG OUT - 2024-12-03 20-24-52(INFO): [GAME_ID: 8ff56d34-a471-49ea-9c7f-a46c2652abe0] Coordinates of Base room [6, 1]
+DIG OUT - 2024-12-03 20-24-52(INFO): [GAME_ID: 8ff56d34-a471-49ea-9c7f-a46c2652abe0] Coordinates of Exit room [1, 10]
+DIG OUT - 2024-12-03 20-24-52(INFO): [GAME_ID: 8ff56d34-a471-49ea-9c7f-a46c2652abe0] create new Survivor. NAME: TED, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: He had been working in the mine for a decade , and his strength was legendary , though he came here thinking it was a library., AGE: 22
+DIG OUT - 2024-12-03 20-24-52(INFO): [GAME_ID: 8ff56d34-a471-49ea-9c7f-a46c2652abe0] Create New MyGame
+DIG OUT - 2024-12-03 20-24-56(INFO): [GAME_ID: 1d44c2e6-8eb7-4a25-9e23-d70800543f56] Generate new ID for new MyGame: 1d44c2e6-8eb7-4a25-9e23-d70800543f56
+DIG OUT - 2024-12-03 20-24-56(INFO): [GAME_ID: 1d44c2e6-8eb7-4a25-9e23-d70800543f56] Coordinates of Base room [4, 1]
+DIG OUT - 2024-12-03 20-24-56(INFO): [GAME_ID: 1d44c2e6-8eb7-4a25-9e23-d70800543f56] Coordinates of Exit room [7, 10]
+DIG OUT - 2024-12-03 20-24-56(INFO): [GAME_ID: 1d44c2e6-8eb7-4a25-9e23-d70800543f56] create new Survivor. NAME: STEVE, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: He loved unearthing treasures , while his coworkers always laughed at him , but most of the time, he just looked for excuses not to work., AGE: 77
+DIG OUT - 2024-12-03 20-24-56(INFO): [GAME_ID: 1d44c2e6-8eb7-4a25-9e23-d70800543f56] Make able to discovered nearest room for room: 4, 1
+DIG OUT - 2024-12-03 20-24-56(INFO): [GAME_ID: 1d44c2e6-8eb7-4a25-9e23-d70800543f56] discovered nearest room R at: 5, 1
+DIG OUT - 2024-12-03 20-24-56(INFO): [GAME_ID: 1d44c2e6-8eb7-4a25-9e23-d70800543f56] discovered nearest room L at: 3, 1
+DIG OUT - 2024-12-03 20-24-56(INFO): [GAME_ID: 1d44c2e6-8eb7-4a25-9e23-d70800543f56] Open Light room to discover on cord: (5, 1)
+DIG OUT - 2024-12-03 20-24-56(INFO): [GAME_ID: 1d44c2e6-8eb7-4a25-9e23-d70800543f56] Open Light room to discover on cord: (3, 1)
+DIG OUT - 2024-12-03 20-24-56(INFO): [GAME_ID: 1d44c2e6-8eb7-4a25-9e23-d70800543f56] create new Survivor. NAME: JIM, ENERGY: 4, SURVIVOR TYPE: MINER, PI: He used to be a goldsmith , yet he never struck gold , and was secretly terrified of mice., AGE: 25
+DIG OUT - 2024-12-03 20-24-56(INFO): [GAME_ID: 1d44c2e6-8eb7-4a25-9e23-d70800543f56] create new Survivor. NAME: RYAN, ENERGY: 4, SURVIVOR TYPE: COOK, PI: He loved unearthing treasures , despite not actually liking the mines , and was secretly terrified of mice., AGE: 22
+DIG OUT - 2024-12-03 20-24-56(INFO): [GAME_ID: 1d44c2e6-8eb7-4a25-9e23-d70800543f56] create new Survivor. NAME: KEN, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: He never parted with his mining gear , and his strength was legendary , because he mistook his helmet for a bucket., AGE: 76
+DIG OUT - 2024-12-03 20-24-56(INFO): [GAME_ID: 1d44c2e6-8eb7-4a25-9e23-d70800543f56] create new Survivor. NAME: KEN 1, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: He loved unearthing treasures , yet he never struck gold , even though he didn’t know how to use a pickaxe., AGE: 57
+DIG OUT - 2024-12-03 20-25-57(INFO): pause()
+DIG OUT - 2024-12-03 20-25-57(INFO): dispose()
+DIG OUT - 2024-12-03 20-25-57(INFO): EIXT GAME
+
+DIG OUT - 2024-12-03 20-45-34(INFO): create()
+DIG OUT - 2024-12-03 20-46-00(INFO): pause()
+DIG OUT - 2024-12-03 20-46-00(INFO): dispose()
+DIG OUT - 2024-12-03 20-46-00(INFO): EIXT GAME
+
+DIG OUT - 2024-12-03 20-47-27(INFO): create()
+DIG OUT - 2024-12-03 20-47-37(INFO): Open new game screen
+DIG OUT - 2024-12-03 20-47-39(INFO): [GAME_ID: e8f51f90-0517-4c4a-a6b6-5d3d5262a0da] Generate new ID for new MyGame: e8f51f90-0517-4c4a-a6b6-5d3d5262a0da
+DIG OUT - 2024-12-03 20-47-39(INFO): [GAME_ID: e8f51f90-0517-4c4a-a6b6-5d3d5262a0da] Coordinates of Base room [4, 1]
+DIG OUT - 2024-12-03 20-47-39(INFO): [GAME_ID: e8f51f90-0517-4c4a-a6b6-5d3d5262a0da] Coordinates of Exit room [10, 10]
+DIG OUT - 2024-12-03 20-47-39(INFO): [GAME_ID: e8f51f90-0517-4c4a-a6b6-5d3d5262a0da] create new Survivor. NAME: KEN, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: He loved unearthing treasures , but lately, his luck has run out , though he always dreamed of retiring on a beach., AGE: 65
+DIG OUT - 2024-12-03 20-47-39(INFO): [GAME_ID: e8f51f90-0517-4c4a-a6b6-5d3d5262a0da] Create New MyGame
+DIG OUT - 2024-12-03 20-47-44(INFO): [GAME_ID: e733ba3b-aecd-4863-8a0b-246ca15a7d0e] Generate new ID for new MyGame: e733ba3b-aecd-4863-8a0b-246ca15a7d0e
+DIG OUT - 2024-12-03 20-47-44(INFO): [GAME_ID: e733ba3b-aecd-4863-8a0b-246ca15a7d0e] Coordinates of Base room [8, 1]
+DIG OUT - 2024-12-03 20-47-44(INFO): [GAME_ID: e733ba3b-aecd-4863-8a0b-246ca15a7d0e] Coordinates of Exit room [10, 10]
+DIG OUT - 2024-12-03 20-47-44(INFO): [GAME_ID: e733ba3b-aecd-4863-8a0b-246ca15a7d0e] create new Survivor. NAME: TED, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Famous for knowing every tunnel by heart , and his strength was legendary , though he always dreamed of retiring on a beach., AGE: 61
+DIG OUT - 2024-12-03 20-47-44(INFO): [GAME_ID: e733ba3b-aecd-4863-8a0b-246ca15a7d0e] Make able to discovered nearest room for room: 8, 1
+DIG OUT - 2024-12-03 20-47-44(INFO): [GAME_ID: e733ba3b-aecd-4863-8a0b-246ca15a7d0e] discovered nearest room R at: 9, 1
+DIG OUT - 2024-12-03 20-47-44(INFO): [GAME_ID: e733ba3b-aecd-4863-8a0b-246ca15a7d0e] discovered nearest room L at: 7, 1
+DIG OUT - 2024-12-03 20-47-44(INFO): [GAME_ID: e733ba3b-aecd-4863-8a0b-246ca15a7d0e] Open Light room to discover on cord: (9, 1)
+DIG OUT - 2024-12-03 20-47-44(INFO): [GAME_ID: e733ba3b-aecd-4863-8a0b-246ca15a7d0e] Open Light room to discover on cord: (7, 1)
+DIG OUT - 2024-12-03 20-47-44(INFO): [GAME_ID: e733ba3b-aecd-4863-8a0b-246ca15a7d0e] create new Survivor. NAME: RYAN, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Known as the pickaxe master , though he was secretly afraid of the dark , despite mining as if he were digging in quicksand., AGE: 74
+DIG OUT - 2024-12-03 20-47-44(INFO): [GAME_ID: e733ba3b-aecd-4863-8a0b-246ca15a7d0e] create new Survivor. NAME: AL, ENERGY: 4, SURVIVOR TYPE: COOK, PI: He used to be a goldsmith , and his strength was legendary , though he always dreamed of retiring on a beach., AGE: 65
+DIG OUT - 2024-12-03 20-47-44(INFO): [GAME_ID: e733ba3b-aecd-4863-8a0b-246ca15a7d0e] create new Survivor. NAME: KURT, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: Famous for knowing every tunnel by heart , yet he never struck gold , although he hoped to discover a forgotten treasure., AGE: 69
+DIG OUT - 2024-12-03 20-47-44(INFO): [GAME_ID: e733ba3b-aecd-4863-8a0b-246ca15a7d0e] create new Survivor. NAME: TOM, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: He never went anywhere without his trusty shovel , but lately, his luck has run out , though he always dreamed of retiring on a beach., AGE: 25
+DIG OUT - 2024-12-03 20-48-05(INFO): pause()
+DIG OUT - 2024-12-03 20-48-05(INFO): dispose()
+DIG OUT - 2024-12-03 20-48-05(INFO): EIXT GAME
+
+DIG OUT - 2024-12-03 20-56-39(INFO): create()
+DIG OUT - 2024-12-03 20-56-45(INFO): Open settings screen
+DIG OUT - 2024-12-03 20-56-45(INFO): Open settings screen
+DIG OUT - 2024-12-03 20-56-45(INFO): Open settings screen
+DIG OUT - 2024-12-03 20-56-46(INFO): Open new game screen
+DIG OUT - 2024-12-03 20-56-47(INFO): [GAME_ID: 3d219078-8722-41f7-9d41-3292b805c081] Generate new ID for new MyGame: 3d219078-8722-41f7-9d41-3292b805c081
+DIG OUT - 2024-12-03 20-56-47(INFO): [GAME_ID: 3d219078-8722-41f7-9d41-3292b805c081] Coordinates of Base room [6, 1]
+DIG OUT - 2024-12-03 20-56-47(INFO): [GAME_ID: 3d219078-8722-41f7-9d41-3292b805c081] Coordinates of Exit room [2, 10]
+DIG OUT - 2024-12-03 20-56-47(INFO): [GAME_ID: 3d219078-8722-41f7-9d41-3292b805c081] create new Survivor. NAME: TIM, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Famous for knowing every tunnel by heart , yet he never struck gold , and was secretly terrified of mice., AGE: 44
+DIG OUT - 2024-12-03 20-56-47(INFO): [GAME_ID: 3d219078-8722-41f7-9d41-3292b805c081] Create New MyGame
+DIG OUT - 2024-12-03 20-56-51(INFO): [GAME_ID: 26d2aba2-d3e3-48e4-9c5c-bed4d4ceb93f] Generate new ID for new MyGame: 26d2aba2-d3e3-48e4-9c5c-bed4d4ceb93f
+DIG OUT - 2024-12-03 20-56-51(INFO): [GAME_ID: 26d2aba2-d3e3-48e4-9c5c-bed4d4ceb93f] Coordinates of Base room [1, 1]
+DIG OUT - 2024-12-03 20-56-51(INFO): [GAME_ID: 26d2aba2-d3e3-48e4-9c5c-bed4d4ceb93f] Coordinates of Exit room [3, 10]
+DIG OUT - 2024-12-03 20-56-51(INFO): [GAME_ID: 26d2aba2-d3e3-48e4-9c5c-bed4d4ceb93f] create new Survivor. NAME: BOB, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: He used to be a goldsmith , while his coworkers always laughed at him , despite mining as if he were digging in quicksand., AGE: 20
+DIG OUT - 2024-12-03 20-56-51(INFO): [GAME_ID: 26d2aba2-d3e3-48e4-9c5c-bed4d4ceb93f] Make able to discovered nearest room for room: 1, 1
+DIG OUT - 2024-12-03 20-56-51(INFO): [GAME_ID: 26d2aba2-d3e3-48e4-9c5c-bed4d4ceb93f] discovered nearest room R at: 1, 2
+DIG OUT - 2024-12-03 20-56-51(INFO): [GAME_ID: 26d2aba2-d3e3-48e4-9c5c-bed4d4ceb93f] Open Light room to discover on cord: (2, 1)
+DIG OUT - 2024-12-03 20-56-51(INFO): [GAME_ID: 26d2aba2-d3e3-48e4-9c5c-bed4d4ceb93f] create new Survivor. NAME: JIM, ENERGY: 4, SURVIVOR TYPE: MINER, PI: He never parted with his mining gear , and his strength was legendary , because he mistook his helmet for a bucket., AGE: 41
+DIG OUT - 2024-12-03 20-56-51(INFO): [GAME_ID: 26d2aba2-d3e3-48e4-9c5c-bed4d4ceb93f] create new Survivor. NAME: KURT, ENERGY: 4, SURVIVOR TYPE: COOK, PI: He never went anywhere without his trusty shovel , though he was secretly afraid of the dark , despite mining as if he were digging in quicksand., AGE: 38
+DIG OUT - 2024-12-03 20-56-51(INFO): [GAME_ID: 26d2aba2-d3e3-48e4-9c5c-bed4d4ceb93f] create new Survivor. NAME: SAM, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: He used to be a goldsmith , and his strength was legendary , despite mining as if he were digging in quicksand., AGE: 29
+DIG OUT - 2024-12-03 20-56-51(INFO): [GAME_ID: 26d2aba2-d3e3-48e4-9c5c-bed4d4ceb93f] create new Survivor. NAME: SAM 1, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: He always dreamed of finding diamonds , though he hated getting his hands dirty , and was secretly terrified of mice., AGE: 34
+DIG OUT - 2024-12-03 20-57-01(INFO): pause()
+DIG OUT - 2024-12-03 20-57-01(INFO): dispose()
+DIG OUT - 2024-12-03 20-57-01(INFO): EIXT GAME
+
+DIG OUT - 2024-12-03 20-59-23(INFO): create()
+DIG OUT - 2024-12-03 20-59-28(INFO): Open new game screen
+DIG OUT - 2024-12-03 20-59-30(INFO): [GAME_ID: df832f83-2b84-419d-a7a8-108d9405bf41] Generate new ID for new MyGame: df832f83-2b84-419d-a7a8-108d9405bf41
+DIG OUT - 2024-12-03 20-59-30(INFO): [GAME_ID: df832f83-2b84-419d-a7a8-108d9405bf41] Coordinates of Base room [10, 1]
+DIG OUT - 2024-12-03 20-59-30(INFO): [GAME_ID: df832f83-2b84-419d-a7a8-108d9405bf41] Coordinates of Exit room [5, 10]
+DIG OUT - 2024-12-03 20-59-30(INFO): [GAME_ID: df832f83-2b84-419d-a7a8-108d9405bf41] create new Survivor. NAME: STEVE, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Once, he was the best miner in town , though he was secretly afraid of the dark , though he still hoped for a promotion to the office., AGE: 80
+DIG OUT - 2024-12-03 20-59-30(INFO): [GAME_ID: df832f83-2b84-419d-a7a8-108d9405bf41] Create New MyGame
+DIG OUT - 2024-12-03 20-59-34(INFO): [GAME_ID: 5cebd0c5-e975-4548-b210-95837e1be829] Generate new ID for new MyGame: 5cebd0c5-e975-4548-b210-95837e1be829
+DIG OUT - 2024-12-03 20-59-34(INFO): [GAME_ID: 5cebd0c5-e975-4548-b210-95837e1be829] Coordinates of Base room [10, 1]
+DIG OUT - 2024-12-03 20-59-34(INFO): [GAME_ID: 5cebd0c5-e975-4548-b210-95837e1be829] Coordinates of Exit room [6, 10]
+DIG OUT - 2024-12-03 20-59-34(INFO): [GAME_ID: 5cebd0c5-e975-4548-b210-95837e1be829] create new Survivor. NAME: TOM, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: Always carried a thermos of coffee , and his strength was legendary , though he came here thinking it was a library., AGE: 43
+DIG OUT - 2024-12-03 20-59-34(INFO): [GAME_ID: 5cebd0c5-e975-4548-b210-95837e1be829] Make able to discovered nearest room for room: 10, 1
+DIG OUT - 2024-12-03 20-59-34(INFO): [GAME_ID: 5cebd0c5-e975-4548-b210-95837e1be829] discovered nearest room L at: 10, 2
+DIG OUT - 2024-12-03 20-59-34(INFO): [GAME_ID: 5cebd0c5-e975-4548-b210-95837e1be829] Open Light room to discover on cord: (9, 1)
+DIG OUT - 2024-12-03 20-59-34(INFO): [GAME_ID: 5cebd0c5-e975-4548-b210-95837e1be829] create new Survivor. NAME: JOHN, ENERGY: 4, SURVIVOR TYPE: MINER, PI: Always carried a thermos of coffee , although he preferred telling stories to mining , and was secretly terrified of mice., AGE: 46
+DIG OUT - 2024-12-03 20-59-34(INFO): [GAME_ID: 5cebd0c5-e975-4548-b210-95837e1be829] create new Survivor. NAME: TOM 1, ENERGY: 4, SURVIVOR TYPE: COOK, PI: He had been working in the mine for a decade , but working underground was exhausting for him , though he still hoped for a promotion to the office., AGE: 22
+DIG OUT - 2024-12-03 20-59-34(INFO): [GAME_ID: 5cebd0c5-e975-4548-b210-95837e1be829] create new Survivor. NAME: DAN, ENERGY: 4, SURVIVOR TYPE: ENGINEER, PI: He never parted with his mining gear , and his strength was legendary , despite mining as if he were digging in quicksand., AGE: 33
+DIG OUT - 2024-12-03 20-59-34(INFO): [GAME_ID: 5cebd0c5-e975-4548-b210-95837e1be829] create new Survivor. NAME: WILL, ENERGY: 4, SURVIVOR TYPE: UNTRAINED, PI: Known as the pickaxe master , despite not actually liking the mines , even though he didn’t know how to use a pickaxe., AGE: 71
+DIG OUT - 2024-12-03 20-59-48(INFO): pause()
+DIG OUT - 2024-12-03 20-59-48(INFO): dispose()
+DIG OUT - 2024-12-03 20-59-48(INFO): EIXT GAME
+
+DIG OUT - 2024-12-03 21-00-08(INFO): create()
+DIG OUT - 2024-12-03 21-00-13(INFO): Open new game screen
+DIG OUT - 2024-12-03 21-00-14(INFO): [GAME_ID: f79977ca-14e6-44eb-8ab0-da34e95bf421] Generate new ID for new MyGame: f79977ca-14e6-44eb-8ab0-da34e95bf421
+DIG OUT - 2024-12-03 21-00-14(INFO): [GAME_ID: f79977ca-14e6-44eb-8ab0-da34e95bf421] Coordinates of Base room [5, 1]
+DIG OUT - 2024-12-03 21-00-14(INFO): [GAME_ID: f79977ca-14e6-44eb-8ab0-da34e95bf421] Coordinates of Exit room [9, 10]
+DIG OUT - 2024-12-03 21-00-14(INFO): [GAME_ID: f79977ca-14e6-44eb-8ab0-da34e95bf421] create new Survivor. NAME: TED, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: He never went anywhere without his trusty shovel , though he hated getting his hands dirty , because he mistook his helmet for a bucket., AGE: 52
+DIG OUT - 2024-12-03 21-00-14(INFO): [GAME_ID: f79977ca-14e6-44eb-8ab0-da34e95bf421] Create New MyGame
+DIG OUT - 2024-12-03 21-00-18(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Generate new ID for new MyGame: ad0816c2-6e79-4554-9b62-46de72cee0c5
+DIG OUT - 2024-12-03 21-00-18(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Coordinates of Base room [6, 1]
+DIG OUT - 2024-12-03 21-00-18(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Coordinates of Exit room [2, 10]
+DIG OUT - 2024-12-03 21-00-18(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] create new Survivor. NAME: TOM, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: He had been working in the mine for a decade , though he was secretly afraid of the dark , even though he didn’t know how to use a pickaxe., AGE: 25
+DIG OUT - 2024-12-03 21-00-18(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Make able to discovered nearest room for room: 6, 1
+DIG OUT - 2024-12-03 21-00-18(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] discovered nearest room R at: 7, 1
+DIG OUT - 2024-12-03 21-00-18(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] discovered nearest room L at: 5, 1
+DIG OUT - 2024-12-03 21-00-18(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Open Light room to discover on cord: (7, 1)
+DIG OUT - 2024-12-03 21-00-18(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Open Light room to discover on cord: (5, 1)
+DIG OUT - 2024-12-03 21-00-22(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Survivor: TOM got a task: DIG_OUT , in room: com.kraisu.digout.rooms.UndiscoveredLightRoom@5e5d171f , cords: 7, 1
+DIG OUT - 2024-12-03 21-00-23(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Make able to discovered nearest room for room: 7, 1
+DIG OUT - 2024-12-03 21-00-23(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] discovered nearest room R at: 7, 2
+DIG OUT - 2024-12-03 21-00-23(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Open Light room to discover on cord: (8, 1)
+DIG OUT - 2024-12-03 21-00-28(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Survivor: TOM got a task: DIG_OUT , in room: com.kraisu.digout.rooms.UndiscoveredLightRoom@385e9564 , cords: 8, 1
+DIG OUT - 2024-12-03 21-00-29(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Make able to discovered nearest room for room: 8, 1
+DIG OUT - 2024-12-03 21-00-29(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] discovered nearest room R at: 8, 2
+DIG OUT - 2024-12-03 21-00-29(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Open Light room to discover on cord: (9, 1)
+DIG OUT - 2024-12-03 21-00-29(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Make able to discovered nearest room for room: 7, 1
+DIG OUT - 2024-12-03 21-00-36(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Survivor: TOM got a task: BUILD_ELEVATOR , in room: com.kraisu.digout.rooms.UndiscoveredLightRoom@385e9564 , cords: 8, 1
+DIG OUT - 2024-12-03 21-00-37(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Make able to discovered nearest room for room: 8, 1
+DIG OUT - 2024-12-03 21-00-37(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] discovered nearest room Up at: 8, 2
+DIG OUT - 2024-12-03 21-00-37(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Open Light room to discover on cord: (8, 2)
+DIG OUT - 2024-12-03 21-00-37(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Make able to discovered nearest room for room: 7, 1
+DIG OUT - 2024-12-03 21-01-05(INFO): pause()
+DIG OUT - 2024-12-03 21-02-05(INFO): resume()
+DIG OUT - 2024-12-03 21-02-09(INFO): pause()
+DIG OUT - 2024-12-03 21-02-19(INFO): resume()
+DIG OUT - 2024-12-03 21-02-24(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Survivor: TOM got a task: EAT , in room: com.kraisu.digout.rooms.BaseRoom@7a675056 , cords: 6, 1
+DIG OUT - 2024-12-03 21-02-25(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Make able to discovered nearest room for room: 8, 1
+DIG OUT - 2024-12-03 21-02-25(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Make able to discovered nearest room for room: 7, 1
+DIG OUT - 2024-12-03 21-02-30(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Survivor: TOM got a task: DIG_OUT , in room: com.kraisu.digout.rooms.UndiscoveredLightRoom@d21a74c , cords: 8, 2
+DIG OUT - 2024-12-03 21-02-31(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Make able to discovered nearest room for room: 8, 1
+DIG OUT - 2024-12-03 21-02-31(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Make able to discovered nearest room for room: 7, 1
+DIG OUT - 2024-12-03 21-02-31(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Make able to discovered nearest room for room: 8, 2
+DIG OUT - 2024-12-03 21-02-31(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] discovered nearest room R at: 9, 2
+DIG OUT - 2024-12-03 21-02-31(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] discovered nearest room L at: 7, 2
+DIG OUT - 2024-12-03 21-02-31(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Open Light room to discover on cord: (9, 2)
+DIG OUT - 2024-12-03 21-02-31(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Open Light room to discover on cord: (7, 2)
+DIG OUT - 2024-12-03 21-02-38(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Survivor: TOM got a task: DIG_OUT , in room: com.kraisu.digout.rooms.UndiscoveredLightRoom@6e509ffa , cords: 9, 2
+DIG OUT - 2024-12-03 21-02-39(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Make able to discovered nearest room for room: 8, 1
+DIG OUT - 2024-12-03 21-02-39(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Make able to discovered nearest room for room: 9, 2
+DIG OUT - 2024-12-03 21-02-39(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] discovered nearest room R at: 9, 3
+DIG OUT - 2024-12-03 21-02-39(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Open Light room to discover on cord: (10, 2)
+DIG OUT - 2024-12-03 21-02-39(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Make able to discovered nearest room for room: 7, 1
+DIG OUT - 2024-12-03 21-02-39(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Make able to discovered nearest room for room: 8, 2
+DIG OUT - 2024-12-03 21-02-47(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Survivor: TOM got a task: BUILD_ELEVATOR , in room: com.kraisu.digout.rooms.UndiscoveredLightRoom@6e509ffa , cords: 9, 2
+DIG OUT - 2024-12-03 21-02-48(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Make able to discovered nearest room for room: 8, 1
+DIG OUT - 2024-12-03 21-02-48(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Make able to discovered nearest room for room: 9, 2
+DIG OUT - 2024-12-03 21-02-48(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] discovered nearest room Up at: 9, 3
+DIG OUT - 2024-12-03 21-02-48(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Open Light room to discover on cord: (9, 3)
+DIG OUT - 2024-12-03 21-02-48(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Make able to discovered nearest room for room: 7, 1
+DIG OUT - 2024-12-03 21-02-48(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Make able to discovered nearest room for room: 8, 2
+DIG OUT - 2024-12-03 21-02-54(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Survivor: TOM got a task: EAT , in room: com.kraisu.digout.rooms.BaseRoom@7a675056 , cords: 6, 1
+DIG OUT - 2024-12-03 21-02-56(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Make able to discovered nearest room for room: 8, 1
+DIG OUT - 2024-12-03 21-02-56(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Make able to discovered nearest room for room: 9, 2
+DIG OUT - 2024-12-03 21-02-56(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Make able to discovered nearest room for room: 7, 1
+DIG OUT - 2024-12-03 21-02-56(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Make able to discovered nearest room for room: 8, 2
+DIG OUT - 2024-12-03 21-03-30(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Survivor: TOM got a task: DIG_OUT , in room: com.kraisu.digout.rooms.UndiscoveredLightRoom@672872e1 , cords: 9, 3
+DIG OUT - 2024-12-03 21-03-32(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] create new Survivor. NAME: BORBO, ENERGY: 4, SURVIVOR TYPE: COOK, PI: He has no idea what he's doing here, he was dragged here by accident., AGE: 22
+DIG OUT - 2024-12-03 21-03-32(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Make able to discovered nearest room for room: 8, 1
+DIG OUT - 2024-12-03 21-03-32(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Make able to discovered nearest room for room: 9, 2
+DIG OUT - 2024-12-03 21-03-32(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Make able to discovered nearest room for room: 7, 1
+DIG OUT - 2024-12-03 21-03-32(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Make able to discovered nearest room for room: 8, 2
+DIG OUT - 2024-12-03 21-03-32(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Make able to discovered nearest room for room: 9, 3
+DIG OUT - 2024-12-03 21-03-32(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] discovered nearest room R at: 10, 3
+DIG OUT - 2024-12-03 21-03-32(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] discovered nearest room L at: 8, 3
+DIG OUT - 2024-12-03 21-03-32(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Open Light room to discover on cord: (10, 3)
+DIG OUT - 2024-12-03 21-03-32(INFO): [GAME_ID: ad0816c2-6e79-4554-9b62-46de72cee0c5] Open Light room to discover on cord: (8, 3)
+DIG OUT - 2024-12-03 21-03-42(INFO): pause()
+DIG OUT - 2024-12-03 21-03-42(INFO): dispose()
+DIG OUT - 2024-12-03 21-03-42(INFO): EIXT GAME
+
+DIG OUT - 2024-12-03 21-10-18(INFO): create()
+DIG OUT - 2024-12-03 21-10-24(INFO): Open new game screen
+DIG OUT - 2024-12-03 21-10-25(INFO): [GAME_ID: 408109bd-1258-4fd9-b513-e2e46a430bb9] Generate new ID for new MyGame: 408109bd-1258-4fd9-b513-e2e46a430bb9
+DIG OUT - 2024-12-03 21-10-25(INFO): [GAME_ID: 408109bd-1258-4fd9-b513-e2e46a430bb9] Coordinates of Base room [1, 1]
+DIG OUT - 2024-12-03 21-10-25(INFO): [GAME_ID: 408109bd-1258-4fd9-b513-e2e46a430bb9] Coordinates of Exit room [5, 10]
+DIG OUT - 2024-12-03 21-10-25(INFO): [GAME_ID: 408109bd-1258-4fd9-b513-e2e46a430bb9] create new Survivor. NAME: TOM, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: He never parted with his mining gear , yet he never struck gold , although he hoped to discover a forgotten treasure., AGE: 21
+DIG OUT - 2024-12-03 21-10-25(INFO): [GAME_ID: 408109bd-1258-4fd9-b513-e2e46a430bb9] Create New MyGame
+DIG OUT - 2024-12-03 21-10-30(INFO): [GAME_ID: bc8e104b-79df-4770-8aa5-b073ae8bca17] Generate new ID for new MyGame: bc8e104b-79df-4770-8aa5-b073ae8bca17
+DIG OUT - 2024-12-03 21-10-30(INFO): [GAME_ID: bc8e104b-79df-4770-8aa5-b073ae8bca17] Coordinates of Base room [5, 1]
+DIG OUT - 2024-12-03 21-10-30(INFO): [GAME_ID: bc8e104b-79df-4770-8aa5-b073ae8bca17] Coordinates of Exit room [5, 10]
+DIG OUT - 2024-12-03 21-10-30(INFO): [GAME_ID: bc8e104b-79df-4770-8aa5-b073ae8bca17] create new Survivor. NAME: JOHN, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: He loved unearthing treasures , but working underground was exhausting for him , because he mistook his helmet for a bucket., AGE: 38
+DIG OUT - 2024-12-03 21-10-30(INFO): [GAME_ID: bc8e104b-79df-4770-8aa5-b073ae8bca17] Make able to discovered nearest room for room: 5, 1
+DIG OUT - 2024-12-03 21-10-30(INFO): [GAME_ID: bc8e104b-79df-4770-8aa5-b073ae8bca17] discovered nearest room R at: 6, 1
+DIG OUT - 2024-12-03 21-10-30(INFO): [GAME_ID: bc8e104b-79df-4770-8aa5-b073ae8bca17] discovered nearest room L at: 4, 1
+DIG OUT - 2024-12-03 21-10-30(INFO): [GAME_ID: bc8e104b-79df-4770-8aa5-b073ae8bca17] Open Light room to discover on cord: (6, 1)
+DIG OUT - 2024-12-03 21-10-30(INFO): [GAME_ID: bc8e104b-79df-4770-8aa5-b073ae8bca17] Open Light room to discover on cord: (4, 1)
+DIG OUT - 2024-12-03 21-10-37(INFO): pause()
+DIG OUT - 2024-12-03 21-10-37(INFO): dispose()
+DIG OUT - 2024-12-03 21-10-37(INFO): EIXT GAME
+

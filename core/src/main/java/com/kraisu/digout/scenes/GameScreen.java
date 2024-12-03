@@ -202,9 +202,6 @@ public class GameScreen implements Screen {
 
 
         //resources bar
-        myGame.getResourceManager().getResource(Constants.Resources.TOOLS).setTotalAmount(2);
-        myGame.getResourceManager().getResource(Constants.Resources.MATERIALS).setTotalAmount(10);
-        myGame.getResourceManager().getResource(Constants.Resources.FOOD).setTotalAmount(30);
         populateResourceBar();
 
 
@@ -294,8 +291,11 @@ public class GameScreen implements Screen {
         //addEqAndTaskTable.setSize(Gdx.graphics.getWidth() / 3f, Gdx.graphics.getHeight() / 2f);
         outerAddEqTable.add(addEqAndTaskTable);
 
-//        myGame.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(myGame, Constants.Survivors.WORKER));
-//        MyGame.getSurvivorManager().addSurvivor(SurvivorManager.generateNewSurvivors(MyGame, Constants.Survivors.UNTRAINED));
+//        myGame.getSurvivorManager().addSurvivor(myGame.getSurvivorManager().generateNewSurvivors(myGame, Constants.Survivors.MINER));
+//        myGame.getSurvivorManager().addSurvivor(myGame.getSurvivorManager().generateNewSurvivors(myGame, Constants.Survivors.COOK));
+//        myGame.getSurvivorManager().addSurvivor(myGame.getSurvivorManager().generateNewSurvivors(myGame, Constants.Survivors.ENGINEER));
+//        myGame.getSurvivorManager().addSurvivor(myGame.getSurvivorManager().generateNewSurvivors(myGame, Constants.Survivors.UNTRAINED));
+
 
         //survivors bar
         float survivorBoxWidth = 150f;
@@ -486,7 +486,7 @@ public class GameScreen implements Screen {
             myGame.getSurvivorManager().allSurvivorGotReceivedStuff();
             myGame.getResourceManager().consumeAllocatedResources();
             uiHelps1.doTheTasks(myGame);
-            myGame.getSurvivorManager().checkOxygenForAllLevels();
+            myGame.getSurvivorManager().checkOxygenForAllLevels(myGame);
             Diary diary = new Diary();
             diary.makeEntryForAllSurvivors(myGame);
             myGame.getDiaryManager().makeDiaryEntryPerDay(myGame, diary);
@@ -982,13 +982,21 @@ public class GameScreen implements Screen {
     }
 
     private void showTooltipEndRound(TextTooltip tooltip, Button button){
+        String oxygen;
+
+        if(myGame.getSurvivorManager().hasLevelWithMoreThanFourSurvivors(myGame)){
+            oxygen = "\n\n[ORANGE]There are 4 or more survivors in one or more levels, which will affect their energies." +
+                " You can change this by building AIR_PUMP or giving survivors oxygen masks.";
+        }else{
+            oxygen = "";
+        }
 
         if(button.isDisabled()){
             tooltip.getActor().setText("To end the round, all survivors are to be assigned tasks.\n" +
                 "\n" +
-                "[RED]Not all survivors are assigned tasks.");
+                "[RED]Not all survivors are assigned tasks." + oxygen);
         }else{
-            tooltip.getActor().setText("You can end the round so that the survivors complete their tasks.");
+            tooltip.getActor().setText("You can end the round so that the survivors complete their tasks." + oxygen);
         }
     }
 

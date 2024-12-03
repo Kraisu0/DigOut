@@ -147,7 +147,7 @@ public class uiHelps {
         table.add(closeButton).size(30, 30).pad(5).top().right().colspan(5).row();
 
         LinkedHashMap<Constants.Equipment, Integer> equipmentStatus = myGame.getEquipmentManager().getEquipmentStatus();
-        LinkedHashMap<Constants.Equipment, String> equipmentNames = myGame.getEquipmentManager().getEquipmentNames();
+        LinkedHashMap<Constants.Equipment, String>  equipmentDescription = myGame.getEquipmentManager().getEquipmentDescription();
 
         for (Map.Entry<Constants.Equipment, Integer> entry : equipmentStatus.entrySet()) {
             Constants.Equipment equipment = entry.getKey();
@@ -156,6 +156,7 @@ public class uiHelps {
             Image equipmentIcon = new Image(new Texture(Gdx.files.internal("assets/equipment/" + equipment.toString() + "_icon_64.png")));
             equipmentIcon.setSize(64, 64);
             table.add(equipmentIcon).size(64, 64).pad(5);
+
         }
 
         Image toolIcon = new Image(new Texture(Gdx.files.internal("assets/resources/TOOLS_icon_64.png")));
@@ -167,8 +168,13 @@ public class uiHelps {
         for (Map.Entry<Constants.Equipment, Integer> entry : equipmentStatus.entrySet()) {
             Constants.Equipment equipment = entry.getKey();
             Integer amount = entry.getValue();
+            String description = equipmentDescription.get(equipment);
 
             TextButton addButton = new TextButton("Add", DigOutGame.skinButton.get("small", TextButton.TextButtonStyle.class));
+
+            TextTooltip tooltipEQ = new TextTooltip(description, DigOutGame.skin);
+            tooltipEQ.setInstant(true);
+            addButton.addListener(tooltipEQ);
 
             if (amount == 0 || survivor.getEquipment() != null) {
                 addButton.setDisabled(true);
@@ -202,6 +208,9 @@ public class uiHelps {
         }
 
         TextButton addToolButton = new TextButton("Add", DigOutGame.skinButton.get("small", TextButton.TextButtonStyle.class));
+        TextTooltip tooltip = new TextTooltip("When you give the tools to the survivor, he will become a WORKER.", DigOutGame.skin);
+        tooltip.setInstant(true);
+        addToolButton.addListener(tooltip);
 
         if (myGame.getResourceManager().getResource(Constants.Resources.TOOLS).getTotalAmount() - myGame.getResourceManager().getResource(Constants.Resources.TOOLS).getAllocatedAmount() == 0 || survivor.getProfession() == Constants.Survivors.WORKER || survivor.getProfession() == Constants.Survivors.MINER) {
             addToolButton.setDisabled(true);
@@ -616,18 +625,18 @@ public class uiHelps {
         });
 
 
-        table.add(closeButton).size(30, 30).pad(5).colspan(79).top().right().row();
-        table.add(info).pad(5).colspan(7).expandX().fillX().center().row();
-        table.add(creatingFoodButton).pad(10).colspan(7).height(table.getHeight()/8).expandX().fillX().center().row();
-        table.add(creatingToolsButton).pad(10).colspan(7).height(table.getHeight()/8).expandX().fillX().center().row();
+        table.add(closeButton).size(30, 30).pad(5).colspan(81).top().right().row();
+        table.add(info).pad(5).colspan(9).expandX().fillX().center().row();
+        table.add(creatingFoodButton).pad(10).colspan(9).height(table.getHeight()/8).expandX().fillX().center().row();
+        table.add(creatingToolsButton).pad(10).colspan(9).height(table.getHeight()/8).expandX().fillX().center().row();
         createCreateToolsCost(table, Constants.EquipmentPrices.TOOLS_PRICE, myGame);
-        table.add(creatingSearchlightButton).pad(10).colspan(7).height(table.getHeight()/8).expandX().fillX().center().row();
+        table.add(creatingSearchlightButton).pad(10).colspan(9).height(table.getHeight()/8).expandX().fillX().center().row();
         createCreateCost(table, Constants.EquipmentPrices.SEARCHLIGHT_PRICE, myGame);
-        table.add(creatingKitchenRobotButton).pad(10).colspan(7).height(table.getHeight()/8).expandX().fillX().center().row();
+        table.add(creatingKitchenRobotButton).pad(10).colspan(9).height(table.getHeight()/8).expandX().fillX().center().row();
         createCreateCost(table, Constants.EquipmentPrices.KITCHEN_ROBOT_PRICE, myGame);
-        table.add(creatingOxygenMaskButton).pad(10).colspan(7).height(table.getHeight()/8).expandX().fillX().center().row();
+        table.add(creatingOxygenMaskButton).pad(10).colspan(9).height(table.getHeight()/8).expandX().fillX().center().row();
         createCreateCost(table, Constants.EquipmentPrices.OXYGEN_MASK_PRICE, myGame);
-        table.add(creatingPickaxeButton).pad(10).colspan(7).height(table.getHeight()/8).expandX().fillX().center().row();
+        table.add(creatingPickaxeButton).pad(10).colspan(9).height(table.getHeight()/8).expandX().fillX().center().row();
         createCreateCost(table, Constants.EquipmentPrices.PICKAXE_PRICE, myGame);
         table.row().space(10);
 
@@ -681,10 +690,12 @@ public class uiHelps {
         Image CRImage = new Image(new Texture(Gdx.files.internal("assets/resources/" + Constants.Resources.MATERIALS + "_icon_64.png")));
         Image foodImage = new Image(new Texture(Gdx.files.internal("assets/resources/" + Constants.Resources.FOOD + "_icon_64.png")));
         Image toolsImage = new Image(new Texture(Gdx.files.internal("assets/resources/" + Constants.Resources.TOOLS + "_icon_64.png")));
+        Image electricityImage = new Image(new Texture(Gdx.files.internal("assets/resources/" + Constants.Resources.ELECTRICITY + "_icon_64.png")));
 
         Label CRCost = new Label(String.valueOf(equipmentPrice.getMaterials()), DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
         Label foodCost = new Label(String.valueOf(equipmentPrice.getFood()), DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
         Label toolsCost = new Label(String.valueOf(equipmentPrice.getTools()), DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
+        Label electricityCost = new Label(String.valueOf(equipmentPrice.getElectricity()), DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
 
         if(equipmentPrice.getMaterials() > myGame.getResourceManager().getResource( Constants.Resources.MATERIALS).getTotalAmount())
             CRCost = new Label(String.valueOf(equipmentPrice.getMaterials()), DigOutGame.skin.get("redSmallFont", Label.LabelStyle.class));
@@ -695,6 +706,9 @@ public class uiHelps {
         if(equipmentPrice.getTools() > myGame.getResourceManager().getResource( Constants.Resources.TOOLS).getTotalAmount())
             toolsCost = new Label(String.valueOf(equipmentPrice.getTools()), DigOutGame.skin.get("redSmallFont", Label.LabelStyle.class));
 
+        if(equipmentPrice.getTools() > myGame.getResourceManager().getResource( Constants.Resources.ELECTRICITY).getTotalAmount())
+            electricityCost = new Label(String.valueOf(equipmentPrice.getElectricity()), DigOutGame.skin.get("redSmallFont", Label.LabelStyle.class));
+
         table.add(cost).padRight(5).padLeft(10).center();
         table.add(CRImage).size(32, 32).padRight(2).center();
         table.add(CRCost).padRight(5).center();
@@ -704,6 +718,9 @@ public class uiHelps {
 
         table.add(toolsImage).size(32, 32).padRight(2).center();
         table.add(toolsCost).padRight(5).center();
+
+        table.add(electricityImage).size(32, 32).padRight(2).center();
+        table.add(electricityCost).padRight(5).center();
 
         table.row();
 

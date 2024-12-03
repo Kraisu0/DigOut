@@ -2,6 +2,7 @@ package com.kraisu.digout.game;
 
 import com.kraisu.digout.genertor.Generators;
 import com.kraisu.digout.help.Constants;
+import com.kraisu.digout.help.ConstantsGenerator;
 import com.kraisu.digout.help.Instruction;
 import com.kraisu.digout.loaders.JsonLoader;
 import com.kraisu.digout.logs.DateLogs;
@@ -55,6 +56,9 @@ public class NewGame {
 
 
         myGame = new MyGame(uuid, player, 1, roomManager,survivorManager,equipmentManager,resourceManager,diaryManager);
+        myGame.getResourceManager().getResource(Constants.Resources.TOOLS).setTotalAmount(ConstantsGenerator.StartsResource.STARTS_TOOLS);
+        myGame.getResourceManager().getResource(Constants.Resources.MATERIALS).setTotalAmount(ConstantsGenerator.StartsResource.STARTS_MATERIALS);
+        myGame.getResourceManager().getResource(Constants.Resources.FOOD).setTotalAmount(ConstantsGenerator.StartsResource.STARTS_FOOD);
 
 
     }

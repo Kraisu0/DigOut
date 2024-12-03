@@ -47,6 +47,12 @@ public class ConstantsGenerator {
         public static final int OXYGEN_MASK = 33;
     }
 
+    public static class StartsResource{
+        public static final int STARTS_MATERIALS = 3;
+        public static final int STARTS_TOOLS = 1;
+        public static final int STARTS_FOOD = 2;
+    }
+
     public static class JsonData {
         public static final List<String> names = new ArrayList<>();
         public static final Map<String, List<String>> descriptions = new HashMap<>();

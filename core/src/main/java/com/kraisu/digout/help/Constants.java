@@ -58,11 +58,11 @@ public class Constants {
     }
 
     public static class EquipmentPrices{
-        public static final EquipmentPrice SEARCHLIGHT_PRICE = new EquipmentPrice(1,3,0,1);
-        public static final EquipmentPrice KITCHEN_ROBOT_PRICE = new EquipmentPrice(0,3,2,1);
-        public static final EquipmentPrice OXYGEN_MASK_PRICE = new EquipmentPrice(0,3,1,1);
-        public static final EquipmentPrice PICKAXE_PRICE = new EquipmentPrice(2,4,0,1);
-        public static final EquipmentPrice TOOLS_PRICE = new EquipmentPrice(1,0,0,1);
+        public static final EquipmentPrice SEARCHLIGHT_PRICE = new EquipmentPrice(1,3,0,1, 1);
+        public static final EquipmentPrice KITCHEN_ROBOT_PRICE = new EquipmentPrice(0,3,2,1, 1);
+        public static final EquipmentPrice OXYGEN_MASK_PRICE = new EquipmentPrice(0,3,1,1, 1);
+        public static final EquipmentPrice PICKAXE_PRICE = new EquipmentPrice(2,4,0,1, 1);
+        public static final EquipmentPrice TOOLS_PRICE = new EquipmentPrice(1,0,0,0, 1);
     }
 
     public static class TaskCost{

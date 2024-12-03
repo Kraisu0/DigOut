@@ -75,6 +75,9 @@ public class MainMenuScreen implements Screen {
             }
         });
 
+        //Blocker
+        buttonSettings.setDisabled(true);
+
         buttonExit = new TextButton("EXIT", DigOutGame.skinButton.get("default", TextButton.TextButtonStyle.class));
         buttonExit.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y) {
