@@ -15,6 +15,7 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.kraisu.digout.DigOutGame;
 import com.kraisu.digout.game.MyGame;
 import com.kraisu.digout.help.Constants;
+import com.kraisu.digout.help.ConstantsGenerator;
 import com.kraisu.digout.logs.DateLogs;
 import com.kraisu.digout.stuff.Equipment;
 import com.kraisu.digout.stuff.EquipmentPrice;
@@ -159,8 +160,23 @@ public class WinGameScreen implements Screen {
         Table table = new Table();
 
         Label name = new Label( "Number of buildings constructed: ", DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
-        Image image = new Image(new Texture(Gdx.files.internal("assets/img/BUILDING_BLANK.png")));
+        Image image = new Image(new Texture(Gdx.files.internal("img/BUILDING_BLANK.png")));
         Label quantity = new Label(String.valueOf(myGame.getRoomManager().countBuildingsWinGame()) , DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
+
+        table.add(image).size(32, 32).padRight(2).center();
+        table.add(name).padRight(5).padLeft(10).center();
+        table.add(quantity).padRight(5).center();
+
+        return table;
+    }
+
+    private Table createScoring(MyGame myGame){
+        Table table = new Table();
+
+        Label name = new Label( "Score: ", DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
+        Image image = new Image(new Texture(Gdx.files.internal("img/SCORE.png")));
+        Label quantity = new Label(String.valueOf(countScore(myGame)) , DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
+        quantity.setColor(Color.GOLD);
 
         table.add(image).size(32, 32).padRight(2).center();
         table.add(name).padRight(5).padLeft(10).center();
@@ -173,7 +189,7 @@ public class WinGameScreen implements Screen {
         Table table = new Table();
 
         Label name = new Label( "Number of survivors saved: ", DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
-        Image image = new Image(new Texture(Gdx.files.internal("assets/img/SURVIVOR_BLANK.png")));
+        Image image = new Image(new Texture(Gdx.files.internal("img/SURVIVOR_BLANK.png")));
         Label quantity = new Label(String.valueOf(myGame.getSurvivorManager().getSurvivors().size()) , DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
 
         table.add(image).size(32, 32).padRight(2).center();
@@ -185,16 +201,34 @@ public class WinGameScreen implements Screen {
 
     private Table connectStaff(MyGame myGame){
         Table table = new Table();
-        table.add(createResourceStaffBlock(myGame.getResourceManager().getResource(Constants.Resources.MATERIALS))).pad(10).left().expandX().fillX().row();
-        table.add(createResourceStaffBlock(myGame.getResourceManager().getResource(Constants.Resources.FOOD))).pad(10).left().expandX().fillX().row();
-        table.add(createResourceStaffBlock(myGame.getResourceManager().getResource(Constants.Resources.TOOLS))).pad(10).left().expandX().fillX().row();
-        table.add(createResourceStaffBlock(myGame.getResourceManager().getResource(Constants.Resources.ELECTRICITY))).pad(10).left().expandX().fillX().row();
-        table.add(createEquipmentStaffBlock(myGame.getEquipmentManager().getEquipment(Constants.Equipment.SEARCHLIGHT))).pad(10).left().expandX().fillX().row();
-        table.add(createEquipmentStaffBlock(myGame.getEquipmentManager().getEquipment(Constants.Equipment.KITCHEN_ROBOT))).pad(10).left().expandX().fillX().row();
-        table.add(createEquipmentStaffBlock(myGame.getEquipmentManager().getEquipment(Constants.Equipment.OXYGEN_MASK))).pad(10).left().expandX().fillX().row();
-        table.add(createEquipmentStaffBlock(myGame.getEquipmentManager().getEquipment(Constants.Equipment.PICKAXE))).pad(10).left().expandX().fillX().row();
-        table.add(createBuilding(myGame)).pad(10).left().expandX().fillX().row();
-        table.add(createSurvivors(myGame)).pad(10).left().expandX().fillX().row();
+        table.add(createScoring(myGame)).pad(10).expandX().fillX().row();
+        table.add(createResourceStaffBlock(myGame.getResourceManager().getResource(Constants.Resources.MATERIALS))).pad(8).left().expandX().fillX().row();
+        table.add(createResourceStaffBlock(myGame.getResourceManager().getResource(Constants.Resources.FOOD))).pad(8).left().expandX().fillX().row();
+        table.add(createResourceStaffBlock(myGame.getResourceManager().getResource(Constants.Resources.TOOLS))).pad(8).left().expandX().fillX().row();
+        table.add(createResourceStaffBlock(myGame.getResourceManager().getResource(Constants.Resources.ELECTRICITY))).pad(8).left().expandX().fillX().row();
+        table.add(createEquipmentStaffBlock(myGame.getEquipmentManager().getEquipment(Constants.Equipment.SEARCHLIGHT))).pad(8).left().expandX().fillX().row();
+        table.add(createEquipmentStaffBlock(myGame.getEquipmentManager().getEquipment(Constants.Equipment.KITCHEN_ROBOT))).pad(8).left().expandX().fillX().row();
+        table.add(createEquipmentStaffBlock(myGame.getEquipmentManager().getEquipment(Constants.Equipment.OXYGEN_MASK))).pad(8).left().expandX().fillX().row();
+        table.add(createEquipmentStaffBlock(myGame.getEquipmentManager().getEquipment(Constants.Equipment.PICKAXE))).pad(8).left().expandX().fillX().row();
+        table.add(createBuilding(myGame)).pad(8).left().expandX().fillX().row();
+        table.add(createSurvivors(myGame)).pad(8).left().expandX().fillX().row();
         return table;
+    }
+
+    private int countScore(MyGame myGame){
+        int score = 0;
+        score += myGame.getRoomManager().countBuildingsWinGame()* ConstantsGenerator.ScoreMultiplier.SCORE_ROOM;
+        score += myGame.getSurvivorManager().getSurvivors().size()* ConstantsGenerator.ScoreMultiplier.SCORE_SURVIVOR;
+        score += myGame.getResourceManager().getResource(Constants.Resources.MATERIALS).getTotalAmount() * ConstantsGenerator.ScoreMultiplier.SCORE_MATERIALS;
+        score += myGame.getResourceManager().getResource(Constants.Resources.FOOD).getTotalAmount() * ConstantsGenerator.ScoreMultiplier.SCORE_FOOD;
+        score += myGame.getResourceManager().getResource(Constants.Resources.TOOLS).getTotalAmount() * ConstantsGenerator.ScoreMultiplier.SCORE_TOOLS;
+        score += myGame.getResourceManager().getResource(Constants.Resources.ELECTRICITY).getTotalAmount() * ConstantsGenerator.ScoreMultiplier.SCORE_ELECTRICITY;
+        score += (myGame.getEquipmentManager().getEquipment(Constants.Equipment.SEARCHLIGHT).getTotalAmount() + myGame.getEquipmentManager().getEquipment(Constants.Equipment.KITCHEN_ROBOT).getTotalAmount() +
+            myGame.getEquipmentManager().getEquipment(Constants.Equipment.OXYGEN_MASK).getTotalAmount() + myGame.getEquipmentManager().getEquipment(Constants.Equipment.PICKAXE).getTotalAmount()) * ConstantsGenerator.ScoreMultiplier.SCORE_EQ;
+        score += myGame.getRound() * ConstantsGenerator.ScoreMultiplier.SCORE_DAYS;
+
+        myGame.getPlayer().setScore(score);
+
+        return score;
     }
 }

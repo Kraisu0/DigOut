@@ -79,7 +79,7 @@ public class DiaryManager implements Serializable {
 
         if(diary.getAllReceivedStuff().getMaterials() > 0){
             Table materialsTable = new Table();
-            Image materialsImage = new Image(new Texture(Gdx.files.internal("assets/resources/" + Constants.Resources.MATERIALS + "_icon_64.png")));
+            Image materialsImage = new Image(new Texture(Gdx.files.internal("resources/" + Constants.Resources.MATERIALS + "_icon_64.png")));
             Label materialsValue = new Label(diary.getAllReceivedStuff().getMaterials() + " - MATERIALS", DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
             materialsTable.add(materialsImage).size(32, 32).padRight(2).center();
             materialsTable.add(materialsValue).padRight(5).center();
@@ -88,7 +88,7 @@ public class DiaryManager implements Serializable {
 
         if(diary.getAllReceivedStuff().getFood() > 0){
             Table foodTable = new Table();
-            Image foodImage = new Image(new Texture(Gdx.files.internal("assets/resources/" + Constants.Resources.FOOD + "_icon_64.png")));
+            Image foodImage = new Image(new Texture(Gdx.files.internal("resources/" + Constants.Resources.FOOD + "_icon_64.png")));
             Label foodValue = new Label(diary.getAllReceivedStuff().getFood() + " - FOOD", DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
             foodTable.add(foodImage).size(32, 32).padRight(2).center();
             foodTable.add(foodValue).padRight(5).center();
@@ -97,7 +97,7 @@ public class DiaryManager implements Serializable {
 
         if(diary.getAllReceivedStuff().getTools() > 0){
             Table toolsTable = new Table();
-            Image toolsImage = new Image(new Texture(Gdx.files.internal("assets/resources/" + Constants.Resources.TOOLS + "_icon_64.png")));
+            Image toolsImage = new Image(new Texture(Gdx.files.internal("resources/" + Constants.Resources.TOOLS + "_icon_64.png")));
             Label toolsValue = new Label(diary.getAllReceivedStuff().getTools() + " - TOOLS", DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
             toolsTable.add(toolsImage).size(32, 32).padRight(2).center();
             toolsTable.add(toolsValue).padRight(5).center();
@@ -106,7 +106,7 @@ public class DiaryManager implements Serializable {
 
         if(diary.getAllReceivedStuff().getElectricity() > 0){
             Table electricityTable = new Table();
-            Image electricityImage = new Image(new Texture(Gdx.files.internal("assets/resources/" + Constants.Resources.ELECTRICITY + "_icon_64.png")));
+            Image electricityImage = new Image(new Texture(Gdx.files.internal("resources/" + Constants.Resources.ELECTRICITY + "_icon_64.png")));
             Label electricityValue = new Label(diary.getAllReceivedStuff().getElectricity() + " - ELECTRICITY", DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
             electricityTable.add(electricityImage).size(32, 32).padRight(2).center();
             electricityTable.add(electricityValue).padRight(5).center();
@@ -115,7 +115,7 @@ public class DiaryManager implements Serializable {
 
         if(diary.getAllReceivedStuff().getSearchlight() > 0){
             Table searchlightTable = new Table();
-            Image searchlightImage = new Image(new Texture(Gdx.files.internal("assets/equipment/" + Constants.Equipment.SEARCHLIGHT + "_icon_64.png")));
+            Image searchlightImage = new Image(new Texture(Gdx.files.internal("equipment/" + Constants.Equipment.SEARCHLIGHT + "_icon_64.png")));
             Label searchlightValue = new Label(diary.getAllReceivedStuff().getSearchlight() + " - SEARCHLIGHT", DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
             searchlightTable.add(searchlightImage).size(32, 32).padRight(2).center();
             searchlightTable.add(searchlightValue).padRight(5).center();
@@ -124,7 +124,7 @@ public class DiaryManager implements Serializable {
 
         if(diary.getAllReceivedStuff().getKitchenRobot() > 0){
             Table kitchenRobotTable = new Table();
-            Image kitchenRobotImage = new Image(new Texture(Gdx.files.internal("assets/equipment/" + Constants.Equipment.KITCHEN_ROBOT + "_icon_64.png")));
+            Image kitchenRobotImage = new Image(new Texture(Gdx.files.internal("equipment/" + Constants.Equipment.KITCHEN_ROBOT + "_icon_64.png")));
             Label kitchenRobotValue = new Label(diary.getAllReceivedStuff().getKitchenRobot() + " - KITCHEN_ROBOT", DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
             kitchenRobotTable.add(kitchenRobotImage).size(32, 32).padRight(2).center();
             kitchenRobotTable.add(kitchenRobotValue).padRight(5).center();
@@ -133,7 +133,7 @@ public class DiaryManager implements Serializable {
 
         if(diary.getAllReceivedStuff().getOxygenMask() > 0){
             Table oxygenMaskTable = new Table();
-            Image oxygenMaskImage = new Image(new Texture(Gdx.files.internal("assets/equipment/" + Constants.Equipment.OXYGEN_MASK + "_icon_64.png")));
+            Image oxygenMaskImage = new Image(new Texture(Gdx.files.internal("equipment/" + Constants.Equipment.OXYGEN_MASK + "_icon_64.png")));
             Label oxygenMaskValue = new Label(diary.getAllReceivedStuff().getOxygenMask() + " - OXYGEN_MASK", DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
             oxygenMaskTable.add(oxygenMaskImage).size(32, 32).padRight(2).center();
             oxygenMaskTable.add(oxygenMaskValue).padRight(5).center();
@@ -142,7 +142,7 @@ public class DiaryManager implements Serializable {
 
         if(diary.getAllReceivedStuff().getPickaxe() > 0){
             Table pickaxeTable = new Table();
-            Image pickaxeImage = new Image(new Texture(Gdx.files.internal("assets/equipment/" + Constants.Equipment.PICKAXE + "_icon_64.png")));
+            Image pickaxeImage = new Image(new Texture(Gdx.files.internal("equipment/" + Constants.Equipment.PICKAXE + "_icon_64.png")));
             Label pickaxeValue = new Label(diary.getAllReceivedStuff().getPickaxe() + " - PICKAXE", DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
             pickaxeTable.add(pickaxeImage).size(32, 32).padRight(2).center();
             pickaxeTable.add(pickaxeValue).padRight(5).center();

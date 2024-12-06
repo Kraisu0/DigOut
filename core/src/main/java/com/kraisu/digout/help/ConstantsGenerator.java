@@ -24,7 +24,7 @@ public class ConstantsGenerator {
         public static final int NO_TOOLS_DROP = 80;
     }
 
-    public static class SurvivorsDropPercentages{
+    public static class SurvivorsDropPercentages{ //TODO zmienić na 30/70
         public static final int SURVIVOR_DROP = 30;
         public static final int NO_SURVIVOR_DROP = 70;
     }
@@ -51,6 +51,17 @@ public class ConstantsGenerator {
         public static final int STARTS_MATERIALS = 3;
         public static final int STARTS_TOOLS = 1;
         public static final int STARTS_FOOD = 2;
+    }
+
+    public static class ScoreMultiplier{
+        public static final int SCORE_ROOM = 100;
+        public static final int SCORE_SURVIVOR = 1000;
+        public static final int SCORE_MATERIALS = 20;
+        public static final int SCORE_FOOD = 50;
+        public static final int SCORE_TOOLS = 70;
+        public static final int SCORE_ELECTRICITY = 100;
+        public static final int SCORE_EQ = 300;
+        public static final int SCORE_DAYS = -20;
     }
 
     public static class JsonData {

@@ -153,13 +153,13 @@ public class uiHelps {
             Constants.Equipment equipment = entry.getKey();
             Integer amount = entry.getValue();
 
-            Image equipmentIcon = new Image(new Texture(Gdx.files.internal("assets/equipment/" + equipment.toString() + "_icon_64.png")));
+            Image equipmentIcon = new Image(new Texture(Gdx.files.internal("equipment/" + equipment.toString() + "_icon_64.png")));
             equipmentIcon.setSize(64, 64);
             table.add(equipmentIcon).size(64, 64).pad(5);
 
         }
 
-        Image toolIcon = new Image(new Texture(Gdx.files.internal("assets/resources/TOOLS_icon_64.png")));
+        Image toolIcon = new Image(new Texture(Gdx.files.internal("resources/TOOLS_icon_64.png")));
         toolIcon.setSize(64,64);
         table.add(toolIcon).size(64,64).pad(5);
 
@@ -645,10 +645,10 @@ public class uiHelps {
     public static void createBuildCost(Table table, BuildingPrice buildingPrice, MyGame myGame){
 
         Label cost = new Label("Cost: ", DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
-        Image CRImage = new Image(new Texture(Gdx.files.internal("assets/resources/" + Constants.Resources.MATERIALS + "_icon_64.png")));
-        Image foodImage = new Image(new Texture(Gdx.files.internal("assets/resources/" + Constants.Resources.FOOD + "_icon_64.png")));
-        Image toolsImage = new Image(new Texture(Gdx.files.internal("assets/resources/" + Constants.Resources.TOOLS + "_icon_64.png")));
-        Image electricityImage = new Image(new Texture(Gdx.files.internal("assets/resources/" + Constants.Resources.ELECTRICITY + "_icon_64.png")));
+        Image CRImage = new Image(new Texture(Gdx.files.internal("resources/" + Constants.Resources.MATERIALS + "_icon_64.png")));
+        Image foodImage = new Image(new Texture(Gdx.files.internal("resources/" + Constants.Resources.FOOD + "_icon_64.png")));
+        Image toolsImage = new Image(new Texture(Gdx.files.internal("resources/" + Constants.Resources.TOOLS + "_icon_64.png")));
+        Image electricityImage = new Image(new Texture(Gdx.files.internal("resources/" + Constants.Resources.ELECTRICITY + "_icon_64.png")));
 
         Label CRCost = new Label(String.valueOf(buildingPrice.getMaterials()), DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
         Label foodCost = new Label(String.valueOf(buildingPrice.getFood()), DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
@@ -687,10 +687,10 @@ public class uiHelps {
     public static void createCreateCost(Table table, EquipmentPrice equipmentPrice, MyGame myGame){
 
         Label cost = new Label("Cost: ", DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
-        Image CRImage = new Image(new Texture(Gdx.files.internal("assets/resources/" + Constants.Resources.MATERIALS + "_icon_64.png")));
-        Image foodImage = new Image(new Texture(Gdx.files.internal("assets/resources/" + Constants.Resources.FOOD + "_icon_64.png")));
-        Image toolsImage = new Image(new Texture(Gdx.files.internal("assets/resources/" + Constants.Resources.TOOLS + "_icon_64.png")));
-        Image electricityImage = new Image(new Texture(Gdx.files.internal("assets/resources/" + Constants.Resources.ELECTRICITY + "_icon_64.png")));
+        Image CRImage = new Image(new Texture(Gdx.files.internal("resources/" + Constants.Resources.MATERIALS + "_icon_64.png")));
+        Image foodImage = new Image(new Texture(Gdx.files.internal("resources/" + Constants.Resources.FOOD + "_icon_64.png")));
+        Image toolsImage = new Image(new Texture(Gdx.files.internal("resources/" + Constants.Resources.TOOLS + "_icon_64.png")));
+        Image electricityImage = new Image(new Texture(Gdx.files.internal("resources/" + Constants.Resources.ELECTRICITY + "_icon_64.png")));
 
         Label CRCost = new Label(String.valueOf(equipmentPrice.getMaterials()), DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
         Label foodCost = new Label(String.valueOf(equipmentPrice.getFood()), DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
@@ -729,7 +729,7 @@ public class uiHelps {
     public static void createCreateToolsCost(Table table, EquipmentPrice equipmentPrice, MyGame myGame){
 
         Label cost = new Label("Cost: ", DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
-        Image CRImage = new Image(new Texture(Gdx.files.internal("assets/resources/" + Constants.Resources.MATERIALS + "_icon_64.png")));
+        Image CRImage = new Image(new Texture(Gdx.files.internal("resources/" + Constants.Resources.MATERIALS + "_icon_64.png")));
 
         Label CRCost = new Label(String.valueOf(equipmentPrice.getMaterials()), DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
 

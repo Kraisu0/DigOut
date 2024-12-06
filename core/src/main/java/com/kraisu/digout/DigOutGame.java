@@ -45,7 +45,7 @@ public class DigOutGame extends Game {
         skinSurvivorBox = new Skin(Gdx.files.internal("SurvivorsBox.json"));
         skinAvatars = new Skin(Gdx.files.internal("avatars.json"));
         borderSkin = new Skin(Gdx.files.internal("borderRoom.json"));
-        skinRoom = new Skin(Gdx.files.internal("rooms/Rooms.json"));
+        skinRoom = new Skin(Gdx.files.internal("Rooms.json"));
         logs(DateLogs.LogType.INFO, null, "create()", null);
 
         setScreen(new SplashScreen());

@@ -1,7 +1,0 @@
-grayButton.png
-size:128,64
-repeat:none
-b.gray.down
-bounds:2,2,50,50
-b.gray.up
-bounds:54,2,50,50
