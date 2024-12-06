@@ -1,6 +1,7 @@
 package com.kraisu.digout.managers;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.kraisu.digout.DigOutGame;
 import com.kraisu.digout.game.MyGame;
 import com.kraisu.digout.genertor.Generators;
 import com.kraisu.digout.help.Constants;
@@ -11,9 +12,11 @@ import com.kraisu.digout.stuff.Equipment;
 import com.kraisu.digout.stuff.ReceivedStuff;
 import com.kraisu.digout.survivor.Survivor;
 
-import java.io.File;
-import java.io.Serializable;
+import java.io.*;
+import java.net.URLDecoder;
 import java.util.*;
+import java.util.jar.JarEntry;
+import java.util.jar.JarFile;
 
 import static com.kraisu.digout.genertor.Generators.generateRandomNumber;
 import static com.kraisu.digout.help.ConstantsGenerator.JsonData.descriptions;
@@ -90,9 +93,10 @@ public class SurvivorManager implements Serializable {
             null,
             "profileInformation",
             0,
-            "assets/avatars/temp.work.png"
+            "avatars/temp.work.png"
         );
         temp = setRandomBio(
+            myGame,
             temp,
             names,
             descriptions
@@ -108,13 +112,28 @@ public class SurvivorManager implements Serializable {
         return temp;
     }
 
+    //TODO do Debugowania
     public static String getRandomAvatarPath() {
-        File folder = new File("assets/avatars");
-        File[] files = folder.listFiles();
+        try {
+            File folder = new File("assets/avatars");
 
-        if (files != null && files.length > 1) {
+            if (!folder.exists()) {
+                logs(DateLogs.LogType.ERROR, null, "The 'avatars' folder does not exist.", null);
+                throw new IOException("The 'avatars' folder does not exist.");
+            }
+
+            if (!folder.isDirectory()) {
+                logs(DateLogs.LogType.ERROR, null, "'avatars' is not a directory.", null);
+                throw new IOException("'avatars' is not a directory.");
+            }
+
+            File[] files = folder.listFiles();
+            if (files == null || files.length == 0) {
+                logs(DateLogs.LogType.ERROR, null, "There are no files in the 'avatars' folder.", null);
+                throw new IOException("There are no files in the 'avatars' folder.");
+            }
+
             List<File> validFiles = new ArrayList<>();
-
             for (File file : files) {
                 if (!file.getName().endsWith(".work.png")) {
                     validFiles.add(file);
@@ -124,10 +143,73 @@ public class SurvivorManager implements Serializable {
             if (!validFiles.isEmpty()) {
                 int randomIndex = new Random().nextInt(validFiles.size());
                 return validFiles.get(randomIndex).getPath();
+            } else {
+                logs(DateLogs.LogType.ERROR, null, "There are no matching files in the 'avatars' folder.", null);
+                throw new IOException("There are no matching files in the 'avatars' folder.");
             }
+        } catch (Exception e) {
+            logs(DateLogs.LogType.ERROR, null, "Error while getRandomAvatarPath()", e);
+            return null;
         }
-        return null;
     }
+
+
+    //TODO do Jarowania
+//    public static List<String> listFilesInJar(String folderPath) throws IOException {
+//        List<String> filePaths = new ArrayList<>();
+//
+//        // Pobierz JAR, w którym jest uruchomiona aplikacja
+//        String jarPath = DigOutGame.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+//
+//        // Dekoduj ścieżkę, aby obsłużyć spacje i znaki specjalne
+//        jarPath = URLDecoder.decode(jarPath, "UTF-8");
+//
+//        try (JarFile jarFile = new JarFile(jarPath)) {
+//            Enumeration<JarEntry> entries = jarFile.entries();
+//
+//            while (entries.hasMoreElements()) {
+//                JarEntry entry = entries.nextElement();
+//                String entryName = entry.getName();
+//
+//                // Sprawdź, czy plik należy do folderu avatars i pomiń katalogi
+//                if (entryName.startsWith(folderPath) && !entryName.endsWith("/")) {
+//                    filePaths.add(entryName);
+//                }
+//            }
+//        }
+//
+//        return filePaths;
+//    }
+//
+//    public static String getRandomAvatarPath() {
+//        try {
+//            List<String> avatarFiles = listFilesInJar("avatars");
+//
+//            List<String> validFiles = new ArrayList<>();
+//            for (String file : avatarFiles) {
+//                if (!file.endsWith(".work.png") && !file.endsWith(".atlas") && !file.endsWith(".json") && !file.endsWith("avatars.png") ) {
+//                    //logs(DateLogs.LogType.INFO, null, "Valid file path:" + file, null);
+//                    validFiles.add(file);
+//                }
+//            }
+//
+//            if (!validFiles.isEmpty()) {
+//                int randomIndex = new Random().nextInt(validFiles.size());
+//                String avatarPath = validFiles.get(randomIndex);
+//                logs(DateLogs.LogType.INFO, null, "Random index: " + randomIndex + ", Size: " + validFiles.size() + ", AvatarPath: " + avatarPath, null);
+//                return avatarPath;
+//            } else {
+//                System.err.println("Brak dostępnych avatarów (wszystkie są .work.png).");
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        return null;
+//    }
+
+
+
+
 
     public static int getAgeFromAvatar(String fileName) {
         String[] parts = fileName.split("_");
@@ -152,8 +234,9 @@ public class SurvivorManager implements Serializable {
         return beginning + " " + middle + " " + end;
     }
 
-    public Survivor setRandomBio(Survivor survivor, List<String> names, Map<String, List<String>> descriptions) {
+    public Survivor setRandomBio(MyGame myGame, Survivor survivor, List<String> names, Map<String, List<String>> descriptions) {
         String avatarPath = getRandomAvatarPath();
+        logs(DateLogs.LogType.INFO, myGame.getGameId(), "Survivor new path: " + avatarPath, null);
         if (avatarPath == null)
             return survivor;
 
@@ -174,7 +257,7 @@ public class SurvivorManager implements Serializable {
         //BORBO
         if(avatarPath.endsWith("37_22_64.png")){
             List<String> names1 = new ArrayList<>();
-            names1.add("BORBO");
+            names1.add("BORIA");
             survivor.setAge(22);
             survivor.setName(getRandomName(names1));
             survivor.setProfileInformation("He has no idea what he's doing here, he was dragged here by accident.");

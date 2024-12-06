@@ -18,10 +18,10 @@ public class EquipmentManager implements Serializable {
     }
 
     private void initializeEquipment() {
-        equipmentStuff.put(Constants.Equipment.SEARCHLIGHT, new Equipment("Searchlight", "Thanks to this item, Worker can find twice as many resources", "assets/equipment/SEARCHLIGHT_icon_64.png", 0 ));
-        equipmentStuff.put(Constants.Equipment.KITCHEN_ROBOT, new Equipment("Kitchen Robot", "This robot can work for two in the kitchen with the Cook", "assets/equipment/KITCHEN_ROBOT_icon_64.png", 0 ));
-        equipmentStuff.put(Constants.Equipment.OXYGEN_MASK, new Equipment("Oxygen mask", "Thanks to this item, the Survivor does not experience oxygen loss", "assets/equipment/OXYGEN_MASK_icon_64.png", 0 ));
-        equipmentStuff.put(Constants.Equipment.PICKAXE, new Equipment("Pickaxe", "This Worker item creates a Miner, allowing it to mine hard rocks", "assets/equipment/PICKAXE_icon_64.png", 0 ));
+        equipmentStuff.put(Constants.Equipment.SEARCHLIGHT, new Equipment("Searchlight", "Thanks to this item, Worker can find twice as many resources", "equipment/SEARCHLIGHT_icon_64.png", 0 ));
+        equipmentStuff.put(Constants.Equipment.KITCHEN_ROBOT, new Equipment("Kitchen Robot", "This robot can work for two in the kitchen with the Cook", "equipment/KITCHEN_ROBOT_icon_64.png", 0 ));
+        equipmentStuff.put(Constants.Equipment.OXYGEN_MASK, new Equipment("Oxygen mask", "Thanks to this item, the Survivor does not experience oxygen loss", "equipment/OXYGEN_MASK_icon_64.png", 0 ));
+        equipmentStuff.put(Constants.Equipment.PICKAXE, new Equipment("Pickaxe", "This Worker item creates a Miner, allowing it to mine hard rocks", "equipment/PICKAXE_icon_64.png", 0 ));
 
     }
 

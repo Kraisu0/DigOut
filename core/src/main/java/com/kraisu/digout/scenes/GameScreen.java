@@ -52,9 +52,9 @@ public class GameScreen implements Screen {
     private uiHelps uiHelps1;
     private String name;
     private int roundNumber;
-    private TextTooltip endRoundTooltip;
+    private TextTooltip endRoundTooltip, tooltipAddEQ;
 
-    private static Button addTask;
+    private static Button addTask, addEQ;
     private static boolean needsRefreshAfterAddEQ = false;
     private static boolean needsRefreshAfterAddTask = false;
     private static boolean needsRefreshAfterEndRound = false;
@@ -533,6 +533,17 @@ public class GameScreen implements Screen {
             }
         }
 
+        if(addEQ != null) {
+            if (isChooseRoomVisible) {
+                addEQ.setDisabled(true);
+                tooltipAddEQ.getActor().setText("Assign additional equipment to the survivor or train him as a Worker by giving him tools. \n\n" +
+                    "[RED] A survivor cannot receive additional EQ or tools if he is in the process of choosing a room.");
+            } else {
+                addEQ.setDisabled(false);
+                tooltipAddEQ.getActor().setText("Assign additional equipment to the survivor or train him as a Worker by giving him tools.");
+            }
+        }
+
 
     }
 
@@ -569,15 +580,22 @@ public class GameScreen implements Screen {
 
         Label isTaskAssigned = new Label("Task: ---" , DigOutGame.skin.get("mediumFont", Label.LabelStyle.class));
 
-        if(survivor.getTask() != null)
+        if(survivor.getTask() != null) {
             isTaskAssigned = new Label("Task: " + survivor.getTask().getTask(), DigOutGame.skin.get("greenMediumFont", Label.LabelStyle.class));
+            if(survivor.getTask().getTask().toString().length() > 10){
+                isTaskAssigned.setFontScale(0.8f);
+            }else{
+                isTaskAssigned.setFontScale(1f);
+            }
+
+        }
 
         info.add(isTaskAssigned).expandX().fillX().center().pad(2).colspan(2).row();
 
-        Label placeOfAssignment = new Label("Place of Assignemnt: ---" , DigOutGame.skin.get("mediumFont", Label.LabelStyle.class));
+        Label placeOfAssignment = new Label("Allocation: ---" , DigOutGame.skin.get("mediumFont", Label.LabelStyle.class));
 
         if(survivor.getTask() != null && survivor.getTask().getCoordinateOfRoom() != null) {
-            placeOfAssignment = new Label("Place of Assignemnt: " + survivor.getTask().getCoordinateOfRoom().getX() + ", " + survivor.getTask().getCoordinateOfRoom().getY(), DigOutGame.skin.get("mediumFont", Label.LabelStyle.class));
+            placeOfAssignment = new Label("Allocation: " + survivor.getTask().getCoordinateOfRoom().getX() + ", " + survivor.getTask().getCoordinateOfRoom().getY(), DigOutGame.skin.get("mediumFont", Label.LabelStyle.class));
         }
 
         info.add(placeOfAssignment).expandX().fillX().center().pad(2).colspan(2);
@@ -587,8 +605,8 @@ public class GameScreen implements Screen {
         if(survivor.getEquipment() == null)
         {
 
-            Button addEQ = new TextButton("+", DigOutGame.skinButton);
-            TextTooltip tooltipAddEQ = new TextTooltip("Assign additional equipment to the survivor or train him as a Worker by giving him tools.", DigOutGame.skin);
+            addEQ = new TextButton("+", DigOutGame.skinButton);
+            tooltipAddEQ = new TextTooltip("Assign additional equipment to the survivor or train him as a Worker by giving him tools.", DigOutGame.skin);
 
             addEQ.addListener(new ChangeListener() {
                 public void changed(ChangeEvent event, Actor actor) {
@@ -773,7 +791,7 @@ public class GameScreen implements Screen {
             String name = equipmentName.get(equipment);
             String description = equipmentDescription.get(equipment);
 
-            Image equipmentIcon = new Image(new Texture(Gdx.files.internal("assets/equipment/" + equipment.toString() + "_icon_64.png")));
+            Image equipmentIcon = new Image(new Texture(Gdx.files.internal("equipment/" + equipment.toString() + "_icon_64.png")));
             equipmentIcon.setScaling(Scaling.none);
             equipmentIcon.setSize(64, 64);
 
@@ -920,7 +938,7 @@ public class GameScreen implements Screen {
             Table resourceEntryNames = new Table();
             Table resourceEntryFull = new Table();
 
-            Image resourceIcon = new Image(new Texture(Gdx.files.internal("assets/resources/" + resource.toString() + "_icon_64.png")));
+            Image resourceIcon = new Image(new Texture(Gdx.files.internal("resources/" + resource.toString() + "_icon_64.png")));
             resourceIcon.setScaling(Scaling.none);
             resourceIcon.setSize(64, 64);
 

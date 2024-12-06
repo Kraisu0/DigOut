@@ -67,6 +67,7 @@ jar {
   dependencies {
     exclude('META-INF/INDEX.LIST', 'META-INF/maven/**')
   }
+
 // setting the manifest makes the JAR runnable.
   manifest {
     attributes 'Main-Class': project.mainClassName

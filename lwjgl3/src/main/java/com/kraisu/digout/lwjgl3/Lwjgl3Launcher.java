@@ -3,7 +3,7 @@ package com.kraisu.digout.lwjgl3;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 import com.kraisu.digout.DigOutGame;
-import com.kraisu.digout.Main;
+
 import com.kraisu.digout.SurvivorGenerator;
 
 /** Launches the desktop (LWJGL3) application. */
