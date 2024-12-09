@@ -113,99 +113,99 @@ public class SurvivorManager implements Serializable {
     }
 
     //TODO do Debugowania
+//    public static String getRandomAvatarPath() {
+//        try {
+//            File folder = new File("assets/avatars");
+//
+//            if (!folder.exists()) {
+//                logs(DateLogs.LogType.ERROR, null, "The 'avatars' folder does not exist.", null);
+//                throw new IOException("The 'avatars' folder does not exist.");
+//            }
+//
+//            if (!folder.isDirectory()) {
+//                logs(DateLogs.LogType.ERROR, null, "'avatars' is not a directory.", null);
+//                throw new IOException("'avatars' is not a directory.");
+//            }
+//
+//            File[] files = folder.listFiles();
+//            if (files == null || files.length == 0) {
+//                logs(DateLogs.LogType.ERROR, null, "There are no files in the 'avatars' folder.", null);
+//                throw new IOException("There are no files in the 'avatars' folder.");
+//            }
+//
+//            List<File> validFiles = new ArrayList<>();
+//            for (File file : files) {
+//                if (!file.getName().endsWith(".work.png")) {
+//                    validFiles.add(file);
+//                }
+//            }
+//            if (!validFiles.isEmpty()) {
+//                int randomIndex = new Random().nextInt(validFiles.size());
+//                return validFiles.get(randomIndex).getPath();
+//            } else {
+//                logs(DateLogs.LogType.ERROR, null, "There are no matching files in the 'avatars' folder.", null);
+//                throw new IOException("There are no matching files in the 'avatars' folder.");
+//            }
+//        } catch (Exception e) {
+//            logs(DateLogs.LogType.ERROR, null, "Error while getRandomAvatarPath()", e);
+//            return null;
+//        }
+//    }
+
+
+
+    //TODO do Jarowania
+    public static List<String> listFilesInJar(String folderPath) throws IOException {
+        List<String> filePaths = new ArrayList<>();
+
+        // Pobierz JAR, w którym jest uruchomiona aplikacja
+        String jarPath = DigOutGame.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+
+        // Dekoduj ścieżkę, aby obsłużyć spacje i znaki specjalne
+        jarPath = URLDecoder.decode(jarPath, "UTF-8");
+
+        try (JarFile jarFile = new JarFile(jarPath)) {
+            Enumeration<JarEntry> entries = jarFile.entries();
+
+            while (entries.hasMoreElements()) {
+                JarEntry entry = entries.nextElement();
+                String entryName = entry.getName();
+
+                // Sprawdź, czy plik należy do folderu avatars i pomiń katalogi
+                if (entryName.startsWith(folderPath) && !entryName.endsWith("/")) {
+                    filePaths.add(entryName);
+                }
+            }
+        }
+
+        return filePaths;
+    }
+
     public static String getRandomAvatarPath() {
         try {
-            File folder = new File("assets/avatars");
+            List<String> avatarFiles = listFilesInJar("avatars");
 
-            if (!folder.exists()) {
-                logs(DateLogs.LogType.ERROR, null, "The 'avatars' folder does not exist.", null);
-                throw new IOException("The 'avatars' folder does not exist.");
-            }
-
-            if (!folder.isDirectory()) {
-                logs(DateLogs.LogType.ERROR, null, "'avatars' is not a directory.", null);
-                throw new IOException("'avatars' is not a directory.");
-            }
-
-            File[] files = folder.listFiles();
-            if (files == null || files.length == 0) {
-                logs(DateLogs.LogType.ERROR, null, "There are no files in the 'avatars' folder.", null);
-                throw new IOException("There are no files in the 'avatars' folder.");
-            }
-
-            List<File> validFiles = new ArrayList<>();
-            for (File file : files) {
-                if (!file.getName().endsWith(".work.png")) {
+            List<String> validFiles = new ArrayList<>();
+            for (String file : avatarFiles) {
+                if (!file.endsWith(".work.png") && !file.endsWith(".atlas") && !file.endsWith(".json") && !file.endsWith("avatars.png") ) {
+                    //logs(DateLogs.LogType.INFO, null, "Valid file path:" + file, null);
                     validFiles.add(file);
                 }
             }
 
             if (!validFiles.isEmpty()) {
                 int randomIndex = new Random().nextInt(validFiles.size());
-                return validFiles.get(randomIndex).getPath();
+                String avatarPath = validFiles.get(randomIndex);
+                logs(DateLogs.LogType.INFO, null, "Random index: " + randomIndex + ", Size: " + validFiles.size() + ", AvatarPath: " + avatarPath, null);
+                return avatarPath;
             } else {
-                logs(DateLogs.LogType.ERROR, null, "There are no matching files in the 'avatars' folder.", null);
-                throw new IOException("There are no matching files in the 'avatars' folder.");
+                System.err.println("Brak dostępnych avatarów (wszystkie są .work.png).");
             }
-        } catch (Exception e) {
-            logs(DateLogs.LogType.ERROR, null, "Error while getRandomAvatarPath()", e);
-            return null;
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+        return null;
     }
-
-
-    //TODO do Jarowania
-//    public static List<String> listFilesInJar(String folderPath) throws IOException {
-//        List<String> filePaths = new ArrayList<>();
-//
-//        // Pobierz JAR, w którym jest uruchomiona aplikacja
-//        String jarPath = DigOutGame.class.getProtectionDomain().getCodeSource().getLocation().getPath();
-//
-//        // Dekoduj ścieżkę, aby obsłużyć spacje i znaki specjalne
-//        jarPath = URLDecoder.decode(jarPath, "UTF-8");
-//
-//        try (JarFile jarFile = new JarFile(jarPath)) {
-//            Enumeration<JarEntry> entries = jarFile.entries();
-//
-//            while (entries.hasMoreElements()) {
-//                JarEntry entry = entries.nextElement();
-//                String entryName = entry.getName();
-//
-//                // Sprawdź, czy plik należy do folderu avatars i pomiń katalogi
-//                if (entryName.startsWith(folderPath) && !entryName.endsWith("/")) {
-//                    filePaths.add(entryName);
-//                }
-//            }
-//        }
-//
-//        return filePaths;
-//    }
-//
-//    public static String getRandomAvatarPath() {
-//        try {
-//            List<String> avatarFiles = listFilesInJar("avatars");
-//
-//            List<String> validFiles = new ArrayList<>();
-//            for (String file : avatarFiles) {
-//                if (!file.endsWith(".work.png") && !file.endsWith(".atlas") && !file.endsWith(".json") && !file.endsWith("avatars.png") ) {
-//                    //logs(DateLogs.LogType.INFO, null, "Valid file path:" + file, null);
-//                    validFiles.add(file);
-//                }
-//            }
-//
-//            if (!validFiles.isEmpty()) {
-//                int randomIndex = new Random().nextInt(validFiles.size());
-//                String avatarPath = validFiles.get(randomIndex);
-//                logs(DateLogs.LogType.INFO, null, "Random index: " + randomIndex + ", Size: " + validFiles.size() + ", AvatarPath: " + avatarPath, null);
-//                return avatarPath;
-//            } else {
-//                System.err.println("Brak dostępnych avatarów (wszystkie są .work.png).");
-//            }
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        return null;
-//    }
 
 
 

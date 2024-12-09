@@ -302,3 +302,30 @@ DIG OUT - 2024-12-06 12-22-43(INFO): pause()
 DIG OUT - 2024-12-06 12-22-43(INFO): dispose()
 DIG OUT - 2024-12-06 12-22-43(INFO): EIXT GAME
 
+DIG OUT - 2024-12-06 13-23-06(INFO): create()
+DIG OUT - 2024-12-06 13-23-11(INFO): pause()
+DIG OUT - 2024-12-06 13-23-11(INFO): dispose()
+DIG OUT - 2024-12-06 13-23-11(INFO): EIXT GAME
+
+DIG OUT - 2024-12-09 20-33-33(INFO): create()
+DIG OUT - 2024-12-09 20-33-38(INFO): Open new game screen
+DIG OUT - 2024-12-09 20-33-40(INFO): [GAME_ID: 03856ce2-3fa4-4fb5-bd9b-c802cb298407] Generate new ID for new MyGame: 03856ce2-3fa4-4fb5-bd9b-c802cb298407
+DIG OUT - 2024-12-09 20-33-40(INFO): [GAME_ID: 03856ce2-3fa4-4fb5-bd9b-c802cb298407] Coordinates of Base room [2, 1]
+DIG OUT - 2024-12-09 20-33-40(INFO): [GAME_ID: 03856ce2-3fa4-4fb5-bd9b-c802cb298407] Coordinates of Exit room [1, 10]
+DIG OUT - 2024-12-09 20-33-40(INFO): [GAME_ID: 03856ce2-3fa4-4fb5-bd9b-c802cb298407] Survivor new path: null
+DIG OUT - 2024-12-09 20-33-40(INFO): [GAME_ID: 03856ce2-3fa4-4fb5-bd9b-c802cb298407] create new Survivor. NAME: name, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: profileInformation, AGE: 0
+DIG OUT - 2024-12-09 20-33-40(INFO): [GAME_ID: 03856ce2-3fa4-4fb5-bd9b-c802cb298407] Create New MyGame
+DIG OUT - 2024-12-09 20-33-44(INFO): [GAME_ID: 8e5d6ae7-9989-42e9-b035-a9227f729911] Generate new ID for new MyGame: 8e5d6ae7-9989-42e9-b035-a9227f729911
+DIG OUT - 2024-12-09 20-33-44(INFO): [GAME_ID: 8e5d6ae7-9989-42e9-b035-a9227f729911] Coordinates of Base room [7, 1]
+DIG OUT - 2024-12-09 20-33-44(INFO): [GAME_ID: 8e5d6ae7-9989-42e9-b035-a9227f729911] Coordinates of Exit room [2, 10]
+DIG OUT - 2024-12-09 20-33-44(INFO): [GAME_ID: 8e5d6ae7-9989-42e9-b035-a9227f729911] Survivor new path: null
+DIG OUT - 2024-12-09 20-33-44(INFO): [GAME_ID: 8e5d6ae7-9989-42e9-b035-a9227f729911] create new Survivor. NAME: name, ENERGY: 4, SURVIVOR TYPE: WORKER, PI: profileInformation, AGE: 0
+DIG OUT - 2024-12-09 20-33-44(INFO): [GAME_ID: 8e5d6ae7-9989-42e9-b035-a9227f729911] Make able to discovered nearest room for room: 7, 1
+DIG OUT - 2024-12-09 20-33-44(INFO): [GAME_ID: 8e5d6ae7-9989-42e9-b035-a9227f729911] discovered nearest room R at: 8, 1
+DIG OUT - 2024-12-09 20-33-44(INFO): [GAME_ID: 8e5d6ae7-9989-42e9-b035-a9227f729911] discovered nearest room L at: 6, 1
+DIG OUT - 2024-12-09 20-33-44(INFO): [GAME_ID: 8e5d6ae7-9989-42e9-b035-a9227f729911] Open Light room to discover on cord: (8, 1)
+DIG OUT - 2024-12-09 20-33-44(INFO): [GAME_ID: 8e5d6ae7-9989-42e9-b035-a9227f729911] Open Light room to discover on cord: (6, 1)
+DIG OUT - 2024-12-09 20-34-05(INFO): pause()
+DIG OUT - 2024-12-09 20-34-05(INFO): dispose()
+DIG OUT - 2024-12-09 20-34-05(INFO): EIXT GAME
+
