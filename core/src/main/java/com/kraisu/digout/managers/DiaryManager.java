@@ -115,7 +115,7 @@ public class DiaryManager implements Serializable {
 
         if(diary.getAllReceivedStuff().getSearchlight() > 0){
             Table searchlightTable = new Table();
-            Image searchlightImage = new Image(new Texture(Gdx.files.internal("equipment/" + Constants.Equipment.SEARCHLIGHT + "_icon_64.png")));
+            Image searchlightImage = new Image(new Texture(Gdx.files.internal(myGame.getEquipmentManager().getEquipment(Constants.Equipment.SEARCHLIGHT).getIconPath())));
             Label searchlightValue = new Label(diary.getAllReceivedStuff().getSearchlight() + " - SEARCHLIGHT", DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
             searchlightTable.add(searchlightImage).size(32, 32).padRight(2).center();
             searchlightTable.add(searchlightValue).padRight(5).center();
@@ -124,7 +124,7 @@ public class DiaryManager implements Serializable {
 
         if(diary.getAllReceivedStuff().getKitchenRobot() > 0){
             Table kitchenRobotTable = new Table();
-            Image kitchenRobotImage = new Image(new Texture(Gdx.files.internal("equipment/" + Constants.Equipment.KITCHEN_ROBOT + "_icon_64.png")));
+            Image kitchenRobotImage = new Image(new Texture(Gdx.files.internal(myGame.getEquipmentManager().getEquipment(Constants.Equipment.KITCHEN_ROBOT).getIconPath())));
             Label kitchenRobotValue = new Label(diary.getAllReceivedStuff().getKitchenRobot() + " - KITCHEN_ROBOT", DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
             kitchenRobotTable.add(kitchenRobotImage).size(32, 32).padRight(2).center();
             kitchenRobotTable.add(kitchenRobotValue).padRight(5).center();
@@ -133,7 +133,7 @@ public class DiaryManager implements Serializable {
 
         if(diary.getAllReceivedStuff().getOxygenMask() > 0){
             Table oxygenMaskTable = new Table();
-            Image oxygenMaskImage = new Image(new Texture(Gdx.files.internal("equipment/" + Constants.Equipment.OXYGEN_MASK + "_icon_64.png")));
+            Image oxygenMaskImage = new Image(new Texture(Gdx.files.internal(myGame.getEquipmentManager().getEquipment(Constants.Equipment.OXYGEN_MASK).getIconPath())));
             Label oxygenMaskValue = new Label(diary.getAllReceivedStuff().getOxygenMask() + " - OXYGEN_MASK", DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
             oxygenMaskTable.add(oxygenMaskImage).size(32, 32).padRight(2).center();
             oxygenMaskTable.add(oxygenMaskValue).padRight(5).center();
@@ -142,7 +142,7 @@ public class DiaryManager implements Serializable {
 
         if(diary.getAllReceivedStuff().getPickaxe() > 0){
             Table pickaxeTable = new Table();
-            Image pickaxeImage = new Image(new Texture(Gdx.files.internal("equipment/" + Constants.Equipment.PICKAXE + "_icon_64.png")));
+            Image pickaxeImage = new Image(new Texture(Gdx.files.internal(myGame.getEquipmentManager().getEquipment(Constants.Equipment.PICKAXE).getIconPath())));
             Label pickaxeValue = new Label(diary.getAllReceivedStuff().getPickaxe() + " - PICKAXE", DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
             pickaxeTable.add(pickaxeImage).size(32, 32).padRight(2).center();
             pickaxeTable.add(pickaxeValue).padRight(5).center();

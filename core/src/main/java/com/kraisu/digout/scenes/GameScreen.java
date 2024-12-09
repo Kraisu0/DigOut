@@ -408,7 +408,7 @@ public class GameScreen implements Screen {
             throw new RuntimeException(e);
         }
 
-        if(menuTable.isVisible()) {
+        if(menuTable.isVisible() || !isXWasClicked) {
             outerTable.setColor(0, 0, 0, 0.3f);
             outerTable.setTouchable(Touchable.disabled);
         } else {
@@ -416,13 +416,13 @@ public class GameScreen implements Screen {
             outerTable.setTouchable(Touchable.enabled);
         }
 
-        if(!isXWasClicked) {
-            outerTable.setColor(0, 0, 0, 0.3f);
-            outerTable.setTouchable(Touchable.disabled);
-        } else {
-            outerTable.setColor(0, 0, 0, 1f);
-            outerTable.setTouchable(Touchable.enabled);
-        }
+//        if(!isXWasClicked) {
+//            outerTable.setColor(0, 0, 0, 0.3f);
+//            outerTable.setTouchable(Touchable.disabled);
+//        } else {
+//            outerTable.setColor(0, 0, 0, 1f);
+//            outerTable.setTouchable(Touchable.enabled);
+//        }
 
         fps.setText("FPS: " + Gdx.graphics.getFramesPerSecond());
 
@@ -791,7 +791,7 @@ public class GameScreen implements Screen {
             String name = equipmentName.get(equipment);
             String description = equipmentDescription.get(equipment);
 
-            Image equipmentIcon = new Image(new Texture(Gdx.files.internal("equipment/" + equipment.toString() + "_icon_64.png")));
+            Image equipmentIcon = new Image(new Texture(Gdx.files.internal(myGame.getEquipmentManager().getEquipment(equipment).getIconPath())));
             equipmentIcon.setScaling(Scaling.none);
             equipmentIcon.setSize(64, 64);
 
@@ -810,7 +810,7 @@ public class GameScreen implements Screen {
             eqInfoTable.row();
         }
 
-        Label descriptionLabel = new Label("Additional equipment can be made in the TINKER ROOM or found during DIG OUT (Not counting the [PURPLE] PICKICK[WHITE], it can only be crafted).\n" +
+        Label descriptionLabel = new Label("Additional equipment can be made in the TINKER ROOM or found during DIG OUT (Not counting the [PURPLE]PICKAXE[WHITE], it can only be crafted).\n" +
             "Each piece of equipment can be assigned to a survivor, but cannot be recovered, so assign it well.", DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
         descriptionLabel.setWrap(true);
         descriptionLabel.setAlignment(Align.center);

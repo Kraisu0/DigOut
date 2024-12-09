@@ -153,7 +153,7 @@ public class uiHelps {
             Constants.Equipment equipment = entry.getKey();
             Integer amount = entry.getValue();
 
-            Image equipmentIcon = new Image(new Texture(Gdx.files.internal("equipment/" + equipment.toString() + "_icon_64.png")));
+            Image equipmentIcon = new Image(new Texture(Gdx.files.internal(myGame.getEquipmentManager().getEquipment(equipment).getIconPath())));
             equipmentIcon.setSize(64, 64);
             table.add(equipmentIcon).size(64, 64).pad(5);
 
