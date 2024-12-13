@@ -212,7 +212,7 @@ public class uiHelps {
         tooltip.setInstant(true);
         addToolButton.addListener(tooltip);
 
-        if (myGame.getResourceManager().getResource(Constants.Resources.TOOLS).getTotalAmount() - myGame.getResourceManager().getResource(Constants.Resources.TOOLS).getAllocatedAmount() == 0 || survivor.getProfession() == Constants.Survivors.WORKER || survivor.getProfession() == Constants.Survivors.MINER) {
+        if (myGame.getResourceManager().getResource(Constants.Resources.TOOLS).getTotalAmount() - myGame.getResourceManager().getResource(Constants.Resources.TOOLS).getAllocatedAmount() <= 0 || survivor.getProfession() == Constants.Survivors.WORKER || survivor.getProfession() == Constants.Survivors.MINER) {
             addToolButton.setDisabled(true);
         } else {
             addToolButton.addListener(new ChangeListener() {
@@ -1005,7 +1005,7 @@ public class uiHelps {
                             tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]There is no Tinker Room to do this action.");
                             button.setDisabled(true);
                         }else {
-                            if (isEnoughResources(myGame, Constants.EquipmentPrices.SEARCHLIGHT_PRICE, null)) {
+                            if (isEnoughResources(myGame, Constants.EquipmentPrices.KITCHEN_ROBOT_PRICE, null)) {
                                 tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]Not enough resources to create Kitchen Roobot");
                                 button.setDisabled(true);
                             }
@@ -1016,7 +1016,7 @@ public class uiHelps {
                             tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]There is no Tinker Room to do this action.");
                             button.setDisabled(true);
                         }else {
-                            if (isEnoughResources(myGame, Constants.EquipmentPrices.SEARCHLIGHT_PRICE, null)) {
+                            if (isEnoughResources(myGame, Constants.EquipmentPrices.OXYGEN_MASK_PRICE, null)) {
                                 tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]Not enough resources to create Oxygen mask");
                                 button.setDisabled(true);
                             }
@@ -1027,7 +1027,7 @@ public class uiHelps {
                             tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]There is no Tinker Room to do this action.");
                             button.setDisabled(true);
                         }else {
-                            if (isEnoughResources(myGame, Constants.EquipmentPrices.SEARCHLIGHT_PRICE, null)) {
+                            if (isEnoughResources(myGame, Constants.EquipmentPrices.PICKAXE_PRICE, null)) {
                                 tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]Not enough resources to create Pickaxe");
                                 button.setDisabled(true);
                             }
