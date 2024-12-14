@@ -310,7 +310,7 @@ public class SurvivorManager implements Serializable {
                 return new ReceivedStuff(0,0,0,0,-1,0,0,0,0,null);
             case REST:
                 return new ReceivedStuff(0,0,0,0,1,0,0,0,0,null);
-            case CREAT_FOOD:
+            case CREATE_FOOD:
                 return new ReceivedStuff(0,0,1,0,-1,0,0,0,0,null);
             case DIG_OUT:
                 int eq = Generators.generateRandomEquipment();
@@ -333,17 +333,17 @@ public class SurvivorManager implements Serializable {
                 }
             case EAT:
                 return new ReceivedStuff(0,0,0,0,3,0,0,0,0,null);
-            case CREAT_SEARCHLIGHT:
+            case CREATE_SEARCHLIGHT:
                 return new ReceivedStuff(0,0,0,0,-1,1,0,0,0,null);
-            case CREAT_KITCHEN_ROBOT:
+            case CREATE_KITCHEN_ROBOT:
                 return new ReceivedStuff(0,0,0,0,-1,0,0,1,0,null);
-            case CREAT_OXYGEN_MASK:
+            case CREATE_OXYGEN_MASK:
                 return new ReceivedStuff(0,0,0,0,-1,0,1,0,0,null);
-            case CREAT_PICKAXE:
+            case CREATE_PICKAXE:
                 return new ReceivedStuff(0,0,0,0,-1,0,0,0,1,null);
             case BUILD_POWER_STATION:
                 return new ReceivedStuff(0,0,0,4,-1,0,0,0,0,null);
-            case CREAT_TOOLS:
+            case CREATE_TOOLS:
                 return new ReceivedStuff(0,1,0,0,-1,0,0,0,0,null);
         }
         return new ReceivedStuff(0,0,0,0,0,0,0,0,0,null);

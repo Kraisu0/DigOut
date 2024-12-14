@@ -28,7 +28,7 @@ public class DigOutGame extends Game {
     public static Skin borderSkin;
     public static Skin skinRoom;
 
-    public static final String TITLE = "DIG OUT", VERSION = "1.1.1";
+    public static final String TITLE = "DIG OUT", VERSION = "1.1.3";
     public static File LOGFILE = new File("../../../digout.log");
     public static Integer titleBarHeight = null;
 

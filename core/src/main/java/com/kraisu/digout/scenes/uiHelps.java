@@ -9,15 +9,11 @@ import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.Align;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.kraisu.digout.DigOutGame;
 import com.kraisu.digout.game.MyGame;
 import com.kraisu.digout.help.Constants;
-import com.kraisu.digout.loaders.CoordinateAdapter;
 import com.kraisu.digout.loaders.JsonLoader;
 import com.kraisu.digout.logs.DateLogs;
-import com.kraisu.digout.managers.SurvivorManager;
 import com.kraisu.digout.rooms.Coordinate;
 import com.kraisu.digout.stuff.BuildingPrice;
 import com.kraisu.digout.stuff.EquipmentPrice;
@@ -309,7 +305,7 @@ public class uiHelps {
 
         TextButton creatingStuffButton = new TextButton("Create something", DigOutGame.skinButton.get("small", TextButton.TextButtonStyle.class));
         TextTooltip creatingStuffTooltip = new TextTooltip(" The survivor will create some stuff: food, tools or extra EQ. \n\n The Cook can create food, the Worker can create tools, and the Engineer can create additional EQ.", DigOutGame.skin);
-        taskBlocker(creatingStuffButton, creatingStuffTooltip, myGame, survivor.getProfession(), Constants.Tasks.CREAT);
+        taskBlocker(creatingStuffButton, creatingStuffTooltip, myGame, survivor.getProfession(), Constants.Tasks.CREATE);
         creatingStuffTooltip.setInstant(true);
         creatingStuffButton.addListener(creatingStuffTooltip);
 
@@ -548,79 +544,79 @@ public class uiHelps {
 
         TextButton creatingFoodButton = new TextButton("Creating Food", DigOutGame.skinButton.get("small", TextButton.TextButtonStyle.class));
         TextTooltip creatingFoodTooltip = new TextTooltip(" Food can be made in the kitchen, from some rat or spring water.", DigOutGame.skin);
-        taskBlocker(creatingFoodButton, creatingFoodTooltip, myGame, survivor.getProfession(), Constants.Tasks.CREAT_FOOD);
+        taskBlocker(creatingFoodButton, creatingFoodTooltip, myGame, survivor.getProfession(), Constants.Tasks.CREATE_FOOD);
         creatingFoodTooltip.setInstant(true);
         creatingFoodButton.addListener(creatingFoodTooltip);
 
         creatingFoodButton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
                 getAddEqAndTaskTable().clear();
-                showRoomChooser(stage, survivor, myGame, Constants.Tasks.CREAT_FOOD);
+                showRoomChooser(stage, survivor, myGame, Constants.Tasks.CREATE_FOOD);
             }
         });
 
         TextButton creatingToolsButton = new TextButton("Creating Tools", DigOutGame.skinButton.get("small", TextButton.TextButtonStyle.class));
         TextTooltip creatingToolsTooltip = new TextTooltip(" Tools can be made from materials.", DigOutGame.skin);
-        taskBlocker(creatingToolsButton, creatingToolsTooltip, myGame, survivor.getProfession(), Constants.Tasks.CREAT_TOOLS);
+        taskBlocker(creatingToolsButton, creatingToolsTooltip, myGame, survivor.getProfession(), Constants.Tasks.CREATE_TOOLS);
         creatingToolsTooltip.setInstant(true);
         creatingToolsButton.addListener(creatingToolsTooltip);
 
         creatingToolsButton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
                 getAddEqAndTaskTable().clear();
-                showRoomChooser(stage, survivor, myGame, Constants.Tasks.CREAT_TOOLS);
+                showRoomChooser(stage, survivor, myGame, Constants.Tasks.CREATE_TOOLS);
             }
         });
 
         TextButton creatingSearchlightButton = new TextButton("Creating Searchlight", DigOutGame.skinButton.get("small", TextButton.TextButtonStyle.class));
         TextTooltip creatingSearchlightTooltip = new TextTooltip(" " + myGame.getEquipmentManager().getEquipment(Constants.Equipment.SEARCHLIGHT).getDescription(), DigOutGame.skin);
-        taskBlocker(creatingSearchlightButton, creatingSearchlightTooltip, myGame, survivor.getProfession(), Constants.Tasks.CREAT_SEARCHLIGHT);
+        taskBlocker(creatingSearchlightButton, creatingSearchlightTooltip, myGame, survivor.getProfession(), Constants.Tasks.CREATE_SEARCHLIGHT);
         creatingSearchlightTooltip.setInstant(true);
         creatingSearchlightButton.addListener(creatingSearchlightTooltip);
 
         creatingSearchlightButton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
                 getAddEqAndTaskTable().clear();
-                showRoomChooser(stage, survivor, myGame, Constants.Tasks.CREAT_SEARCHLIGHT);
+                showRoomChooser(stage, survivor, myGame, Constants.Tasks.CREATE_SEARCHLIGHT);
             }
         });
 
         TextButton creatingKitchenRobotButton = new TextButton("Creating Kitchen Robot", DigOutGame.skinButton.get("small", TextButton.TextButtonStyle.class));
         TextTooltip creatingKitchenRobotTooltip = new TextTooltip(" " + myGame.getEquipmentManager().getEquipment(Constants.Equipment.KITCHEN_ROBOT).getDescription(), DigOutGame.skin);
-        taskBlocker(creatingKitchenRobotButton, creatingKitchenRobotTooltip, myGame, survivor.getProfession(), Constants.Tasks.CREAT_KITCHEN_ROBOT);
+        taskBlocker(creatingKitchenRobotButton, creatingKitchenRobotTooltip, myGame, survivor.getProfession(), Constants.Tasks.CREATE_KITCHEN_ROBOT);
         creatingKitchenRobotTooltip.setInstant(true);
         creatingKitchenRobotButton.addListener(creatingKitchenRobotTooltip);
 
         creatingKitchenRobotButton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
                 getAddEqAndTaskTable().clear();
-                showRoomChooser(stage, survivor, myGame, Constants.Tasks.CREAT_KITCHEN_ROBOT);
+                showRoomChooser(stage, survivor, myGame, Constants.Tasks.CREATE_KITCHEN_ROBOT);
             }
         });
 
         TextButton creatingOxygenMaskButton = new TextButton("Creating Oxygen Mask", DigOutGame.skinButton.get("small", TextButton.TextButtonStyle.class));
         TextTooltip creatingOxygenMaskTooltip = new TextTooltip(" " + myGame.getEquipmentManager().getEquipment(Constants.Equipment.OXYGEN_MASK).getDescription(), DigOutGame.skin);
-        taskBlocker(creatingOxygenMaskButton, creatingOxygenMaskTooltip, myGame, survivor.getProfession(), Constants.Tasks.CREAT_OXYGEN_MASK);
+        taskBlocker(creatingOxygenMaskButton, creatingOxygenMaskTooltip, myGame, survivor.getProfession(), Constants.Tasks.CREATE_OXYGEN_MASK);
         creatingOxygenMaskTooltip.setInstant(true);
         creatingOxygenMaskButton.addListener(creatingOxygenMaskTooltip);
 
         creatingOxygenMaskButton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
                 getAddEqAndTaskTable().clear();
-                showRoomChooser(stage, survivor, myGame, Constants.Tasks.CREAT_OXYGEN_MASK);
+                showRoomChooser(stage, survivor, myGame, Constants.Tasks.CREATE_OXYGEN_MASK);
             }
         });
 
         TextButton creatingPickaxeButton = new TextButton("Creating Pickaxe", DigOutGame.skinButton.get("small", TextButton.TextButtonStyle.class));
         TextTooltip creatingPickaxeTooltip = new TextTooltip(" " + myGame.getEquipmentManager().getEquipment(Constants.Equipment.PICKAXE).getDescription(), DigOutGame.skin);
-        taskBlocker(creatingPickaxeButton, creatingPickaxeTooltip, myGame, survivor.getProfession(), Constants.Tasks.CREAT_PICKAXE);
+        taskBlocker(creatingPickaxeButton, creatingPickaxeTooltip, myGame, survivor.getProfession(), Constants.Tasks.CREATE_PICKAXE);
         creatingPickaxeTooltip.setInstant(true);
         creatingPickaxeButton.addListener(creatingPickaxeTooltip);
 
         creatingPickaxeButton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
                 getAddEqAndTaskTable().clear();
-                showRoomChooser(stage, survivor, myGame, Constants.Tasks.CREAT_PICKAXE);
+                showRoomChooser(stage, survivor, myGame, Constants.Tasks.CREATE_PICKAXE);
             }
         });
 
@@ -706,7 +702,7 @@ public class uiHelps {
         if(equipmentPrice.getTools() > myGame.getResourceManager().getResource( Constants.Resources.TOOLS).getTotalAmount())
             toolsCost = new Label(String.valueOf(equipmentPrice.getTools()), DigOutGame.skin.get("redSmallFont", Label.LabelStyle.class));
 
-        if(equipmentPrice.getTools() > myGame.getResourceManager().getResource( Constants.Resources.ELECTRICITY).getTotalAmount())
+        if(equipmentPrice.getElectricity() > myGame.getResourceManager().getResource( Constants.Resources.ELECTRICITY).getTotalAmount())
             electricityCost = new Label(String.valueOf(equipmentPrice.getElectricity()), DigOutGame.skin.get("redSmallFont", Label.LabelStyle.class));
 
         table.add(cost).padRight(5).padLeft(10).center();
@@ -788,7 +784,7 @@ public class uiHelps {
                         tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]Only Workers can build.");
                         button.setDisabled(true);
                         break;
-                    case CREAT:
+                    case CREATE:
                         tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]Only Workers, Cooks and Engineers can create.");
                         button.setDisabled(true);
                         break;
@@ -872,11 +868,11 @@ public class uiHelps {
                             button.setDisabled(true);
                         }
                         break;
-                    case CREAT_FOOD:
+                    case CREATE_FOOD:
                         tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]Only Cooks can create food.");
                         button.setDisabled(true);
                         break;
-                    case CREAT_TOOLS:
+                    case CREATE_TOOLS:
                         if(!hasWorkshop){
                             tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]There is no Workshop to do this action.");
                             button.setDisabled(true);
@@ -887,10 +883,10 @@ public class uiHelps {
                             }
                         }
                         break;
-                    case CREAT_SEARCHLIGHT:
-                    case CREAT_KITCHEN_ROBOT:
-                    case CREAT_OXYGEN_MASK:
-                    case CREAT_PICKAXE:
+                    case CREATE_SEARCHLIGHT:
+                    case CREATE_KITCHEN_ROBOT:
+                    case CREATE_OXYGEN_MASK:
+                    case CREATE_PICKAXE:
                         tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]Only Engineers can create additional Equipment.");
                         button.setDisabled(true);
                         break;
@@ -930,20 +926,20 @@ public class uiHelps {
                         tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]Only Workers can build.");
                         button.setDisabled(true);
                         break;
-                    case CREAT_FOOD:
+                    case CREATE_FOOD:
                         if(!hasKitchen){
                             tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]There is no Kitchen to do this action.");
                             button.setDisabled(true);
                         }
                         break;
-                    case CREAT_TOOLS:
+                    case CREATE_TOOLS:
                         tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]Only Workers can create tools.");
                         button.setDisabled(true);
                         break;
-                    case CREAT_SEARCHLIGHT:
-                    case CREAT_KITCHEN_ROBOT:
-                    case CREAT_OXYGEN_MASK:
-                    case CREAT_PICKAXE:
+                    case CREATE_SEARCHLIGHT:
+                    case CREATE_KITCHEN_ROBOT:
+                    case CREATE_OXYGEN_MASK:
+                    case CREATE_PICKAXE:
                         tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]Only Engineers can create additional Equipment.");
                         button.setDisabled(true);
                         break;
@@ -981,15 +977,15 @@ public class uiHelps {
                         tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]Only Workers can build.");
                         button.setDisabled(true);
                         break;
-                    case CREAT_FOOD:
+                    case CREATE_FOOD:
                         tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]Only Cooks can create food.");
                         button.setDisabled(true);
                         break;
-                    case CREAT_TOOLS:
+                    case CREATE_TOOLS:
                         tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]Only Workers can create tools.");
                         button.setDisabled(true);
                         break;
-                    case CREAT_SEARCHLIGHT:
+                    case CREATE_SEARCHLIGHT:
                         if(!hasTinkerRoom){
                             tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]There is no Tinker Room to do this action.");
                             button.setDisabled(true);
@@ -1000,7 +996,7 @@ public class uiHelps {
                             }
                         }
                         break;
-                    case CREAT_KITCHEN_ROBOT:
+                    case CREATE_KITCHEN_ROBOT:
                         if(!hasTinkerRoom){
                             tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]There is no Tinker Room to do this action.");
                             button.setDisabled(true);
@@ -1011,7 +1007,7 @@ public class uiHelps {
                             }
                         }
                         break;
-                    case CREAT_OXYGEN_MASK:
+                    case CREATE_OXYGEN_MASK:
                         if(!hasTinkerRoom){
                             tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]There is no Tinker Room to do this action.");
                             button.setDisabled(true);
@@ -1022,7 +1018,7 @@ public class uiHelps {
                             }
                         }
                         break;
-                    case CREAT_PICKAXE:
+                    case CREATE_PICKAXE:
                         if(!hasTinkerRoom){
                             tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]There is no Tinker Room to do this action.");
                             button.setDisabled(true);
@@ -1069,7 +1065,7 @@ public class uiHelps {
                         tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]Only Workers can build.");
                         button.setDisabled(true);
                         break;
-                    case CREAT:
+                    case CREATE:
                         tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]Only Workers, Cooks and Engineers can create.");
                         button.setDisabled(true);
                         break;
@@ -1176,14 +1172,14 @@ public class uiHelps {
                 drawAvailableRooms(myGame, stage, survivor, myGame.getRoomManager().getRoomsByType(null, Constants.Buildings.RESTROOM), task);
                 break;
             case TRAIN_TO_COOK:
-            case CREAT_FOOD:
+            case CREATE_FOOD:
                 drawAvailableRooms(myGame, stage, survivor, myGame.getRoomManager().getRoomsByType(null, Constants.Buildings.KITCHEN), task);
                 break;
             case TRAIN_TO_ENGINEER:
-            case CREAT_SEARCHLIGHT:
-            case CREAT_KITCHEN_ROBOT:
-            case CREAT_OXYGEN_MASK:
-            case CREAT_PICKAXE:
+            case CREATE_SEARCHLIGHT:
+            case CREATE_KITCHEN_ROBOT:
+            case CREATE_OXYGEN_MASK:
+            case CREATE_PICKAXE:
                 drawAvailableRooms(myGame, stage, survivor, myGame.getRoomManager().getRoomsByType(null, Constants.Buildings.TINKER_ROOM), task);
                 break;
             case BUILD_RESTROOM:
@@ -1199,7 +1195,7 @@ public class uiHelps {
                     drawAvailableRooms(myGame, stage, survivor, myGame.getRoomManager().getExitRoomToBuild(), task);
                 drawAvailableRooms(myGame, stage, survivor, myGame.getRoomManager().getRoomsByType(Constants.RoomType.ROOM_TO_ARRANGE, Constants.Buildings.NOTHING), task);
                 break;
-            case CREAT_TOOLS:
+            case CREATE_TOOLS:
                 drawAvailableRooms(myGame, stage, survivor, myGame.getRoomManager().getRoomsByType(null, Constants.Buildings.WORKSHOP), task);
                 break;
             case DIG_OUT:
@@ -1325,19 +1321,19 @@ public class uiHelps {
             case WAIT:
             case REST:
             case TRAIN_TO_COOK:
-            case CREAT_FOOD:
+            case CREATE_FOOD:
             case TRAIN_TO_ENGINEER:
             case DIG_OUT:
                 return blank;
             case EAT:
                 return new BuildingPrice(0,0,1,0, 1, false);
-            case CREAT_SEARCHLIGHT:
+            case CREATE_SEARCHLIGHT:
                 return eqPriceToBuildPrice(Constants.EquipmentPrices.SEARCHLIGHT_PRICE);
-            case CREAT_KITCHEN_ROBOT:
+            case CREATE_KITCHEN_ROBOT:
                 return eqPriceToBuildPrice(Constants.EquipmentPrices.KITCHEN_ROBOT_PRICE);
-            case CREAT_OXYGEN_MASK:
+            case CREATE_OXYGEN_MASK:
                 return eqPriceToBuildPrice(Constants.EquipmentPrices.OXYGEN_MASK_PRICE);
-            case CREAT_PICKAXE:
+            case CREATE_PICKAXE:
                 return eqPriceToBuildPrice(Constants.EquipmentPrices.PICKAXE_PRICE);
             case BUILD_RESTROOM:
                 return Constants.BuildingPrices.RESTROOM_PRICE;
@@ -1353,7 +1349,7 @@ public class uiHelps {
                 return Constants.BuildingPrices.AIR_PUMP_PRICE;
             case BUILD_TINKER_ROOM:
                 return Constants.BuildingPrices.TINKER_ROOM_PRICE;
-            case CREAT_TOOLS:
+            case CREATE_TOOLS:
                 return eqPriceToBuildPrice(Constants.EquipmentPrices.TOOLS_PRICE);
         }
         return blank;
@@ -1413,7 +1409,7 @@ public class uiHelps {
                 survivor.setProfession(Constants.Survivors.COOK);
                 survivor.increaseEnergy(survivor.getTask().getReceivedStuff().getEnergyForSurvivor());
                 break;
-            case CREAT_FOOD:
+            case CREATE_FOOD:
                 myGame.getResourceManager().getResource(Constants.Resources.FOOD).increaseResource(
                     survivor.getTask().getReceivedStuff().getFood()
                 );
@@ -1472,25 +1468,25 @@ public class uiHelps {
 
                 myGame.getRoomManager().getRoom(survivor.getTask().getCoordinateOfRoom()).updateSpace(myGame);
                 break;
-            case CREAT_SEARCHLIGHT:
+            case CREATE_SEARCHLIGHT:
                 myGame.getEquipmentManager().getEquipment(Constants.Equipment.SEARCHLIGHT).increaseEquipment(
                     survivor.getTask().getReceivedStuff().getSearchlight()
                 );
                 survivor.increaseEnergy(survivor.getTask().getReceivedStuff().getEnergyForSurvivor());
                 break;
-            case CREAT_KITCHEN_ROBOT:
+            case CREATE_KITCHEN_ROBOT:
                 myGame.getEquipmentManager().getEquipment(Constants.Equipment.KITCHEN_ROBOT).increaseEquipment(
                     survivor.getTask().getReceivedStuff().getKitchenRobot()
                 );
                 survivor.increaseEnergy(survivor.getTask().getReceivedStuff().getEnergyForSurvivor());
                 break;
-            case CREAT_OXYGEN_MASK:
+            case CREATE_OXYGEN_MASK:
                 myGame.getEquipmentManager().getEquipment(Constants.Equipment.OXYGEN_MASK).increaseEquipment(
                     survivor.getTask().getReceivedStuff().getOxygenMask()
                 );
                 survivor.increaseEnergy(survivor.getTask().getReceivedStuff().getEnergyForSurvivor());
                 break;
-            case CREAT_PICKAXE:
+            case CREATE_PICKAXE:
                 myGame.getEquipmentManager().getEquipment(Constants.Equipment.PICKAXE).increaseEquipment(
                     survivor.getTask().getReceivedStuff().getPickaxe()
                 );
@@ -1558,7 +1554,7 @@ public class uiHelps {
 
                 survivor.increaseEnergy(survivor.getTask().getReceivedStuff().getEnergyForSurvivor());
                 break;
-            case CREAT_TOOLS:
+            case CREATE_TOOLS:
                 myGame.getResourceManager().getResource(Constants.Resources.TOOLS).increaseResource(
                     survivor.getTask().getReceivedStuff().getTools()
                 );
@@ -1643,8 +1639,5 @@ public class uiHelps {
             return null;
         }
     }
-
-
-
 
 }
