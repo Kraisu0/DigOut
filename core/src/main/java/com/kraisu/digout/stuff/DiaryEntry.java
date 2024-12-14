@@ -1,11 +1,8 @@
 package com.kraisu.digout.stuff;
 
-import com.kraisu.digout.help.Constants;
-import com.kraisu.digout.rooms.Room;
 import com.kraisu.digout.survivor.Survivor;
 
 import java.io.Serializable;
-import java.util.Map;
 
 public class DiaryEntry implements Serializable {
 
@@ -21,7 +18,7 @@ public class DiaryEntry implements Serializable {
             case TRAIN_TO_COOK:
                 return survivor.getName() + " trained as COOK in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
                     ", " + survivor.getTask().getCoordinateOfRoom().getY() + ").\n";
-            case CREAT_FOOD:
+            case CREATE_FOOD:
                 return survivor.getName() + " created FOOD in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
                     ", " + survivor.getTask().getCoordinateOfRoom().getY() + "and he created " + survivor.getTask().getReceivedStuff().food + "-FOOD.\n";
             case TRAIN_TO_ENGINEER:
@@ -33,16 +30,16 @@ public class DiaryEntry implements Serializable {
             case EAT:
                 return survivor.getName() + " ate in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
                     ", " + survivor.getTask().getCoordinateOfRoom().getY() + ").\n";
-            case CREAT_SEARCHLIGHT:
+            case CREATE_SEARCHLIGHT:
                 return survivor.getName() + " created SEARCHLIGHT in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
                     ", " + survivor.getTask().getCoordinateOfRoom().getY() + ") and he created " + survivor.getTask().getReceivedStuff().searchlight + "-SEARCHLIGHT.\n";
-            case CREAT_KITCHEN_ROBOT:
+            case CREATE_KITCHEN_ROBOT:
                 return survivor.getName() + " created KITCHEN ROBOT in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
                     ", " + survivor.getTask().getCoordinateOfRoom().getY() + ") and he created " + survivor.getTask().getReceivedStuff().kitchenRobot + "-KITCHEN ROBOT.\n";
-            case CREAT_OXYGEN_MASK:
+            case CREATE_OXYGEN_MASK:
                 return survivor.getName() + " created OXYGEN MASK in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
                     ", " + survivor.getTask().getCoordinateOfRoom().getY() + ") and he created " + survivor.getTask().getReceivedStuff().oxygenMask + "-OXYGEN MASK.\n";
-            case CREAT_PICKAXE:
+            case CREATE_PICKAXE:
                 return survivor.getName() + " created PICKAXE in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
                     ", " + survivor.getTask().getCoordinateOfRoom().getY() + ") and he created " + survivor.getTask().getReceivedStuff().pickaxe + "-PICKAXE.\n";
             case BUILD_RESTROOM:
@@ -67,7 +64,7 @@ public class DiaryEntry implements Serializable {
             case BUILD_TINKER_ROOM:
                 return survivor.getName() + " built TINKER ROOM in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
                     ", " + survivor.getTask().getCoordinateOfRoom().getY() + ").\n";
-            case CREAT_TOOLS:
+            case CREATE_TOOLS:
                 return survivor.getName() + " created TOOLS in room: (" + survivor.getTask().getCoordinateOfRoom().getX() +
                     ", " + survivor.getTask().getCoordinateOfRoom().getY() + ") and he created " + survivor.getTask().getReceivedStuff().tools + "-TOOLS.\n";
         }
