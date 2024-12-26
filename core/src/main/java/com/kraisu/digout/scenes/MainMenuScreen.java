@@ -8,14 +8,13 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.kraisu.digout.DigOutGame;
 import com.kraisu.digout.logs.DateLogs;
@@ -48,9 +47,8 @@ public class MainMenuScreen implements Screen {
 
         //creating footer
         footer = new Label("Version: " + VERSION, DigOutGame.skin.get("smallFont", LabelStyle.class));
-        //footer.setFontScale(0.5f);
 
-        //creatingButton
+        //creatingButtons
         buttonNewGame = new TextButton("NEW GAME", DigOutGame.skinButton.get("default", TextButton.TextButtonStyle.class));
         buttonNewGame.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y) {
@@ -99,6 +97,8 @@ public class MainMenuScreen implements Screen {
         table.row();
         table.add(footer).bottom().right();
         //table.debug(); //opcja debugowania
+
+
 
         //adding table to stage
         stage.addActor(table);

@@ -441,11 +441,11 @@ public class SurvivorManager implements Serializable {
             }
 
             if (survivorCount >= 4) {
-                return true; // Znaleziono poziom z więcej niż 4 ocalałymi
+                return true;
             }
         }
 
-        return false; // Na żadnym poziomie nie było więcej niż 4 ocalałych
+        return false;
     }
 
     public void checkLoseGame(){

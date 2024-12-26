@@ -34,7 +34,6 @@ public class DigOutGame extends Game {
 
     @Override
     public void create() {
-        //TextureAtlas atlas = new TextureAtlas(Gdx.files.internal("ui/skins.atlas"));
         skin = new Skin(Gdx.files.internal("skins.json"));
         skin.getFont("small-font").getData().markupEnabled = true;
         skin.getFont("medium-font").getData().markupEnabled = true;

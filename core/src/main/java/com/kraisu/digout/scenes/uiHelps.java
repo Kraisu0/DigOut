@@ -775,7 +775,8 @@ public class uiHelps {
                         }
                         break;
                     case EAT:
-                        if(myGame.getResourceManager().getResource(Constants.Resources.FOOD).getTotalAmount() - myGame.getResourceManager().getResource(Constants.Resources.FOOD).getAllocatedAmount() == 0) {
+                        if(myGame.getResourceManager().getResource(Constants.Resources.FOOD).getTotalAmount() -
+                            myGame.getResourceManager().getResource(Constants.Resources.FOOD).getAllocatedAmount() == 0) {
                             tooltip.getActor().setText(tooltip.getActor().getText() + "\n\n [RED]There is no Food to eat.");
                             button.setDisabled(true);
                         }
@@ -1376,7 +1377,9 @@ public class uiHelps {
         table.setTouchable(Touchable.disabled);
         getOuterPinRoomTable().clear();
 
-        logs(DateLogs.LogType.INFO, myGame.getGameId(), "Survivor: " + survivor.getName() + " got a task: " + survivor.getTask().getTask() + " , in room: " + myGame.getRoomManager().getRoom(coordinate) + " , cords: " + coordinate.getX() + ", " + coordinate.getY(), null);
+        logs(DateLogs.LogType.INFO, myGame.getGameId(), "Survivor: " + survivor.getName() + " got a task: "
+            + survivor.getTask().getTask() + " , in room: " + myGame.getRoomManager().getRoom(coordinate) + " , cords: " + coordinate.getX() +
+            ", " + coordinate.getY(), null);
     }
 
     private static void actionAfterCloseByX(Table table) {
@@ -1427,14 +1430,22 @@ public class uiHelps {
                 survivor.increaseEnergy(survivor.getTask().getReceivedStuff().getEnergyForSurvivor());
                 break;
             case DIG_OUT:
-                myGame.getResourceManager().getResource(Constants.Resources.FOOD).increaseResource(survivor.getTask().getReceivedStuff().getFood());
-                myGame.getResourceManager().getResource(Constants.Resources.TOOLS).increaseResource(survivor.getTask().getReceivedStuff().getTools());
-                myGame.getResourceManager().getResource(Constants.Resources.MATERIALS).increaseResource(survivor.getTask().getReceivedStuff().getMaterials());
-                myGame.getResourceManager().getResource(Constants.Resources.ELECTRICITY).increaseResource(survivor.getTask().getReceivedStuff().getElectricity());
-                myGame.getEquipmentManager().getEquipment(Constants.Equipment.SEARCHLIGHT).increaseEquipment(survivor.getTask().getReceivedStuff().getSearchlight());
-                myGame.getEquipmentManager().getEquipment(Constants.Equipment.OXYGEN_MASK).increaseEquipment(survivor.getTask().getReceivedStuff().getOxygenMask());
-                myGame.getEquipmentManager().getEquipment(Constants.Equipment.KITCHEN_ROBOT).increaseEquipment(survivor.getTask().getReceivedStuff().getKitchenRobot());
-                myGame.getEquipmentManager().getEquipment(Constants.Equipment.PICKAXE).increaseEquipment(survivor.getTask().getReceivedStuff().getPickaxe());
+                myGame.getResourceManager().getResource(Constants.Resources.FOOD).
+                    increaseResource(survivor.getTask().getReceivedStuff().getFood());
+                myGame.getResourceManager().getResource(Constants.Resources.TOOLS).
+                    increaseResource(survivor.getTask().getReceivedStuff().getTools());
+                myGame.getResourceManager().getResource(Constants.Resources.MATERIALS).
+                    increaseResource(survivor.getTask().getReceivedStuff().getMaterials());
+                myGame.getResourceManager().getResource(Constants.Resources.ELECTRICITY).
+                    increaseResource(survivor.getTask().getReceivedStuff().getElectricity());
+                myGame.getEquipmentManager().getEquipment(Constants.Equipment.SEARCHLIGHT).
+                    increaseEquipment(survivor.getTask().getReceivedStuff().getSearchlight());
+                myGame.getEquipmentManager().getEquipment(Constants.Equipment.OXYGEN_MASK).
+                    increaseEquipment(survivor.getTask().getReceivedStuff().getOxygenMask());
+                myGame.getEquipmentManager().getEquipment(Constants.Equipment.KITCHEN_ROBOT).
+                    increaseEquipment(survivor.getTask().getReceivedStuff().getKitchenRobot());
+                myGame.getEquipmentManager().getEquipment(Constants.Equipment.PICKAXE).
+                    increaseEquipment(survivor.getTask().getReceivedStuff().getPickaxe());
 
                 if(survivor.getTask().getReceivedStuff().getSurvivor() != null)
                     myGame.getSurvivorManager().addSurvivor(myGame.getSurvivorManager().generateNewSurvivors(myGame, survivor.getTask().getReceivedStuff().getSurvivor()));
