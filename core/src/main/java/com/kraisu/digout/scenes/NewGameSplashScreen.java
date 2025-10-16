@@ -41,8 +41,8 @@ public class NewGameSplashScreen implements Screen {
         splash.setColor(1, 1, 1, 0);
 
         // Create new game
-        NewGame newGame = new NewGame(gameName);
-        logs(DateLogs.LogType.INFO, newGame.getGame().getGameId(), "Create New MyGame", null);
+       // NewGame newGame = new NewGame(gameName);
+        //logs(DateLogs.LogType.INFO, newGame.getGame().getGameId(), "Create New MyGame", null);
 
         // Fade in animation
         Tween.to(splash, SpriteAccessor.ALPHA, 3)
@@ -72,10 +72,13 @@ public class NewGameSplashScreen implements Screen {
                     @Override
                     public void onEvent(int type, BaseTween<?> source) {
                         NewGame newGame = new NewGame(gameName);
+                        logs(DateLogs.LogType.INFO, newGame.getGame().getGameId(), "Create New MyGame", null);
                         ((Game) Gdx.app.getApplicationListener()).setScreen(new GameScreen(newGame.getGame()));
                     }
                 })
                 .start(tweenManager);
+        }else {
+
         }
     }
 

@@ -284,11 +284,9 @@ public class GameScreen implements Screen {
 
 
         //eq table
-//        myGame.getEquipmentManager().getEquipment(Constants.Equipment.PICKAXE).setTotalAmount(2);
         refreshEqInfoTable();
 
         //addEqTable
-        //addEqAndTaskTable.setSize(Gdx.graphics.getWidth() / 3f, Gdx.graphics.getHeight() / 2f);
         outerAddEqTable.add(addEqAndTaskTable);
 
 //        myGame.getSurvivorManager().addSurvivor(myGame.getSurvivorManager().generateNewSurvivors(myGame, Constants.Survivors.MINER));
@@ -396,11 +394,6 @@ public class GameScreen implements Screen {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(Gdx.gl.GL_COLOR_BUFFER_BIT);
 
-        //this.MyGame = MyGame;
-        //refreshEqInfoTable();
-
-        //MyGame.getSurvivorManager().showDisable();
-
         try {
             checkNeedsRefresh();
         } catch (InterruptedException e) {
@@ -427,8 +420,6 @@ public class GameScreen implements Screen {
         fps.setText("FPS: " + Gdx.graphics.getFramesPerSecond());
 
         openMenu();
-
-
 
 
         stage.act(delta);
@@ -810,8 +801,10 @@ public class GameScreen implements Screen {
             eqInfoTable.row();
         }
 
-        Label descriptionLabel = new Label("Additional equipment can be made in the TINKER ROOM or found during DIG OUT (Not counting the [PURPLE]PICKAXE[WHITE], it can only be crafted).\n" +
-            "Each piece of equipment can be assigned to a survivor, but cannot be recovered, so assign it well.", DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
+        Label descriptionLabel = new Label("Additional equipment can be made in the TINKER ROOM or found during DIG OUT" +
+            " (Not counting the [PURPLE]PICKAXE[WHITE], it can only be crafted).\n" +
+            "Each piece of equipment can be assigned to a survivor, but cannot be recovered, so assign it well.",
+            DigOutGame.skin.get("smallFont", Label.LabelStyle.class));
         descriptionLabel.setWrap(true);
         descriptionLabel.setAlignment(Align.center);
 

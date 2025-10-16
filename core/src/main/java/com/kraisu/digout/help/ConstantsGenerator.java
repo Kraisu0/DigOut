@@ -24,7 +24,7 @@ public class ConstantsGenerator {
         public static final int NO_TOOLS_DROP = 80;
     }
 
-    public static class SurvivorsDropPercentages{ //TODO zmienić na 30/70
+    public static class SurvivorsDropPercentages{
         public static final int SURVIVOR_DROP = 30;
         public static final int NO_SURVIVOR_DROP = 70;
     }
