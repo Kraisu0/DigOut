@@ -16,7 +16,7 @@ The game begins at the lowest part of the mine, with one survivor and optional s
 The game board is divided into 10 levels, each containing 10 rooms. The player starts at the lowest level, with the goal of reaching the exit at the top level of the mine.
 
 <p align="center">
-  <img src="README_FILES/LIGHT_ROOM_L.0.png" alt="light room left"><img src="README_FILES/BASE_ROOM.0.png" alt="base room"><img src="README_FILES/RESTROOM.0.png" alt="restroom"<img src="README_FILES/KITCHEN.0.png" alt="kitchen"><img src="README_FILES/ELEVETOR.0.png" alt="elevetor"><img src="README_FILES/LIGHT_ROOM_R.0.png" alt="light room right">
+  <img src="README_FILES/LIGHT_ROOM_L.0.png" alt="light room left"><img src="README_FILES/BASE_ROOM.0.png" alt="base room"><img src="README_FILES/RESTROOM.0.png" alt="restroom"<img src="README_FILES/KITCHEN.0.png" alt="kitchen"><img src="README_FILES/ELEVATOR.0.png" alt="elevetor"><img src="README_FILES/LIGHT_ROOM_R.0.png" alt="light room right">
 </p>
 
 ### Core Gameplay Elements
