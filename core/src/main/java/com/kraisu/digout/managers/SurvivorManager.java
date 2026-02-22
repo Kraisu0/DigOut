@@ -63,7 +63,6 @@ public class SurvivorManager implements Serializable {
             return baseName;
         }
 
-
         int maxNumber = 0;
         for (String name : survivors.keySet()) {
             if (name.startsWith(baseName)) {
@@ -80,81 +79,79 @@ public class SurvivorManager implements Serializable {
         return baseName + " " + (maxNumber + 1);
     }
 
-
-
-    public Survivor generateNewSurvivors(MyGame myGame, Constants.Survivors survivorType){
+    public Survivor generateNewSurvivors(MyGame myGame, Constants.Survivors survivorType) {
         Survivor temp = null;
 
         temp = new Survivor(
-            myGame.getGameId(),
-            "name",
-            4,
-            survivorType,
-            null,
-            "profileInformation",
-            0,
-            "avatars/temp.work.png"
-        );
+                myGame.getGameId(),
+                "name",
+                4,
+                survivorType,
+                null,
+                "profileInformation",
+                0,
+                "avatars/1_65_64.png");
         temp = setRandomBio(
-            myGame,
-            temp,
-            names,
-            descriptions
-        );
+                myGame,
+                temp,
+                names,
+                descriptions);
 
         logs(DateLogs.LogType.INFO, myGame.getGameId(), "create new Survivor. NAME: " + temp.getName() + ", ENERGY: "
-            + temp.getEnergy() + ", SURVIVOR TYPE: " + survivorType + ", PI: " + temp.getProfileInformation() +
-            ", AGE: " + temp.getAge(), null);
+                + temp.getEnergy() + ", SURVIVOR TYPE: " + survivorType + ", PI: " + temp.getProfileInformation() +
+                ", AGE: " + temp.getAge(), null);
 
-        if(temp.getProfession() == Constants.Survivors.MINER)
+        if (temp.getProfession() == Constants.Survivors.MINER)
             temp.setEquipment(myGame.getEquipmentManager().getEquipment(Constants.Equipment.PICKAXE));
 
         return temp;
     }
 
-    //TODO do Debugowania
-//    public static String getRandomAvatarPath() {
-//        try {
-//            File folder = new File("assets/avatars");
-//
-//            if (!folder.exists()) {
-//                logs(DateLogs.LogType.ERROR, null, "The 'avatars' folder does not exist.", null);
-//                throw new IOException("The 'avatars' folder does not exist.");
-//            }
-//
-//            if (!folder.isDirectory()) {
-//                logs(DateLogs.LogType.ERROR, null, "'avatars' is not a directory.", null);
-//                throw new IOException("'avatars' is not a directory.");
-//            }
-//
-//            File[] files = folder.listFiles();
-//            if (files == null || files.length == 0) {
-//                logs(DateLogs.LogType.ERROR, null, "There are no files in the 'avatars' folder.", null);
-//                throw new IOException("There are no files in the 'avatars' folder.");
-//            }
-//
-//            List<File> validFiles = new ArrayList<>();
-//            for (File file : files) {
-//                if (!file.getName().endsWith(".work.png")) {
-//                    validFiles.add(file);
-//                }
-//            }
-//            if (!validFiles.isEmpty()) {
-//                int randomIndex = new Random().nextInt(validFiles.size());
-//                return validFiles.get(randomIndex).getPath();
-//            } else {
-//                logs(DateLogs.LogType.ERROR, null, "There are no matching files in the 'avatars' folder.", null);
-//                throw new IOException("There are no matching files in the 'avatars' folder.");
-//            }
-//        } catch (Exception e) {
-//            logs(DateLogs.LogType.ERROR, null, "Error while getRandomAvatarPath()", e);
-//            return null;
-//        }
-//    }
+    // TODO do Debugowania
+    // public static String getRandomAvatarPath() {
+    // try {
+    // File folder = new File("assets/avatars");
+    //
+    // if (!folder.exists()) {
+    // logs(DateLogs.LogType.ERROR, null, "The 'avatars' folder does not exist.",
+    // null);
+    // throw new IOException("The 'avatars' folder does not exist.");
+    // }
+    //
+    // if (!folder.isDirectory()) {
+    // logs(DateLogs.LogType.ERROR, null, "'avatars' is not a directory.", null);
+    // throw new IOException("'avatars' is not a directory.");
+    // }
+    //
+    // File[] files = folder.listFiles();
+    // if (files == null || files.length == 0) {
+    // logs(DateLogs.LogType.ERROR, null, "There are no files in the 'avatars'
+    // folder.", null);
+    // throw new IOException("There are no files in the 'avatars' folder.");
+    // }
+    //
+    // List<File> validFiles = new ArrayList<>();
+    // for (File file : files) {
+    // if (!file.getName().endsWith(".work.png")) {
+    // validFiles.add(file);
+    // }
+    // }
+    // if (!validFiles.isEmpty()) {
+    // int randomIndex = new Random().nextInt(validFiles.size());
+    // return validFiles.get(randomIndex).getPath();
+    // } else {
+    // logs(DateLogs.LogType.ERROR, null, "There are no matching files in the
+    // 'avatars' folder.", null);
+    // throw new IOException("There are no matching files in the 'avatars'
+    // folder.");
+    // }
+    // } catch (Exception e) {
+    // logs(DateLogs.LogType.ERROR, null, "Error while getRandomAvatarPath()", e);
+    // return null;
+    // }
+    // }
 
-
-
-    //TODO do Jarowania
+    // TODO do Jarowania
     public static List<String> listFilesInJar(String folderPath) throws IOException {
         List<String> filePaths = new ArrayList<>();
 
@@ -187,8 +184,9 @@ public class SurvivorManager implements Serializable {
 
             List<String> validFiles = new ArrayList<>();
             for (String file : avatarFiles) {
-                if (!file.endsWith(".work.png") && !file.endsWith(".atlas") && !file.endsWith(".json") && !file.endsWith("avatars.png") ) {
-                    //logs(DateLogs.LogType.INFO, null, "Valid file path:" + file, null);
+                if (!file.endsWith(".work.png") && !file.endsWith(".atlas") && !file.endsWith(".json")
+                        && !file.endsWith("avatars.png")) {
+                    // logs(DateLogs.LogType.INFO, null, "Valid file path:" + file, null);
                     validFiles.add(file);
                 }
             }
@@ -196,7 +194,9 @@ public class SurvivorManager implements Serializable {
             if (!validFiles.isEmpty()) {
                 int randomIndex = new Random().nextInt(validFiles.size());
                 String avatarPath = validFiles.get(randomIndex);
-                logs(DateLogs.LogType.INFO, null, "Random index: " + randomIndex + ", Size: " + validFiles.size() + ", AvatarPath: " + avatarPath, null);
+                logs(DateLogs.LogType.INFO, null,
+                        "Random index: " + randomIndex + ", Size: " + validFiles.size() + ", AvatarPath: " + avatarPath,
+                        null);
                 return avatarPath;
             } else {
                 System.err.println("Brak dostępnych avatarów (wszystkie są .work.png).");
@@ -207,18 +207,18 @@ public class SurvivorManager implements Serializable {
         return null;
     }
 
-
-
-
-
     public static int getAgeFromAvatar(String fileName) {
         String[] parts = fileName.split("_");
         int ageRange = Integer.parseInt(parts[1]);
         switch (ageRange) {
-            case 20: return generateRandomNumber(18, 39);
-            case 40: return generateRandomNumber(40, 64);
-            case 65: return generateRandomNumber(65, 80);
-            default: return generateRandomNumber(18, 80);
+            case 20:
+                return generateRandomNumber(18, 39);
+            case 40:
+                return generateRandomNumber(40, 64);
+            case 65:
+                return generateRandomNumber(65, 80);
+            default:
+                return generateRandomNumber(18, 80);
         }
     }
 
@@ -227,14 +227,16 @@ public class SurvivorManager implements Serializable {
         return names.get(randomIndex);
     }
 
-    public static String generateRandomBio(String name, List<String> beginnings, List<String> middles, List<String> ends) {
+    public static String generateRandomBio(String name, List<String> beginnings, List<String> middles,
+            List<String> ends) {
         String beginning = beginnings.get(generateRandomNumber(0, beginnings.size() - 1));
         String middle = middles.get(generateRandomNumber(0, middles.size() - 1));
         String end = ends.get(generateRandomNumber(0, ends.size() - 1)).replace("X", name);
         return beginning + " " + middle + " " + end;
     }
 
-    public Survivor setRandomBio(MyGame myGame, Survivor survivor, List<String> names, Map<String, List<String>> descriptions) {
+    public Survivor setRandomBio(MyGame myGame, Survivor survivor, List<String> names,
+            Map<String, List<String>> descriptions) {
         String avatarPath = getRandomAvatarPath();
         logs(DateLogs.LogType.INFO, myGame.getGameId(), "Survivor new path: " + avatarPath, null);
         if (avatarPath == null)
@@ -244,18 +246,17 @@ public class SurvivorManager implements Serializable {
         int age = getAgeFromAvatar(avatarFile.getName());
         String name = generateUniqueName(names);
         String bio = generateRandomBio(
-            name,
-            descriptions.get("beginning"),
-            descriptions.get("middle"),
-            descriptions.get("end")
-        );
+                name,
+                descriptions.get("beginning"),
+                descriptions.get("middle"),
+                descriptions.get("end"));
 
         survivor.setAge(age);
         survivor.setName(name);
         survivor.setProfileInformation(bio);
 
-        //BORBO
-        if(avatarPath.endsWith("37_22_64.png")){
+        // BORBO
+        if (avatarPath.endsWith("37_22_64.png")) {
             List<String> names1 = new ArrayList<>();
             names1.add("BORIA");
             survivor.setAge(22);
@@ -266,19 +267,17 @@ public class SurvivorManager implements Serializable {
         survivor.setImgPath(avatarPath);
         survivor.setImg(new Texture(avatarPath));
 
-
-
         return survivor;
     }
 
-    public Survivor whoIsInTheRoom(Coordinate coordinate){
+    public Survivor whoIsInTheRoom(Coordinate coordinate) {
         Map<String, Survivor> survivorsMap = getSurvivors();
-        for(Map.Entry<String, Survivor> entry : survivorsMap.entrySet()){
-            if(entry.getValue().getTask() != null) {
+        for (Map.Entry<String, Survivor> entry : survivorsMap.entrySet()) {
+            if (entry.getValue().getTask() != null) {
                 if (entry.getValue().getTask().getCoordinateOfRoom() == coordinate) {
                     return entry.getValue();
                 }
-            }else{
+            } else {
                 continue;
             }
         }
@@ -295,9 +294,9 @@ public class SurvivorManager implements Serializable {
         return true;
     }
 
-    private static ReceivedStuff survivorGotReceivedStuff(Constants.Tasks task){
+    private static ReceivedStuff survivorGotReceivedStuff(Constants.Tasks task) {
 
-        switch(task){
+        switch (task) {
             case WAIT:
             case TRAIN_TO_COOK:
             case TRAIN_TO_ENGINEER:
@@ -307,69 +306,71 @@ public class SurvivorManager implements Serializable {
             case BUILD_WORKSHOP:
             case BUILD_AIR_PUMP:
             case BUILD_TINKER_ROOM:
-                return new ReceivedStuff(0,0,0,0,-1,0,0,0,0,null);
+                return new ReceivedStuff(0, 0, 0, 0, -1, 0, 0, 0, 0, null);
             case REST:
-                return new ReceivedStuff(0,0,0,0,1,0,0,0,0,null);
+                return new ReceivedStuff(0, 0, 0, 0, 1, 0, 0, 0, 0, null);
             case CREATE_FOOD:
-                return new ReceivedStuff(0,0,1,0,-1,0,0,0,0,null);
+                return new ReceivedStuff(0, 0, 1, 0, -1, 0, 0, 0, 0, null);
             case DIG_OUT:
                 int eq = Generators.generateRandomEquipment();
-                if(eq == 0){
-                    return new ReceivedStuff(Generators.generateRandomCR(),Generators.generateRandomTools(),
-                        Generators.generateRandomFood(),0,-1,
-                        1,0,0,0, Generators.generateRandomSurvivor());
-                }else if(eq == 1){
-                    return new ReceivedStuff(Generators.generateRandomCR(),Generators.generateRandomTools(),
-                        Generators.generateRandomFood(),0,-1,
-                        0,0,1,0, Generators.generateRandomSurvivor());
-                }else if(eq == 2){
-                    return new ReceivedStuff(Generators.generateRandomCR(),Generators.generateRandomTools(),
-                        Generators.generateRandomFood(),0,-1,
-                        0,1,0,0, Generators.generateRandomSurvivor());
-                }else{
-                    return new ReceivedStuff(Generators.generateRandomCR(),Generators.generateRandomTools(),
-                        Generators.generateRandomFood(),0,-1,
-                        0,0,0,0, Generators.generateRandomSurvivor());
+                if (eq == 0) {
+                    return new ReceivedStuff(Generators.generateRandomCR(), Generators.generateRandomTools(),
+                            Generators.generateRandomFood(), 0, -1,
+                            1, 0, 0, 0, Generators.generateRandomSurvivor());
+                } else if (eq == 1) {
+                    return new ReceivedStuff(Generators.generateRandomCR(), Generators.generateRandomTools(),
+                            Generators.generateRandomFood(), 0, -1,
+                            0, 0, 1, 0, Generators.generateRandomSurvivor());
+                } else if (eq == 2) {
+                    return new ReceivedStuff(Generators.generateRandomCR(), Generators.generateRandomTools(),
+                            Generators.generateRandomFood(), 0, -1,
+                            0, 1, 0, 0, Generators.generateRandomSurvivor());
+                } else {
+                    return new ReceivedStuff(Generators.generateRandomCR(), Generators.generateRandomTools(),
+                            Generators.generateRandomFood(), 0, -1,
+                            0, 0, 0, 0, Generators.generateRandomSurvivor());
                 }
             case EAT:
-                return new ReceivedStuff(0,0,0,0,3,0,0,0,0,null);
+                return new ReceivedStuff(0, 0, 0, 0, 3, 0, 0, 0, 0, null);
             case CREATE_SEARCHLIGHT:
-                return new ReceivedStuff(0,0,0,0,-1,1,0,0,0,null);
+                return new ReceivedStuff(0, 0, 0, 0, -1, 1, 0, 0, 0, null);
             case CREATE_KITCHEN_ROBOT:
-                return new ReceivedStuff(0,0,0,0,-1,0,0,1,0,null);
+                return new ReceivedStuff(0, 0, 0, 0, -1, 0, 0, 1, 0, null);
             case CREATE_OXYGEN_MASK:
-                return new ReceivedStuff(0,0,0,0,-1,0,1,0,0,null);
+                return new ReceivedStuff(0, 0, 0, 0, -1, 0, 1, 0, 0, null);
             case CREATE_PICKAXE:
-                return new ReceivedStuff(0,0,0,0,-1,0,0,0,1,null);
+                return new ReceivedStuff(0, 0, 0, 0, -1, 0, 0, 0, 1, null);
             case BUILD_POWER_STATION:
-                return new ReceivedStuff(0,0,0,4,-1,0,0,0,0,null);
+                return new ReceivedStuff(0, 0, 0, 4, -1, 0, 0, 0, 0, null);
             case CREATE_TOOLS:
-                return new ReceivedStuff(0,1,0,0,-1,0,0,0,0,null);
+                return new ReceivedStuff(0, 1, 0, 0, -1, 0, 0, 0, 0, null);
         }
-        return new ReceivedStuff(0,0,0,0,0,0,0,0,0,null);
+        return new ReceivedStuff(0, 0, 0, 0, 0, 0, 0, 0, 0, null);
     }
 
-    public void allSurvivorGotReceivedStuff(){
+    public void allSurvivorGotReceivedStuff() {
         Map<String, Survivor> survivorsMap = getSurvivors();
         for (Map.Entry<String, Survivor> entry : survivorsMap.entrySet()) {
-                entry.getValue().getTask().setReceivedStuff(survivorGotReceivedStuff(entry.getValue().getTask().getTask()));
+            entry.getValue().getTask().setReceivedStuff(survivorGotReceivedStuff(entry.getValue().getTask().getTask()));
         }
     }
 
-    public void clearSurvivorsTasks(MyGame myGame){
+    public void clearSurvivorsTasks(MyGame myGame) {
         Map<String, Survivor> survivorsMap = getSurvivors();
         for (Map.Entry<String, Survivor> entry : survivorsMap.entrySet()) {
-            if(entry.getValue().getTask() != null) {
-                if(myGame.getRoomManager().getRoom(entry.getValue().getTask().getCoordinateOfRoom()).getAmountOfSurvivors() != 0) {
-                    myGame.getRoomManager().getRoom(entry.getValue().getTask().getCoordinateOfRoom()).setAmountOfSurvivors(
-                        myGame.getRoomManager().getRoom(entry.getValue().getTask().getCoordinateOfRoom()).getAmountOfSurvivors() - 1
-                    );
+            if (entry.getValue().getTask() != null) {
+                if (myGame.getRoomManager().getRoom(entry.getValue().getTask().getCoordinateOfRoom())
+                        .getAmountOfSurvivors() != 0) {
+                    myGame.getRoomManager().getRoom(entry.getValue().getTask().getCoordinateOfRoom())
+                            .setAmountOfSurvivors(
+                                    myGame.getRoomManager().getRoom(entry.getValue().getTask().getCoordinateOfRoom())
+                                            .getAmountOfSurvivors() - 1);
                 }
                 myGame.getRoomManager().getRoom(entry.getValue().getTask().getCoordinateOfRoom()).updateSpace(myGame);
                 myGame.getRoomManager().getRoom(entry.getValue().getTask().getCoordinateOfRoom()).updatePicture();
                 entry.getValue().setTask(null);
                 entry.getValue().changeImgForNotWork();
-            }else{
+            } else {
                 continue;
             }
         }
@@ -421,8 +422,8 @@ public class SurvivorManager implements Serializable {
         }
     }
 
-    public void checkOxygenForAllLevels(MyGame myGame){
-        for(int i = 1; i <= 10; i++){
+    public void checkOxygenForAllLevels(MyGame myGame) {
+        for (int i = 1; i <= 10; i++) {
             adjustOxygenLevelsAtLevel(myGame, i);
         }
     }
@@ -448,20 +449,19 @@ public class SurvivorManager implements Serializable {
         return false;
     }
 
-    public void checkLoseGame(){
-        if(survivors.isEmpty())
+    public void checkLoseGame() {
+        if (survivors.isEmpty())
             GameScreen.setGameLose(true);
     }
 
-
-    public void showDisable(){
+    public void showDisable() {
         Map<String, Survivor> survivorsMap = getSurvivors();
-        for(Map.Entry<String, Survivor> entry : survivorsMap.entrySet()){
-            if(entry.getValue().getTask() != null) {
+        for (Map.Entry<String, Survivor> entry : survivorsMap.entrySet()) {
+            if (entry.getValue().getTask() != null) {
                 System.out.println("Coordinate for " + entry.getValue().getName() + ": " +
-                    entry.getValue().getTask().getCoordinateOfRoom().getX() + " ," +
-                    entry.getValue().getTask().getCoordinateOfRoom().getY());
-            }else{
+                        entry.getValue().getTask().getCoordinateOfRoom().getX() + " ," +
+                        entry.getValue().getTask().getCoordinateOfRoom().getY());
+            } else {
                 System.out.println("Coordinate for " + entry.getValue().getName() + ": null, null");
             }
         }
