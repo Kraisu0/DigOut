@@ -1,0 +1,18 @@
+package com.kraisu.digout.EventBus;
+
+public enum EventType {
+    TURN_END,
+    GAME_WON,
+    GAME_LOST,
+    ROOM_DISCOVERED,
+    ROOM_CHANGED,
+    SURVIROR_CHANGED,
+    EQUIPMENT_CHANGED,
+    RESOURCES_CHANGED,
+    UI_REFRESH_EQ,
+    UI_REFRESH_SURVIVOR,
+    UI_REFRESH_RESOURCES,
+    UI_ROOM_COLOR_CHANGED,
+    DIALOG_CLOSED,
+    SHOW_DIALOG
+}

@@ -7,6 +7,9 @@ import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.kraisu.digout.help.Constants;
 import com.kraisu.digout.stuff.Equipment;
+import com.kraisu.digout.logs.DateLogs;
+
+import static com.kraisu.digout.logs.DateLogs.logs;
 
 import java.io.Serializable;
 import java.util.UUID;
@@ -23,7 +26,8 @@ public class Survivor implements Serializable {
     private transient Texture img;
     private Task task;
 
-    public Survivor(UUID gameId, String name, int energy, Constants.Survivors profession, Equipment equipment, String profileInformation, int age, String avatarPath) {
+    public Survivor(UUID gameId, String name, int energy, Constants.Survivors profession, Equipment equipment,
+            String profileInformation, int age, String avatarPath) {
         this.gameId = gameId;
         this.name = name;
         this.energy = energy;
@@ -108,7 +112,7 @@ public class Survivor implements Serializable {
         this.img = img;
     }
 
-    public void setImgFromPath(String path){
+    public void setImgFromPath(String path) {
         this.img = new Texture(path);
     }
 
@@ -120,15 +124,14 @@ public class Survivor implements Serializable {
         this.task = task;
     }
 
-
     public void reduceEnergy(int amount) {
         this.energy = Math.max(this.energy - amount, Constants.SurvivorLimitations.MIN_SURVIVOR_ENERGY);
     }
 
     public void increaseEnergy(int amount) {
-        if(this.energy + amount < Constants.SurvivorLimitations.MAX_SURVIVOR_ENERGY) {
+        if (this.energy + amount < Constants.SurvivorLimitations.MAX_SURVIVOR_ENERGY) {
             this.energy = this.energy + amount;
-        }else{
+        } else {
             this.energy = Constants.SurvivorLimitations.MAX_SURVIVOR_ENERGY;
         }
     }
@@ -142,32 +145,46 @@ public class Survivor implements Serializable {
         return new TextureRegionDrawable(new TextureRegion(energyTexture));
     }
 
-    public void changeImgForWork(){
+    public void changeImgForWork() {
         String[] parts = imgPath.split("\\.", 2);
         String path = parts[0] + ".work.png";
         setImgPath(path);
         setImgFromPath(path);
     }
 
-    public void changeImgForNotWork(){
-        String[] parts = imgPath.split("\\.", 3);
-        String path = parts[0] + ".png";
-        setImgPath(path);
-        setImgFromPath(path);
+    public void changeImgForNotWork() {
+        // Handle .work.png suffix by removing it
+        String path;
+        if (imgPath.endsWith(".work.png")) {
+            path = imgPath.substring(0, imgPath.length() - ".work.png".length()) + ".png";
+        } else {
+            // Already a non-work image, no change needed
+            path = imgPath;
+        }
+
+        // Verify the target file exists before applying
+        if (Gdx.files.internal(path).exists()) {
+            setImgPath(path);
+            setImgFromPath(path);
+        } else {
+            // Fallback: keep current image if target doesn't exist
+            logs(DateLogs.LogType.WARN, gameId, "Cannot change image to non-work variant, file not found: " + path,
+                    null);
+        }
     }
 
     @Override
     public String toString() {
         return "Survivor{" +
-            "gameId=" + gameId +
-            ", name='" + name + '\'' +
-            ", energy=" + energy +
-            ", profession=" + profession +
-            ", equipment=" + equipment +
-            ", profileInformation='" + profileInformation + '\'' +
-            ", age=" + age +
-            ", img=" + img +
-            ", task=" + task +
-            '}';
+                "gameId=" + gameId +
+                ", name='" + name + '\'' +
+                ", energy=" + energy +
+                ", profession=" + profession +
+                ", equipment=" + equipment +
+                ", profileInformation='" + profileInformation + '\'' +
+                ", age=" + age +
+                ", img=" + img +
+                ", task=" + task +
+                '}';
     }
 }

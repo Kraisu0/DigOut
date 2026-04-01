@@ -1,4 +1,3 @@
-
 buildscript {
   repositories {
     gradlePluginPortal()
@@ -18,8 +17,7 @@ plugins {
 import io.github.fourlastor.construo.Target
 
 sourceSets.main.resources.srcDirs += [ rootProject.file('assets').path ]
-mainClassName = 'com.kraisu.digout.lwjgl3.Lwjgl3Launcher'
-application.setMainClass(mainClassName)
+application.mainClass.set('com.kraisu.digout.lwjgl3.Lwjgl3Launcher')
 eclipse.project.name = appName + '-lwjgl3'
 java.sourceCompatibility = 11
 java.targetCompatibility = 11
@@ -70,7 +68,7 @@ jar {
 
 // setting the manifest makes the JAR runnable.
   manifest {
-    attributes 'Main-Class': project.mainClassName
+    attributes 'Main-Class': application.mainClass.get()
   }
 // this last step may help on some OSes that need extra instruction to make runnable JARs.
   doLast {
